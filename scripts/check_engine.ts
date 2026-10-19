@@ -3,7 +3,8 @@
 
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { computeTable, generateFixtures, simulateSeason } from '../src/competitions/league';
+import { computeTable, generateFixtures } from '../src/competitions/league';
+import { simulateSeason } from '../src/competitions/season';
 import { generateFictionalLeague } from '../src/data/fictionalLeague';
 import { effectiveAt, familiarity, FORMATIONS } from '../src/domain/positions';
 import type { Club, LeagueConfig, MatchResult, Player } from '../src/domain/types';
@@ -74,8 +75,15 @@ for (const c of gen.clubs) clubs[c.id] = c;
   const sFor = teamStrength({ formation: club.tactic.formation, slots: forcedSlots }, positions);
   check('XI fora de posição tem ataque e defesa menores', sFor.offense < sNat.offense && sFor.defenseLine < sNat.defenseLine,
     `ofensivo ${sNat.offense.toFixed(1)} -> ${sFor.offense.toFixed(1)}, defensivo ${sNat.defenseLine.toFixed(1)} -> ${sFor.defenseLine.toFixed(1)}`);
-  check('escalação automática redistribui o XI fixado nas posições certas',
-    forced.slots.reduce((a, s) => a + s.rating, 0) >= natural.slots.reduce((a, s) => a + s.rating, 0) - 1e-6);
+  check('XI escolhido pelo usuário é respeitado vaga a vaga',
+    forced.slots.map((s) => s.playerId).join() === flipped.startingXI.join());
+  const fixedClub: Club = { ...club, startingXI: xiIds };
+  const gkId = xiIds[positions.indexOf('GK')]!;
+  const withoutGk = chooseLineup(fixedClub, players, (id) => id !== gkId);
+  const subGk = withoutGk.slots.find((s) => s.pos === 'GK')!.playerId;
+  check('vaga de titular indisponível vai para o reserva da posição',
+    subGk !== gkId && players[subGk]!.positions[0] === 'GK' &&
+      withoutGk.slots.filter((s) => s.pos !== 'GK').every((s, i) => s.playerId === natural.slots.filter((x) => x.pos !== 'GK')[i]!.playerId));
   const gkSlot = natural.slots.find((s) => s.pos === 'GK')!;
   check('escalação automática põe goleiro no gol', players[gkSlot.playerId]!.positions[0] === 'GK');
 }
@@ -194,6 +202,31 @@ for (const c of gen.clubs) clubs[c.id] = c;
   check('jogador lesionado fica fora das partidas seguintes', injuryOk, `${injuriesChecked} lesões verificadas`);
 
   check('resultado da temporada é JSON puro (ida e volta sem perda)', JSON.stringify(JSON.parse(JSON.stringify(season))) === JSON.stringify(season));
+}
+
+// 6b. Fadiga: cansado rende menos, condição fica em 0-100 e o rodízio acontece.
+{
+  const club = gen.clubs[3]!;
+  const rested = chooseLineup(club, players);
+  const tiredPlayers: Record<string, Player> = { ...players };
+  for (const s of rested.slots) tiredPlayers[s.playerId] = { ...players[s.playerId]!, fitness: 40 };
+  const positions = FORMATIONS[club.tactic.formation];
+  const tiredFixed = chooseLineup({ ...club, startingXI: rested.slots.map((s) => s.playerId) }, tiredPlayers);
+  check('time cansado tem força menor', teamStrength(tiredFixed, positions).offense < teamStrength(rested, positions).offense);
+  const auto = chooseLineup(club, tiredPlayers);
+  check('escalação automática poupa titulares muito cansados', auto.slots.some((s) => !rested.slots.some((r) => r.playerId === s.playerId)));
+
+  const season = simulateSeason({ league: gen.league, clubs: gen.clubs, players, seed: 31 });
+  let starts = 0;
+  let distinct = 0;
+  const appearances: Record<string, number> = {};
+  for (const r of season.results) for (const id of [...r.homeXI, ...r.awayXI]) appearances[id] = (appearances[id] ?? 0) + 1;
+  for (const v of Object.values(appearances)) {
+    starts += v;
+    distinct++;
+  }
+  check('rodízio: mais de 11 titulares diferentes por clube na temporada', distinct / gen.clubs.length > 11, `${(distinct / gen.clubs.length).toFixed(1)} jogadores usados por clube`);
+  check('dados de entrada não são alterados pela simulação', gen.players.every((p) => p.fitness === 100));
 }
 
 // 7. Domínio sem React e sem Math.random.

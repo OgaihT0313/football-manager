@@ -27,10 +27,10 @@ export interface EngineParams {
   injuriesPerTeam: number;
 }
 
-/** Calibrado na Fase 0 com scripts/backtest_league.ts (500 temporadas). Ver ROADMAP.md. */
+/** Calibrado com scripts/backtest_league.ts (500 temporadas; recalibrado na Fase 1 com fadiga). Ver ROADMAP.md. */
 export const DEFAULT_PARAMS: EngineParams = {
-  muHome: 1.5,
-  muAway: 1.13,
+  muHome: 1.44,
+  muAway: 1.09,
   k: 2.2,
   kGk: 1.5,
   midWeight: 0.35,

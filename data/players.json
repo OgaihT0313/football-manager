@@ -18,11 +18,11 @@
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
-    "attack": 54,
-    "creation": 80,
-    "defending": 44,
-    "physical": 83,
-    "goalkeeping": 82
+    "attack": 48,
+    "creation": 66,
+    "defending": 40,
+    "physical": 81,
+    "goalkeeping": 83
   },
   {
     "id": "ficticia-scs-02",
@@ -43,11 +43,11 @@
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
-    "attack": 42,
-    "creation": 75,
-    "defending": 35,
-    "physical": 73,
-    "goalkeeping": 75
+    "attack": 37,
+    "creation": 59,
+    "defending": 31,
+    "physical": 68,
+    "goalkeeping": 77
   },
   {
     "id": "ficticia-scs-03",
@@ -84,20 +84,20 @@
       "LB"
     ],
     "foot": "L",
-    "ovr": 83,
-    "potential": 95,
+    "ovr": 82,
+    "potential": 94,
     "contract": {
-      "wage": 212900,
+      "wage": 177500,
       "expires": 2027
     },
-    "value": 85150000,
+    "value": 71000000,
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
     "attack": 77,
-    "creation": 90,
+    "creation": 89,
     "defending": 80,
-    "physical": 84,
+    "physical": 83,
     "goalkeeping": 19
   },
   {
@@ -124,7 +124,7 @@
     "attack": 73,
     "creation": 77,
     "defending": 84,
-    "physical": 80,
+    "physical": 79,
     "goalkeeping": 16
   },
   {
@@ -214,20 +214,20 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 79,
-    "potential": 85,
+    "ovr": 80,
+    "potential": 86,
     "contract": {
-      "wage": 87000,
+      "wage": 104400,
       "expires": 2028
     },
-    "value": 34800000,
+    "value": 41750000,
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
-    "attack": 76,
+    "attack": 77,
     "creation": 86,
-    "defending": 76,
-    "physical": 79,
+    "defending": 77,
+    "physical": 80,
     "goalkeeping": 14
   },
   {
@@ -241,17 +241,17 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 77,
-    "potential": 77,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 44000,
+      "wage": 52800,
       "expires": 2028
     },
-    "value": 17600000,
+    "value": 21100000,
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
-    "attack": 78,
+    "attack": 79,
     "creation": 78,
     "defending": 78,
     "physical": 76,
@@ -318,19 +318,19 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 85,
-    "potential": 90,
+    "ovr": 86,
+    "potential": 91,
     "contract": {
-      "wage": 259000,
+      "wage": 310800,
       "expires": 2030
     },
-    "value": 103600000,
+    "value": 124300000,
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
     "attack": 81,
-    "creation": 82,
-    "defending": 86,
+    "creation": 83,
+    "defending": 87,
     "physical": 86,
     "goalkeeping": 17
   },
@@ -345,20 +345,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 81,
-    "potential": 83,
+    "ovr": 82,
+    "potential": 84,
     "contract": {
-      "wage": 125100,
+      "wage": 150100,
       "expires": 2029
     },
-    "value": 50050000,
+    "value": 60050000,
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
     "attack": 68,
     "creation": 82,
-    "defending": 81,
-    "physical": 81,
+    "defending": 82,
+    "physical": 82,
     "goalkeeping": 8
   },
   {
@@ -425,20 +425,20 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 80,
-    "potential": 87,
+    "ovr": 79,
+    "potential": 86,
     "contract": {
-      "wage": 123400,
+      "wage": 102900,
       "expires": 2027
     },
-    "value": 49350000,
+    "value": 41150000,
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
     "attack": 79,
     "creation": 78,
     "defending": 66,
-    "physical": 84,
+    "physical": 83,
     "goalkeeping": 18
   },
   {
@@ -487,8 +487,8 @@
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
-    "attack": 81,
-    "creation": 82,
+    "attack": 82,
+    "creation": 83,
     "defending": 74,
     "physical": 87,
     "goalkeeping": 11
@@ -555,18 +555,18 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 75,
-    "potential": 86,
+    "ovr": 74,
+    "potential": 85,
     "contract": {
-      "wage": 49800,
+      "wage": 41400,
       "expires": 2031
     },
-    "value": 19900000,
+    "value": 16550000,
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
-    "attack": 76,
-    "creation": 80,
+    "attack": 75,
+    "creation": 79,
     "defending": 53,
     "physical": 69,
     "goalkeeping": 8
@@ -590,11 +590,11 @@
     "clubId": "ficticia-scs",
     "morale": 50,
     "fitness": 100,
-    "attack": 35,
-    "creation": 80,
-    "defending": 42,
-    "physical": 78,
-    "goalkeeping": 77
+    "attack": 31,
+    "creation": 55,
+    "defending": 37,
+    "physical": 65,
+    "goalkeeping": 80
   },
   {
     "id": "ficticia-scs-24",
@@ -617,9 +617,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 75,
-    "creation": 74,
+    "creation": 75,
     "defending": 38,
-    "physical": 71,
+    "physical": 72,
     "goalkeeping": 19
   },
   {
@@ -668,11 +668,11 @@
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 43,
-    "creation": 74,
-    "defending": 40,
+    "attack": 39,
+    "creation": 61,
+    "defending": 36,
     "physical": 79,
-    "goalkeeping": 79
+    "goalkeeping": 80
   },
   {
     "id": "ficticia-gca-02",
@@ -693,11 +693,11 @@
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 48,
-    "creation": 81,
-    "defending": 38,
-    "physical": 87,
-    "goalkeeping": 79
+    "attack": 43,
+    "creation": 59,
+    "defending": 35,
+    "physical": 80,
+    "goalkeeping": 81
   },
   {
     "id": "ficticia-gca-03",
@@ -735,19 +735,19 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 73,
-    "potential": 78,
+    "ovr": 74,
+    "potential": 79,
     "contract": {
-      "wage": 34500,
+      "wage": 41400,
       "expires": 2027
     },
-    "value": 13800000,
+    "value": 16550000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
     "attack": 71,
-    "creation": 77,
-    "defending": 71,
+    "creation": 78,
+    "defending": 72,
     "physical": 74,
     "goalkeeping": 11
   },
@@ -797,9 +797,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 46,
-    "creation": 71,
+    "creation": 72,
     "defending": 76,
-    "physical": 74,
+    "physical": 75,
     "goalkeeping": 8
   },
   {
@@ -812,20 +812,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 80,
-    "potential": 84,
+    "ovr": 81,
+    "potential": 85,
     "contract": {
-      "wage": 123400,
+      "wage": 148000,
       "expires": 2030
     },
-    "value": 49350000,
+    "value": 59200000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 53,
-    "creation": 82,
-    "defending": 80,
-    "physical": 80,
+    "attack": 54,
+    "creation": 83,
+    "defending": 81,
+    "physical": 81,
     "goalkeeping": 19
   },
   {
@@ -838,20 +838,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 81,
-    "potential": 84,
+    "ovr": 82,
+    "potential": 85,
     "contract": {
-      "wage": 125100,
+      "wage": 150100,
       "expires": 2030
     },
-    "value": 50050000,
+    "value": 60050000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
     "attack": 70,
-    "creation": 76,
-    "defending": 80,
-    "physical": 84,
+    "creation": 77,
+    "defending": 81,
+    "physical": 85,
     "goalkeeping": 7
   },
   {
@@ -863,20 +863,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 79,
-    "potential": 92,
+    "ovr": 80,
+    "potential": 93,
     "contract": {
-      "wage": 102900,
+      "wage": 123400,
       "expires": 2031
     },
-    "value": 41150000,
+    "value": 49350000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
     "attack": 67,
     "creation": 81,
-    "defending": 80,
-    "physical": 77,
+    "defending": 81,
+    "physical": 78,
     "goalkeeping": 16
   },
   {
@@ -900,7 +900,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 65,
-    "creation": 79,
+    "creation": 80,
     "defending": 79,
     "physical": 73,
     "goalkeeping": 19
@@ -925,7 +925,7 @@
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 88,
+    "attack": 89,
     "creation": 86,
     "defending": 76,
     "physical": 82,
@@ -940,19 +940,19 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 69,
+    "ovr": 70,
+    "potential": 70,
     "contract": {
-      "wage": 10300,
+      "wage": 12400,
       "expires": 2029
     },
-    "value": 4100000,
+    "value": 4950000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
     "attack": 74,
-    "creation": 66,
-    "defending": 71,
+    "creation": 67,
+    "defending": 72,
     "physical": 68,
     "goalkeeping": 14
   },
@@ -965,19 +965,19 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 77,
-    "potential": 77,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 24800,
+      "wage": 29600,
       "expires": 2029
     },
-    "value": 9900000,
+    "value": 11850000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 71,
-    "creation": 79,
-    "defending": 77,
+    "attack": 72,
+    "creation": 80,
+    "defending": 78,
     "physical": 76,
     "goalkeeping": 20
   },
@@ -990,20 +990,20 @@
       "DM"
     ],
     "foot": "L",
-    "ovr": 77,
-    "potential": 77,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 44000,
+      "wage": 52800,
       "expires": 2028
     },
-    "value": 17600000,
+    "value": 21100000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
     "attack": 53,
     "creation": 80,
     "defending": 80,
-    "physical": 69,
+    "physical": 70,
     "goalkeeping": 15
   },
   {
@@ -1015,20 +1015,20 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 80,
-    "potential": 80,
+    "ovr": 81,
+    "potential": 81,
     "contract": {
-      "wage": 75900,
+      "wage": 91000,
       "expires": 2031
     },
-    "value": 30350000,
+    "value": 36400000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 83,
-    "creation": 77,
-    "defending": 85,
-    "physical": 82,
+    "attack": 84,
+    "creation": 78,
+    "defending": 86,
+    "physical": 83,
     "goalkeeping": 9
   },
   {
@@ -1066,19 +1066,19 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 80,
-    "potential": 80,
+    "ovr": 81,
+    "potential": 81,
     "contract": {
-      "wage": 75900,
+      "wage": 91000,
       "expires": 2028
     },
-    "value": 30350000,
+    "value": 36400000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 83,
-    "creation": 78,
-    "defending": 85,
+    "attack": 84,
+    "creation": 79,
+    "defending": 86,
     "physical": 79,
     "goalkeeping": 19
   },
@@ -1092,20 +1092,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 74,
-    "potential": 83,
+    "ovr": 75,
+    "potential": 84,
     "contract": {
-      "wage": 41400,
+      "wage": 49800,
       "expires": 2027
     },
-    "value": 16550000,
+    "value": 19900000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 68,
-    "creation": 74,
+    "attack": 69,
+    "creation": 75,
     "defending": 75,
-    "physical": 78,
+    "physical": 79,
     "goalkeeping": 15
   },
   {
@@ -1118,20 +1118,20 @@
       "LW"
     ],
     "foot": "R",
-    "ovr": 82,
-    "potential": 93,
+    "ovr": 83,
+    "potential": 94,
     "contract": {
-      "wage": 177500,
+      "wage": 212900,
       "expires": 2030
     },
-    "value": 71000000,
+    "value": 85150000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 79,
-    "creation": 91,
-    "defending": 78,
-    "physical": 86,
+    "attack": 80,
+    "creation": 92,
+    "defending": 79,
+    "physical": 87,
     "goalkeeping": 19
   },
   {
@@ -1143,20 +1143,20 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 76,
-    "potential": 76,
+    "ovr": 77,
+    "potential": 77,
     "contract": {
-      "wage": 20600,
+      "wage": 24800,
       "expires": 2027
     },
-    "value": 8250000,
+    "value": 9900000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 79,
-    "creation": 73,
+    "attack": 80,
+    "creation": 74,
     "defending": 54,
-    "physical": 70,
+    "physical": 71,
     "goalkeeping": 8
   },
   {
@@ -1182,7 +1182,7 @@
     "attack": 84,
     "creation": 76,
     "defending": 57,
-    "physical": 71,
+    "physical": 72,
     "goalkeeping": 14
   },
   {
@@ -1206,9 +1206,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 73,
-    "creation": 73,
-    "defending": 60,
-    "physical": 67,
+    "creation": 74,
+    "defending": 61,
+    "physical": 68,
     "goalkeeping": 16
   },
   {
@@ -1230,11 +1230,11 @@
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 33,
-    "creation": 65,
-    "defending": 36,
-    "physical": 74,
-    "goalkeeping": 69
+    "attack": 28,
+    "creation": 42,
+    "defending": 31,
+    "physical": 66,
+    "goalkeeping": 71
   },
   {
     "id": "ficticia-gca-24",
@@ -1255,9 +1255,9 @@
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 57,
+    "attack": 58,
     "creation": 73,
-    "defending": 71,
+    "defending": 72,
     "physical": 72,
     "goalkeeping": 19
   },
@@ -1271,20 +1271,20 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 76,
-    "potential": 93,
+    "ovr": 77,
+    "potential": 94,
     "contract": {
-      "wage": 59600,
+      "wage": 71500,
       "expires": 2029
     },
-    "value": 23850000,
+    "value": 28600000,
     "clubId": "ficticia-gca",
     "morale": 50,
     "fitness": 100,
-    "attack": 66,
-    "creation": 69,
-    "defending": 74,
-    "physical": 82,
+    "attack": 67,
+    "creation": 70,
+    "defending": 75,
+    "physical": 83,
     "goalkeeping": 16
   },
   {
@@ -1296,21 +1296,21 @@
       "GK"
     ],
     "foot": "L",
-    "ovr": 81,
-    "potential": 87,
+    "ovr": 82,
+    "potential": 88,
     "contract": {
-      "wage": 125100,
+      "wage": 150100,
       "expires": 2031
     },
-    "value": 50050000,
+    "value": 60050000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 56,
-    "creation": 83,
-    "defending": 41,
-    "physical": 79,
-    "goalkeeping": 81
+    "attack": 51,
+    "creation": 69,
+    "defending": 39,
+    "physical": 75,
+    "goalkeeping": 84
   },
   {
     "id": "ficticia-fce-02",
@@ -1321,21 +1321,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 77,
-    "potential": 90,
+    "ovr": 80,
+    "potential": 93,
     "contract": {
-      "wage": 71500,
+      "wage": 123400,
       "expires": 2029
     },
-    "value": 28600000,
+    "value": 49350000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 51,
-    "creation": 74,
-    "defending": 39,
-    "physical": 75,
-    "goalkeeping": 77
+    "attack": 47,
+    "creation": 57,
+    "defending": 37,
+    "physical": 70,
+    "goalkeeping": 82
   },
   {
     "id": "ficticia-fce-03",
@@ -1347,20 +1347,20 @@
       "LW"
     ],
     "foot": "L",
-    "ovr": 80,
-    "potential": 80,
+    "ovr": 82,
+    "potential": 82,
     "contract": {
-      "wage": 42800,
+      "wage": 61400,
       "expires": 2029
     },
-    "value": 17100000,
+    "value": 24550000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 79,
-    "creation": 79,
-    "defending": 76,
-    "physical": 86,
+    "attack": 81,
+    "creation": 81,
+    "defending": 79,
+    "physical": 88,
     "goalkeeping": 9
   },
   {
@@ -1373,20 +1373,20 @@
       "LW"
     ],
     "foot": "R",
-    "ovr": 75,
-    "potential": 75,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 30600,
+      "wage": 52800,
       "expires": 2031
     },
-    "value": 12250000,
+    "value": 21100000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 78,
-    "creation": 77,
-    "defending": 75,
-    "physical": 74,
+    "attack": 80,
+    "creation": 79,
+    "defending": 77,
+    "physical": 77,
     "goalkeeping": 6
   },
   {
@@ -1399,20 +1399,20 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 81,
-    "potential": 81,
+    "ovr": 84,
+    "potential": 84,
     "contract": {
-      "wage": 91000,
+      "wage": 157100,
       "expires": 2031
     },
-    "value": 36400000,
+    "value": 62850000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 66,
-    "creation": 81,
-    "defending": 82,
-    "physical": 79,
+    "attack": 68,
+    "creation": 84,
+    "defending": 85,
+    "physical": 82,
     "goalkeeping": 16
   },
   {
@@ -1424,20 +1424,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 74,
-    "potential": 74,
+    "ovr": 76,
+    "potential": 76,
     "contract": {
-      "wage": 14400,
+      "wage": 20600,
       "expires": 2029
     },
-    "value": 5750000,
+    "value": 8250000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 51,
-    "creation": 79,
-    "defending": 73,
-    "physical": 74,
+    "attack": 53,
+    "creation": 82,
+    "defending": 75,
+    "physical": 76,
     "goalkeeping": 8
   },
   {
@@ -1449,20 +1449,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 83,
-    "potential": 91,
+    "ovr": 85,
+    "potential": 93,
     "contract": {
-      "wage": 212900,
+      "wage": 306100,
       "expires": 2030
     },
-    "value": 85150000,
+    "value": 122450000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 69,
-    "creation": 82,
-    "defending": 84,
-    "physical": 80,
+    "attack": 71,
+    "creation": 84,
+    "defending": 86,
+    "physical": 82,
     "goalkeeping": 20
   },
   {
@@ -1474,20 +1474,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 77,
-    "potential": 84,
+    "ovr": 79,
+    "potential": 86,
     "contract": {
-      "wage": 71500,
+      "wage": 102900,
       "expires": 2027
     },
-    "value": 28600000,
+    "value": 41150000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 53,
-    "creation": 67,
-    "defending": 74,
-    "physical": 86,
+    "attack": 56,
+    "creation": 69,
+    "defending": 76,
+    "physical": 88,
     "goalkeeping": 11
   },
   {
@@ -1500,20 +1500,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 80,
-    "potential": 88,
+    "ovr": 83,
+    "potential": 91,
     "contract": {
-      "wage": 104400,
+      "wage": 180100,
       "expires": 2030
     },
-    "value": 41750000,
+    "value": 72050000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 75,
-    "creation": 81,
-    "defending": 81,
-    "physical": 79,
+    "attack": 78,
+    "creation": 84,
+    "defending": 84,
+    "physical": 81,
     "goalkeeping": 10
   },
   {
@@ -1526,20 +1526,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 72,
-    "potential": 72,
+    "ovr": 75,
+    "potential": 75,
     "contract": {
-      "wage": 10000,
+      "wage": 17300,
       "expires": 2029
     },
-    "value": 4000000,
+    "value": 6900000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 74,
-    "creation": 76,
-    "defending": 72,
-    "physical": 70,
+    "attack": 77,
+    "creation": 79,
+    "defending": 74,
+    "physical": 73,
     "goalkeeping": 10
   },
   {
@@ -1551,20 +1551,20 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 77,
-    "potential": 77,
+    "ovr": 80,
+    "potential": 80,
     "contract": {
-      "wage": 24800,
+      "wage": 42800,
       "expires": 2030
     },
-    "value": 9900000,
+    "value": 17100000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 74,
-    "creation": 80,
-    "defending": 73,
-    "physical": 77,
+    "attack": 77,
+    "creation": 83,
+    "defending": 76,
+    "physical": 79,
     "goalkeeping": 13
   },
   {
@@ -1577,20 +1577,20 @@
       "DM"
     ],
     "foot": "L",
-    "ovr": 76,
-    "potential": 76,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 20600,
+      "wage": 29600,
       "expires": 2029
     },
-    "value": 8250000,
+    "value": 11850000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 72,
-    "creation": 79,
-    "defending": 75,
-    "physical": 72,
+    "attack": 74,
+    "creation": 81,
+    "defending": 78,
+    "physical": 74,
     "goalkeeping": 9
   },
   {
@@ -1603,20 +1603,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 76,
-    "potential": 76,
+    "ovr": 79,
+    "potential": 79,
     "contract": {
-      "wage": 20600,
+      "wage": 35600,
       "expires": 2028
     },
-    "value": 8250000,
+    "value": 14250000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 71,
-    "creation": 74,
-    "defending": 82,
-    "physical": 76,
+    "attack": 74,
+    "creation": 77,
+    "defending": 85,
+    "physical": 79,
     "goalkeeping": 19
   },
   {
@@ -1628,20 +1628,20 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 76,
+    "ovr": 78,
     "potential": 99,
     "contract": {
-      "wage": 59600,
+      "wage": 85800,
       "expires": 2027
     },
-    "value": 23850000,
+    "value": 34300000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 78,
-    "creation": 77,
-    "defending": 70,
-    "physical": 77,
+    "attack": 81,
+    "creation": 79,
+    "defending": 73,
+    "physical": 79,
     "goalkeeping": 14
   },
   {
@@ -1654,20 +1654,20 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 84,
-    "potential": 84,
+    "ovr": 86,
+    "potential": 86,
     "contract": {
-      "wage": 157100,
+      "wage": 226000,
       "expires": 2028
     },
-    "value": 62850000,
+    "value": 90400000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 83,
-    "creation": 85,
-    "defending": 63,
-    "physical": 82,
+    "attack": 86,
+    "creation": 88,
+    "defending": 65,
+    "physical": 84,
     "goalkeeping": 19
   },
   {
@@ -1680,20 +1680,20 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 76,
-    "potential": 76,
+    "ovr": 79,
+    "potential": 79,
     "contract": {
-      "wage": 50400,
+      "wage": 87000,
       "expires": 2031
     },
-    "value": 20150000,
+    "value": 34800000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 77,
-    "creation": 75,
-    "defending": 43,
-    "physical": 77,
+    "attack": 79,
+    "creation": 78,
+    "defending": 45,
+    "physical": 79,
     "goalkeeping": 17
   },
   {
@@ -1705,20 +1705,20 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 79,
-    "potential": 92,
+    "ovr": 82,
+    "potential": 95,
     "contract": {
-      "wage": 102900,
+      "wage": 177500,
       "expires": 2028
     },
-    "value": 41150000,
+    "value": 71000000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 81,
-    "creation": 76,
-    "defending": 65,
-    "physical": 82,
+    "attack": 84,
+    "creation": 78,
+    "defending": 68,
+    "physical": 85,
     "goalkeeping": 11
   },
   {
@@ -1730,20 +1730,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 78,
-    "potential": 78,
+    "ovr": 80,
+    "potential": 80,
     "contract": {
-      "wage": 52800,
+      "wage": 75900,
       "expires": 2029
     },
-    "value": 21100000,
+    "value": 30350000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 77,
-    "creation": 81,
-    "defending": 55,
-    "physical": 75,
+    "attack": 79,
+    "creation": 83,
+    "defending": 57,
+    "physical": 77,
     "goalkeeping": 7
   },
   {
@@ -1755,20 +1755,20 @@
       "ST"
     ],
     "foot": "L",
-    "ovr": 82,
-    "potential": 82,
+    "ovr": 85,
+    "potential": 85,
     "contract": {
-      "wage": 109300,
+      "wage": 188400,
       "expires": 2027
     },
-    "value": 43700000,
+    "value": 75350000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 83,
-    "creation": 85,
-    "defending": 56,
-    "physical": 80,
+    "attack": 85,
+    "creation": 87,
+    "defending": 58,
+    "physical": 83,
     "goalkeeping": 14
   },
   {
@@ -1782,20 +1782,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 71,
-    "potential": 92,
+    "ovr": 73,
+    "potential": 94,
     "contract": {
-      "wage": 24000,
+      "wage": 34500,
       "expires": 2031
     },
-    "value": 9600000,
+    "value": 13800000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 65,
-    "creation": 81,
-    "defending": 51,
-    "physical": 84,
+    "attack": 67,
+    "creation": 83,
+    "defending": 54,
+    "physical": 86,
     "goalkeeping": 19
   },
   {
@@ -1808,20 +1808,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 76,
-    "potential": 76,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 20600,
+      "wage": 29600,
       "expires": 2028
     },
-    "value": 8250000,
+    "value": 11850000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 82,
-    "creation": 65,
-    "defending": 57,
-    "physical": 64,
+    "attack": 84,
+    "creation": 67,
+    "defending": 59,
+    "physical": 67,
     "goalkeeping": 20
   },
   {
@@ -1835,20 +1835,20 @@
       "LW"
     ],
     "foot": "R",
-    "ovr": 75,
-    "potential": 89,
+    "ovr": 77,
+    "potential": 91,
     "contract": {
-      "wage": 49800,
+      "wage": 71500,
       "expires": 2031
     },
-    "value": 19900000,
+    "value": 28600000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 79,
-    "creation": 73,
-    "defending": 57,
-    "physical": 65,
+    "attack": 81,
+    "creation": 75,
+    "defending": 59,
+    "physical": 67,
     "goalkeeping": 17
   },
   {
@@ -1860,21 +1860,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 96,
+    "ovr": 69,
+    "potential": 98,
     "contract": {
-      "wage": 11600,
+      "wage": 16800,
       "expires": 2028
     },
-    "value": 4650000,
+    "value": 6700000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 39,
-    "creation": 64,
-    "defending": 27,
-    "physical": 69,
-    "goalkeeping": 67
+    "attack": 35,
+    "creation": 47,
+    "defending": 26,
+    "physical": 65,
+    "goalkeeping": 71
   },
   {
     "id": "ficticia-fce-24",
@@ -1886,20 +1886,20 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 70,
-    "potential": 81,
+    "ovr": 73,
+    "potential": 84,
     "contract": {
-      "wage": 20000,
+      "wage": 34500,
       "expires": 2029
     },
-    "value": 8000000,
+    "value": 13800000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 77,
-    "creation": 68,
-    "defending": 69,
-    "physical": 73,
+    "attack": 79,
+    "creation": 71,
+    "defending": 72,
+    "physical": 75,
     "goalkeeping": 7
   },
   {
@@ -1911,20 +1911,20 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 72,
-    "potential": 87,
+    "ovr": 75,
+    "potential": 90,
     "contract": {
-      "wage": 28800,
+      "wage": 49800,
       "expires": 2030
     },
-    "value": 11500000,
+    "value": 19900000,
     "clubId": "ficticia-fce",
     "morale": 50,
     "fitness": 100,
-    "attack": 73,
-    "creation": 69,
-    "defending": 75,
-    "physical": 75,
+    "attack": 75,
+    "creation": 72,
+    "defending": 78,
+    "physical": 77,
     "goalkeeping": 13
   },
   {
@@ -1936,21 +1936,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 79,
-    "potential": 85,
+    "ovr": 80,
+    "potential": 86,
     "contract": {
-      "wage": 102900,
+      "wage": 123400,
       "expires": 2028
     },
-    "value": 41150000,
+    "value": 49350000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 44,
-    "creation": 78,
-    "defending": 43,
-    "physical": 77,
-    "goalkeeping": 79
+    "attack": 40,
+    "creation": 59,
+    "defending": 39,
+    "physical": 69,
+    "goalkeeping": 82
   },
   {
     "id": "ficticia-pse-02",
@@ -1961,21 +1961,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 70,
-    "potential": 70,
+    "ovr": 71,
+    "potential": 71,
     "contract": {
-      "wage": 6900,
+      "wage": 8400,
       "expires": 2028
     },
-    "value": 2750000,
+    "value": 3350000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 39,
-    "creation": 64,
-    "defending": 33,
-    "physical": 61,
-    "goalkeeping": 71
+    "attack": 34,
+    "creation": 51,
+    "defending": 29,
+    "physical": 60,
+    "goalkeeping": 73
   },
   {
     "id": "ficticia-pse-03",
@@ -1986,20 +1986,20 @@
       "CB"
     ],
     "foot": "L",
-    "ovr": 78,
-    "potential": 78,
+    "ovr": 79,
+    "potential": 79,
     "contract": {
-      "wage": 29600,
+      "wage": 35600,
       "expires": 2031
     },
-    "value": 11850000,
+    "value": 14250000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 49,
-    "creation": 75,
-    "defending": 79,
-    "physical": 77,
+    "attack": 50,
+    "creation": 76,
+    "defending": 80,
+    "physical": 78,
     "goalkeeping": 7
   },
   {
@@ -2012,20 +2012,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 75,
-    "potential": 83,
+    "ovr": 76,
+    "potential": 84,
     "contract": {
-      "wage": 49800,
+      "wage": 59600,
       "expires": 2027
     },
-    "value": 19900000,
+    "value": 23850000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 60,
-    "creation": 77,
-    "defending": 75,
-    "physical": 74,
+    "attack": 61,
+    "creation": 78,
+    "defending": 76,
+    "physical": 75,
     "goalkeeping": 14
   },
   {
@@ -2038,20 +2038,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 77,
-    "potential": 77,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 44000,
+      "wage": 52800,
       "expires": 2027
     },
-    "value": 17600000,
+    "value": 21100000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 46,
-    "creation": 79,
-    "defending": 78,
-    "physical": 73,
+    "attack": 47,
+    "creation": 80,
+    "defending": 80,
+    "physical": 74,
     "goalkeeping": 17
   },
   {
@@ -2064,20 +2064,20 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 74,
-    "potential": 89,
+    "ovr": 76,
+    "potential": 91,
     "contract": {
-      "wage": 41400,
+      "wage": 59600,
       "expires": 2028
     },
-    "value": 16550000,
+    "value": 23850000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 52,
-    "creation": 72,
-    "defending": 75,
-    "physical": 72,
+    "attack": 53,
+    "creation": 74,
+    "defending": 77,
+    "physical": 73,
     "goalkeeping": 5
   },
   {
@@ -2090,20 +2090,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 78,
-    "potential": 78,
+    "ovr": 79,
+    "potential": 79,
     "contract": {
-      "wage": 52800,
+      "wage": 63300,
       "expires": 2027
     },
-    "value": 21100000,
+    "value": 25300000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 61,
+    "attack": 62,
     "creation": 82,
-    "defending": 79,
-    "physical": 76,
+    "defending": 80,
+    "physical": 77,
     "goalkeeping": 20
   },
   {
@@ -2116,20 +2116,20 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 74,
-    "potential": 74,
+    "ovr": 75,
+    "potential": 75,
     "contract": {
-      "wage": 14400,
+      "wage": 17300,
       "expires": 2031
     },
-    "value": 5750000,
+    "value": 6900000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 48,
-    "creation": 66,
-    "defending": 72,
-    "physical": 79,
+    "attack": 49,
+    "creation": 67,
+    "defending": 73,
+    "physical": 80,
     "goalkeeping": 17
   },
   {
@@ -2143,20 +2143,20 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 80,
-    "potential": 80,
+    "ovr": 81,
+    "potential": 81,
     "contract": {
-      "wage": 104400,
+      "wage": 125100,
       "expires": 2030
     },
-    "value": 41750000,
+    "value": 50050000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 76,
-    "creation": 83,
-    "defending": 77,
-    "physical": 84,
+    "attack": 77,
+    "creation": 84,
+    "defending": 78,
+    "physical": 85,
     "goalkeeping": 19
   },
   {
@@ -2182,8 +2182,8 @@
     "fitness": 100,
     "attack": 62,
     "creation": 74,
-    "defending": 75,
-    "physical": 75,
+    "defending": 76,
+    "physical": 76,
     "goalkeeping": 20
   },
   {
@@ -2196,20 +2196,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 76,
-    "potential": 85,
+    "ovr": 77,
+    "potential": 86,
     "contract": {
-      "wage": 50400,
+      "wage": 60500,
       "expires": 2030
     },
-    "value": 20150000,
+    "value": 24200000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 73,
+    "attack": 74,
     "creation": 79,
-    "defending": 75,
-    "physical": 76,
+    "defending": 76,
+    "physical": 77,
     "goalkeeping": 10
   },
   {
@@ -2223,20 +2223,20 @@
       "LB"
     ],
     "foot": "L",
-    "ovr": 73,
-    "potential": 78,
+    "ovr": 74,
+    "potential": 79,
     "contract": {
-      "wage": 29300,
+      "wage": 35000,
       "expires": 2029
     },
-    "value": 11700000,
+    "value": 14000000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 79,
+    "attack": 80,
     "creation": 72,
-    "defending": 72,
-    "physical": 72,
+    "defending": 73,
+    "physical": 73,
     "goalkeeping": 7
   },
   {
@@ -2249,20 +2249,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 78,
-    "potential": 78,
+    "ovr": 79,
+    "potential": 79,
     "contract": {
-      "wage": 29600,
+      "wage": 35600,
       "expires": 2028
     },
-    "value": 11850000,
+    "value": 14250000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 64,
-    "creation": 78,
-    "defending": 77,
-    "physical": 80,
+    "attack": 65,
+    "creation": 79,
+    "defending": 78,
+    "physical": 81,
     "goalkeeping": 17
   },
   {
@@ -2274,20 +2274,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 73,
-    "potential": 84,
+    "ovr": 74,
+    "potential": 85,
     "contract": {
-      "wage": 34500,
+      "wage": 41400,
       "expires": 2028
     },
-    "value": 13800000,
+    "value": 16550000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 43,
-    "creation": 74,
-    "defending": 72,
-    "physical": 73,
+    "attack": 44,
+    "creation": 75,
+    "defending": 73,
+    "physical": 74,
     "goalkeeping": 18
   },
   {
@@ -2300,20 +2300,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 79,
-    "potential": 81,
+    "ovr": 80,
+    "potential": 82,
     "contract": {
-      "wage": 87000,
+      "wage": 104400,
       "expires": 2031
     },
-    "value": 34800000,
+    "value": 41750000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 82,
-    "creation": 80,
+    "attack": 83,
+    "creation": 81,
     "defending": 75,
-    "physical": 80,
+    "physical": 81,
     "goalkeeping": 9
   },
   {
@@ -2326,20 +2326,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 72,
-    "potential": 75,
+    "ovr": 73,
+    "potential": 76,
     "contract": {
-      "wage": 24400,
+      "wage": 29300,
       "expires": 2031
     },
-    "value": 9750000,
+    "value": 11700000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 65,
-    "creation": 69,
-    "defending": 74,
-    "physical": 82,
+    "attack": 67,
+    "creation": 70,
+    "defending": 75,
+    "physical": 83,
     "goalkeeping": 13
   },
   {
@@ -2351,20 +2351,20 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 78,
-    "potential": 80,
+    "ovr": 79,
+    "potential": 81,
     "contract": {
-      "wage": 72500,
+      "wage": 87000,
       "expires": 2030
     },
-    "value": 29000000,
+    "value": 34800000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 77,
-    "creation": 77,
-    "defending": 57,
-    "physical": 86,
+    "attack": 78,
+    "creation": 78,
+    "defending": 58,
+    "physical": 87,
     "goalkeeping": 15
   },
   {
@@ -2377,20 +2377,20 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 89,
+    "ovr": 69,
+    "potential": 91,
     "contract": {
-      "wage": 11600,
+      "wage": 16800,
       "expires": 2028
     },
-    "value": 4650000,
+    "value": 6700000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 67,
-    "creation": 70,
-    "defending": 56,
-    "physical": 60,
+    "attack": 69,
+    "creation": 72,
+    "defending": 57,
+    "physical": 62,
     "goalkeeping": 7
   },
   {
@@ -2414,10 +2414,10 @@
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 80,
+    "attack": 81,
     "creation": 83,
-    "defending": 68,
-    "physical": 77,
+    "defending": 69,
+    "physical": 78,
     "goalkeeping": 19
   },
   {
@@ -2431,20 +2431,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 71,
-    "potential": 71,
+    "ovr": 72,
+    "potential": 72,
     "contract": {
-      "wage": 8400,
+      "wage": 10000,
       "expires": 2027
     },
-    "value": 3350000,
+    "value": 4000000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 70,
-    "creation": 76,
-    "defending": 53,
-    "physical": 73,
+    "attack": 71,
+    "creation": 77,
+    "defending": 54,
+    "physical": 74,
     "goalkeeping": 8
   },
   {
@@ -2457,20 +2457,20 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 77,
-    "potential": 77,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 24800,
+      "wage": 29600,
       "expires": 2028
     },
-    "value": 9900000,
+    "value": 11850000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 75,
-    "creation": 85,
-    "defending": 73,
-    "physical": 80,
+    "attack": 76,
+    "creation": 86,
+    "defending": 74,
+    "physical": 81,
     "goalkeeping": 19
   },
   {
@@ -2496,7 +2496,7 @@
     "fitness": 100,
     "attack": 74,
     "creation": 80,
-    "defending": 58,
+    "defending": 59,
     "physical": 69,
     "goalkeeping": 20
   },
@@ -2509,21 +2509,21 @@
       "GK"
     ],
     "foot": "L",
-    "ovr": 65,
-    "potential": 74,
+    "ovr": 67,
+    "potential": 76,
     "contract": {
-      "wage": 8100,
+      "wage": 11600,
       "expires": 2027
     },
-    "value": 3250000,
+    "value": 4650000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 30,
-    "creation": 59,
-    "defending": 38,
+    "attack": 26,
+    "creation": 46,
+    "defending": 33,
     "physical": 61,
-    "goalkeeping": 66
+    "goalkeeping": 69
   },
   {
     "id": "ficticia-pse-24",
@@ -2546,9 +2546,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 73,
-    "creation": 68,
-    "defending": 60,
-    "physical": 69,
+    "creation": 69,
+    "defending": 61,
+    "physical": 70,
     "goalkeeping": 19
   },
   {
@@ -2560,20 +2560,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 85,
+    "ovr": 68,
+    "potential": 86,
     "contract": {
-      "wage": 11600,
+      "wage": 13900,
       "expires": 2031
     },
-    "value": 4650000,
+    "value": 5550000,
     "clubId": "ficticia-pse",
     "morale": 50,
     "fitness": 100,
-    "attack": 52,
-    "creation": 63,
-    "defending": 68,
-    "physical": 67,
+    "attack": 53,
+    "creation": 64,
+    "defending": 69,
+    "physical": 68,
     "goalkeeping": 10
   },
   {
@@ -2585,21 +2585,21 @@
       "GK"
     ],
     "foot": "B",
-    "ovr": 75,
-    "potential": 75,
+    "ovr": 74,
+    "potential": 74,
     "contract": {
-      "wage": 17300,
+      "wage": 14400,
       "expires": 2031
     },
-    "value": 6900000,
+    "value": 5750000,
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
-    "attack": 43,
-    "creation": 76,
-    "defending": 48,
-    "physical": 81,
-    "goalkeeping": 74
+    "attack": 37,
+    "creation": 48,
+    "defending": 42,
+    "physical": 66,
+    "goalkeeping": 77
   },
   {
     "id": "ficticia-dpe-02",
@@ -2620,11 +2620,11 @@
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
-    "attack": 29,
-    "creation": 65,
-    "defending": 40,
-    "physical": 63,
-    "goalkeeping": 72
+    "attack": 25,
+    "creation": 49,
+    "defending": 34,
+    "physical": 58,
+    "goalkeeping": 74
   },
   {
     "id": "ficticia-dpe-03",
@@ -2663,19 +2663,19 @@
       "CB"
     ],
     "foot": "L",
-    "ovr": 70,
-    "potential": 83,
+    "ovr": 69,
+    "potential": 82,
     "contract": {
-      "wage": 20000,
+      "wage": 16800,
       "expires": 2030
     },
-    "value": 8000000,
+    "value": 6700000,
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
-    "attack": 68,
-    "creation": 72,
-    "defending": 67,
+    "attack": 67,
+    "creation": 71,
+    "defending": 66,
     "physical": 73,
     "goalkeeping": 12
   },
@@ -2689,20 +2689,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 75,
-    "potential": 78,
+    "ovr": 76,
+    "potential": 79,
     "contract": {
-      "wage": 42000,
+      "wage": 50400,
       "expires": 2028
     },
-    "value": 16800000,
+    "value": 20150000,
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
     "attack": 63,
     "creation": 73,
-    "defending": 74,
-    "physical": 77,
+    "defending": 75,
+    "physical": 78,
     "goalkeeping": 16
   },
   {
@@ -2802,7 +2802,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 69,
-    "creation": 72,
+    "creation": 73,
     "defending": 69,
     "physical": 77,
     "goalkeeping": 20
@@ -2827,7 +2827,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 68,
-    "creation": 68,
+    "creation": 69,
     "defending": 77,
     "physical": 72,
     "goalkeeping": 9
@@ -2853,7 +2853,7 @@
     "fitness": 100,
     "attack": 67,
     "creation": 73,
-    "defending": 60,
+    "defending": 61,
     "physical": 67,
     "goalkeeping": 17
   },
@@ -2904,9 +2904,9 @@
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
-    "attack": 70,
+    "attack": 71,
     "creation": 71,
-    "defending": 70,
+    "defending": 71,
     "physical": 73,
     "goalkeeping": 6
   },
@@ -2921,18 +2921,18 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 68,
-    "potential": 76,
+    "ovr": 69,
+    "potential": 77,
     "contract": {
-      "wage": 13900,
+      "wage": 16800,
       "expires": 2028
     },
-    "value": 5550000,
+    "value": 6700000,
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
-    "attack": 72,
-    "creation": 64,
+    "attack": 73,
+    "creation": 65,
     "defending": 71,
     "physical": 74,
     "goalkeeping": 15
@@ -3015,7 +3015,7 @@
     "attack": 74,
     "creation": 73,
     "defending": 54,
-    "physical": 63,
+    "physical": 62,
     "goalkeeping": 17
   },
   {
@@ -3027,20 +3027,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 70,
-    "potential": 70,
+    "ovr": 69,
+    "potential": 69,
     "contract": {
-      "wage": 6900,
+      "wage": 5800,
       "expires": 2030
     },
-    "value": 2750000,
+    "value": 2300000,
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
-    "attack": 63,
-    "creation": 73,
+    "attack": 62,
+    "creation": 72,
     "defending": 53,
-    "physical": 82,
+    "physical": 81,
     "goalkeeping": 19
   },
   {
@@ -3064,9 +3064,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 71,
-    "creation": 79,
+    "creation": 78,
     "defending": 52,
-    "physical": 73,
+    "physical": 72,
     "goalkeeping": 10
   },
   {
@@ -3143,9 +3143,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 61,
-    "creation": 65,
+    "creation": 64,
     "defending": 37,
-    "physical": 68,
+    "physical": 67,
     "goalkeeping": 16
   },
   {
@@ -3157,21 +3157,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 66,
-    "potential": 66,
+    "ovr": 67,
+    "potential": 67,
     "contract": {
-      "wage": 6000,
+      "wage": 7100,
       "expires": 2027
     },
-    "value": 2400000,
+    "value": 2850000,
     "clubId": "ficticia-dpe",
     "morale": 50,
     "fitness": 100,
-    "attack": 37,
-    "creation": 58,
-    "defending": 30,
-    "physical": 67,
-    "goalkeeping": 66
+    "attack": 31,
+    "creation": 38,
+    "defending": 25,
+    "physical": 62,
+    "goalkeeping": 69
   },
   {
     "id": "ficticia-dpe-24",
@@ -3246,11 +3246,11 @@
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
-    "attack": 38,
-    "creation": 72,
-    "defending": 33,
-    "physical": 84,
-    "goalkeeping": 75
+    "attack": 34,
+    "creation": 49,
+    "defending": 29,
+    "physical": 75,
+    "goalkeeping": 78
   },
   {
     "id": "ficticia-avr-02",
@@ -3261,21 +3261,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 69,
+    "ovr": 70,
+    "potential": 70,
     "contract": {
-      "wage": 10300,
+      "wage": 12400,
       "expires": 2029
     },
-    "value": 4100000,
+    "value": 4950000,
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
-    "attack": 34,
-    "creation": 83,
-    "defending": 38,
-    "physical": 74,
-    "goalkeeping": 68
+    "attack": 29,
+    "creation": 57,
+    "defending": 33,
+    "physical": 58,
+    "goalkeeping": 72
   },
   {
     "id": "ficticia-avr-03",
@@ -3298,7 +3298,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 73,
-    "creation": 68,
+    "creation": 67,
     "defending": 71,
     "physical": 72,
     "goalkeeping": 14
@@ -3323,8 +3323,8 @@
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
-    "attack": 73,
-    "creation": 71,
+    "attack": 72,
+    "creation": 70,
     "defending": 64,
     "physical": 73,
     "goalkeeping": 17
@@ -3456,7 +3456,7 @@
     "attack": 55,
     "creation": 79,
     "defending": 71,
-    "physical": 82,
+    "physical": 81,
     "goalkeeping": 8
   },
   {
@@ -3522,19 +3522,19 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 69,
+    "ovr": 68,
+    "potential": 68,
     "contract": {
-      "wage": 10300,
+      "wage": 8600,
       "expires": 2030
     },
-    "value": 4100000,
+    "value": 3450000,
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
     "attack": 71,
-    "creation": 68,
-    "defending": 72,
+    "creation": 67,
+    "defending": 71,
     "physical": 64,
     "goalkeeping": 16
   },
@@ -3572,19 +3572,19 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 76,
+    "ovr": 65,
+    "potential": 77,
     "contract": {
-      "wage": 6800,
+      "wage": 8100,
       "expires": 2027
     },
-    "value": 2700000,
+    "value": 3250000,
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
     "attack": 47,
-    "creation": 63,
-    "defending": 68,
+    "creation": 64,
+    "defending": 69,
     "physical": 57,
     "goalkeeping": 20
   },
@@ -3608,7 +3608,7 @@
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
-    "attack": 82,
+    "attack": 81,
     "creation": 74,
     "defending": 78,
     "physical": 79,
@@ -3633,7 +3633,7 @@
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
-    "attack": 59,
+    "attack": 60,
     "creation": 68,
     "defending": 61,
     "physical": 63,
@@ -3688,7 +3688,7 @@
     "attack": 70,
     "creation": 68,
     "defending": 62,
-    "physical": 61,
+    "physical": 62,
     "goalkeeping": 9
   },
   {
@@ -3701,18 +3701,18 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 73,
-    "potential": 73,
+    "ovr": 74,
+    "potential": 74,
     "contract": {
-      "wage": 21300,
+      "wage": 25500,
       "expires": 2031
     },
-    "value": 8500000,
+    "value": 10200000,
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
     "attack": 77,
-    "creation": 66,
+    "creation": 67,
     "defending": 48,
     "physical": 67,
     "goalkeeping": 6
@@ -3804,21 +3804,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 56,
-    "potential": 56,
+    "ovr": 57,
+    "potential": 57,
     "contract": {
-      "wage": 1000,
+      "wage": 1100,
       "expires": 2030
     },
-    "value": 400000,
+    "value": 450000,
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
-    "attack": 27,
-    "creation": 52,
-    "defending": 15,
-    "physical": 54,
-    "goalkeeping": 57
+    "attack": 21,
+    "creation": 35,
+    "defending": 11,
+    "physical": 49,
+    "goalkeeping": 59
   },
   {
     "id": "ficticia-avr-24",
@@ -3829,18 +3829,18 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 59,
-    "potential": 73,
+    "ovr": 60,
+    "potential": 74,
     "contract": {
-      "wage": 2800,
+      "wage": 3300,
       "expires": 2027
     },
-    "value": 1100000,
+    "value": 1300000,
     "clubId": "ficticia-avr",
     "morale": 50,
     "fitness": 100,
-    "attack": 59,
-    "creation": 58,
+    "attack": 60,
+    "creation": 59,
     "defending": 32,
     "physical": 59,
     "goalkeeping": 19
@@ -3890,11 +3890,11 @@
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
-    "attack": 28,
-    "creation": 92,
-    "defending": 41,
-    "physical": 83,
-    "goalkeeping": 74
+    "attack": 25,
+    "creation": 67,
+    "defending": 36,
+    "physical": 68,
+    "goalkeeping": 77
   },
   {
     "id": "ficticia-ose-02",
@@ -3915,11 +3915,11 @@
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
-    "attack": 25,
-    "creation": 67,
-    "defending": 36,
-    "physical": 70,
-    "goalkeeping": 69
+    "attack": 22,
+    "creation": 50,
+    "defending": 31,
+    "physical": 65,
+    "goalkeeping": 71
   },
   {
     "id": "ficticia-ose-03",
@@ -3932,20 +3932,20 @@
       "CB"
     ],
     "foot": "L",
-    "ovr": 77,
-    "potential": 77,
+    "ovr": 78,
+    "potential": 78,
     "contract": {
-      "wage": 24800,
+      "wage": 29600,
       "expires": 2031
     },
-    "value": 9900000,
+    "value": 11850000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
-    "attack": 72,
+    "attack": 73,
     "creation": 79,
     "defending": 81,
-    "physical": 73,
+    "physical": 74,
     "goalkeeping": 20
   },
   {
@@ -3959,20 +3959,20 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 69,
-    "potential": 70,
+    "ovr": 70,
+    "potential": 71,
     "contract": {
-      "wage": 14100,
+      "wage": 17000,
       "expires": 2030
     },
-    "value": 5650000,
+    "value": 6800000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
     "attack": 74,
     "creation": 69,
-    "defending": 69,
-    "physical": 68,
+    "defending": 70,
+    "physical": 69,
     "goalkeeping": 19
   },
   {
@@ -3985,19 +3985,19 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 75,
-    "potential": 75,
+    "ovr": 74,
+    "potential": 74,
     "contract": {
-      "wage": 30600,
+      "wage": 25500,
       "expires": 2028
     },
-    "value": 12250000,
+    "value": 10200000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
     "attack": 63,
     "creation": 79,
-    "defending": 73,
+    "defending": 72,
     "physical": 77,
     "goalkeeping": 20
   },
@@ -4099,7 +4099,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 71,
-    "creation": 75,
+    "creation": 74,
     "defending": 77,
     "physical": 78,
     "goalkeeping": 7
@@ -4140,19 +4140,19 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 68,
-    "potential": 73,
+    "ovr": 69,
+    "potential": 74,
     "contract": {
-      "wage": 11800,
+      "wage": 14100,
       "expires": 2028
     },
-    "value": 4700000,
+    "value": 5650000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
     "attack": 72,
-    "creation": 69,
-    "defending": 70,
+    "creation": 70,
+    "defending": 71,
     "physical": 63,
     "goalkeeping": 8
   },
@@ -4202,7 +4202,7 @@
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
-    "attack": 73,
+    "attack": 74,
     "creation": 72,
     "defending": 74,
     "physical": 72,
@@ -4218,18 +4218,18 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 73,
-    "potential": 79,
+    "ovr": 72,
+    "potential": 78,
     "contract": {
-      "wage": 29300,
+      "wage": 24400,
       "expires": 2028
     },
-    "value": 11700000,
+    "value": 9750000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
     "attack": 78,
-    "creation": 73,
+    "creation": 72,
     "defending": 72,
     "physical": 70,
     "goalkeeping": 15
@@ -4256,7 +4256,7 @@
     "fitness": 100,
     "attack": 86,
     "creation": 80,
-    "defending": 79,
+    "defending": 80,
     "physical": 77,
     "goalkeeping": 9
   },
@@ -4270,20 +4270,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 72,
-    "potential": 89,
+    "ovr": 73,
+    "potential": 90,
     "contract": {
-      "wage": 28800,
+      "wage": 34500,
       "expires": 2029
     },
-    "value": 11500000,
+    "value": 13800000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
-    "attack": 78,
-    "creation": 71,
-    "defending": 64,
-    "physical": 77,
+    "attack": 79,
+    "creation": 72,
+    "defending": 65,
+    "physical": 78,
     "goalkeeping": 5
   },
   {
@@ -4375,20 +4375,20 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 70,
-    "potential": 70,
+    "ovr": 71,
+    "potential": 71,
     "contract": {
-      "wage": 12400,
+      "wage": 14800,
       "expires": 2029
     },
-    "value": 4950000,
+    "value": 5900000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
-    "attack": 68,
+    "attack": 69,
     "creation": 71,
     "defending": 52,
-    "physical": 72,
+    "physical": 73,
     "goalkeeping": 15
   },
   {
@@ -4441,7 +4441,7 @@
     "attack": 67,
     "creation": 64,
     "defending": 51,
-    "physical": 68,
+    "physical": 69,
     "goalkeeping": 18
   },
   {
@@ -4453,21 +4453,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 63,
-    "potential": 63,
+    "ovr": 64,
+    "potential": 64,
     "contract": {
-      "wage": 2000,
+      "wage": 2400,
       "expires": 2031
     },
-    "value": 800000,
+    "value": 950000,
     "clubId": "ficticia-ose",
     "morale": 50,
     "fitness": 100,
-    "attack": 31,
-    "creation": 66,
-    "defending": 36,
-    "physical": 65,
-    "goalkeeping": 63
+    "attack": 25,
+    "creation": 48,
+    "defending": 30,
+    "physical": 59,
+    "goalkeeping": 65
   },
   {
     "id": "ficticia-ose-24",
@@ -4530,21 +4530,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 74,
-    "potential": 80,
+    "ovr": 73,
+    "potential": 79,
     "contract": {
-      "wage": 41400,
+      "wage": 34500,
       "expires": 2031
     },
-    "value": 16550000,
+    "value": 13800000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 38,
-    "creation": 66,
-    "defending": 38,
-    "physical": 74,
-    "goalkeeping": 74
+    "attack": 33,
+    "creation": 45,
+    "defending": 33,
+    "physical": 67,
+    "goalkeeping": 75
   },
   {
     "id": "ficticia-rmo-02",
@@ -4555,21 +4555,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 73,
-    "potential": 73,
+    "ovr": 72,
+    "potential": 72,
     "contract": {
-      "wage": 12000,
+      "wage": 10000,
       "expires": 2028
     },
-    "value": 4800000,
+    "value": 4000000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 38,
-    "creation": 73,
-    "defending": 35,
-    "physical": 68,
-    "goalkeeping": 73
+    "attack": 33,
+    "creation": 53,
+    "defending": 31,
+    "physical": 58,
+    "goalkeeping": 75
   },
   {
     "id": "ficticia-rmo-03",
@@ -4620,8 +4620,8 @@
     "morale": 50,
     "fitness": 100,
     "attack": 63,
-    "creation": 68,
-    "defending": 63,
+    "creation": 67,
+    "defending": 62,
     "physical": 63,
     "goalkeeping": 5
   },
@@ -4661,20 +4661,20 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 68,
-    "potential": 70,
+    "ovr": 69,
+    "potential": 71,
     "contract": {
-      "wage": 11800,
+      "wage": 14100,
       "expires": 2031
     },
-    "value": 4700000,
+    "value": 5650000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
     "attack": 54,
     "creation": 76,
-    "defending": 67,
-    "physical": 66,
+    "defending": 68,
+    "physical": 67,
     "goalkeeping": 15
   },
   {
@@ -4698,8 +4698,8 @@
     "fitness": 100,
     "attack": 62,
     "creation": 74,
-    "defending": 74,
-    "physical": 79,
+    "defending": 75,
+    "physical": 80,
     "goalkeeping": 9
   },
   {
@@ -4713,18 +4713,18 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 73,
+    "ovr": 68,
+    "potential": 72,
     "contract": {
-      "wage": 14100,
+      "wage": 11800,
       "expires": 2028
     },
-    "value": 5650000,
+    "value": 4700000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
     "attack": 51,
-    "creation": 70,
+    "creation": 69,
     "defending": 71,
     "physical": 63,
     "goalkeeping": 14
@@ -4750,7 +4750,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 72,
-    "creation": 76,
+    "creation": 77,
     "defending": 77,
     "physical": 75,
     "goalkeeping": 20
@@ -4819,20 +4819,20 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 69,
+    "ovr": 70,
+    "potential": 70,
     "contract": {
-      "wage": 5800,
+      "wage": 6900,
       "expires": 2028
     },
-    "value": 2300000,
+    "value": 2750000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
     "attack": 77,
-    "creation": 73,
-    "defending": 68,
-    "physical": 64,
+    "creation": 74,
+    "defending": 69,
+    "physical": 65,
     "goalkeeping": 17
   },
   {
@@ -4855,7 +4855,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 69,
-    "creation": 81,
+    "creation": 82,
     "defending": 75,
     "physical": 74,
     "goalkeeping": 5
@@ -4882,8 +4882,8 @@
     "fitness": 100,
     "attack": 57,
     "creation": 72,
-    "defending": 69,
-    "physical": 71,
+    "defending": 68,
+    "physical": 70,
     "goalkeeping": 13
   },
   {
@@ -4895,20 +4895,20 @@
       "CM"
     ],
     "foot": "L",
-    "ovr": 73,
-    "potential": 73,
+    "ovr": 74,
+    "potential": 74,
     "contract": {
-      "wage": 21300,
+      "wage": 25500,
       "expires": 2030
     },
-    "value": 8500000,
+    "value": 10200000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 72,
+    "attack": 73,
     "creation": 70,
     "defending": 72,
-    "physical": 84,
+    "physical": 85,
     "goalkeeping": 10
   },
   {
@@ -4948,17 +4948,17 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 73,
-    "potential": 73,
+    "ovr": 72,
+    "potential": 72,
     "contract": {
-      "wage": 12000,
+      "wage": 10000,
       "expires": 2030
     },
-    "value": 4800000,
+    "value": 4000000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 67,
+    "attack": 66,
     "creation": 77,
     "defending": 50,
     "physical": 71,
@@ -4975,18 +4975,18 @@
       "ST"
     ],
     "foot": "L",
-    "ovr": 68,
-    "potential": 78,
+    "ovr": 69,
+    "potential": 79,
     "contract": {
-      "wage": 13900,
+      "wage": 16800,
       "expires": 2029
     },
-    "value": 5550000,
+    "value": 6700000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 67,
-    "creation": 68,
+    "attack": 68,
+    "creation": 69,
     "defending": 56,
     "physical": 73,
     "goalkeeping": 15
@@ -5039,7 +5039,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 69,
-    "creation": 68,
+    "creation": 69,
     "defending": 51,
     "physical": 74,
     "goalkeeping": 7
@@ -5065,7 +5065,7 @@
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 73,
+    "attack": 72,
     "creation": 74,
     "defending": 50,
     "physical": 70,
@@ -5080,18 +5080,18 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 70,
-    "potential": 75,
+    "ovr": 71,
+    "potential": 76,
     "contract": {
-      "wage": 20000,
+      "wage": 24000,
       "expires": 2030
     },
-    "value": 8000000,
+    "value": 9600000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 70,
-    "creation": 78,
+    "attack": 71,
+    "creation": 79,
     "defending": 55,
     "physical": 67,
     "goalkeeping": 7
@@ -5105,21 +5105,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 67,
+    "ovr": 66,
+    "potential": 66,
     "contract": {
-      "wage": 4000,
+      "wage": 3400,
       "expires": 2027
     },
-    "value": 1600000,
+    "value": 1350000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
-    "attack": 26,
-    "creation": 79,
-    "defending": 28,
-    "physical": 67,
-    "goalkeeping": 66
+    "attack": 22,
+    "creation": 59,
+    "defending": 24,
+    "physical": 55,
+    "goalkeeping": 68
   },
   {
     "id": "ficticia-rmo-24",
@@ -5145,7 +5145,7 @@
     "attack": 60,
     "creation": 62,
     "defending": 50,
-    "physical": 64,
+    "physical": 65,
     "goalkeeping": 15
   },
   {
@@ -5157,18 +5157,18 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 82,
+    "ovr": 66,
+    "potential": 81,
     "contract": {
-      "wage": 11600,
+      "wage": 9600,
       "expires": 2027
     },
-    "value": 4650000,
+    "value": 3850000,
     "clubId": "ficticia-rmo",
     "morale": 50,
     "fitness": 100,
     "attack": 66,
-    "creation": 66,
+    "creation": 65,
     "defending": 50,
     "physical": 72,
     "goalkeeping": 8
@@ -5192,11 +5192,11 @@
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 33,
-    "creation": 79,
-    "defending": 44,
-    "physical": 70,
-    "goalkeeping": 71
+    "attack": 29,
+    "creation": 55,
+    "defending": 37,
+    "physical": 56,
+    "goalkeeping": 74
   },
   {
     "id": "ficticia-ala-02",
@@ -5207,21 +5207,21 @@
       "GK"
     ],
     "foot": "L",
-    "ovr": 67,
-    "potential": 68,
+    "ovr": 65,
+    "potential": 66,
     "contract": {
-      "wage": 9900,
+      "wage": 6900,
       "expires": 2031
     },
-    "value": 3950000,
+    "value": 2750000,
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 35,
-    "creation": 65,
-    "defending": 30,
-    "physical": 64,
-    "goalkeeping": 67
+    "attack": 29,
+    "creation": 43,
+    "defending": 25,
+    "physical": 55,
+    "goalkeeping": 68
   },
   {
     "id": "ficticia-ala-03",
@@ -5366,20 +5366,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 76,
+    "ovr": 68,
+    "potential": 77,
     "contract": {
-      "wage": 11600,
+      "wage": 13900,
       "expires": 2031
     },
-    "value": 4650000,
+    "value": 5550000,
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
     "attack": 46,
     "creation": 67,
-    "defending": 66,
-    "physical": 68,
+    "defending": 67,
+    "physical": 69,
     "goalkeeping": 7
   },
   {
@@ -5406,7 +5406,7 @@
     "attack": 73,
     "creation": 68,
     "defending": 72,
-    "physical": 65,
+    "physical": 64,
     "goalkeeping": 12
   },
   {
@@ -5433,7 +5433,7 @@
     "attack": 69,
     "creation": 66,
     "defending": 74,
-    "physical": 71,
+    "physical": 70,
     "goalkeeping": 5
   },
   {
@@ -5481,7 +5481,7 @@
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 70,
+    "attack": 69,
     "creation": 63,
     "defending": 66,
     "physical": 62,
@@ -5508,7 +5508,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 63,
-    "creation": 71,
+    "creation": 70,
     "defending": 68,
     "physical": 69,
     "goalkeeping": 19
@@ -5532,9 +5532,9 @@
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 68,
+    "attack": 69,
     "creation": 66,
-    "defending": 61,
+    "defending": 62,
     "physical": 68,
     "goalkeeping": 20
   },
@@ -5561,7 +5561,7 @@
     "attack": 80,
     "creation": 75,
     "defending": 48,
-    "physical": 74,
+    "physical": 75,
     "goalkeeping": 6
   },
   {
@@ -5588,7 +5588,7 @@
     "attack": 69,
     "creation": 68,
     "defending": 64,
-    "physical": 70,
+    "physical": 71,
     "goalkeeping": 7
   },
   {
@@ -5601,17 +5601,17 @@
       "ST"
     ],
     "foot": "L",
-    "ovr": 71,
-    "potential": 74,
+    "ovr": 72,
+    "potential": 75,
     "contract": {
-      "wage": 20400,
+      "wage": 24400,
       "expires": 2028
     },
-    "value": 8150000,
+    "value": 9750000,
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 68,
+    "attack": 69,
     "creation": 71,
     "defending": 50,
     "physical": 80,
@@ -5665,7 +5665,7 @@
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 66,
+    "attack": 67,
     "creation": 72,
     "defending": 58,
     "physical": 78,
@@ -5682,20 +5682,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 65,
+    "potential": 65,
     "contract": {
-      "wage": 4100,
+      "wage": 5000,
       "expires": 2028
     },
-    "value": 1650000,
+    "value": 2000000,
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
     "attack": 64,
-    "creation": 61,
+    "creation": 62,
     "defending": 62,
-    "physical": 67,
+    "physical": 68,
     "goalkeeping": 18
   },
   {
@@ -5720,7 +5720,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 72,
-    "creation": 73,
+    "creation": 74,
     "defending": 61,
     "physical": 75,
     "goalkeeping": 12
@@ -5770,11 +5770,11 @@
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 18,
-    "creation": 52,
-    "defending": 15,
-    "physical": 53,
-    "goalkeeping": 59
+    "attack": 14,
+    "creation": 35,
+    "defending": 11,
+    "physical": 48,
+    "goalkeeping": 60
   },
   {
     "id": "ficticia-ala-24",
@@ -5785,17 +5785,17 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 87,
+    "ovr": 65,
+    "potential": 88,
     "contract": {
-      "wage": 6800,
+      "wage": 8100,
       "expires": 2029
     },
-    "value": 2700000,
+    "value": 3250000,
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 68,
+    "attack": 69,
     "creation": 62,
     "defending": 67,
     "physical": 66,
@@ -5811,20 +5811,20 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 63,
-    "potential": 87,
+    "ovr": 62,
+    "potential": 86,
     "contract": {
-      "wage": 5600,
+      "wage": 4600,
       "expires": 2031
     },
-    "value": 2250000,
+    "value": 1850000,
     "clubId": "ficticia-ala",
     "morale": 50,
     "fitness": 100,
-    "attack": 62,
+    "attack": 61,
     "creation": 60,
     "defending": 38,
-    "physical": 68,
+    "physical": 67,
     "goalkeeping": 9
   },
   {
@@ -5846,11 +5846,11 @@
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
-    "attack": 41,
-    "creation": 72,
-    "defending": 39,
-    "physical": 75,
-    "goalkeeping": 74
+    "attack": 36,
+    "creation": 55,
+    "defending": 34,
+    "physical": 71,
+    "goalkeeping": 75
   },
   {
     "id": "ficticia-ecp-02",
@@ -5871,11 +5871,11 @@
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
-    "attack": 18,
-    "creation": 69,
-    "defending": 29,
-    "physical": 63,
-    "goalkeeping": 64
+    "attack": 15,
+    "creation": 44,
+    "defending": 24,
+    "physical": 49,
+    "goalkeeping": 67
   },
   {
     "id": "ficticia-ecp-03",
@@ -5901,7 +5901,7 @@
     "attack": 42,
     "creation": 58,
     "defending": 69,
-    "physical": 72,
+    "physical": 73,
     "goalkeeping": 14
   },
   {
@@ -5978,7 +5978,7 @@
     "fitness": 100,
     "attack": 37,
     "creation": 55,
-    "defending": 64,
+    "defending": 65,
     "physical": 62,
     "goalkeeping": 11
   },
@@ -6003,7 +6003,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 41,
-    "creation": 66,
+    "creation": 67,
     "defending": 62,
     "physical": 73,
     "goalkeeping": 14
@@ -6044,19 +6044,19 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 72,
-    "potential": 72,
+    "ovr": 71,
+    "potential": 71,
     "contract": {
-      "wage": 24400,
+      "wage": 20400,
       "expires": 2027
     },
-    "value": 9750000,
+    "value": 8150000,
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
     "attack": 66,
-    "creation": 69,
-    "defending": 72,
+    "creation": 68,
+    "defending": 71,
     "physical": 75,
     "goalkeeping": 17
   },
@@ -6082,7 +6082,7 @@
     "attack": 56,
     "creation": 61,
     "defending": 65,
-    "physical": 57,
+    "physical": 58,
     "goalkeeping": 16
   },
   {
@@ -6106,7 +6106,7 @@
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
-    "attack": 74,
+    "attack": 73,
     "creation": 75,
     "defending": 76,
     "physical": 71,
@@ -6122,20 +6122,20 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 63,
-    "potential": 72,
+    "ovr": 62,
+    "potential": 71,
     "contract": {
-      "wage": 5600,
+      "wage": 4600,
       "expires": 2031
     },
-    "value": 2250000,
+    "value": 1850000,
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
     "attack": 60,
     "creation": 63,
     "defending": 65,
-    "physical": 60,
+    "physical": 59,
     "goalkeeping": 8
   },
   {
@@ -6208,7 +6208,7 @@
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
-    "attack": 64,
+    "attack": 65,
     "creation": 68,
     "defending": 65,
     "physical": 68,
@@ -6236,7 +6236,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 68,
-    "creation": 66,
+    "creation": 65,
     "defending": 66,
     "physical": 66,
     "goalkeeping": 11
@@ -6250,17 +6250,17 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 73,
-    "potential": 76,
+    "ovr": 72,
+    "potential": 75,
     "contract": {
-      "wage": 29300,
+      "wage": 24400,
       "expires": 2028
     },
-    "value": 11700000,
+    "value": 9750000,
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
-    "attack": 67,
+    "attack": 66,
     "creation": 77,
     "defending": 50,
     "physical": 72,
@@ -6288,7 +6288,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 60,
-    "creation": 64,
+    "creation": 63,
     "defending": 35,
     "physical": 67,
     "goalkeeping": 16
@@ -6304,17 +6304,17 @@
       "LW"
     ],
     "foot": "R",
-    "ovr": 71,
-    "potential": 71,
+    "ovr": 72,
+    "potential": 72,
     "contract": {
-      "wage": 8400,
+      "wage": 10000,
       "expires": 2028
     },
-    "value": 3350000,
+    "value": 4000000,
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
-    "attack": 70,
+    "attack": 71,
     "creation": 71,
     "defending": 47,
     "physical": 73,
@@ -6415,11 +6415,11 @@
     "clubId": "ficticia-ecp",
     "morale": 50,
     "fitness": 100,
-    "attack": 27,
-    "creation": 53,
-    "defending": 20,
-    "physical": 51,
-    "goalkeeping": 57
+    "attack": 21,
+    "creation": 35,
+    "defending": 15,
+    "physical": 45,
+    "goalkeeping": 59
   },
   {
     "id": "ficticia-ecp-24",
@@ -6442,9 +6442,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 55,
-    "creation": 59,
+    "creation": 60,
     "defending": 58,
-    "physical": 55,
+    "physical": 56,
     "goalkeeping": 8
   },
   {
@@ -6469,9 +6469,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 38,
-    "creation": 65,
+    "creation": 64,
     "defending": 69,
-    "physical": 50,
+    "physical": 49,
     "goalkeeping": 16
   },
   {
@@ -6493,11 +6493,11 @@
     "clubId": "ficticia-ema",
     "morale": 50,
     "fitness": 100,
-    "attack": 30,
-    "creation": 71,
-    "defending": 28,
-    "physical": 76,
-    "goalkeeping": 72
+    "attack": 26,
+    "creation": 49,
+    "defending": 24,
+    "physical": 68,
+    "goalkeeping": 74
   },
   {
     "id": "ficticia-ema-02",
@@ -6518,11 +6518,11 @@
     "clubId": "ficticia-ema",
     "morale": 50,
     "fitness": 100,
-    "attack": 22,
-    "creation": 62,
-    "defending": 35,
-    "physical": 68,
-    "goalkeeping": 63
+    "attack": 18,
+    "creation": 45,
+    "defending": 28,
+    "physical": 65,
+    "goalkeeping": 64
   },
   {
     "id": "ficticia-ema-03",
@@ -6570,7 +6570,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 68,
-    "creation": 71,
+    "creation": 70,
     "defending": 64,
     "physical": 66,
     "goalkeeping": 17
@@ -6611,20 +6611,20 @@
       "LB"
     ],
     "foot": "L",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 65,
+    "potential": 65,
     "contract": {
-      "wage": 4100,
+      "wage": 5000,
       "expires": 2031
     },
-    "value": 1650000,
+    "value": 2000000,
     "clubId": "ficticia-ema",
     "morale": 50,
     "fitness": 100,
     "attack": 48,
     "creation": 69,
-    "defending": 63,
-    "physical": 64,
+    "defending": 64,
+    "physical": 65,
     "goalkeeping": 6
   },
   {
@@ -6647,9 +6647,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 51,
-    "creation": 73,
+    "creation": 72,
     "defending": 71,
-    "physical": 68,
+    "physical": 67,
     "goalkeeping": 5
   },
   {
@@ -6674,7 +6674,7 @@
     "fitness": 100,
     "attack": 42,
     "creation": 68,
-    "defending": 63,
+    "defending": 62,
     "physical": 66,
     "goalkeeping": 11
   },
@@ -6687,20 +6687,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 74,
+    "ovr": 70,
+    "potential": 75,
     "contract": {
-      "wage": 14100,
+      "wage": 17000,
       "expires": 2029
     },
-    "value": 5650000,
+    "value": 6800000,
     "clubId": "ficticia-ema",
     "morale": 50,
     "fitness": 100,
     "attack": 64,
     "creation": 70,
-    "defending": 71,
-    "physical": 67,
+    "defending": 72,
+    "physical": 68,
     "goalkeeping": 12
   },
   {
@@ -6774,7 +6774,7 @@
     "clubId": "ficticia-ema",
     "morale": 50,
     "fitness": 100,
-    "attack": 63,
+    "attack": 62,
     "creation": 61,
     "defending": 76,
     "physical": 67,
@@ -6879,7 +6879,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 68,
-    "creation": 65,
+    "creation": 66,
     "defending": 50,
     "physical": 63,
     "goalkeeping": 13
@@ -6931,7 +6931,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 67,
-    "creation": 70,
+    "creation": 69,
     "defending": 48,
     "physical": 63,
     "goalkeeping": 5
@@ -6956,7 +6956,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 69,
-    "creation": 58,
+    "creation": 59,
     "defending": 46,
     "physical": 62,
     "goalkeeping": 8
@@ -7010,7 +7010,7 @@
     "attack": 67,
     "creation": 64,
     "defending": 54,
-    "physical": 71,
+    "physical": 72,
     "goalkeeping": 14
   },
   {
@@ -7033,8 +7033,8 @@
     "clubId": "ficticia-ema",
     "morale": 50,
     "fitness": 100,
-    "attack": 65,
-    "creation": 72,
+    "attack": 66,
+    "creation": 73,
     "defending": 52,
     "physical": 65,
     "goalkeeping": 17
@@ -7058,11 +7058,11 @@
     "clubId": "ficticia-ema",
     "morale": 50,
     "fitness": 100,
-    "attack": 22,
-    "creation": 53,
-    "defending": 24,
-    "physical": 55,
-    "goalkeeping": 55
+    "attack": 16,
+    "creation": 31,
+    "defending": 18,
+    "physical": 45,
+    "goalkeeping": 58
   },
   {
     "id": "ficticia-ema-24",
@@ -7086,7 +7086,7 @@
     "attack": 56,
     "creation": 61,
     "defending": 63,
-    "physical": 56,
+    "physical": 55,
     "goalkeeping": 11
   },
   {
@@ -7111,9 +7111,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 59,
-    "creation": 59,
+    "creation": 60,
     "defending": 50,
-    "physical": 57,
+    "physical": 58,
     "goalkeeping": 19
   },
   {
@@ -7125,21 +7125,21 @@
       "GK"
     ],
     "foot": "L",
-    "ovr": 73,
-    "potential": 77,
+    "ovr": 72,
+    "potential": 76,
     "contract": {
-      "wage": 29300,
+      "wage": 24400,
       "expires": 2030
     },
-    "value": 11700000,
+    "value": 9750000,
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
-    "attack": 35,
-    "creation": 66,
-    "defending": 39,
-    "physical": 66,
-    "goalkeeping": 74
+    "attack": 31,
+    "creation": 50,
+    "defending": 33,
+    "physical": 62,
+    "goalkeeping": 75
   },
   {
     "id": "ficticia-rcu-02",
@@ -7160,11 +7160,11 @@
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
-    "attack": 36,
-    "creation": 79,
-    "defending": 34,
-    "physical": 80,
-    "goalkeeping": 67
+    "attack": 31,
+    "creation": 55,
+    "defending": 29,
+    "physical": 69,
+    "goalkeeping": 70
   },
   {
     "id": "ficticia-rcu-03",
@@ -7176,19 +7176,19 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 72,
-    "potential": 72,
+    "ovr": 73,
+    "potential": 73,
     "contract": {
-      "wage": 17800,
+      "wage": 21300,
       "expires": 2030
     },
-    "value": 7100000,
+    "value": 8500000,
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
     "attack": 71,
     "creation": 67,
-    "defending": 73,
+    "defending": 74,
     "physical": 75,
     "goalkeeping": 15
   },
@@ -7254,19 +7254,19 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 69,
-    "potential": 93,
+    "ovr": 68,
+    "potential": 92,
     "contract": {
-      "wage": 16800,
+      "wage": 13900,
       "expires": 2029
     },
-    "value": 6700000,
+    "value": 5550000,
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
     "attack": 57,
     "creation": 68,
-    "defending": 70,
+    "defending": 69,
     "physical": 67,
     "goalkeeping": 17
   },
@@ -7291,8 +7291,8 @@
     "morale": 50,
     "fitness": 100,
     "attack": 45,
-    "creation": 62,
-    "defending": 65,
+    "creation": 61,
+    "defending": 64,
     "physical": 64,
     "goalkeeping": 6
   },
@@ -7318,9 +7318,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 51,
-    "creation": 56,
+    "creation": 57,
     "defending": 63,
-    "physical": 61,
+    "physical": 62,
     "goalkeeping": 16
   },
   {
@@ -7332,20 +7332,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 72,
-    "potential": 72,
+    "ovr": 71,
+    "potential": 71,
     "contract": {
-      "wage": 10000,
+      "wage": 8400,
       "expires": 2030
     },
-    "value": 4000000,
+    "value": 3350000,
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
     "attack": 67,
-    "creation": 70,
-    "defending": 74,
-    "physical": 72,
+    "creation": 69,
+    "defending": 73,
+    "physical": 71,
     "goalkeeping": 8
   },
   {
@@ -7398,7 +7398,7 @@
     "attack": 55,
     "creation": 69,
     "defending": 72,
-    "physical": 84,
+    "physical": 83,
     "goalkeeping": 19
   },
   {
@@ -7462,18 +7462,18 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 69,
+    "ovr": 70,
+    "potential": 70,
     "contract": {
-      "wage": 10300,
+      "wage": 12400,
       "expires": 2027
     },
-    "value": 4100000,
+    "value": 4950000,
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
     "attack": 51,
-    "creation": 70,
+    "creation": 71,
     "defending": 72,
     "physical": 64,
     "goalkeeping": 15
@@ -7555,7 +7555,7 @@
     "attack": 71,
     "creation": 74,
     "defending": 52,
-    "physical": 65,
+    "physical": 64,
     "goalkeeping": 15
   },
   {
@@ -7633,7 +7633,7 @@
     "attack": 52,
     "creation": 64,
     "defending": 50,
-    "physical": 67,
+    "physical": 68,
     "goalkeeping": 15
   },
   {
@@ -7657,7 +7657,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 71,
-    "creation": 70,
+    "creation": 69,
     "defending": 61,
     "physical": 71,
     "goalkeeping": 17
@@ -7682,7 +7682,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 70,
-    "creation": 59,
+    "creation": 60,
     "defending": 36,
     "physical": 61,
     "goalkeeping": 11
@@ -7696,21 +7696,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 62,
-    "potential": 62,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 4000,
+      "wage": 4800,
       "expires": 2028
     },
-    "value": 1600000,
+    "value": 1900000,
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
-    "attack": 22,
-    "creation": 71,
-    "defending": 22,
-    "physical": 61,
-    "goalkeeping": 62
+    "attack": 18,
+    "creation": 45,
+    "defending": 18,
+    "physical": 45,
+    "goalkeeping": 66
   },
   {
     "id": "ficticia-rcu-24",
@@ -7732,7 +7732,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 63,
-    "creation": 62,
+    "creation": 63,
     "defending": 31,
     "physical": 63,
     "goalkeeping": 16
@@ -7746,20 +7746,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 76,
+    "ovr": 65,
+    "potential": 77,
     "contract": {
-      "wage": 6800,
+      "wage": 8100,
       "expires": 2027
     },
-    "value": 2700000,
+    "value": 3250000,
     "clubId": "ficticia-rcu",
     "morale": 50,
     "fitness": 100,
-    "attack": 63,
-    "creation": 64,
+    "attack": 64,
+    "creation": 65,
     "defending": 63,
-    "physical": 67,
+    "physical": 68,
     "goalkeeping": 12
   },
   {
@@ -7781,11 +7781,11 @@
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
-    "attack": 34,
-    "creation": 77,
-    "defending": 41,
-    "physical": 73,
-    "goalkeeping": 71
+    "attack": 29,
+    "creation": 56,
+    "defending": 35,
+    "physical": 63,
+    "goalkeeping": 74
   },
   {
     "id": "ficticia-apl-02",
@@ -7806,11 +7806,11 @@
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
-    "attack": 17,
-    "creation": 49,
-    "defending": 31,
-    "physical": 53,
-    "goalkeeping": 59
+    "attack": 13,
+    "creation": 38,
+    "defending": 24,
+    "physical": 54,
+    "goalkeeping": 60
   },
   {
     "id": "ficticia-apl-03",
@@ -7834,8 +7834,8 @@
     "morale": 50,
     "fitness": 100,
     "attack": 54,
-    "creation": 76,
-    "defending": 69,
+    "creation": 75,
+    "defending": 68,
     "physical": 84,
     "goalkeeping": 14
   },
@@ -7862,7 +7862,7 @@
     "attack": 48,
     "creation": 71,
     "defending": 70,
-    "physical": 70,
+    "physical": 69,
     "goalkeeping": 10
   },
   {
@@ -7902,19 +7902,19 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 70,
-    "potential": 70,
+    "ovr": 69,
+    "potential": 69,
     "contract": {
-      "wage": 17000,
+      "wage": 14100,
       "expires": 2031
     },
-    "value": 6800000,
+    "value": 5650000,
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
     "attack": 39,
     "creation": 67,
-    "defending": 68,
+    "defending": 67,
     "physical": 75,
     "goalkeeping": 20
   },
@@ -7991,9 +7991,9 @@
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
-    "attack": 76,
+    "attack": 75,
     "creation": 66,
-    "defending": 72,
+    "defending": 71,
     "physical": 72,
     "goalkeeping": 16
   },
@@ -8044,10 +8044,10 @@
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
-    "attack": 70,
-    "creation": 68,
+    "attack": 71,
+    "creation": 69,
     "defending": 70,
-    "physical": 73,
+    "physical": 74,
     "goalkeeping": 14
   },
   {
@@ -8086,20 +8086,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 66,
-    "potential": 66,
+    "ovr": 67,
+    "potential": 67,
     "contract": {
-      "wage": 8100,
+      "wage": 9900,
       "expires": 2027
     },
-    "value": 3250000,
+    "value": 3950000,
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
     "attack": 63,
-    "creation": 65,
-    "defending": 68,
-    "physical": 65,
+    "creation": 66,
+    "defending": 69,
+    "physical": 66,
     "goalkeeping": 19
   },
   {
@@ -8122,9 +8122,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 37,
-    "creation": 59,
+    "creation": 60,
     "defending": 66,
-    "physical": 66,
+    "physical": 67,
     "goalkeeping": 19
   },
   {
@@ -8229,7 +8229,7 @@
     "attack": 66,
     "creation": 67,
     "defending": 54,
-    "physical": 70,
+    "physical": 71,
     "goalkeeping": 9
   },
   {
@@ -8252,9 +8252,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 72,
-    "creation": 73,
+    "creation": 74,
     "defending": 53,
-    "physical": 63,
+    "physical": 64,
     "goalkeeping": 13
   },
   {
@@ -8307,7 +8307,7 @@
     "attack": 73,
     "creation": 68,
     "defending": 62,
-    "physical": 68,
+    "physical": 67,
     "goalkeeping": 8
   },
   {
@@ -8319,20 +8319,20 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 65,
-    "potential": 77,
+    "ovr": 66,
+    "potential": 78,
     "contract": {
-      "wage": 8100,
+      "wage": 9600,
       "expires": 2030
     },
-    "value": 3250000,
+    "value": 3850000,
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
     "attack": 67,
     "creation": 66,
     "defending": 46,
-    "physical": 61,
+    "physical": 62,
     "goalkeeping": 18
   },
   {
@@ -8344,21 +8344,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 56,
-    "potential": 73,
+    "ovr": 55,
+    "potential": 72,
     "contract": {
-      "wage": 1600,
+      "wage": 1300,
       "expires": 2027
     },
-    "value": 650000,
+    "value": 500000,
     "clubId": "ficticia-apl",
     "morale": 50,
     "fitness": 100,
-    "attack": 33,
-    "creation": 55,
-    "defending": 20,
-    "physical": 52,
-    "goalkeeping": 56
+    "attack": 26,
+    "creation": 35,
+    "defending": 15,
+    "physical": 43,
+    "goalkeeping": 58
   },
   {
     "id": "ficticia-apl-24",
@@ -8419,21 +8419,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 67,
+    "ovr": 66,
+    "potential": 66,
     "contract": {
-      "wage": 4000,
+      "wage": 3400,
       "expires": 2031
     },
-    "value": 1600000,
+    "value": 1350000,
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
-    "attack": 35,
-    "creation": 61,
-    "defending": 30,
-    "physical": 66,
-    "goalkeeping": 67
+    "attack": 30,
+    "creation": 44,
+    "defending": 26,
+    "physical": 63,
+    "goalkeeping": 68
   },
   {
     "id": "ficticia-uri-02",
@@ -8454,11 +8454,11 @@
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
-    "attack": 21,
-    "creation": 59,
-    "defending": 23,
-    "physical": 55,
-    "goalkeeping": 58
+    "attack": 16,
+    "creation": 45,
+    "defending": 18,
+    "physical": 52,
+    "goalkeeping": 60
   },
   {
     "id": "ficticia-uri-03",
@@ -8470,20 +8470,20 @@
       "LW"
     ],
     "foot": "L",
-    "ovr": 69,
-    "potential": 77,
+    "ovr": 68,
+    "potential": 76,
     "contract": {
-      "wage": 16800,
+      "wage": 13900,
       "expires": 2029
     },
-    "value": 6700000,
+    "value": 5550000,
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
-    "attack": 68,
+    "attack": 67,
     "creation": 60,
     "defending": 67,
-    "physical": 77,
+    "physical": 76,
     "goalkeeping": 9
   },
   {
@@ -8522,20 +8522,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 68,
-    "potential": 79,
+    "ovr": 67,
+    "potential": 78,
     "contract": {
-      "wage": 13900,
+      "wage": 11600,
       "expires": 2030
     },
-    "value": 5550000,
+    "value": 4650000,
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
     "attack": 51,
     "creation": 66,
-    "defending": 66,
-    "physical": 73,
+    "defending": 65,
+    "physical": 72,
     "goalkeeping": 9
   },
   {
@@ -8667,8 +8667,8 @@
     "fitness": 100,
     "attack": 68,
     "creation": 65,
-    "defending": 57,
-    "physical": 70,
+    "defending": 58,
+    "physical": 71,
     "goalkeeping": 9
   },
   {
@@ -8708,20 +8708,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 67,
+    "ovr": 66,
+    "potential": 66,
     "contract": {
-      "wage": 4000,
+      "wage": 3400,
       "expires": 2028
     },
-    "value": 1600000,
+    "value": 1350000,
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
     "attack": 43,
-    "creation": 69,
+    "creation": 68,
     "defending": 63,
-    "physical": 70,
+    "physical": 69,
     "goalkeeping": 12
   },
   {
@@ -8798,7 +8798,7 @@
     "attack": 60,
     "creation": 69,
     "defending": 51,
-    "physical": 75,
+    "physical": 74,
     "goalkeeping": 15
   },
   {
@@ -8812,18 +8812,18 @@
       "ST"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 76,
+    "ovr": 65,
+    "potential": 77,
     "contract": {
-      "wage": 6800,
+      "wage": 8100,
       "expires": 2030
     },
-    "value": 2700000,
+    "value": 3250000,
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
     "attack": 63,
-    "creation": 66,
+    "creation": 67,
     "defending": 54,
     "physical": 62,
     "goalkeeping": 9
@@ -8875,9 +8875,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 65,
-    "creation": 63,
+    "creation": 62,
     "defending": 55,
-    "physical": 59,
+    "physical": 58,
     "goalkeeping": 6
   },
   {
@@ -8952,7 +8952,7 @@
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
-    "attack": 72,
+    "attack": 71,
     "creation": 68,
     "defending": 47,
     "physical": 67,
@@ -8979,9 +8979,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 64,
-    "creation": 69,
+    "creation": 70,
     "defending": 50,
-    "physical": 64,
+    "physical": 65,
     "goalkeeping": 9
   },
   {
@@ -9003,11 +9003,11 @@
     "clubId": "ficticia-uri",
     "morale": 50,
     "fitness": 100,
-    "attack": 24,
-    "creation": 56,
-    "defending": 22,
-    "physical": 54,
-    "goalkeeping": 59
+    "attack": 18,
+    "creation": 35,
+    "defending": 17,
+    "physical": 43,
+    "goalkeeping": 61
   },
   {
     "id": "ficticia-uri-24",
@@ -9079,11 +9079,11 @@
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 31,
-    "creation": 78,
-    "defending": 40,
-    "physical": 75,
-    "goalkeeping": 73
+    "attack": 27,
+    "creation": 57,
+    "defending": 35,
+    "physical": 65,
+    "goalkeeping": 75
   },
   {
     "id": "ficticia-ino-02",
@@ -9094,21 +9094,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 65,
-    "potential": 75,
+    "ovr": 66,
+    "potential": 76,
     "contract": {
-      "wage": 8100,
+      "wage": 9600,
       "expires": 2028
     },
-    "value": 3250000,
+    "value": 3850000,
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 28,
-    "creation": 58,
-    "defending": 27,
-    "physical": 62,
-    "goalkeeping": 66
+    "attack": 23,
+    "creation": 41,
+    "defending": 22,
+    "physical": 59,
+    "goalkeeping": 68
   },
   {
     "id": "ficticia-ino-03",
@@ -9132,7 +9132,7 @@
     "attack": 67,
     "creation": 71,
     "defending": 60,
-    "physical": 70,
+    "physical": 69,
     "goalkeeping": 5
   },
   {
@@ -9171,19 +9171,19 @@
       "LB"
     ],
     "foot": "L",
-    "ovr": 65,
-    "potential": 65,
+    "ovr": 64,
+    "potential": 64,
     "contract": {
-      "wage": 6900,
+      "wage": 5800,
       "expires": 2029
     },
-    "value": 2750000,
+    "value": 2300000,
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
     "attack": 58,
-    "creation": 61,
-    "defending": 68,
+    "creation": 60,
+    "defending": 67,
     "physical": 60,
     "goalkeeping": 9
   },
@@ -9282,9 +9282,9 @@
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 76,
-    "creation": 73,
-    "defending": 65,
+    "attack": 75,
+    "creation": 72,
+    "defending": 64,
     "physical": 70,
     "goalkeeping": 15
   },
@@ -9312,7 +9312,7 @@
     "attack": 62,
     "creation": 61,
     "defending": 57,
-    "physical": 63,
+    "physical": 62,
     "goalkeeping": 7
   },
   {
@@ -9429,17 +9429,17 @@
       "CM"
     ],
     "foot": "R",
-    "ovr": 68,
-    "potential": 77,
+    "ovr": 69,
+    "potential": 78,
     "contract": {
-      "wage": 13900,
+      "wage": 16800,
       "expires": 2029
     },
-    "value": 5550000,
+    "value": 6700000,
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 69,
+    "attack": 70,
     "creation": 67,
     "defending": 57,
     "physical": 71,
@@ -9480,18 +9480,18 @@
       "ST"
     ],
     "foot": "L",
-    "ovr": 70,
-    "potential": 70,
+    "ovr": 69,
+    "potential": 69,
     "contract": {
-      "wage": 12400,
+      "wage": 10300,
       "expires": 2030
     },
-    "value": 4950000,
+    "value": 4100000,
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
     "attack": 71,
-    "creation": 68,
+    "creation": 67,
     "defending": 52,
     "physical": 70,
     "goalkeeping": 9
@@ -9516,7 +9516,7 @@
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 62,
+    "attack": 63,
     "creation": 60,
     "defending": 36,
     "physical": 69,
@@ -9610,18 +9610,18 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 67,
-    "potential": 72,
+    "ovr": 66,
+    "potential": 71,
     "contract": {
-      "wage": 11600,
+      "wage": 9600,
       "expires": 2031
     },
-    "value": 4650000,
+    "value": 3850000,
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 65,
-    "creation": 67,
+    "attack": 64,
+    "creation": 66,
     "defending": 66,
     "physical": 71,
     "goalkeeping": 15
@@ -9635,21 +9635,21 @@
       "GK"
     ],
     "foot": "B",
-    "ovr": 57,
-    "potential": 57,
+    "ovr": 58,
+    "potential": 58,
     "contract": {
-      "wage": 600,
+      "wage": 800,
       "expires": 2030
     },
-    "value": 250000,
+    "value": 300000,
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 21,
-    "creation": 58,
-    "defending": 25,
-    "physical": 54,
-    "goalkeeping": 57
+    "attack": 17,
+    "creation": 40,
+    "defending": 20,
+    "physical": 47,
+    "goalkeeping": 60
   },
   {
     "id": "ficticia-ino-24",
@@ -9688,20 +9688,20 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 59,
-    "potential": 74,
+    "ovr": 60,
+    "potential": 75,
     "contract": {
-      "wage": 2800,
+      "wage": 3300,
       "expires": 2030
     },
-    "value": 1100000,
+    "value": 1300000,
     "clubId": "ficticia-ino",
     "morale": 50,
     "fitness": 100,
-    "attack": 61,
-    "creation": 65,
+    "attack": 62,
+    "creation": 66,
     "defending": 54,
-    "physical": 61,
+    "physical": 62,
     "goalkeeping": 13
   },
   {
@@ -9713,21 +9713,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 68,
-    "potential": 68,
+    "ovr": 69,
+    "potential": 69,
     "contract": {
-      "wage": 8600,
+      "wage": 10300,
       "expires": 2029
     },
-    "value": 3450000,
+    "value": 4100000,
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
-    "attack": 35,
-    "creation": 70,
-    "defending": 22,
-    "physical": 69,
-    "goalkeeping": 68
+    "attack": 30,
+    "creation": 52,
+    "defending": 19,
+    "physical": 63,
+    "goalkeeping": 71
   },
   {
     "id": "ficticia-jfl-02",
@@ -9738,21 +9738,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 2400,
+      "wage": 2000,
       "expires": 2028
     },
-    "value": 950000,
+    "value": 800000,
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
-    "attack": 35,
-    "creation": 70,
-    "defending": 26,
-    "physical": 63,
-    "goalkeeping": 64
+    "attack": 29,
+    "creation": 50,
+    "defending": 21,
+    "physical": 53,
+    "goalkeeping": 65
   },
   {
     "id": "ficticia-jfl-03",
@@ -9765,20 +9765,20 @@
       "CB"
     ],
     "foot": "L",
-    "ovr": 69,
-    "potential": 69,
+    "ovr": 68,
+    "potential": 68,
     "contract": {
-      "wage": 10300,
+      "wage": 8600,
       "expires": 2027
     },
-    "value": 4100000,
+    "value": 3450000,
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
     "attack": 65,
-    "creation": 70,
-    "defending": 66,
-    "physical": 72,
+    "creation": 69,
+    "defending": 65,
+    "physical": 71,
     "goalkeeping": 19
   },
   {
@@ -9856,7 +9856,7 @@
     "attack": 41,
     "creation": 63,
     "defending": 65,
-    "physical": 58,
+    "physical": 59,
     "goalkeeping": 12
   },
   {
@@ -9932,9 +9932,9 @@
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
-    "attack": 64,
-    "creation": 74,
-    "defending": 74,
+    "attack": 63,
+    "creation": 73,
+    "defending": 73,
     "physical": 62,
     "goalkeeping": 14
   },
@@ -9959,9 +9959,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 68,
-    "creation": 57,
+    "creation": 56,
     "defending": 59,
-    "physical": 64,
+    "physical": 63,
     "goalkeeping": 7
   },
   {
@@ -9987,7 +9987,7 @@
     "attack": 57,
     "creation": 72,
     "defending": 67,
-    "physical": 74,
+    "physical": 73,
     "goalkeeping": 8
   },
   {
@@ -10013,7 +10013,7 @@
     "attack": 64,
     "creation": 65,
     "defending": 70,
-    "physical": 68,
+    "physical": 67,
     "goalkeeping": 8
   },
   {
@@ -10037,8 +10037,8 @@
     "fitness": 100,
     "attack": 65,
     "creation": 69,
-    "defending": 68,
-    "physical": 67,
+    "defending": 69,
+    "physical": 68,
     "goalkeeping": 12
   },
   {
@@ -10129,20 +10129,20 @@
       "ST"
     ],
     "foot": "L",
-    "ovr": 69,
-    "potential": 69,
+    "ovr": 70,
+    "potential": 70,
     "contract": {
-      "wage": 5800,
+      "wage": 6900,
       "expires": 2030
     },
-    "value": 2300000,
+    "value": 2750000,
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
     "attack": 67,
     "creation": 71,
     "defending": 56,
-    "physical": 72,
+    "physical": 73,
     "goalkeeping": 17
   },
   {
@@ -10168,7 +10168,7 @@
     "attack": 62,
     "creation": 62,
     "defending": 48,
-    "physical": 64,
+    "physical": 63,
     "goalkeeping": 11
   },
   {
@@ -10191,7 +10191,7 @@
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
-    "attack": 72,
+    "attack": 73,
     "creation": 68,
     "defending": 55,
     "physical": 62,
@@ -10206,18 +10206,18 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 4100,
+      "wage": 3500,
       "expires": 2028
     },
-    "value": 1650000,
+    "value": 1400000,
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
     "attack": 61,
-    "creation": 67,
+    "creation": 66,
     "defending": 46,
     "physical": 63,
     "goalkeeping": 6
@@ -10269,7 +10269,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 63,
-    "creation": 61,
+    "creation": 62,
     "defending": 39,
     "physical": 61,
     "goalkeeping": 17
@@ -10293,11 +10293,11 @@
     "clubId": "ficticia-jfl",
     "morale": 50,
     "fitness": 100,
-    "attack": 20,
-    "creation": 57,
-    "defending": 28,
-    "physical": 58,
-    "goalkeeping": 58
+    "attack": 15,
+    "creation": 37,
+    "defending": 22,
+    "physical": 50,
+    "goalkeeping": 60
   },
   {
     "id": "ficticia-jfl-24",
@@ -10320,7 +10320,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 56,
-    "creation": 57,
+    "creation": 56,
     "defending": 48,
     "physical": 55,
     "goalkeeping": 13
@@ -10346,8 +10346,8 @@
     "fitness": 100,
     "attack": 47,
     "creation": 63,
-    "defending": 56,
-    "physical": 58,
+    "defending": 57,
+    "physical": 59,
     "goalkeeping": 5
   },
   {
@@ -10369,11 +10369,11 @@
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
-    "attack": 35,
-    "creation": 73,
-    "defending": 43,
-    "physical": 67,
-    "goalkeeping": 70
+    "attack": 30,
+    "creation": 50,
+    "defending": 37,
+    "physical": 54,
+    "goalkeeping": 73
   },
   {
     "id": "ficticia-ove-02",
@@ -10384,21 +10384,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 4100,
+      "wage": 3500,
       "expires": 2028
     },
-    "value": 1650000,
+    "value": 1400000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
-    "attack": 14,
-    "creation": 65,
-    "defending": 25,
-    "physical": 67,
-    "goalkeeping": 63
+    "attack": 11,
+    "creation": 38,
+    "defending": 20,
+    "physical": 52,
+    "goalkeeping": 66
   },
   {
     "id": "ficticia-ove-03",
@@ -10420,9 +10420,9 @@
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
-    "attack": 65,
+    "attack": 64,
     "creation": 63,
-    "defending": 67,
+    "defending": 66,
     "physical": 64,
     "goalkeeping": 13
   },
@@ -10437,20 +10437,20 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 56,
-    "potential": 66,
+    "ovr": 55,
+    "potential": 65,
     "contract": {
-      "wage": 1600,
+      "wage": 1300,
       "expires": 2028
     },
-    "value": 650000,
+    "value": 500000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
     "attack": 51,
     "creation": 62,
-    "defending": 56,
-    "physical": 54,
+    "defending": 55,
+    "physical": 53,
     "goalkeeping": 17
   },
   {
@@ -10463,20 +10463,20 @@
       "DM"
     ],
     "foot": "L",
-    "ovr": 68,
-    "potential": 71,
+    "ovr": 67,
+    "potential": 70,
     "contract": {
-      "wage": 11800,
+      "wage": 9900,
       "expires": 2030
     },
-    "value": 4700000,
+    "value": 3950000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
     "attack": 41,
     "creation": 75,
     "defending": 63,
-    "physical": 74,
+    "physical": 73,
     "goalkeeping": 18
   },
   {
@@ -10489,19 +10489,19 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 63,
-    "potential": 81,
+    "ovr": 62,
+    "potential": 80,
     "contract": {
-      "wage": 5600,
+      "wage": 4600,
       "expires": 2031
     },
-    "value": 2250000,
+    "value": 1850000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
     "attack": 46,
     "creation": 63,
-    "defending": 61,
+    "defending": 60,
     "physical": 66,
     "goalkeeping": 5
   },
@@ -10515,19 +10515,19 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 66,
-    "potential": 76,
+    "ovr": 67,
+    "potential": 77,
     "contract": {
-      "wage": 9600,
+      "wage": 11600,
       "expires": 2031
     },
-    "value": 3850000,
+    "value": 4650000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
     "attack": 49,
-    "creation": 72,
-    "defending": 64,
+    "creation": 73,
+    "defending": 65,
     "physical": 69,
     "goalkeeping": 7
   },
@@ -10568,20 +10568,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 63,
-    "potential": 63,
+    "ovr": 64,
+    "potential": 64,
     "contract": {
-      "wage": 2000,
+      "wage": 2400,
       "expires": 2028
     },
-    "value": 800000,
+    "value": 950000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
     "attack": 72,
     "creation": 65,
     "defending": 65,
-    "physical": 57,
+    "physical": 58,
     "goalkeeping": 13
   },
   {
@@ -10630,7 +10630,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 53,
-    "creation": 63,
+    "creation": 62,
     "defending": 63,
     "physical": 75,
     "goalkeeping": 5
@@ -10707,9 +10707,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 52,
-    "creation": 69,
+    "creation": 68,
     "defending": 66,
-    "physical": 68,
+    "physical": 67,
     "goalkeeping": 12
   },
   {
@@ -10802,18 +10802,18 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 64,
-    "potential": 74,
+    "ovr": 65,
+    "potential": 75,
     "contract": {
-      "wage": 6800,
+      "wage": 8100,
       "expires": 2030
     },
-    "value": 2700000,
+    "value": 3250000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
     "attack": 67,
-    "creation": 62,
+    "creation": 63,
     "defending": 45,
     "physical": 63,
     "goalkeeping": 5
@@ -10854,17 +10854,17 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 63,
-    "potential": 75,
+    "ovr": 64,
+    "potential": 76,
     "contract": {
-      "wage": 5600,
+      "wage": 6800,
       "expires": 2029
     },
-    "value": 2250000,
+    "value": 2700000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
-    "attack": 65,
+    "attack": 66,
     "creation": 62,
     "defending": 44,
     "physical": 61,
@@ -10891,7 +10891,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 69,
-    "creation": 66,
+    "creation": 65,
     "defending": 61,
     "physical": 71,
     "goalkeeping": 13
@@ -10907,18 +10907,18 @@
       "RW"
     ],
     "foot": "R",
-    "ovr": 62,
-    "potential": 62,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 2900,
+      "wage": 3500,
       "expires": 2028
     },
-    "value": 1150000,
+    "value": 1400000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
-    "attack": 63,
-    "creation": 52,
+    "attack": 64,
+    "creation": 53,
     "defending": 42,
     "physical": 63,
     "goalkeeping": 16
@@ -10932,21 +10932,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 55,
-    "potential": 65,
+    "ovr": 54,
+    "potential": 64,
     "contract": {
-      "wage": 1300,
+      "wage": 1100,
       "expires": 2028
     },
-    "value": 500000,
+    "value": 450000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
-    "attack": 22,
-    "creation": 52,
-    "defending": 25,
-    "physical": 60,
-    "goalkeeping": 54
+    "attack": 17,
+    "creation": 36,
+    "defending": 19,
+    "physical": 58,
+    "goalkeeping": 55
   },
   {
     "id": "ficticia-ove-24",
@@ -10959,19 +10959,19 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 64,
-    "potential": 83,
+    "ovr": 65,
+    "potential": 84,
     "contract": {
-      "wage": 6800,
+      "wage": 8100,
       "expires": 2031
     },
-    "value": 2700000,
+    "value": 3250000,
     "clubId": "ficticia-ove",
     "morale": 50,
     "fitness": 100,
     "attack": 61,
     "creation": 62,
-    "defending": 64,
+    "defending": 65,
     "physical": 67,
     "goalkeeping": 5
   },
@@ -11010,21 +11010,21 @@
       "GK"
     ],
     "foot": "L",
-    "ovr": 66,
-    "potential": 66,
+    "ovr": 67,
+    "potential": 67,
     "contract": {
-      "wage": 6000,
+      "wage": 7100,
       "expires": 2028
     },
-    "value": 2400000,
+    "value": 2850000,
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 32,
-    "creation": 75,
-    "defending": 33,
-    "physical": 74,
-    "goalkeeping": 65
+    "attack": 27,
+    "creation": 57,
+    "defending": 28,
+    "physical": 68,
+    "goalkeeping": 67
   },
   {
     "id": "ficticia-cit-02",
@@ -11045,11 +11045,11 @@
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 37,
-    "creation": 62,
-    "defending": 32,
-    "physical": 65,
-    "goalkeeping": 65
+    "attack": 31,
+    "creation": 42,
+    "defending": 27,
+    "physical": 57,
+    "goalkeeping": 67
   },
   {
     "id": "ficticia-cit-03",
@@ -11072,7 +11072,7 @@
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 69,
+    "attack": 70,
     "creation": 75,
     "defending": 70,
     "physical": 73,
@@ -11089,20 +11089,20 @@
       "CB"
     ],
     "foot": "R",
-    "ovr": 69,
-    "potential": 71,
+    "ovr": 70,
+    "potential": 72,
     "contract": {
-      "wage": 14100,
+      "wage": 17000,
       "expires": 2028
     },
-    "value": 5650000,
+    "value": 6800000,
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
     "attack": 64,
     "creation": 69,
     "defending": 72,
-    "physical": 68,
+    "physical": 69,
     "goalkeeping": 14
   },
   {
@@ -11125,9 +11125,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 48,
-    "creation": 66,
+    "creation": 67,
     "defending": 63,
-    "physical": 64,
+    "physical": 65,
     "goalkeeping": 10
   },
   {
@@ -11141,20 +11141,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 4100,
+      "wage": 3500,
       "expires": 2029
     },
-    "value": 1650000,
+    "value": 1400000,
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
     "attack": 45,
     "creation": 63,
-    "defending": 64,
-    "physical": 63,
+    "defending": 63,
+    "physical": 62,
     "goalkeeping": 14
   },
   {
@@ -11179,7 +11179,7 @@
     "attack": 51,
     "creation": 65,
     "defending": 69,
-    "physical": 63,
+    "physical": 62,
     "goalkeeping": 19
   },
   {
@@ -11192,20 +11192,20 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 63,
-    "potential": 69,
+    "ovr": 64,
+    "potential": 70,
     "contract": {
-      "wage": 4800,
+      "wage": 5800,
       "expires": 2031
     },
-    "value": 1900000,
+    "value": 2300000,
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
     "attack": 56,
-    "creation": 64,
-    "defending": 61,
-    "physical": 68,
+    "creation": 65,
+    "defending": 62,
+    "physical": 69,
     "goalkeeping": 8
   },
   {
@@ -11232,7 +11232,7 @@
     "attack": 40,
     "creation": 73,
     "defending": 67,
-    "physical": 72,
+    "physical": 71,
     "goalkeeping": 9
   },
   {
@@ -11256,7 +11256,7 @@
     "fitness": 100,
     "attack": 44,
     "creation": 62,
-    "defending": 64,
+    "defending": 63,
     "physical": 56,
     "goalkeeping": 9
   },
@@ -11279,7 +11279,7 @@
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 64,
+    "attack": 63,
     "creation": 68,
     "defending": 65,
     "physical": 72,
@@ -11296,18 +11296,18 @@
       "LB"
     ],
     "foot": "L",
-    "ovr": 61,
-    "potential": 71,
+    "ovr": 60,
+    "potential": 70,
     "contract": {
-      "wage": 3900,
+      "wage": 3300,
       "expires": 2031
     },
-    "value": 1550000,
+    "value": 1300000,
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
     "attack": 58,
-    "creation": 60,
+    "creation": 59,
     "defending": 62,
     "physical": 60,
     "goalkeeping": 8
@@ -11360,7 +11360,7 @@
     "attack": 44,
     "creation": 61,
     "defending": 62,
-    "physical": 64,
+    "physical": 63,
     "goalkeeping": 17
   },
   {
@@ -11382,7 +11382,7 @@
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 78,
+    "attack": 77,
     "creation": 67,
     "defending": 69,
     "physical": 66,
@@ -11463,7 +11463,7 @@
     "attack": 55,
     "creation": 65,
     "defending": 58,
-    "physical": 57,
+    "physical": 56,
     "goalkeeping": 16
   },
   {
@@ -11477,20 +11477,20 @@
       "LW"
     ],
     "foot": "L",
-    "ovr": 62,
-    "potential": 62,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 1600,
+      "wage": 2000,
       "expires": 2027
     },
-    "value": 650000,
+    "value": 800000,
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 60,
+    "attack": 61,
     "creation": 62,
     "defending": 41,
-    "physical": 68,
+    "physical": 69,
     "goalkeeping": 13
   },
   {
@@ -11542,7 +11542,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 64,
-    "creation": 73,
+    "creation": 72,
     "defending": 41,
     "physical": 69,
     "goalkeeping": 20
@@ -11582,21 +11582,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 52,
-    "potential": 63,
+    "ovr": 53,
+    "potential": 64,
     "contract": {
-      "wage": 800,
+      "wage": 900,
       "expires": 2030
     },
-    "value": 300000,
+    "value": 350000,
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 29,
-    "creation": 53,
-    "defending": 13,
-    "physical": 55,
-    "goalkeeping": 52
+    "attack": 22,
+    "creation": 34,
+    "defending": 9,
+    "physical": 48,
+    "goalkeeping": 55
   },
   {
     "id": "ficticia-cit-24",
@@ -11619,7 +11619,7 @@
     "clubId": "ficticia-cit",
     "morale": 50,
     "fitness": 100,
-    "attack": 63,
+    "attack": 64,
     "creation": 51,
     "defending": 46,
     "physical": 54,
@@ -11671,11 +11671,11 @@
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
-    "attack": 36,
-    "creation": 71,
-    "defending": 34,
-    "physical": 72,
-    "goalkeeping": 67
+    "attack": 30,
+    "creation": 50,
+    "defending": 29,
+    "physical": 64,
+    "goalkeeping": 70
   },
   {
     "id": "ficticia-cnb-02",
@@ -11696,11 +11696,11 @@
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
-    "attack": 16,
-    "creation": 62,
-    "defending": 23,
-    "physical": 58,
-    "goalkeeping": 57
+    "attack": 12,
+    "creation": 46,
+    "defending": 18,
+    "physical": 52,
+    "goalkeeping": 58
   },
   {
     "id": "ficticia-cnb-03",
@@ -11713,19 +11713,19 @@
       "CB"
     ],
     "foot": "L",
-    "ovr": 70,
-    "potential": 70,
+    "ovr": 71,
+    "potential": 71,
     "contract": {
-      "wage": 6900,
+      "wage": 8400,
       "expires": 2030
     },
-    "value": 2750000,
+    "value": 3350000,
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
-    "attack": 70,
+    "attack": 71,
     "creation": 67,
-    "defending": 72,
+    "defending": 73,
     "physical": 70,
     "goalkeeping": 17
   },
@@ -11827,9 +11827,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 47,
-    "creation": 70,
+    "creation": 69,
     "defending": 65,
-    "physical": 74,
+    "physical": 73,
     "goalkeeping": 5
   },
   {
@@ -11842,19 +11842,19 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 61,
-    "potential": 76,
+    "ovr": 60,
+    "potential": 75,
     "contract": {
-      "wage": 3900,
+      "wage": 3300,
       "expires": 2029
     },
-    "value": 1550000,
+    "value": 1300000,
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
     "attack": 49,
     "creation": 63,
-    "defending": 60,
+    "defending": 59,
     "physical": 62,
     "goalkeeping": 16
   },
@@ -11896,19 +11896,19 @@
       "LB"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 74,
+    "ovr": 63,
+    "potential": 73,
     "contract": {
-      "wage": 6800,
+      "wage": 5600,
       "expires": 2027
     },
-    "value": 2700000,
+    "value": 2250000,
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
     "attack": 51,
     "creation": 69,
-    "defending": 61,
+    "defending": 60,
     "physical": 68,
     "goalkeeping": 10
   },
@@ -11933,7 +11933,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 57,
-    "creation": 54,
+    "creation": 55,
     "defending": 69,
     "physical": 55,
     "goalkeeping": 5
@@ -12024,20 +12024,20 @@
       "DM"
     ],
     "foot": "L",
-    "ovr": 65,
-    "potential": 65,
+    "ovr": 64,
+    "potential": 64,
     "contract": {
-      "wage": 5000,
+      "wage": 4100,
       "expires": 2028
     },
-    "value": 2000000,
+    "value": 1650000,
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
-    "attack": 76,
-    "creation": 64,
+    "attack": 75,
+    "creation": 63,
     "defending": 63,
-    "physical": 62,
+    "physical": 61,
     "goalkeeping": 13
   },
   {
@@ -12051,18 +12051,18 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 57,
-    "potential": 57,
+    "ovr": 58,
+    "potential": 58,
     "contract": {
-      "wage": 1100,
+      "wage": 1400,
       "expires": 2028
     },
-    "value": 450000,
+    "value": 550000,
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
-    "attack": 57,
-    "creation": 55,
+    "attack": 58,
+    "creation": 56,
     "defending": 61,
     "physical": 60,
     "goalkeeping": 15
@@ -12103,20 +12103,20 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 61,
-    "potential": 71,
+    "ovr": 60,
+    "potential": 70,
     "contract": {
-      "wage": 3900,
+      "wage": 3300,
       "expires": 2029
     },
-    "value": 1550000,
+    "value": 1300000,
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
     "attack": 60,
-    "creation": 64,
+    "creation": 63,
     "defending": 59,
-    "physical": 55,
+    "physical": 54,
     "goalkeeping": 13
   },
   {
@@ -12243,11 +12243,11 @@
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
-    "attack": 11,
-    "creation": 54,
-    "defending": 12,
-    "physical": 53,
-    "goalkeeping": 49
+    "attack": 6,
+    "creation": 31,
+    "defending": 7,
+    "physical": 43,
+    "goalkeeping": 52
   },
   {
     "id": "ficticia-cnb-24",
@@ -12272,7 +12272,7 @@
     "attack": 26,
     "creation": 59,
     "defending": 56,
-    "physical": 62,
+    "physical": 63,
     "goalkeeping": 8
   },
   {
@@ -12286,20 +12286,20 @@
       "RB"
     ],
     "foot": "L",
-    "ovr": 57,
-    "potential": 70,
+    "ovr": 56,
+    "potential": 69,
     "contract": {
-      "wage": 1900,
+      "wage": 1600,
       "expires": 2031
     },
-    "value": 750000,
+    "value": 650000,
     "clubId": "ficticia-cnb",
     "morale": 50,
     "fitness": 100,
     "attack": 44,
     "creation": 56,
     "defending": 55,
-    "physical": 60,
+    "physical": 59,
     "goalkeeping": 11
   },
   {
@@ -12321,11 +12321,11 @@
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
-    "attack": 22,
-    "creation": 66,
-    "defending": 27,
-    "physical": 72,
-    "goalkeeping": 63
+    "attack": 18,
+    "creation": 44,
+    "defending": 22,
+    "physical": 64,
+    "goalkeeping": 65
   },
   {
     "id": "ficticia-sau-02",
@@ -12346,11 +12346,11 @@
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
-    "attack": 21,
-    "creation": 60,
-    "defending": 27,
-    "physical": 53,
-    "goalkeeping": 57
+    "attack": 16,
+    "creation": 46,
+    "defending": 21,
+    "physical": 49,
+    "goalkeeping": 58
   },
   {
     "id": "ficticia-sau-03",
@@ -12372,10 +12372,10 @@
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
-    "attack": 62,
+    "attack": 63,
     "creation": 64,
     "defending": 60,
-    "physical": 63,
+    "physical": 64,
     "goalkeeping": 18
   },
   {
@@ -12426,9 +12426,9 @@
     "morale": 50,
     "fitness": 100,
     "attack": 30,
-    "creation": 64,
+    "creation": 65,
     "defending": 65,
-    "physical": 58,
+    "physical": 59,
     "goalkeeping": 15
   },
   {
@@ -12441,19 +12441,19 @@
       "LB"
     ],
     "foot": "B",
-    "ovr": 67,
-    "potential": 67,
+    "ovr": 66,
+    "potential": 66,
     "contract": {
-      "wage": 7100,
+      "wage": 6000,
       "expires": 2027
     },
-    "value": 2850000,
+    "value": 2400000,
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
     "attack": 47,
-    "creation": 66,
-    "defending": 68,
+    "creation": 65,
+    "defending": 67,
     "physical": 65,
     "goalkeeping": 20
   },
@@ -12516,20 +12516,20 @@
       "RB"
     ],
     "foot": "R",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 2400,
+      "wage": 2000,
       "expires": 2030
     },
-    "value": 950000,
+    "value": 800000,
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
     "attack": 62,
     "creation": 60,
     "defending": 65,
-    "physical": 65,
+    "physical": 64,
     "goalkeeping": 19
   },
   {
@@ -12553,7 +12553,7 @@
     "fitness": 100,
     "attack": 60,
     "creation": 63,
-    "defending": 57,
+    "defending": 56,
     "physical": 60,
     "goalkeeping": 16
   },
@@ -12602,7 +12602,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 54,
-    "creation": 61,
+    "creation": 62,
     "defending": 52,
     "physical": 62,
     "goalkeeping": 5
@@ -12644,19 +12644,19 @@
       "DM"
     ],
     "foot": "R",
-    "ovr": 62,
-    "potential": 62,
+    "ovr": 61,
+    "potential": 61,
     "contract": {
-      "wage": 2900,
+      "wage": 2400,
       "expires": 2030
     },
-    "value": 1150000,
+    "value": 950000,
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
-    "attack": 60,
-    "creation": 58,
-    "defending": 73,
+    "attack": 59,
+    "creation": 57,
+    "defending": 72,
     "physical": 61,
     "goalkeeping": 12
   },
@@ -12710,7 +12710,7 @@
     "attack": 60,
     "creation": 60,
     "defending": 29,
-    "physical": 61,
+    "physical": 62,
     "goalkeeping": 9
   },
   {
@@ -12722,18 +12722,18 @@
       "RW"
     ],
     "foot": "L",
-    "ovr": 64,
-    "potential": 64,
+    "ovr": 63,
+    "potential": 63,
     "contract": {
-      "wage": 4100,
+      "wage": 3500,
       "expires": 2028
     },
-    "value": 1650000,
+    "value": 1400000,
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
     "attack": 61,
-    "creation": 65,
+    "creation": 64,
     "defending": 62,
     "physical": 67,
     "goalkeeping": 15
@@ -12785,7 +12785,7 @@
     "morale": 50,
     "fitness": 100,
     "attack": 65,
-    "creation": 61,
+    "creation": 62,
     "defending": 49,
     "physical": 64,
     "goalkeeping": 10
@@ -12827,20 +12827,20 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 65,
-    "potential": 65,
+    "ovr": 66,
+    "potential": 66,
     "contract": {
-      "wage": 2800,
+      "wage": 3400,
       "expires": 2029
     },
-    "value": 1100000,
+    "value": 1350000,
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
-    "attack": 64,
+    "attack": 65,
     "creation": 62,
     "defending": 64,
-    "physical": 70,
+    "physical": 71,
     "goalkeeping": 5
   },
   {
@@ -12879,21 +12879,21 @@
       "GK"
     ],
     "foot": "R",
-    "ovr": 52,
-    "potential": 54,
+    "ovr": 51,
+    "potential": 53,
     "contract": {
-      "wage": 600,
+      "wage": 500,
       "expires": 2030
     },
-    "value": 250000,
+    "value": 200000,
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
-    "attack": 15,
-    "creation": 51,
-    "defending": 25,
-    "physical": 56,
-    "goalkeeping": 51
+    "attack": 10,
+    "creation": 29,
+    "defending": 18,
+    "physical": 48,
+    "goalkeeping": 53
   },
   {
     "id": "ficticia-sau-24",
@@ -12930,20 +12930,20 @@
       "AM"
     ],
     "foot": "R",
-    "ovr": 54,
-    "potential": 73,
+    "ovr": 55,
+    "potential": 74,
     "contract": {
-      "wage": 1100,
+      "wage": 1300,
       "expires": 2030
     },
-    "value": 450000,
+    "value": 500000,
     "clubId": "ficticia-sau",
     "morale": 50,
     "fitness": 100,
-    "attack": 55,
+    "attack": 56,
     "creation": 56,
     "defending": 25,
-    "physical": 49,
+    "physical": 50,
     "goalkeeping": 15
   }
 ]

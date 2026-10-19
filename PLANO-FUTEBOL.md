@@ -201,6 +201,24 @@ Ajustes ao modelo da seção 4 feitos na Fase 0:
 - **Aceite:** jogar uma temporada completa, fechar e reabrir o app no meio sem perder nada,
   e as métricas da Fase 0 continuam valendo.
 
+**Resultado (medido em 2026-10-18) — Fase 1 concluída.** Expo SDK 58 + NativeWind 4.2.7 +
+Zustand. Temporada jogável rodada a rodada, com fadiga, lesões e suspensões, e save versionado
+com autosave. `check_save` (27 verificações) prova que salvar no meio, recarregar e terminar dá
+a mesma temporada que jogar direto. Testado no navegador em viewport de celular; o Android só
+foi validado pelo bundle, não num aparelho. As métricas continuam na faixa nos dois modos do
+backtest (gols/jogo 2,76 / 2,79; campeão 83,7 / 83,3 pts; último 25,2 / 25,3; mais forte
+campeão 39,0% / 36,8%), depois de recalibrar `μ` e o topo da liga gerada por causa da fadiga.
+Detalhes em `ROADMAP.md`.
+
+Decisões da Fase 1:
+- Navegação por abas própria (estado no store), sem React Navigation/Expo Router: menos
+  dependências e o mesmo código no web e no celular.
+- A lógica de carreira e save fica em `src/` (testável no Node); o store só chama o domínio.
+- XI do usuário é fixo por vaga (como no FM); a IA escala automaticamente e poupa cansados.
+- O save guarda a temporada inteira (resultados com eventos e notas): ~0,9 MB no fim da
+  temporada de uma liga. Revisar na Fase 3 (cinco ligas), possivelmente guardando só o resumo
+  das temporadas antigas e das partidas de outras ligas.
+
 ## FASE 2 — Calendário, contratos, transferências e finanças
 
 - Janelas de transferência (verão e inverno). Negociação: valor, salário, duração, cláusula

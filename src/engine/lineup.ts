@@ -27,9 +27,11 @@ export function slotRating(p: Player, pos: Position): number {
 }
 
 /**
- * Monta o XI. Se o clube definiu `startingXI` com 11 jogadores disponíveis, respeita a escolha
- * e só distribui as vagas; senão escolhe os melhores do elenco. Disponível = está no elenco e
- * `isAvailable` retorna true (lesão, suspensão).
+ * Monta o XI. Disponível = está no elenco e `isAvailable` retorna true (lesão, suspensão).
+ *
+ * Se o clube definiu `startingXI` (um id por vaga, na ordem da formação), a escolha é
+ * respeitada vaga a vaga; só as vagas de quem está indisponível são preenchidas com o melhor
+ * reserva. Sem `startingXI`, a escalação é automática.
  */
 export function chooseLineup(
   club: Club,
@@ -39,10 +41,41 @@ export function chooseLineup(
   const formation = club.tactic.formation;
   const positions = FORMATIONS[formation];
   const pool = club.squad.filter((id) => players[id] && isAvailable(id)).map((id) => players[id] as Player);
+  if (club.startingXI.length === positions.length) return fixedLineup(club.startingXI, formation, pool);
+  return autoLineup(formation, pool);
+}
 
-  const fixed = club.startingXI.filter((id) => pool.some((p) => p.id === id));
-  const candidates = fixed.length === 11 ? pool.filter((p) => fixed.includes(p.id)) : pool;
-  const allowBench = fixed.length !== 11;
+function fixedLineup(xi: readonly string[], formation: Formation, pool: Player[]): Lineup {
+  const positions = FORMATIONS[formation];
+  const byId = new Map(pool.map((p) => [p.id, p]));
+  const assigned: (Player | null)[] = xi.map((id) => byId.get(id) ?? null);
+  const used = new Set(assigned.filter((p): p is Player => p !== null).map((p) => p.id));
+  // Goleiro primeiro, para um goleiro reserva não ser usado na linha.
+  const order = positions.map((pos, i) => ({ pos, i })).sort((a, b) => (a.pos === 'GK' ? -1 : b.pos === 'GK' ? 1 : a.i - b.i));
+  for (const { pos, i } of order) {
+    if (assigned[i]) continue;
+    let best: Player | null = null;
+    for (const p of pool) {
+      if (used.has(p.id)) continue;
+      if (!best || slotRating(p, pos) > slotRating(best, pos)) best = p;
+    }
+    if (best) {
+      assigned[i] = best;
+      used.add(best.id);
+    }
+  }
+  const slots: LineupSlot[] = [];
+  positions.forEach((pos, i) => {
+    const p = assigned[i];
+    if (p) slots.push({ pos, playerId: p.id, rating: slotRating(p, pos) });
+  });
+  return { formation, slots };
+}
+
+/** Escalação automática: gulosa por vaga e depois trocas enquanto houver ganho. */
+export function autoLineup(formation: Formation, pool: Player[]): Lineup {
+  const positions = FORMATIONS[formation];
+  const candidates = pool;
 
   // Gulosa: goleiro primeiro, depois as vagas na ordem da formação.
   const order = positions.map((pos, i) => ({ pos, i })).sort((a, b) => (a.pos === 'GK' ? -1 : b.pos === 'GK' ? 1 : a.i - b.i));
@@ -83,19 +116,17 @@ export function chooseLineup(
           improved = true;
         }
       }
-      if (allowBench) {
-        const cur = assigned[a];
-        const posA = positions[a] as Position;
-        const curR = cur ? slotRating(cur, posA) : -Infinity;
-        for (const p of candidates) {
-          if (used.has(p.id)) continue;
-          if (slotRating(p, posA) > curR + 1e-9) {
-            if (cur) used.delete(cur.id);
-            used.add(p.id);
-            assigned[a] = p;
-            improved = true;
-            break;
-          }
+      const cur = assigned[a];
+      const posA = positions[a] as Position;
+      const curR = cur ? slotRating(cur, posA) : -Infinity;
+      for (const p of candidates) {
+        if (used.has(p.id)) continue;
+        if (slotRating(p, posA) > curR + 1e-9) {
+          if (cur) used.delete(cur.id);
+          used.add(p.id);
+          assigned[a] = p;
+          improved = true;
+          break;
         }
       }
     }

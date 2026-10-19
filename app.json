@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Football Manager",
+    "slug": "football-manager",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#020617",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.thiagonx.footballmanager"
+    },
+    "android": {
+      "package": "com.thiagonx.footballmanager"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": ["expo-status-bar"]
+  }
+}

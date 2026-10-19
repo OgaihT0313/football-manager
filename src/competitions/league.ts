@@ -1,4 +1,4 @@
-// Liga por pontos corridos: calendário, tabela, desempates e simulação de uma temporada.
+// Liga por pontos corridos: calendário, tabela e desempates. A simulação fica em season.ts.
 //
 // Critérios de desempate (ordem padrão, configurável em LeagueConfig.tiebreakers):
 //   1. pontos
@@ -9,10 +9,7 @@
 //   6. gols pró como visitante
 //   7. id do clube em ordem alfabética (substitui o sorteio/jogo extra, para ser determinístico)
 
-import type { Club, Fixture, LeagueConfig, MatchResult, Player, TableRow, Tiebreaker } from '../domain/types';
-import { chooseLineup, type Lineup } from '../engine/lineup';
-import { FORMATIONS } from '../domain/positions';
-import { buildContext, DEFAULT_PARAMS, simulateMatch, teamStrength, type EngineParams, type MatchContext } from '../engine/matchEngine';
+import type { Fixture, LeagueConfig, MatchResult, TableRow, Tiebreaker } from '../domain/types';
 import { createRng, deriveSeed, shuffle } from '../engine/rng';
 
 /**
@@ -145,92 +142,4 @@ function sortGroup(
     }
   }
   return out;
-}
-
-export interface SeasonInput {
-  league: LeagueConfig;
-  clubs: Club[];
-  players: Record<string, Player>;
-  seed: number;
-  params?: EngineParams;
-}
-
-export interface SeasonResult {
-  fixtures: Fixture[];
-  results: MatchResult[];
-  table: TableRow[];
-  context: MatchContext;
-}
-
-/** Cartões amarelos acumulados que geram um jogo de suspensão. */
-const YELLOW_LIMIT = 5;
-
-/**
- * Simula a temporada inteira. Lesões e suspensões (vermelho = 1 jogo, 5 amarelos = 1 jogo)
- * tiram o jogador das partidas seguintes do clube. Sem fadiga na Fase 0.
- */
-export function simulateSeason(input: SeasonInput): SeasonResult {
-  const { league, players, seed } = input;
-  const params = input.params ?? DEFAULT_PARAMS;
-  const clubs: Record<string, Club> = {};
-  for (const c of input.clubs) clubs[c.id] = c;
-
-  // Referência da liga: força média dos XIs completos.
-  const bestLineups = league.clubIds.map((id) => chooseLineup(clubs[id] as Club, players));
-  const context = buildContext(bestLineups.map((l) => teamStrength(l, FORMATIONS[l.formation], params)));
-
-  const fixtures = generateFixtures(league, seed);
-  const out: Record<string, number> = {};
-  const yellows: Record<string, number> = {};
-  const lineupCache: Record<string, Lineup> = {};
-  const dirty = new Set<string>(league.clubIds);
-  const isAvailable = (id: string) => !(out[id]! > 0);
-
-  const lineupFor = (clubId: string): Lineup => {
-    if (dirty.has(clubId) || !lineupCache[clubId]) {
-      lineupCache[clubId] = chooseLineup(clubs[clubId] as Club, players, isAvailable);
-      dirty.delete(clubId);
-    }
-    return lineupCache[clubId] as Lineup;
-  };
-
-  const results: MatchResult[] = [];
-  for (const fx of fixtures) {
-    const home = clubs[fx.homeId] as Club;
-    const away = clubs[fx.awayId] as Club;
-    const result = simulateMatch({
-      fixture: fx,
-      home,
-      away,
-      homeLineup: lineupFor(home.id),
-      awayLineup: lineupFor(away.id),
-      players,
-      ctx: context,
-      rng: createRng(deriveSeed(seed, fx.id)),
-      params,
-    });
-    results.push(result);
-
-    // Cumpre um jogo de quem estava fora e registra as novas ausências.
-    for (const club of [home, away]) {
-      for (const pid of club.squad) {
-        if (out[pid]! > 0) {
-          out[pid]!--;
-          if (out[pid] === 0) dirty.add(club.id);
-        }
-      }
-    }
-    for (const e of result.events) {
-      if (e.type === 'injury') out[e.playerId] = Math.max(out[e.playerId] ?? 0, e.matchesOut ?? 1);
-      else if (e.type === 'red') out[e.playerId] = Math.max(out[e.playerId] ?? 0, 1);
-      else if (e.type === 'yellow') {
-        yellows[e.playerId] = (yellows[e.playerId] ?? 0) + 1;
-        if (yellows[e.playerId]! % YELLOW_LIMIT === 0) out[e.playerId] = Math.max(out[e.playerId] ?? 0, 1);
-        else continue;
-      } else continue;
-      dirty.add(e.clubId);
-    }
-  }
-
-  return { fixtures, results, table: computeTable(league, results), context };
 }

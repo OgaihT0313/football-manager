@@ -6,7 +6,7 @@
 // Sem --novas-ligas, usa a liga salva em data/ (gera se não existir). Com --novas-ligas, gera
 // uma liga fictícia nova por temporada (mede o motor sem depender de um sorteio de elencos).
 
-import { simulateSeason } from '../src/competitions/league';
+import { simulateSeason } from '../src/competitions/season';
 import { generateFictionalLeague, type GeneratedLeague } from '../src/data/fictionalLeague';
 import { chooseLineup } from '../src/engine/lineup';
 import { DEFAULT_PARAMS, type EngineParams } from '../src/engine/matchEngine';

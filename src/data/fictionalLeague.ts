@@ -1,7 +1,7 @@
 // Gerador de liga fictícia (20 clubes x 25 jogadores) com distribuição de força realista:
 // poucos clubes fortes, maioria média, alguns fracos.
 
-import { computeOvr, FORMATIONS, FORMATION_LIST, POSITION_WEIGHTS } from '../domain/positions';
+import { computeOvr, FORMATIONS, FORMATION_LIST, POSITION_WEIGHTS, ratingAt } from '../domain/positions';
 import type { Attributes, Club, Foot, Formation, LeagueConfig, Level, Player, Position } from '../domain/types';
 import { createRng, gaussian, int, pick, shuffle, type Rng } from '../engine/rng';
 
@@ -22,8 +22,8 @@ export interface GenOptions {
  * fraco. Os valores são faixas [mín, máx]; cada clube sorteia dentro da sua.
  */
 const STRENGTH_TIERS: readonly [number, number][] = [
-  [81, 83], [80, 82],
-  [77, 79], [76, 78],
+  [81, 83], [80.5, 82.5], [79.5, 81.5],
+  [77, 79],
   [74, 76], [73, 75], [73, 75],
   [71, 73], [71, 73], [70, 72], [70, 72], [69, 71], [69, 71], [68, 70],
   [67, 69], [67, 69], [66, 68], [66, 68],
@@ -81,18 +81,21 @@ function makeAttributes(rng: Rng, pos: Position, target: number): Attributes {
   const w = POSITION_WEIGHTS[pos];
   const attrs: Attributes = { attack: 0, creation: 0, defending: 0, physical: 0, goalkeeping: 0 };
   const keys = Object.keys(attrs) as (keyof Attributes)[];
+  // Goleiro: só `goalkeeping` define o nível; reposição (criação) e físico ficam abaixo dele.
+  const anchors: (keyof Attributes)[] = pos === 'GK' ? ['goalkeeping'] : keys.filter((k) => w[k] > 0);
   for (const key of keys) {
-    if (w[key] > 0) attrs[key] = target + gaussian(rng, 0, 4);
+    if (anchors.includes(key)) attrs[key] = target + gaussian(rng, 0, 4);
     else if (key === 'goalkeeping') attrs[key] = int(rng, 5, 20);
-    else if (pos === 'GK') attrs[key] = target - 35 + gaussian(rng, 0, 6);
+    else if (pos === 'GK') attrs[key] = target - (key === 'physical' ? 8 : key === 'creation' ? 20 : 40) + gaussian(rng, 0, 5);
     else attrs[key] = target - 18 + gaussian(rng, 0, 7);
   }
-  // Corrige o desvio para o OVR cair no alvo (só nos atributos que pesam na posição).
-  const diff = target - computeOvr(attrs, pos);
-  for (const key of keys) {
-    if (w[key] > 0) attrs[key] += diff;
-    attrs[key] = Math.round(clamp(attrs[key]));
+  // Corrige o desvio para o OVR cair no alvo, mexendo só nos atributos-âncora.
+  for (let iter = 0; iter < 3; iter++) {
+    const diff = target - ratingAt(attrs, pos);
+    const share = anchors.reduce((a, k) => a + w[k], 0);
+    for (const key of anchors) attrs[key] = clamp(attrs[key] + diff / share);
   }
+  for (const key of keys) attrs[key] = Math.round(clamp(attrs[key]));
   return attrs;
 }
 
