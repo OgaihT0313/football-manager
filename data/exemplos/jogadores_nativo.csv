@@ -1,0 +1,4 @@
+id;name;age;nationality;club_id;club_name;positions;foot;attack;creation;defending;physical;goalkeeping;potential;wage;contract_expires;value
+ex-01;Carlos Goleiro;29;BRA;exemplo-fc;Exemplo FC;GK;R;20;45;25;62;78;80;40000;2028;9000000
+ex-02;Bruno Zaga;27;POR;exemplo-fc;Exemplo FC;CB DM;R;35;55;79;76;8;81;55000;2029;18000000
+ex-03;"Silva, Rafael";22;BRA;exemplo-fc;Exemplo FC;ST;L;80;62;30;74;6;88;70000;2030;35000000

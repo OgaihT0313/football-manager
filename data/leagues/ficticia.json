@@ -1,0 +1,38 @@
+{
+  "id": "ficticia",
+  "name": "Liga Fictícia",
+  "country": "Fictícia",
+  "clubIds": [
+    "ficticia-scs",
+    "ficticia-gca",
+    "ficticia-fce",
+    "ficticia-pse",
+    "ficticia-dpe",
+    "ficticia-avr",
+    "ficticia-ose",
+    "ficticia-rmo",
+    "ficticia-ala",
+    "ficticia-ecp",
+    "ficticia-ema",
+    "ficticia-rcu",
+    "ficticia-apl",
+    "ficticia-uri",
+    "ficticia-ino",
+    "ficticia-jfl",
+    "ficticia-ove",
+    "ficticia-cit",
+    "ficticia-cnb",
+    "ficticia-sau"
+  ],
+  "pointsForWin": 3,
+  "pointsForDraw": 1,
+  "legs": 2,
+  "tiebreakers": [
+    "points",
+    "goalDiff",
+    "goalsFor",
+    "headToHead",
+    "wins",
+    "awayGoalsFor"
+  ]
+}
