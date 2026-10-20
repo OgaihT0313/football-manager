@@ -81,7 +81,7 @@ check('histórico registra a temporada encerrada', atOnce.history.length === 1 &
   const whole = simulateRounds(w0);
   const ms = performance.now() - t0;
   const comps = Object.values(whole.season.competitions);
-  check('mundo: 10 ligas, 5 copas e 5 supercopas com campeão', comps.filter((c) => c.kind === 'league').length === 10 &&
+  check('mundo: todas as ligas, 5 copas e 5 supercopas com campeão', comps.filter((c) => c.kind === 'league').length === world.leagues.length &&
     comps.filter((c) => c.kind === 'cup').every((c) => c.championId) && comps.filter((c) => c.kind === 'supercup').every((c) => c.championId),
     `${comps.reduce((a, c) => a + c.results.length, 0)} jogos em ${(ms / 1000).toFixed(1)} s`);
   const mid = simulateRounds(w0, 21);

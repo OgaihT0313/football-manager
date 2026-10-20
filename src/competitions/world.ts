@@ -10,6 +10,10 @@ import {
   type EngineParams, type MatchContext, type TeamStrength,
 } from '../engine/matchEngine';
 import { chance, createRng, deriveSeed, shuffle } from '../engine/rng';
+import {
+  aggregateTied, countryOfClub, createEuropeCompetition, drawEuropeStage, EUROPE_MARKERS, EUROPE_TIEBREAKERS,
+  inheritSeeds, stageWinners, type EuropeTier,
+} from './europe';
 import { computeTable, generateFixtures } from './league';
 
 export interface PlayerStatus {
@@ -29,11 +33,13 @@ export interface CalendarSlot {
 export interface CupStage {
   name: string;
   slot: number;
+  /** Data do jogo de volta (mata-mata de ida e volta). */
+  slot2?: number;
   fixtureIds: string[];
   drawn: boolean;
 }
 
-export type CompetitionKind = 'league' | 'cup' | 'supercup';
+export type CompetitionKind = 'league' | 'cup' | 'supercup' | 'europe';
 
 export interface CompetitionState {
   id: string;
@@ -52,6 +58,8 @@ export interface CompetitionState {
   ratings: Record<string, number>;
   stages: CupStage[];
   championId: string | null;
+  /** Europa: semente de cada clube no mata-mata (posição na fase de liga, herdada por quem avança). */
+  seeds?: Record<string, number>;
 }
 
 /** Linha de estatística de um jogador na temporada (todas as competições). */
@@ -108,6 +116,8 @@ export function buildSlots(midweekMarkers: number[]): CalendarSlot[] {
     for (let k = 0; k < (counts[m] ?? 0); k++) slots.push({ kind: 'meio', marker: m });
     slots.push({ kind: 'fds', marker: m });
   }
+  // Depois da última rodada (jornada 39): finais europeias.
+  for (let k = 0; k < (counts[39] ?? 0); k++) slots.push({ kind: 'meio', marker: 39 });
   return slots;
 }
 
@@ -191,8 +201,8 @@ export interface WorldSeasonOptions {
   /** Participantes da supercopa por país: [campeão da liga, campeão da copa]. */
   supercups?: Record<string, [string, string]>;
   params?: EngineParams;
-  /** Meios de semana extras (competições da Fase 4). */
-  extraMidweeks?: number[];
+  /** Participantes das competições europeias (Fase 4). Sem isso, não há Europa. */
+  europe?: Partial<Record<EuropeTier, string[]>>;
 }
 
 export function createWorldSeason(data: WorldData, year: number, seed: number, opts: WorldSeasonOptions = {}): WorldSeason {
@@ -200,7 +210,8 @@ export function createWorldSeason(data: WorldData, year: number, seed: number, o
   const withCups = opts.cups ?? true;
   const tier1 = Object.values(data.leagues).filter((l) => (l.tier ?? 1) === 1);
   const hasCups = withCups && tier1.some((l) => l.cupName);
-  const markers = [...(hasCups ? [SUPERCUP_MARKER, ...CUP_MARKERS] : []), ...(opts.extraMidweeks ?? [])];
+  const europe = Object.entries(opts.europe ?? {}).filter(([, ids]) => (ids?.length ?? 0) === 36) as [EuropeTier, string[]][];
+  const markers = [...(hasCups ? [SUPERCUP_MARKER, ...CUP_MARKERS] : []), ...(europe.length ? EUROPE_MARKERS : [])];
   const slots = buildSlots(markers);
   const competitions: Record<string, CompetitionState> = {};
 
@@ -219,6 +230,18 @@ export function createWorldSeason(data: WorldData, year: number, seed: number, o
         const pair = opts.supercups?.[league.country] ?? defaultSupercup(data, league);
         competitions[`${league.id}-super`] = supercupCompetition(data, league, pair, slots, competitions[league.id]!.context);
       }
+    }
+  }
+  if (europe.length) {
+    // Referência única para os jogos entre ligas diferentes: a média de todos os participantes.
+    const all = [...new Set(europe.flatMap(([, ids]) => ids))];
+    const context = buildContext(all.map((id) => restedStrength(data.clubs[id]!, data.players, params)));
+    const ratingOfId = (id: string) => ratingOf(data.clubs[id]!, data.players);
+    const countryOf = countryOfClub(data.clubs, data.leagues);
+    for (const [tier, ids] of europe) {
+      const ghosts: Record<string, number> = {};
+      for (const id of ids) if (!hasSquad(data.clubs[id]!)) ghosts[id] = ratingOfId(id);
+      competitions[tier] = createEuropeCompetition(tier, ids, slots, seed, ratingOfId, countryOf, context, ghosts);
     }
   }
   return { year, seed, slots, nextSlot: 0, competitions, status: {}, stats: {} };
@@ -372,7 +395,9 @@ export function playSlot(
 
   for (const comp of Object.values(ws.competitions)) {
     comp.stages.forEach((st, i) => {
-      if (st.slot === slotIdx && !st.drawn) drawCupStage(ws, comp, i);
+      if (st.slot !== slotIdx || st.drawn) return;
+      if (comp.kind === 'europe') drawEuropeStage(comp, i, ws.seed);
+      else drawCupStage(ws, comp, i);
     });
     const todays = comp.fixtures.filter((f) => f.slot === slotIdx);
     if (todays.length === 0) continue;
@@ -402,9 +427,7 @@ export function playSlot(
         });
         applyMatchEffects(ws, result, home, away, players, comp.kind === 'league');
       }
-      if (comp.kind !== 'league' && result.homeGoals === result.awayGoals) {
-        result.shootoutWinnerId = shootout(ws, fx, home, away, comp, players);
-      }
+      if (needsShootout(comp, fx, result)) result.shootoutWinnerId = shootout(ws, fx, home, away, comp, players);
       accumulateStats(ws, result);
       played.push(result);
       // Resumido: só placar e gols (o resto já foi para `stats`).
@@ -432,6 +455,8 @@ export function playSlot(
     if (comp.kind === 'league') {
       const league = data.leagues[comp.leagueId!]!;
       comp.table = computeTable({ ...league, clubIds: comp.clubIds }, comp.results);
+    } else if (comp.kind === 'europe') {
+      updateEurope(comp, slotIdx);
     } else {
       const last = comp.stages[comp.stages.length - 1];
       if (last && last.slot === slotIdx) {
@@ -461,6 +486,41 @@ function accumulateStats(ws: WorldSeason, r: MatchResult): void {
     } else if (e.type === 'yellow') line(e.playerId).yellows++;
     else if (e.type === 'red') line(e.playerId).reds++;
   }
+}
+
+/**
+ * Pênaltis: copa e final em jogo único empatados; volta de mata-mata europeu com agregado
+ * empatado. Liga e fase de liga europeia nunca.
+ */
+function needsShootout(comp: CompetitionState, fx: Fixture, r: MatchResult): boolean {
+  if (comp.kind === 'league') return false;
+  if (comp.kind === 'europe') {
+    if (fx.leg === 1 || comp.stages[0]?.fixtureIds.includes(fx.id)) return false;
+    if (fx.leg === 2) {
+      const first = comp.results.find((x) => x.fixtureId === fx.firstLegId);
+      return !!first && aggregateTied(first, r);
+    }
+  }
+  return r.homeGoals === r.awayGoals;
+}
+
+/** Tabela da fase de liga, sementes e campeão europeu. ALTERA `comp`. */
+function updateEurope(comp: CompetitionState, slotIdx: number): void {
+  const leagueIds = new Set(comp.stages[0]!.fixtureIds);
+  const leagueResults = comp.results.filter((r) => leagueIds.has(r.fixtureId));
+  if (comp.fixtures.some((f) => f.slot === slotIdx && leagueIds.has(f.id))) {
+    comp.table = computeTable(
+      { id: comp.id, name: comp.name, country: comp.country, clubIds: comp.clubIds, pointsForWin: 3, pointsForDraw: 1, legs: 1, tiebreakers: EUROPE_TIEBREAKERS },
+      leagueResults,
+    );
+  }
+  comp.stages.forEach((st, i) => {
+    if (i === 0) return;
+    const lastSlot = st.slot2 ?? st.slot;
+    if (lastSlot !== slotIdx) return;
+    if (st.slot2 !== undefined) inheritSeeds(comp, i);
+    else comp.championId = stageWinners(comp, i)[0] ?? null;
+  });
 }
 
 /** Pênaltis: 50% com leve vantagem para o time mais forte. */

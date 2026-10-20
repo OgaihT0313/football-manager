@@ -61,6 +61,48 @@ export const COUNTRIES: CountrySpec[] = [
   },
 ];
 
+/** Liga de fundo: só clubes "por força", que jogam sua liga e alimentam as competições europeias. */
+export interface BackgroundSpec {
+  code: string;
+  country: string;
+  league: string;
+  clubs: number;
+  /** Força do melhor clube e queda até o pior. */
+  top: number;
+  spread: number;
+  reputation: number;
+  continental: { ucl: number; uel: number; uecl: number };
+  cities: string[];
+  prefixes: string[];
+}
+
+export const BACKGROUND: BackgroundSpec[] = [
+  { code: 'por', country: 'Portugal', league: 'Liga Portugal', clubs: 18, top: 79, spread: 17, reputation: 68, continental: { ucl: 2, uel: 1, uecl: 1 },
+    cities: ['Alvorada', 'Barcelinhos', 'Castelo Novo', 'Douradas', 'Estremoz', 'Famalicão Velho', 'Gaia Nova', 'Horta Seca', 'Ílhavo', 'Lagoa Funda', 'Mafra', 'Nazaré', 'Olhão', 'Peniche', 'Queluz', 'Rio Maior', 'Sines', 'Tavira', 'Vizela', 'Seixal'], prefixes: ['Sporting', 'FC', 'Académico', 'Vitória', 'União', 'SC'] },
+  { code: 'hol', country: 'Holanda', league: 'Eredivisie', clubs: 18, top: 78, spread: 17, reputation: 66, continental: { ucl: 2, uel: 1, uecl: 1 },
+    cities: ['Alkmaar Noord', 'Breda West', 'Deventer', 'Emmen', 'Gouda', 'Heerlen', 'Leiden', 'Maastricht', 'Nijkerk', 'Oss', 'Purmerend', 'Roosendaal', 'Schiedam', 'Tiel', 'Venlo', 'Zaandam', 'Zwolle Oost', 'Helmond', 'Hoorn', 'Assen'], prefixes: ['FC', 'SC', 'VV', 'Sparta', 'Vitesse', 'Fortuna'] },
+  { code: 'bel', country: 'Bélgica', league: 'Pro League', clubs: 16, top: 75, spread: 14, reputation: 60, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Aalst', 'Beveren', 'Charleroi Sud', 'Dendermonde', 'Eupen', 'Geel', 'Hasselt', 'Kortrijk Oost', 'Lier', 'Mechelen Noord', 'Namur', 'Oostende', 'Roeselare', 'Tienen', 'Waregem', 'Zulte', 'Lokeren', 'Mouscron'], prefixes: ['KV', 'RSC', 'Royal', 'Sporting', 'Cercle', 'KRC'] },
+  { code: 'tur', country: 'Turquia', league: 'Süper Lig', clubs: 18, top: 76, spread: 15, reputation: 60, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Adana', 'Bursa Yeni', 'Çorum', 'Denizli', 'Edirne', 'Giresun', 'Hatay', 'Isparta', 'Kayseri', 'Konya Merkez', 'Malatya', 'Manisa', 'Ordu', 'Rize', 'Samsun', 'Sivas', 'Trabzon Liman', 'Urfa', 'Van', 'Zonguldak'], prefixes: ['spor', 'Gençlik', 'Belediye', 'FK', 'SK', 'İdman'] },
+  { code: 'esc', country: 'Escócia', league: 'Premiership', clubs: 12, top: 73, spread: 13, reputation: 56, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Airdrie', 'Arbroath', 'Dumbarton', 'Elgin', 'Falkirk', 'Greenock', 'Inverurie', 'Kilmarnock Vale', 'Montrose', 'Perth', 'Stirling', 'Troon', 'Peterhead', 'Forfar'], prefixes: ['FC', 'Athletic', 'United', 'Thistle', 'Rovers', 'Academicals'] },
+  { code: 'aut', country: 'Áustria', league: 'Bundesliga (AUT)', clubs: 12, top: 72, spread: 12, reputation: 55, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Amstetten', 'Bregenz', 'Dornbirn', 'Feldkirch', 'Hartberg Ost', 'Kapfenberg', 'Leoben', 'Lustenau', 'Mödling', 'Steyr', 'Villach', 'Wels', 'Wolfsberg Süd', 'Krems'], prefixes: ['SV', 'SK', 'FC', 'Admira', 'Austria', 'WSG'] },
+  { code: 'sui', country: 'Suíça', league: 'Super League', clubs: 12, top: 71, spread: 12, reputation: 54, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Aarau', 'Bellinzona', 'Chiasso', 'Delémont', 'Frauenfeld', 'Lugano Nord', 'Neuchâtel', 'Olten', 'Schaffhausen', 'Sion Ville', 'Thun', 'Wil', 'Winterthur Ost', 'Yverdon'], prefixes: ['FC', 'Servette', 'Grasshopper', 'Young', 'Concordia', 'AC'] },
+  { code: 'gre', country: 'Grécia', league: 'Super League (GRE)', clubs: 14, top: 72, spread: 13, reputation: 54, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Árta', 'Chania', 'Drama', 'Kalamata', 'Kavala', 'Lamia', 'Larissa', 'Patras', 'Rodes', 'Serres', 'Trikala', 'Veria', 'Xanthi', 'Volos', 'Ioannina', 'Kozani'], prefixes: ['Panathinaikos', 'Atromitos', 'Aris', 'AE', 'Asteras', 'PAS'] },
+  { code: 'tch', country: 'Tchéquia', league: 'Chance Liga', clubs: 16, top: 70, spread: 13, reputation: 50, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Brno Sever', 'Budějovice', 'Hradec', 'Jablonec Dolní', 'Karviná', 'Kladno', 'Liberec Horní', 'Mladá', 'Olomouc Jih', 'Opava', 'Ostrava Nová', 'Pardubice', 'Plzeň Západ', 'Teplice', 'Zlín', 'Příbram', 'Jihlava', 'Most'], prefixes: ['FK', 'SK', 'Baník', 'Slovan', 'Viktoria', 'Dukla'] },
+  { code: 'din', country: 'Dinamarca', league: 'Superliga', clubs: 12, top: 70, spread: 12, reputation: 50, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Aalborg Vest', 'Esbjerg', 'Fredericia', 'Herning', 'Horsens', 'Kolding', 'Lyngby', 'Næstved', 'Odense Øst', 'Randers', 'Silkeborg', 'Vejle', 'Viborg', 'Hillerød'], prefixes: ['FC', 'AGF', 'BK', 'IF', 'Brøndby', 'AaB'] },
+  { code: 'cro', country: 'Croácia', league: 'HNL', clubs: 10, top: 70, spread: 11, reputation: 48, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Osijek Novi', 'Rijeka Luka', 'Split Zapad', 'Varaždin', 'Zadar', 'Šibenik', 'Pula', 'Vinkovci', 'Karlovac', 'Slaven', 'Gorica', 'Lokomotiva'], prefixes: ['NK', 'HNK', 'Dinamo', 'Hajduk', 'Inter', 'Istra'] },
+  { code: 'sev', country: 'Sérvia', league: 'Superliga (SRB)', clubs: 14, top: 70, spread: 13, reputation: 48, continental: { ucl: 1, uel: 1, uecl: 1 },
+    cities: ['Čačak', 'Kragujevac', 'Kruševac', 'Leskovac', 'Niš', 'Novi Pazar', 'Novi Sad Jug', 'Pančevo', 'Smederevo', 'Subotica', 'Užice', 'Zemun', 'Vranje', 'Valjevo', 'Šabac'], prefixes: ['FK', 'Radnički', 'Vojvodina', 'Partizan', 'Crvena', 'Mladost'] },
+];
+
 export interface GeneratedWorld {
   leagues: LeagueConfig[];
   clubs: Club[];
@@ -196,6 +238,26 @@ export function generateFictionalWorld(seed: number, season = 2026): GeneratedWo
       l2.clubIds.push(id);
     });
     leagues.push(l1, l2);
+  }
+
+  // Ligas de fundo (Fase 4): uma divisão "por força" por país, que alimenta a Europa.
+  for (const spec of BACKGROUND) {
+    const rng = createRng(deriveSeed(seed, spec.code));
+    const cities = shuffle(rng, spec.cities).slice(0, spec.clubs);
+    const league: LeagueConfig = {
+      id: `${spec.code}1`, name: spec.league, country: spec.country, clubIds: [], pointsForWin: 3, pointsForDraw: 1, legs: 2,
+      tiebreakers: TIEBREAKERS, tier: 1, mode: 'strength', relegation: 0, continental: spec.continental, reputation: spec.reputation,
+    };
+    cities.forEach((city, i) => {
+      const prefix = pick(rng, spec.prefixes);
+      const name = prefix === 'spor' ? `${city}spor` : `${prefix} ${city}`;
+      const id = `${league.id}-${slug(name)}`;
+      const strength = spec.top - spec.spread * Math.pow(i / Math.max(1, spec.clubs - 1), 0.8) + gaussian(rng, 0, 1.2);
+      const base = baseClub(id, name, shortOf(name, used), league.id, pick(rng, FORMATION_LIST), rng, strength);
+      clubs.push(ghostClub(base, strength));
+      league.clubIds.push(id);
+    });
+    leagues.push(league);
   }
   return { leagues, clubs, players };
 }

@@ -86,6 +86,8 @@ export interface Club {
   strength?: number;
   /** Jogadores do clube emprestados a outros (continuam na folha, na parte não coberta). */
   loanedOut?: string[];
+  /** Temporada em que caiu para a 2ª divisão (some quando sobe). */
+  lowerSince?: number;
 }
 
 export interface SeasonLedger {
@@ -192,6 +194,9 @@ export interface Fixture {
   competitionId?: string;
   /** Campo neutro (finais): sem vantagem de mando. */
   neutral?: boolean;
+  /** Mata-mata de ida e volta: 1 = ida, 2 = volta (a volta aponta para a ida). */
+  leg?: 1 | 2;
+  firstLegId?: string;
 }
 
 export type MatchEventType = 'goal' | 'yellow' | 'red' | 'injury';

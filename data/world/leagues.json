@@ -455,5 +455,501 @@
     "relegation": 2,
     "linkedLeagueId": "fra1",
     "reputation": 44
+  },
+  {
+    "id": "por1",
+    "name": "Liga Portugal",
+    "country": "Portugal",
+    "clubIds": [
+      "por1-academico-estremoz",
+      "por1-vitoria-sines",
+      "por1-uniao-rio-maior",
+      "por1-uniao-horta-seca",
+      "por1-sporting-olhao",
+      "por1-uniao-ilhavo",
+      "por1-academico-lagoa-funda",
+      "por1-sc-alvorada",
+      "por1-academico-queluz",
+      "por1-sporting-douradas",
+      "por1-uniao-peniche",
+      "por1-sporting-barcelinhos",
+      "por1-sporting-nazare",
+      "por1-sporting-vizela",
+      "por1-sc-gaia-nova",
+      "por1-sporting-tavira",
+      "por1-vitoria-seixal",
+      "por1-vitoria-mafra"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 2,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 68
+  },
+  {
+    "id": "hol1",
+    "name": "Eredivisie",
+    "country": "Holanda",
+    "clubIds": [
+      "hol1-fc-zwolle-oost",
+      "hol1-vv-purmerend",
+      "hol1-vitesse-gouda",
+      "hol1-sparta-emmen",
+      "hol1-fortuna-breda-west",
+      "hol1-sparta-hoorn",
+      "hol1-sparta-deventer",
+      "hol1-vv-alkmaar-noord",
+      "hol1-fortuna-assen",
+      "hol1-fortuna-heerlen",
+      "hol1-fc-schiedam",
+      "hol1-sc-venlo",
+      "hol1-fortuna-zaandam",
+      "hol1-vitesse-helmond",
+      "hol1-sparta-maastricht",
+      "hol1-sparta-leiden",
+      "hol1-sc-nijkerk",
+      "hol1-sc-tiel"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 2,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 66
+  },
+  {
+    "id": "bel1",
+    "name": "Pro League",
+    "country": "Bélgica",
+    "clubIds": [
+      "bel1-krc-roeselare",
+      "bel1-krc-beveren",
+      "bel1-cercle-eupen",
+      "bel1-kv-lier",
+      "bel1-sporting-dendermonde",
+      "bel1-krc-waregem",
+      "bel1-rsc-lokeren",
+      "bel1-sporting-oostende",
+      "bel1-kv-tienen",
+      "bel1-krc-charleroi-sud",
+      "bel1-kv-namur",
+      "bel1-sporting-hasselt",
+      "bel1-sporting-zulte",
+      "bel1-sporting-mouscron",
+      "bel1-sporting-kortrijk-oost",
+      "bel1-kv-geel"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 60
+  },
+  {
+    "id": "tur1",
+    "name": "Süper Lig",
+    "country": "Turquia",
+    "clubIds": [
+      "tur1-fk-giresun",
+      "tur1-sk-trabzon-liman",
+      "tur1-genclik-urfa",
+      "tur1-ispartaspor",
+      "tur1-idman-ordu",
+      "tur1-idman-rize",
+      "tur1-belediye-adana",
+      "tur1-fk-zonguldak",
+      "tur1-bursa-yenispor",
+      "tur1-genclik-edirne",
+      "tur1-belediye-corum",
+      "tur1-malatyaspor",
+      "tur1-hatayspor",
+      "tur1-genclik-samsun",
+      "tur1-idman-denizli",
+      "tur1-konya-merkezspor",
+      "tur1-genclik-manisa",
+      "tur1-sivasspor"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 60
+  },
+  {
+    "id": "esc1",
+    "name": "Premiership",
+    "country": "Escócia",
+    "clubIds": [
+      "esc1-rovers-inverurie",
+      "esc1-thistle-troon",
+      "esc1-rovers-stirling",
+      "esc1-fc-elgin",
+      "esc1-thistle-arbroath",
+      "esc1-fc-perth",
+      "esc1-athletic-montrose",
+      "esc1-united-dumbarton",
+      "esc1-academicals-kilmarnock-vale",
+      "esc1-rovers-peterhead",
+      "esc1-fc-greenock",
+      "esc1-fc-forfar"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 56
+  },
+  {
+    "id": "aut1",
+    "name": "Bundesliga (AUT)",
+    "country": "Áustria",
+    "clubIds": [
+      "aut1-sv-lustenau",
+      "aut1-sv-amstetten",
+      "aut1-admira-steyr",
+      "aut1-austria-dornbirn",
+      "aut1-sk-bregenz",
+      "aut1-austria-leoben",
+      "aut1-sv-villach",
+      "aut1-austria-modling",
+      "aut1-austria-krems",
+      "aut1-admira-feldkirch",
+      "aut1-wsg-kapfenberg",
+      "aut1-admira-hartberg-ost"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 55
+  },
+  {
+    "id": "sui1",
+    "name": "Super League",
+    "country": "Suíça",
+    "clubIds": [
+      "sui1-ac-chiasso",
+      "sui1-concordia-winterthur-ost",
+      "sui1-concordia-bellinzona",
+      "sui1-young-delemont",
+      "sui1-grasshopper-yverdon",
+      "sui1-grasshopper-aarau",
+      "sui1-ac-neuchatel",
+      "sui1-concordia-schaffhausen",
+      "sui1-servette-lugano-nord",
+      "sui1-ac-sion-ville",
+      "sui1-young-frauenfeld",
+      "sui1-fc-thun"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 54
+  },
+  {
+    "id": "gre1",
+    "name": "Super League (GRE)",
+    "country": "Grécia",
+    "clubIds": [
+      "gre1-ae-drama",
+      "gre1-atromitos-xanthi",
+      "gre1-panathinaikos-larissa",
+      "gre1-pas-trikala",
+      "gre1-asteras-arta",
+      "gre1-pas-rodes",
+      "gre1-aris-lamia",
+      "gre1-pas-kalamata",
+      "gre1-panathinaikos-chania",
+      "gre1-aris-veria",
+      "gre1-aris-serres",
+      "gre1-ae-kozani",
+      "gre1-panathinaikos-kavala",
+      "gre1-aris-ioannina"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 54
+  },
+  {
+    "id": "tch1",
+    "name": "Chance Liga",
+    "country": "Tchéquia",
+    "clubIds": [
+      "tch1-banik-brno-sever",
+      "tch1-viktoria-teplice",
+      "tch1-fk-karvina",
+      "tch1-viktoria-ostrava-nova",
+      "tch1-dukla-kladno",
+      "tch1-dukla-jablonec-dolni",
+      "tch1-banik-pardubice",
+      "tch1-banik-budejovice",
+      "tch1-dukla-plzen-zapad",
+      "tch1-slovan-zlin",
+      "tch1-dukla-hradec",
+      "tch1-dukla-pribram",
+      "tch1-viktoria-olomouc-jih",
+      "tch1-slovan-jihlava",
+      "tch1-dukla-opava",
+      "tch1-fk-liberec-horni"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 50
+  },
+  {
+    "id": "din1",
+    "name": "Superliga",
+    "country": "Dinamarca",
+    "clubIds": [
+      "din1-br-ndby-esbjerg",
+      "din1-fc-fredericia",
+      "din1-agf-hiller-d",
+      "din1-fc-n-stved",
+      "din1-aab-kolding",
+      "din1-if-viborg",
+      "din1-fc-silkeborg",
+      "din1-agf-lyngby",
+      "din1-fc-odense-st",
+      "din1-br-ndby-herning",
+      "din1-fc-horsens",
+      "din1-bk-randers"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 50
+  },
+  {
+    "id": "cro1",
+    "name": "HNL",
+    "country": "Croácia",
+    "clubIds": [
+      "cro1-nk-gorica",
+      "cro1-nk-karlovac",
+      "cro1-nk-osijek-novi",
+      "cro1-istra-sibenik",
+      "cro1-hnk-vinkovci",
+      "cro1-nk-slaven",
+      "cro1-istra-split-zapad",
+      "cro1-hnk-rijeka-luka",
+      "cro1-hajduk-pula",
+      "cro1-hnk-lokomotiva"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 48
+  },
+  {
+    "id": "sev1",
+    "name": "Superliga (SRB)",
+    "country": "Sérvia",
+    "clubIds": [
+      "sev1-mladost-leskovac",
+      "sev1-fk-cacak",
+      "sev1-partizan-subotica",
+      "sev1-crvena-uzice",
+      "sev1-partizan-nis",
+      "sev1-radnicki-sabac",
+      "sev1-partizan-smederevo",
+      "sev1-partizan-novi-sad-jug",
+      "sev1-mladost-krusevac",
+      "sev1-mladost-pancevo",
+      "sev1-radnicki-kragujevac",
+      "sev1-radnicki-vranje",
+      "sev1-mladost-novi-pazar",
+      "sev1-fk-valjevo"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "continental": {
+      "ucl": 1,
+      "uel": 1,
+      "uecl": 1
+    },
+    "reputation": 48
   }
 ]

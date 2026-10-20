@@ -8350,5 +8350,5337 @@
         "transfersOut": 0
       }
     }
+  },
+  {
+    "id": "por1-academico-estremoz",
+    "name": "Académico Estremoz",
+    "shortName": "ACA",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 22150000,
+    "wageBudget": 1171500,
+    "reputation": 69,
+    "strength": 78.1,
+    "training": 4,
+    "finance": {
+      "balance": 36920000,
+      "revenueBase": 92300000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-vitoria-sines",
+    "name": "Vitória Sines",
+    "shortName": "VI2",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 26150000,
+    "wageBudget": 1383500,
+    "reputation": 71,
+    "strength": 78.5,
+    "training": 4,
+    "finance": {
+      "balance": 43600000,
+      "revenueBase": 109000000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-uniao-rio-maior",
+    "name": "União Rio Maior",
+    "shortName": "UN4",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 18750000,
+    "wageBudget": 992500,
+    "reputation": 65,
+    "strength": 76.6,
+    "training": 4,
+    "finance": {
+      "balance": 31280000,
+      "revenueBase": 78200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-uniao-horta-seca",
+    "name": "União Horta Seca",
+    "shortName": "UN5",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 13400000,
+    "wageBudget": 709500,
+    "reputation": 59,
+    "strength": 74.6,
+    "training": 3,
+    "finance": {
+      "balance": 22360000,
+      "revenueBase": 55900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sporting-olhao",
+    "name": "Sporting Olhão",
+    "shortName": "SPO",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 13400000,
+    "wageBudget": 709500,
+    "reputation": 61,
+    "strength": 75.4,
+    "training": 3,
+    "finance": {
+      "balance": 22360000,
+      "revenueBase": 55900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-uniao-ilhavo",
+    "name": "União Ílhavo",
+    "shortName": "UN6",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 9600000,
+    "wageBudget": 509000,
+    "reputation": 53,
+    "strength": 72.6,
+    "training": 3,
+    "finance": {
+      "balance": 16040000,
+      "revenueBase": 40100000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-academico-lagoa-funda",
+    "name": "Académico Lagoa Funda",
+    "shortName": "AC1",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 9600000,
+    "wageBudget": 509000,
+    "reputation": 53,
+    "strength": 72.5,
+    "training": 3,
+    "finance": {
+      "balance": 16040000,
+      "revenueBase": 40100000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sc-alvorada",
+    "name": "SC Alvorada",
+    "shortName": "ALV",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 51,
+    "strength": 72.1,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-academico-queluz",
+    "name": "Académico Queluz",
+    "shortName": "AC2",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 4950000,
+    "wageBudget": 261500,
+    "reputation": 41,
+    "strength": 68.7,
+    "training": 2,
+    "finance": {
+      "balance": 8240000,
+      "revenueBase": 20600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sporting-douradas",
+    "name": "Sporting Douradas",
+    "shortName": "SP1",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 48,
+    "strength": 70.9,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-uniao-peniche",
+    "name": "União Peniche",
+    "shortName": "UN7",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.6,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sporting-barcelinhos",
+    "name": "Sporting Barcelinhos",
+    "shortName": "SP2",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 4950000,
+    "wageBudget": 261500,
+    "reputation": 42,
+    "strength": 68.9,
+    "training": 2,
+    "finance": {
+      "balance": 8240000,
+      "revenueBase": 20600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sporting-nazare",
+    "name": "Sporting Nazaré",
+    "shortName": "SP3",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 31,
+    "strength": 65.4,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sporting-vizela",
+    "name": "Sporting Vizela",
+    "shortName": "SP4",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 29,
+    "strength": 64.6,
+    "training": 1,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sc-gaia-nova",
+    "name": "SC Gaia Nova",
+    "shortName": "GAI",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 34,
+    "strength": 66.5,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-sporting-tavira",
+    "name": "Sporting Tavira",
+    "shortName": "SP5",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 23,
+    "strength": 62.7,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-vitoria-seixal",
+    "name": "Vitória Seixal",
+    "shortName": "VI3",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.5,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "por1-vitoria-mafra",
+    "name": "Vitória Mafra",
+    "shortName": "VI4",
+    "leagueId": "por1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.7,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-fc-zwolle-oost",
+    "name": "FC Zwolle Oost",
+    "shortName": "ZWO",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 15900000,
+    "wageBudget": 840200,
+    "reputation": 63,
+    "strength": 75.9,
+    "training": 3,
+    "finance": {
+      "balance": 26480000,
+      "revenueBase": 66200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-vv-purmerend",
+    "name": "VV Purmerend",
+    "shortName": "PUR",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 18750000,
+    "wageBudget": 992500,
+    "reputation": 66,
+    "strength": 77.1,
+    "training": 4,
+    "finance": {
+      "balance": 31280000,
+      "revenueBase": 78200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-vitesse-gouda",
+    "name": "Vitesse Gouda",
+    "shortName": "VI5",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 13400000,
+    "wageBudget": 709500,
+    "reputation": 60,
+    "strength": 74.9,
+    "training": 3,
+    "finance": {
+      "balance": 22360000,
+      "revenueBase": 55900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sparta-emmen",
+    "name": "Sparta Emmen",
+    "shortName": "SPA",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 9600000,
+    "wageBudget": 509000,
+    "reputation": 55,
+    "strength": 73.5,
+    "training": 3,
+    "finance": {
+      "balance": 16040000,
+      "revenueBase": 40100000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-fortuna-breda-west",
+    "name": "Fortuna Breda West",
+    "shortName": "FO4",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 51,
+    "strength": 72,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sparta-hoorn",
+    "name": "Sparta Hoorn",
+    "shortName": "SP6",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 49,
+    "strength": 71.2,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sparta-deventer",
+    "name": "Sparta Deventer",
+    "shortName": "SP7",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 44,
+    "strength": 69.6,
+    "training": 2,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-vv-alkmaar-noord",
+    "name": "VV Alkmaar Noord",
+    "shortName": "ALK",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 45,
+    "strength": 70.1,
+    "training": 3,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-fortuna-assen",
+    "name": "Fortuna Assen",
+    "shortName": "FO5",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.8,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-fortuna-heerlen",
+    "name": "Fortuna Heerlen",
+    "shortName": "FO6",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.6,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-fc-schiedam",
+    "name": "FC Schiedam",
+    "shortName": "SCH",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 37,
+    "strength": 67.3,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sc-venlo",
+    "name": "SC Venlo",
+    "shortName": "VEN",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 32,
+    "strength": 65.7,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-fortuna-zaandam",
+    "name": "Fortuna Zaandam",
+    "shortName": "FO7",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.8,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-vitesse-helmond",
+    "name": "Vitesse Helmond",
+    "shortName": "VI6",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 25,
+    "strength": 63.4,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sparta-maastricht",
+    "name": "Sparta Maastricht",
+    "shortName": "SP8",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 32,
+    "strength": 65.8,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sparta-leiden",
+    "name": "Sparta Leiden",
+    "shortName": "SP9",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 21,
+    "strength": 61.9,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sc-nijkerk",
+    "name": "SC Nijkerk",
+    "shortName": "NIJ",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 21,
+    "strength": 62.1,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "hol1-sc-tiel",
+    "name": "SC Tiel",
+    "shortName": "TIE",
+    "leagueId": "hol1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1150000,
+    "wageBudget": 59700,
+    "reputation": 16,
+    "strength": 60.5,
+    "training": 1,
+    "finance": {
+      "balance": 1880000,
+      "revenueBase": 4700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-krc-roeselare",
+    "name": "KRC Roeselare",
+    "shortName": "KRC",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 15900000,
+    "wageBudget": 840200,
+    "reputation": 63,
+    "strength": 75.9,
+    "training": 3,
+    "finance": {
+      "balance": 26480000,
+      "revenueBase": 66200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-krc-beveren",
+    "name": "KRC Beveren",
+    "shortName": "KR1",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 52,
+    "strength": 72.3,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-cercle-eupen",
+    "name": "Cercle Eupen",
+    "shortName": "CE1",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 44,
+    "strength": 69.6,
+    "training": 2,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-kv-lier",
+    "name": "KV Lier",
+    "shortName": "LIE",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 50,
+    "strength": 71.8,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-sporting-dendermonde",
+    "name": "Sporting Dendermonde",
+    "shortName": "SP10",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 4950000,
+    "wageBudget": 261500,
+    "reputation": 41,
+    "strength": 68.7,
+    "training": 2,
+    "finance": {
+      "balance": 8240000,
+      "revenueBase": 20600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-krc-waregem",
+    "name": "KRC Waregem",
+    "shortName": "KR2",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 44,
+    "strength": 69.8,
+    "training": 2,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-rsc-lokeren",
+    "name": "RSC Lokeren",
+    "shortName": "RSC",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 37,
+    "strength": 67.2,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-sporting-oostende",
+    "name": "Sporting Oostende",
+    "shortName": "SP11",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 36,
+    "strength": 66.9,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-kv-tienen",
+    "name": "KV Tienen",
+    "shortName": "TI1",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 30,
+    "strength": 64.9,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-krc-charleroi-sud",
+    "name": "KRC Charleroi Sud",
+    "shortName": "KR3",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 33,
+    "strength": 66,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-kv-namur",
+    "name": "KV Namur",
+    "shortName": "NAM",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 28,
+    "strength": 64.4,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-sporting-hasselt",
+    "name": "Sporting Hasselt",
+    "shortName": "SP12",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 30,
+    "strength": 64.9,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-sporting-zulte",
+    "name": "Sporting Zulte",
+    "shortName": "SP13",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.3,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-sporting-mouscron",
+    "name": "Sporting Mouscron",
+    "shortName": "SP14",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 21,
+    "strength": 62,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-sporting-kortrijk-oost",
+    "name": "Sporting Kortrijk Oost",
+    "shortName": "SP15",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 18,
+    "strength": 61.1,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bel1-kv-geel",
+    "name": "KV Geel",
+    "shortName": "GEE",
+    "leagueId": "bel1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.3,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-fk-giresun",
+    "name": "FK Giresun",
+    "shortName": "GIR",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 18750000,
+    "wageBudget": 992500,
+    "reputation": 67,
+    "strength": 77.3,
+    "training": 4,
+    "finance": {
+      "balance": 31280000,
+      "revenueBase": 78200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-sk-trabzon-liman",
+    "name": "SK Trabzon Liman",
+    "shortName": "TRA",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 13400000,
+    "wageBudget": 709500,
+    "reputation": 61,
+    "strength": 75.3,
+    "training": 3,
+    "finance": {
+      "balance": 22360000,
+      "revenueBase": 55900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-genclik-urfa",
+    "name": "Gençlik Urfa",
+    "shortName": "GEN",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 13400000,
+    "wageBudget": 709500,
+    "reputation": 59,
+    "strength": 74.7,
+    "training": 3,
+    "finance": {
+      "balance": 22360000,
+      "revenueBase": 55900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-ispartaspor",
+    "name": "Ispartaspor",
+    "shortName": "ISP",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 51,
+    "strength": 72.2,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-idman-ordu",
+    "name": "İdman Ordu",
+    "shortName": "IDM",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 47,
+    "strength": 70.8,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-idman-rize",
+    "name": "İdman Rize",
+    "shortName": "ID1",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 47,
+    "strength": 70.5,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-belediye-adana",
+    "name": "Belediye Adana",
+    "shortName": "BE2",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 44,
+    "strength": 69.5,
+    "training": 2,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-fk-zonguldak",
+    "name": "FK Zonguldak",
+    "shortName": "ZON",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 36,
+    "strength": 67.1,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-bursa-yenispor",
+    "name": "Bursa Yenispor",
+    "shortName": "BUR",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 40,
+    "strength": 68.3,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-genclik-edirne",
+    "name": "Gençlik Edirne",
+    "shortName": "GE1",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 27,
+    "strength": 64.1,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-belediye-corum",
+    "name": "Belediye Çorum",
+    "shortName": "BE3",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 34,
+    "strength": 66.3,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-malatyaspor",
+    "name": "Malatyaspor",
+    "shortName": "MAL",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 35,
+    "strength": 66.5,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-hatayspor",
+    "name": "Hatayspor",
+    "shortName": "HAT",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 23,
+    "strength": 62.5,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-genclik-samsun",
+    "name": "Gençlik Samsun",
+    "shortName": "GE2",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 31,
+    "strength": 65.3,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-idman-denizli",
+    "name": "İdman Denizli",
+    "shortName": "ID2",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 23,
+    "strength": 62.6,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-konya-merkezspor",
+    "name": "Konya Merkezspor",
+    "shortName": "KON",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 18,
+    "strength": 61.1,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-genclik-manisa",
+    "name": "Gençlik Manisa",
+    "shortName": "GE3",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 19,
+    "strength": 61.4,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tur1-sivasspor",
+    "name": "Sivasspor",
+    "shortName": "SIV",
+    "leagueId": "tur1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1150000,
+    "wageBudget": 59700,
+    "reputation": 14,
+    "strength": 59.8,
+    "training": 1,
+    "finance": {
+      "balance": 1880000,
+      "revenueBase": 4700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-rovers-inverurie",
+    "name": "Rovers Inverurie",
+    "shortName": "ROV",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 11400000,
+    "wageBudget": 601600,
+    "reputation": 57,
+    "strength": 74.1,
+    "training": 3,
+    "finance": {
+      "balance": 18960000,
+      "revenueBase": 47400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-thistle-troon",
+    "name": "Thistle Troon",
+    "shortName": "THI",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 49,
+    "strength": 71.3,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-rovers-stirling",
+    "name": "Rovers Stirling",
+    "shortName": "RO1",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 46,
+    "strength": 70.3,
+    "training": 3,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-fc-elgin",
+    "name": "FC Elgin",
+    "shortName": "ELG",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 40,
+    "strength": 68.2,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-thistle-arbroath",
+    "name": "Thistle Arbroath",
+    "shortName": "TH1",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 33,
+    "strength": 65.9,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-fc-perth",
+    "name": "FC Perth",
+    "shortName": "PER",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 31,
+    "strength": 65.5,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-athletic-montrose",
+    "name": "Athletic Montrose",
+    "shortName": "ATH",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 27,
+    "strength": 64,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-united-dumbarton",
+    "name": "United Dumbarton",
+    "shortName": "UN8",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 30,
+    "strength": 65,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-academicals-kilmarnock-vale",
+    "name": "Academicals Kilmarnock Vale",
+    "shortName": "AC3",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 23,
+    "strength": 62.5,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-rovers-peterhead",
+    "name": "Rovers Peterhead",
+    "shortName": "RO2",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 24,
+    "strength": 63,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-fc-greenock",
+    "name": "FC Greenock",
+    "shortName": "GRE",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 21,
+    "strength": 62.2,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "esc1-fc-forfar",
+    "name": "FC Forfar",
+    "shortName": "FO8",
+    "leagueId": "esc1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 17,
+    "strength": 60.7,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-sv-lustenau",
+    "name": "SV Lustenau",
+    "shortName": "LUS",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 51,
+    "strength": 72.1,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-sv-amstetten",
+    "name": "SV Amstetten",
+    "shortName": "AMS",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 48,
+    "strength": 70.9,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-admira-steyr",
+    "name": "Admira Steyr",
+    "shortName": "ADM",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.5,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-austria-dornbirn",
+    "name": "Austria Dornbirn",
+    "shortName": "AUS",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.6,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-sk-bregenz",
+    "name": "SK Bregenz",
+    "shortName": "BR1",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 36,
+    "strength": 67,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-austria-leoben",
+    "name": "Austria Leoben",
+    "shortName": "AU1",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 30,
+    "strength": 65,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-sv-villach",
+    "name": "SV Villach",
+    "shortName": "VIL",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.7,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-austria-modling",
+    "name": "Austria Mödling",
+    "shortName": "AU2",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 29,
+    "strength": 64.6,
+    "training": 1,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-austria-krems",
+    "name": "Austria Krems",
+    "shortName": "AU3",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 21,
+    "strength": 61.9,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-admira-feldkirch",
+    "name": "Admira Feldkirch",
+    "shortName": "AD1",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 20,
+    "strength": 61.8,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-wsg-kapfenberg",
+    "name": "WSG Kapfenberg",
+    "shortName": "WSG",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 18,
+    "strength": 61.1,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "aut1-admira-hartberg-ost",
+    "name": "Admira Hartberg Ost",
+    "shortName": "AD2",
+    "leagueId": "aut1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 19,
+    "strength": 61.4,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-ac-chiasso",
+    "name": "AC Chiasso",
+    "shortName": "CHI",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 9600000,
+    "wageBudget": 509000,
+    "reputation": 53,
+    "strength": 72.7,
+    "training": 3,
+    "finance": {
+      "balance": 16040000,
+      "revenueBase": 40100000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-concordia-winterthur-ost",
+    "name": "Concordia Winterthur Ost",
+    "shortName": "CON",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 40,
+    "strength": 68.3,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-concordia-bellinzona",
+    "name": "Concordia Bellinzona",
+    "shortName": "CO1",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 35,
+    "strength": 66.5,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-young-delemont",
+    "name": "Young Delémont",
+    "shortName": "YOU",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 4950000,
+    "wageBudget": 261500,
+    "reputation": 42,
+    "strength": 69,
+    "training": 2,
+    "finance": {
+      "balance": 8240000,
+      "revenueBase": 20600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-grasshopper-yverdon",
+    "name": "Grasshopper Yverdon",
+    "shortName": "GR2",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 36,
+    "strength": 66.9,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-grasshopper-aarau",
+    "name": "Grasshopper Aarau",
+    "shortName": "GR3",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 32,
+    "strength": 65.5,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-ac-neuchatel",
+    "name": "AC Neuchâtel",
+    "shortName": "NE2",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 28,
+    "strength": 64.3,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-concordia-schaffhausen",
+    "name": "Concordia Schaffhausen",
+    "shortName": "CO2",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 30,
+    "strength": 64.9,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-servette-lugano-nord",
+    "name": "Servette Lugano Nord",
+    "shortName": "SER",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 20,
+    "strength": 61.5,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-ac-sion-ville",
+    "name": "AC Sion Ville",
+    "shortName": "SIO",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 17,
+    "strength": 60.6,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-young-frauenfeld",
+    "name": "Young Frauenfeld",
+    "shortName": "YO1",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 1150000,
+    "wageBudget": 59700,
+    "reputation": 15,
+    "strength": 60.2,
+    "training": 1,
+    "finance": {
+      "balance": 1880000,
+      "revenueBase": 4700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sui1-fc-thun",
+    "name": "FC Thun",
+    "shortName": "THU",
+    "leagueId": "sui1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 1150000,
+    "wageBudget": 59700,
+    "reputation": 16,
+    "strength": 60.3,
+    "training": 1,
+    "finance": {
+      "balance": 1880000,
+      "revenueBase": 4700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-ae-drama",
+    "name": "AE Drama",
+    "shortName": "DRA",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 50,
+    "strength": 71.6,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-atromitos-xanthi",
+    "name": "Atromitos Xanthi",
+    "shortName": "ATR",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 48,
+    "strength": 70.9,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-panathinaikos-larissa",
+    "name": "Panathinaikos Larissa",
+    "shortName": "PAN",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 35,
+    "strength": 66.7,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-pas-trikala",
+    "name": "PAS Trikala",
+    "shortName": "PAS",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.7,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-asteras-arta",
+    "name": "Asteras Árta",
+    "shortName": "AST",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 33,
+    "strength": 66.1,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-pas-rodes",
+    "name": "PAS Rodes",
+    "shortName": "PA1",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 34,
+    "strength": 66.3,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-aris-lamia",
+    "name": "Aris Lamia",
+    "shortName": "ARI",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 33,
+    "strength": 66.1,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-pas-kalamata",
+    "name": "PAS Kalamata",
+    "shortName": "PA2",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 27,
+    "strength": 64,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-panathinaikos-chania",
+    "name": "Panathinaikos Chania",
+    "shortName": "PA3",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 25,
+    "strength": 63.3,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-aris-veria",
+    "name": "Aris Veria",
+    "shortName": "AR1",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.3,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-aris-serres",
+    "name": "Aris Serres",
+    "shortName": "AR2",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.4,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-ae-kozani",
+    "name": "AE Kozani",
+    "shortName": "KOZ",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 24,
+    "strength": 62.9,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-panathinaikos-kavala",
+    "name": "Panathinaikos Kavala",
+    "shortName": "PA4",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 17,
+    "strength": 60.8,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "gre1-aris-ioannina",
+    "name": "Aris Ioannina",
+    "shortName": "AR3",
+    "leagueId": "gre1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 800000,
+    "wageBudget": 43200,
+    "reputation": 9,
+    "strength": 57.9,
+    "training": 1,
+    "finance": {
+      "balance": 1360000,
+      "revenueBase": 3400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-banik-brno-sever",
+    "name": "Baník Brno Sever",
+    "shortName": "BAN",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 4950000,
+    "wageBudget": 261500,
+    "reputation": 41,
+    "strength": 68.7,
+    "training": 2,
+    "finance": {
+      "balance": 8240000,
+      "revenueBase": 20600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-viktoria-teplice",
+    "name": "Viktoria Teplice",
+    "shortName": "VIK",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 45,
+    "strength": 69.9,
+    "training": 3,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-fk-karvina",
+    "name": "FK Karviná",
+    "shortName": "KAR",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.6,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-viktoria-ostrava-nova",
+    "name": "Viktoria Ostrava Nová",
+    "shortName": "VI7",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 35,
+    "strength": 66.6,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-dukla-kladno",
+    "name": "Dukla Kladno",
+    "shortName": "DUK",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 35,
+    "strength": 66.7,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-dukla-jablonec-dolni",
+    "name": "Dukla Jablonec Dolní",
+    "shortName": "DU1",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 35,
+    "strength": 66.6,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-banik-pardubice",
+    "name": "Baník Pardubice",
+    "shortName": "BA1",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 27,
+    "strength": 64.1,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-banik-budejovice",
+    "name": "Baník Budějovice",
+    "shortName": "BA2",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 17,
+    "strength": 60.6,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-dukla-plzen-zapad",
+    "name": "Dukla Plzeň Západ",
+    "shortName": "DU2",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.7,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-slovan-zlin",
+    "name": "Slovan Zlín",
+    "shortName": "SLO",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 27,
+    "strength": 63.9,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-dukla-hradec",
+    "name": "Dukla Hradec",
+    "shortName": "DU3",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 17,
+    "strength": 60.8,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-dukla-pribram",
+    "name": "Dukla Příbram",
+    "shortName": "DU4",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 1150000,
+    "wageBudget": 59700,
+    "reputation": 15,
+    "strength": 59.9,
+    "training": 1,
+    "finance": {
+      "balance": 1880000,
+      "revenueBase": 4700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-viktoria-olomouc-jih",
+    "name": "Viktoria Olomouc Jih",
+    "shortName": "VI8",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 800000,
+    "wageBudget": 43200,
+    "reputation": 10,
+    "strength": 58.3,
+    "training": 1,
+    "finance": {
+      "balance": 1360000,
+      "revenueBase": 3400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-slovan-jihlava",
+    "name": "Slovan Jihlava",
+    "shortName": "SL1",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 800000,
+    "wageBudget": 43200,
+    "reputation": 10,
+    "strength": 58.4,
+    "training": 1,
+    "finance": {
+      "balance": 1360000,
+      "revenueBase": 3400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-dukla-opava",
+    "name": "Dukla Opava",
+    "shortName": "DU5",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 700000,
+    "wageBudget": 38100,
+    "reputation": 3,
+    "strength": 56.2,
+    "training": 1,
+    "finance": {
+      "balance": 1200000,
+      "revenueBase": 3000000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "tch1-fk-liberec-horni",
+    "name": "FK Liberec Horní",
+    "shortName": "LIB",
+    "leagueId": "tch1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 700000,
+    "wageBudget": 38100,
+    "reputation": 6,
+    "strength": 56.9,
+    "training": 1,
+    "finance": {
+      "balance": 1200000,
+      "revenueBase": 3000000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-br-ndby-esbjerg",
+    "name": "Brøndby Esbjerg",
+    "shortName": "BRN",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 49,
+    "strength": 71.5,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-fc-fredericia",
+    "name": "FC Fredericia",
+    "shortName": "FR1",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 40,
+    "strength": 68.5,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-agf-hiller-d",
+    "name": "AGF Hillerød",
+    "shortName": "AGF",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 34,
+    "strength": 66.2,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-fc-n-stved",
+    "name": "FC Næstved",
+    "shortName": "NST",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 31,
+    "strength": 65.3,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-aab-kolding",
+    "name": "AaB Kolding",
+    "shortName": "AAB",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 29,
+    "strength": 64.6,
+    "training": 1,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-if-viborg",
+    "name": "IF Viborg",
+    "shortName": "VIB",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.7,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-fc-silkeborg",
+    "name": "FC Silkeborg",
+    "shortName": "SIL",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 20,
+    "strength": 61.8,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-agf-lyngby",
+    "name": "AGF Lyngby",
+    "shortName": "AG1",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 29,
+    "strength": 64.8,
+    "training": 1,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-fc-odense-st",
+    "name": "FC Odense Øst",
+    "shortName": "ODE",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 19,
+    "strength": 61.3,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-br-ndby-herning",
+    "name": "Brøndby Herning",
+    "shortName": "BR2",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 18,
+    "strength": 60.9,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-fc-horsens",
+    "name": "FC Horsens",
+    "shortName": "HOR",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 800000,
+    "wageBudget": 43200,
+    "reputation": 10,
+    "strength": 58.3,
+    "training": 1,
+    "finance": {
+      "balance": 1360000,
+      "revenueBase": 3400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "din1-bk-randers",
+    "name": "BK Randers",
+    "shortName": "RAN",
+    "leagueId": "din1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 700000,
+    "wageBudget": 38100,
+    "reputation": 7,
+    "strength": 57.5,
+    "training": 1,
+    "finance": {
+      "balance": 1200000,
+      "revenueBase": 3000000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-nk-gorica",
+    "name": "NK Gorica",
+    "shortName": "GO1",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 48,
+    "strength": 71.1,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-nk-karlovac",
+    "name": "NK Karlovac",
+    "shortName": "KA1",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 3550000,
+    "wageBudget": 187800,
+    "reputation": 36,
+    "strength": 67.2,
+    "training": 2,
+    "finance": {
+      "balance": 5920000,
+      "revenueBase": 14800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-nk-osijek-novi",
+    "name": "NK Osijek Novi",
+    "shortName": "OSI",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 29,
+    "strength": 64.8,
+    "training": 1,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-istra-sibenik",
+    "name": "Istra Šibenik",
+    "shortName": "IST",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 28,
+    "strength": 64.4,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-hnk-vinkovci",
+    "name": "HNK Vinkovci",
+    "shortName": "HNK",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 28,
+    "strength": 64.5,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-nk-slaven",
+    "name": "NK Slaven",
+    "shortName": "SLA",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.4,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-istra-split-zapad",
+    "name": "Istra Split Zapad",
+    "shortName": "IS1",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 28,
+    "strength": 64.2,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-hnk-rijeka-luka",
+    "name": "HNK Rijeka Luka",
+    "shortName": "HN1",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.4,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-hajduk-pula",
+    "name": "Hajduk Pula",
+    "shortName": "HAJ",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 19,
+    "strength": 61.2,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "cro1-hnk-lokomotiva",
+    "name": "HNK Lokomotiva",
+    "shortName": "HN2",
+    "leagueId": "cro1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 950000,
+    "wageBudget": 49500,
+    "reputation": 11,
+    "strength": 58.8,
+    "training": 1,
+    "finance": {
+      "balance": 1560000,
+      "revenueBase": 3900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-mladost-leskovac",
+    "name": "Mladost Leskovac",
+    "shortName": "MLA",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 45,
+    "strength": 69.8,
+    "training": 3,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-fk-cacak",
+    "name": "FK Čačak",
+    "shortName": "CAC",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 45,
+    "strength": 70.1,
+    "training": 3,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-partizan-subotica",
+    "name": "Partizan Subotica",
+    "shortName": "PAR",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 33,
+    "strength": 66.1,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-crvena-uzice",
+    "name": "Crvena Užice",
+    "shortName": "CRV",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 30,
+    "strength": 65.2,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-partizan-nis",
+    "name": "Partizan Niš",
+    "shortName": "PA5",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 34,
+    "strength": 66.4,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-radnicki-sabac",
+    "name": "Radnički Šabac",
+    "shortName": "RAD",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 25,
+    "strength": 63.5,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-partizan-smederevo",
+    "name": "Partizan Smederevo",
+    "shortName": "PA6",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.8,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-partizan-novi-sad-jug",
+    "name": "Partizan Novi Sad Jug",
+    "shortName": "PA7",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.3,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-mladost-krusevac",
+    "name": "Mladost Kruševac",
+    "shortName": "ML1",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 20,
+    "strength": 61.8,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-mladost-pancevo",
+    "name": "Mladost Pančevo",
+    "shortName": "ML2",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 23,
+    "strength": 62.6,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-radnicki-kragujevac",
+    "name": "Radnički Kragujevac",
+    "shortName": "RA5",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 950000,
+    "wageBudget": 49500,
+    "reputation": 12,
+    "strength": 59,
+    "training": 1,
+    "finance": {
+      "balance": 1560000,
+      "revenueBase": 3900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-radnicki-vranje",
+    "name": "Radnički Vranje",
+    "shortName": "RA6",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 700000,
+    "wageBudget": 38100,
+    "reputation": 2,
+    "strength": 55.8,
+    "training": 1,
+    "finance": {
+      "balance": 1200000,
+      "revenueBase": 3000000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-mladost-novi-pazar",
+    "name": "Mladost Novi Pazar",
+    "shortName": "ML3",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 800000,
+    "wageBudget": 43200,
+    "reputation": 9,
+    "strength": 57.9,
+    "training": 1,
+    "finance": {
+      "balance": 1360000,
+      "revenueBase": 3400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "sev1-fk-valjevo",
+    "name": "FK Valjevo",
+    "shortName": "VA2",
+    "leagueId": "sev1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 800000,
+    "wageBudget": 43200,
+    "reputation": 9,
+    "strength": 58,
+    "training": 1,
+    "finance": {
+      "balance": 1360000,
+      "revenueBase": 3400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
   }
 ]

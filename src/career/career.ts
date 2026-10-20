@@ -8,6 +8,7 @@ import {
   createWorldSeason, currentSlot, isAvailableIn, isWorldSeasonOver, leagueCompetitionOf, playSlot, squadRating,
   type WorldData, type WorldSeason, type WorldSeasonOptions,
 } from '../competitions/world';
+import { europePrizes, europeanQualifiers } from '../competitions/europe';
 import { outsideFreeAgents, populateClub, topUpSquad } from '../data/fictionalWorld';
 import { FORMATIONS } from '../domain/positions';
 import type {
@@ -56,6 +57,8 @@ export const CURRENT_SAVE_VERSION = 3;
 const TRANSFER_HISTORY_SEASONS = 3;
 /** Tamanho máximo do grupo de agentes livres, por clube com elenco (os piores são descartados). */
 const FREE_AGENT_POOL_PER_CLUB = 3;
+/** Temporadas seguidas na 2ª divisão até o clube da IA voltar a ser "por força". */
+const GHOSTIFY_AFTER = 2;
 /** Distância entre a média da 1ª divisão e o alvo de força da 2ª. */
 const GHOST_GAP = 11;
 /** Agentes livres adultos garantidos depois da virada, por clube com elenco (o resto vem "de fora"). */
@@ -82,6 +85,20 @@ export function worldData(c: Pick<CareerState, 'leagues' | 'clubs' | 'players'>)
   return { leagues: c.leagues, clubs: c.clubs, players: c.players };
 }
 
+/** Força de um clube (XI ideal, ou força declarada se não tem elenco): serve de coeficiente. */
+function clubRating(c: Pick<CareerState, 'clubs' | 'players'>): (id: string) => number {
+  const cache = new Map<string, number>();
+  return (id) => {
+    let r = cache.get(id);
+    if (r === undefined) {
+      const club = c.clubs[id]!;
+      r = club.squad.length ? squadRating(club, c.players) : (club.strength ?? 50);
+      cache.set(id, r);
+    }
+    return r;
+  };
+}
+
 export function newCareer(input: NewCareerInput): CareerState {
   const leagues: Record<string, LeagueConfig> = {};
   for (const l of input.leagues) leagues[l.id] = { ...l, clubIds: l.clubIds.slice() };
@@ -92,7 +109,9 @@ export function newCareer(input: NewCareerInput): CareerState {
   const players: Record<string, Player> = {};
   for (const p of input.players) players[p.id] = { ...p, fitness: 100, morale: p.morale ?? 50 };
   const base = { leagues, clubs, players };
-  const season = createWorldSeason(worldData(base), input.year, deriveSeed(input.seed, 'temporada', input.year));
+  // Primeira temporada: Europa pela força dos clubes (não há tabela anterior).
+  const europe = europeanQualifiers(leagues, clubRating(base));
+  const season = createWorldSeason(worldData(base), input.year, deriveSeed(input.seed, 'temporada', input.year), { europe });
   const career: CareerState = {
     saveVersion: CURRENT_SAVE_VERSION,
     seed: input.seed,
@@ -212,6 +231,23 @@ function closeSeason(c: CareerState, opts: StepOptions): void {
       if (club.squad.length) c.clubs[row.clubId] = closeSeasonFinance(club, i + 1, byRevenue.indexOf(row.clubId) + 1, n);
     });
   }
+  // Premiação e reputação das copas europeias.
+  for (const comp of Object.values(c.season.competitions)) {
+    if (comp.kind !== 'europe') continue;
+    for (const [id, prize] of Object.entries(europePrizes(comp))) {
+      const club = c.clubs[id];
+      if (!club) continue;
+      c.clubs[id] = {
+        ...club,
+        reputation: Math.min(100, club.reputation + prize.reputation),
+        finance: {
+          ...club.finance,
+          balance: club.finance.balance + prize.money,
+          season: { ...club.finance.season, prizes: club.finance.season.prizes + prize.money },
+        },
+      };
+    }
+  }
   const userComp = leagueCompetitionOf(c.season, c.userClubId);
   const pos = userComp ? userComp.table.findIndex((r) => r.clubId === c.userClubId) : -1;
   const winners: Record<string, string> = {};
@@ -315,7 +351,16 @@ export function startNextSeason(c: CareerState, opts: StepOptions = {}): CareerS
     if (inTop(champ) && inTop(cupWinner)) supercups[league.country] = [champ!, cupWinner === champ ? table[1]!.clubId : cupWinner!];
   }
 
-  const season = createWorldSeason(worldData(next), year, deriveSeed(next.seed, 'temporada', year), { supercups });
+  // Europa pela tabela da temporada que acabou e pelos campeões das copas.
+  const order: Record<string, string[]> = {};
+  const cupWinners: Record<string, string | null> = {};
+  for (const l of Object.values(next.leagues)) {
+    const table = old.competitions[l.id]?.table;
+    if (table) order[l.id] = table.map((r) => r.clubId);
+    cupWinners[l.id] = old.competitions[`${l.id}-copa`]?.championId ?? null;
+  }
+  const europe = europeanQualifiers(next.leagues, clubRating(next), order, cupWinners);
+  const season = createWorldSeason(worldData(next), year, deriveSeed(next.seed, 'temporada', year), { supercups, europe });
   return autoPickUserXI({
     ...next,
     season,
@@ -347,6 +392,7 @@ function promoteAndRelegate(c: CareerState, old: WorldSeason, year: number): voi
       c.clubs[id] = {
         ...cl,
         leagueId: bottom.id,
+        lowerSince: year,
         reputation: Math.max(1, cl.reputation - 8),
         finance: { ...cl.finance, revenueBase: Math.round((cl.finance.revenueBase * RELEGATION_REVENUE) / 100_000) * 100_000 },
       };
@@ -358,8 +404,9 @@ function promoteAndRelegate(c: CareerState, old: WorldSeason, year: number): voi
         const level = squadRating(cl, c.players);
         const extra = topUpSquad({ ...cl, strength: level }, c.players, createRng(deriveSeed(c.seed, 'acesso', year, id)), year, 22);
         for (const p of extra) c.players[p.id] = p;
+        const { lowerSince: _ls, ...rest } = cl;
         c.clubs[id] = {
-          ...cl,
+          ...rest,
           squad: [...cl.squad, ...extra.map((p) => p.id)],
           leagueId: top.id,
           reputation: Math.min(100, cl.reputation + 6),
@@ -370,6 +417,17 @@ function promoteAndRelegate(c: CareerState, old: WorldSeason, year: number): voi
         for (const p of players) c.players[p.id] = p;
         c.clubs[id] = club;
       }
+    }
+  }
+
+  // Quem passa GHOSTIFY_AFTER temporadas na 2ª divisão sem subir volta a ser "por força": o
+  // mundo não acumula elencos completos lá embaixo (custo de simulação e tamanho do save).
+  for (const league of Object.values(c.leagues)) {
+    if (league.tier !== 2) continue;
+    for (const id of league.clubIds) {
+      const cl = c.clubs[id]!;
+      if (!cl.squad.length || id === c.userClubId || cl.lowerSince === undefined || year - cl.lowerSince < GHOSTIFY_AFTER) continue;
+      ghostify(c, cl);
     }
   }
 
@@ -388,6 +446,34 @@ function promoteAndRelegate(c: CareerState, old: WorldSeason, year: number): voi
       c.clubs[cl.id] = { ...cl, strength: Math.round((s + (target - s) * 0.15 + gaussian(rng, 0, 1.2)) * 10) / 10 };
     }
   }
+}
+
+/** Transforma um clube com elenco em clube "por força". ALTERA `c`. */
+function ghostify(c: CareerState, cl: Club): void {
+  const strength = Math.round(squadRating(cl, c.players) * 10) / 10;
+  for (const pid of cl.squad) {
+    const p = c.players[pid];
+    if (!p) continue;
+    if (p.loan) {
+      // Emprestado a este clube: volta para o dono, se o dono ainda tiver elenco.
+      const parent = c.clubs[p.loan.parentClubId];
+      const { loan: _l, ...rest } = p;
+      if (parent?.squad.length) {
+        c.players[pid] = { ...rest, clubId: parent.id };
+        c.clubs[parent.id] = { ...parent, squad: [...parent.squad, pid], loanedOut: (parent.loanedOut ?? []).filter((x) => x !== pid) };
+      } else c.players[pid] = { ...rest, clubId: null };
+    } else c.players[pid] = { ...p, clubId: null };
+  }
+  // Emprestados por este clube ficam de vez com quem os recebeu.
+  for (const pid of cl.loanedOut ?? []) {
+    const p = c.players[pid];
+    if (p?.loan?.parentClubId === cl.id) {
+      const { loan: _l, ...rest } = p;
+      c.players[pid] = rest;
+    }
+  }
+  const { loanedOut: _lo, ...rest } = cl;
+  c.clubs[cl.id] = { ...rest, squad: [], startingXI: [], strength };
 }
 
 export function updateUserClub(c: CareerState, patch: Partial<Club>): CareerState {
