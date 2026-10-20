@@ -3,6 +3,7 @@
 //   - 'nativo': as colunas do nosso modelo (attack, creation, defending, physical, goalkeeping...).
 //   - 'fifa':   colunas no estilo dos datasets de EA FC/FIFA (pace, shooting, passing...).
 
+import { initFinance } from '../club/finance';
 import { computeOvr, FORMATIONS, POSITION_WEIGHTS } from '../domain/positions';
 import type { Attributes, Club, Foot, Player, Position } from '../domain/types';
 
@@ -118,7 +119,7 @@ export function importPlayersCsv(text: string, opts: ImportOptions): ImportResul
   const warnings: string[] = [];
   const errors: string[] = [];
   const players: Player[] = [];
-  const clubs: Record<string, Club> = {};
+  const clubs: Record<string, Omit<Club, 'finance' | 'training'>> = {};
   const usedIds = new Set<string>();
 
   rows.forEach((r, i) => {
@@ -268,5 +269,13 @@ export function importPlayersCsv(text: string, opts: ImportOptions): ImportResul
     if (gks === 0) warnings.push(`${club.name}: nenhum goleiro`);
   }
 
-  return { players, clubs: Object.values(clubs), warnings };
+  // Reputação pela força do elenco (média dos 11 melhores) e finanças pela folha salarial.
+  const byId: Record<string, Player> = {};
+  for (const p of players) byId[p.id] = p;
+  const finished = Object.values(clubs).map((c) => {
+    const top = c.squad.map((id) => byId[id]?.ovr ?? 0).sort((a, b) => b - a).slice(0, 11);
+    const avg = top.reduce((a, b) => a + b, 0) / Math.max(1, top.length);
+    return initFinance({ ...c, reputation: Math.round(Math.max(1, Math.min(100, (avg - 55) * 3))) }, byId);
+  });
+  return { players, clubs: finished, warnings };
 }

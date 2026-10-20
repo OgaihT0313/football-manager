@@ -82,6 +82,9 @@ export interface MatchContext {
   goalkeeper: number;
 }
 
+const MAX_LAMBDA = 6;
+const MAX_GK_RATIO = 1.6;
+
 export const DEFAULT_CONTEXT: MatchContext = { offense: 72, defenseLine: 72, goalkeeper: 72 };
 
 export function teamStrength(lineup: Lineup, positions: readonly Position[], params: EngineParams = DEFAULT_PARAMS): TeamStrength {
@@ -150,13 +153,18 @@ export function expectedGoals(
 ): { home: number; away: number } {
   const th = tacticFactors(homeTactic);
   const ta = tacticFactors(awayTactic);
+  // Limites: improvisado no gol no máximo dobra o efeito do goleiro, e nenhum time passa de
+  // MAX_LAMBDA gols esperados (evita placares absurdos quando o elenco se desmancha).
   const lambda = (mu: number, att: TeamStrength, def: TeamStrength, forF: number, againstF: number) =>
-    mu *
-    Math.pow(att.offense / ctx.offense, params.k) *
-    Math.pow(ctx.defenseLine / def.defenseLine, params.k) *
-    Math.pow(ctx.goalkeeper / def.goalkeeper, params.kGk) *
-    forF *
-    againstF;
+    Math.min(
+      MAX_LAMBDA,
+      mu *
+        Math.pow(att.offense / ctx.offense, params.k) *
+        Math.pow(ctx.defenseLine / def.defenseLine, params.k) *
+        Math.pow(Math.min(MAX_GK_RATIO, ctx.goalkeeper / def.goalkeeper), params.kGk) *
+        forF *
+        againstF,
+    );
   return {
     home: lambda(params.muHome, home, away, th.forOwn, ta.againstOwn),
     away: lambda(params.muAway, away, home, ta.forOwn, th.againstOwn),

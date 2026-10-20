@@ -7,13 +7,14 @@ import {
   simulateRounds, startNextSeason, type CareerState,
 } from '../src/career/career';
 import type { Club, Formation, LeagueConfig, Level, Player } from '../src/domain/types';
+import type { MarketResult } from '../src/career/userMarket';
 import { createSaveService, SaveError } from '../src/save/saveService';
 import { storage } from '../src/save/storage';
 import leagueJson from '../data/leagues/ficticia.json';
 import clubsJson from '../data/clubs.json';
 import playersJson from '../data/players.json';
 
-export type Tab = 'inicio' | 'elenco' | 'escalacao' | 'tabela' | 'rodadas';
+export type Tab = 'inicio' | 'elenco' | 'escalacao' | 'mercado' | 'clube' | 'liga';
 export type Phase = 'carregando' | 'menu' | 'escolhaClube' | 'jogo';
 export type ThemePref = 'system' | 'light' | 'dark';
 
@@ -46,6 +47,8 @@ interface GameState {
   roundView: number | null;
   busy: boolean;
   themePref: ThemePref;
+  /** Mensagem curta exibida no rodapé (resultado de uma ação). */
+  toast: string | null;
 
   init(): Promise<void>;
   goToClubSelect(): void;
@@ -64,6 +67,9 @@ interface GameState {
   setSlot(slot: number, playerId: string): void;
   autoXI(): void;
   setThemePref(pref: ThemePref): void;
+  /** Roda uma ação de mercado; se der certo, salva. Devolve o resultado para a tela. */
+  market(action: (c: CareerState) => { career: CareerState; result: MarketResult }): MarketResult;
+  clearToast(): void;
 }
 
 function infoOf(c: CareerState, savedAt: number): SaveInfo {
@@ -113,6 +119,7 @@ export const useGame = create<GameState>()((set, get) => {
     roundView: null,
     busy: false,
     themePref: 'system',
+    toast: null,
 
     async init() {
       const theme = (await storage.read(THEME_KEY).catch(() => null)) as ThemePref | null;
@@ -193,6 +200,16 @@ export const useGame = create<GameState>()((set, get) => {
       set({ themePref: pref });
       storage.write(THEME_KEY, pref).catch(() => undefined);
     },
+
+    market(action) {
+      const c = get().career;
+      if (!c) return { ok: false, message: 'Sem carreira carregada.' };
+      const { career, result } = action(c);
+      if (career !== c) commit(career);
+      if (result.ok) set({ toast: result.message });
+      return result;
+    },
+    clearToast: () => set({ toast: null }),
   };
 });
 

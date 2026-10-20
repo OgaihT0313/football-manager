@@ -3,7 +3,9 @@
 
 import { computeOvr, FORMATIONS, FORMATION_LIST, POSITION_WEIGHTS, ratingAt } from '../domain/positions';
 import type { Attributes, Club, Foot, Formation, LeagueConfig, Level, Player, Position } from '../domain/types';
+import { initFinance } from '../club/finance';
 import { createRng, gaussian, int, pick, shuffle, type Rng } from '../engine/rng';
+import { marketValue, wageDemand } from '../market/valuation';
 
 export interface GeneratedLeague {
   league: LeagueConfig;
@@ -107,13 +109,7 @@ function pickFoot(rng: Rng, pos: Position): Foot {
   return r < 0.24 ? 'B' : 'R';
 }
 
-function marketValue(ovr: number, age: number): number {
-  const ageFactor = age <= 23 ? 1.3 : age <= 27 ? 1.1 : age <= 30 ? 0.8 : 0.45;
-  const raw = 1_000_000 * Math.exp((ovr - 60) / 5.5) * ageFactor;
-  return Math.round(raw / 50_000) * 50_000;
-}
-
-function makePlayer(
+export function makePlayer(
   rng: Rng,
   id: string,
   clubId: string,
@@ -121,6 +117,8 @@ function makePlayer(
   target: number,
   season: number,
   ageRange: [number, number],
+  /** Pontos de potencial por ano abaixo dos 27: sorteado entre [mín, máx]. */
+  growthRange: [number, number] = [1, 3],
 ): Player {
   const age = int(rng, ageRange[0], ageRange[1]);
   const attrs = makeAttributes(rng, pos, target);
@@ -129,8 +127,11 @@ function makePlayer(
   for (const sec of SECONDARY[pos]) {
     if (positions.length < 3 && rng.next() < 0.35) positions.push(sec);
   }
-  const growth = Math.max(0, 27 - age) * (1 + rng.next() * 2);
-  const value = marketValue(ovr, age);
+  const growth = Math.max(0, 27 - age) * (growthRange[0] + rng.next() * (growthRange[1] - growthRange[0]));
+  const potential = Math.round(clamp(ovr + growth, ovr, 99));
+  // De 0 a 4 temporadas além da atual: ~1/5 dos contratos termina no fim desta temporada.
+  const contract = { wage: wageDemand({ ovr, age }), expires: season + int(rng, 0, 4) };
+  const value = marketValue({ ovr, age, potential, positions, contract }, season);
   return {
     id,
     name: `${pick(rng, FIRST_NAMES)} ${pick(rng, LAST_NAMES)}`,
@@ -139,8 +140,8 @@ function makePlayer(
     positions,
     foot: pickFoot(rng, pos),
     ovr,
-    potential: Math.round(clamp(ovr + growth, ovr, 99)),
-    contract: { wage: Math.round(value / 400 / 100) * 100, expires: season + int(rng, 1, 5) },
+    potential,
+    contract,
     value,
     clubId,
     morale: 50,
@@ -158,7 +159,7 @@ export function generateFictionalLeague(opts: GenOptions): GeneratedLeague {
   const levels = STRENGTH_TIERS.map(([lo, hi]) => lo + rng.next() * (hi - lo));
   const names = shuffle(rng, CLUB_NAMES);
 
-  const clubs: Club[] = [];
+  const clubs: Omit<Club, 'finance' | 'training'>[] = [];
   const players: Player[] = [];
 
   names.forEach(([name, shortName], i) => {
@@ -197,8 +198,8 @@ export function generateFictionalLeague(opts: GenOptions): GeneratedLeague {
         lineHeight: int(rng, 2, 4) as Level,
         tempo: int(rng, 2, 4) as Level,
       },
-      budget: Math.round(Math.exp((level - 60) / 4) * 1_000_000),
-      wageBudget: Math.round(Math.exp((level - 60) / 5) * 30_000),
+      budget: 0,
+      wageBudget: 0,
       reputation: Math.round(clamp((level - 55) * 3, 1, 100)),
     });
   });
@@ -214,5 +215,8 @@ export function generateFictionalLeague(opts: GenOptions): GeneratedLeague {
     tiebreakers: ['points', 'goalDiff', 'goalsFor', 'headToHead', 'wins', 'awayGoalsFor'],
   };
 
-  return { league, clubs, players };
+  // Finanças e orçamentos saem da folha salarial de cada elenco.
+  const byId: Record<string, Player> = {};
+  for (const p of players) byId[p.id] = p;
+  return { league, clubs: clubs.map((c) => initFinance(c, byId)), players };
 }

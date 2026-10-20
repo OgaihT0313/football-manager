@@ -8,8 +8,9 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'inicio', label: 'Início' },
   { id: 'elenco', label: 'Elenco' },
   { id: 'escalacao', label: 'Escalação' },
-  { id: 'tabela', label: 'Tabela' },
-  { id: 'rodadas', label: 'Rodadas' },
+  { id: 'mercado', label: 'Mercado' },
+  { id: 'clube', label: 'Clube' },
+  { id: 'liga', label: 'Liga' },
 ];
 
 export function BottomNav() {
@@ -33,7 +34,7 @@ export function BottomNav() {
             className="min-h-[56px] flex-1 items-center justify-center"
           >
             <View className={`mb-1 h-1 w-6 rounded-full ${active ? 'bg-green-600' : 'bg-transparent'}`} />
-            <Text className={`text-xs ${active ? 'font-bold text-green-700 dark:text-green-400' : 'text-slate-500 dark:text-slate-400'}`}>
+            <Text numberOfLines={1} className={`text-[11px] ${active ? 'font-bold text-green-700 dark:text-green-400' : 'text-slate-500 dark:text-slate-400'}`}>
               {t.label}
             </Text>
           </Pressable>

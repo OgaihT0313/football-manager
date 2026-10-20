@@ -4,14 +4,16 @@ import { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { BottomNav } from './components/BottomNav';
+import { ClubScreen } from './screens/ClubScreen';
 import { ClubSelectScreen } from './screens/ClubSelectScreen';
 import { HomeScreen } from './screens/HomeScreen';
+import { LeagueScreen } from './screens/LeagueScreen';
 import { LineupScreen } from './screens/LineupScreen';
+import { MarketScreen } from './screens/MarketScreen';
 import { MatchDetailScreen } from './screens/MatchDetailScreen';
 import { MenuScreen } from './screens/MenuScreen';
-import { RoundsScreen } from './screens/RoundsScreen';
 import { SquadScreen } from './screens/SquadScreen';
-import { TableScreen } from './screens/TableScreen';
+import { Toast } from './components/Toast';
 import { useGame } from './store/gameStore';
 
 function GameTabs() {
@@ -23,9 +25,11 @@ function GameTabs() {
         {tab === 'inicio' && <HomeScreen />}
         {tab === 'elenco' && <SquadScreen />}
         {tab === 'escalacao' && <LineupScreen />}
-        {tab === 'tabela' && <TableScreen />}
-        {tab === 'rodadas' && <RoundsScreen />}
+        {tab === 'mercado' && <MarketScreen />}
+        {tab === 'clube' && <ClubScreen />}
+        {tab === 'liga' && <LeagueScreen />}
       </View>
+      <Toast />
       <BottomNav />
       {matchDetailId && <MatchDetailScreen fixtureId={matchDetailId} />}
     </View>

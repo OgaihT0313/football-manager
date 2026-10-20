@@ -6,6 +6,7 @@ import { Header } from '../components/Header';
 import { Badge, Button, Card, Muted, SectionTitle, Strong } from '../components/ui';
 import { isSeasonOver } from '../src/competitions/season';
 import { nextFixtureOf, outcomeFor, positionOf, resultsOf } from '../src/career/queries';
+import { windowLabel } from '../src/market/calendar';
 import { selectCareer, useGame } from '../store/gameStore';
 
 const OUTCOME_TONE = { V: 'good', E: 'neutral', D: 'bad' } as const;
@@ -37,6 +38,11 @@ export function HomeScreen() {
         .map((id) => ({ p: players[id]!, st: season.status[id] }))
         .filter((x) => x.p && x.st && x.st.out > 0),
     [club.squad, players, season.status],
+  );
+
+  const expiring = useMemo(
+    () => club.squad.map((id) => players[id]!).filter((p) => p && !p.loan && p.contract.expires === season.year),
+    [club.squad, players, season.year],
   );
 
   const opponentId = next ? (next.homeId === userClubId ? next.awayId : next.homeId) : null;
@@ -90,6 +96,31 @@ export function HomeScreen() {
         </Card>
       ) : null}
 
+      <Card>
+        <SectionTitle>Mercado</SectionTitle>
+        <Muted>{windowLabel(season)}</Muted>
+        {career.inbox.length > 0 ? (
+          <Strong className="mt-1">
+            {career.inbox.length} proposta{career.inbox.length > 1 ? 's' : ''} pelos seus jogadores
+          </Strong>
+        ) : null}
+        {expiring.length > 0 ? (
+          <Muted className="mt-1">
+            {expiring.length} contrato{expiring.length > 1 ? 's terminam' : ' termina'} no fim da temporada: {expiring.slice(0, 3).map((p) => p.name).join(', ')}
+            {expiring.length > 3 ? '…' : ''}
+          </Muted>
+        ) : null}
+        {career.preContracts.length > 0 ? (
+          <Muted className="mt-1">
+            Pré-contratos: {career.preContracts.map((pc) => players[pc.playerId]?.name).join(', ')} (chegam na próxima temporada)
+          </Muted>
+        ) : null}
+        <View className="mt-2 flex-row gap-2">
+          <Button className="flex-1" variant="secondary" label="Mercado" onPress={() => setTab('mercado')} />
+          {expiring.length > 0 ? <Button className="flex-1" variant="secondary" label="Renovar" onPress={() => setTab('elenco')} /> : null}
+        </View>
+      </Card>
+
       {absent.length > 0 ? (
         <Card>
           <SectionTitle>Desfalques</SectionTitle>
@@ -116,7 +147,7 @@ export function HomeScreen() {
             {(row?.goalsFor ?? 0) - (row?.goalsAgainst ?? 0)}
           </Muted>
         </View>
-        <Button className="mt-2" variant="ghost" label="Ver tabela" onPress={() => setTab('tabela')} />
+        <Button className="mt-2" variant="ghost" label="Ver tabela" onPress={() => setTab('liga')} />
       </Card>
 
       {recent.length > 0 ? (

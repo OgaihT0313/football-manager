@@ -3,6 +3,7 @@
 // O armazenamento concreto (arquivo no celular, localStorage no web) entra por StorageAdapter.
 
 import { CURRENT_SAVE_VERSION, type CareerState } from '../career/career';
+import { initFinance } from '../club/finance';
 
 export interface SaveEnvelope {
   saveVersion: number;
@@ -17,7 +18,15 @@ export class SaveError extends Error {}
  * Migrações: a chave é a versão de origem; a função devolve os dados na versão seguinte.
  * Ao mudar o formato de CareerState: subir CURRENT_SAVE_VERSION e adicionar a migração aqui.
  */
-export const MIGRATIONS: Record<number, (data: any) => any> = {};
+export const MIGRATIONS: Record<number, (data: any) => any> = {
+  // v1 → v2 (Fase 2): finanças e treino nos clubes; histórico de transferências, propostas
+  // recebidas e pré-contratos na carreira.
+  1: (d) => {
+    const clubs: Record<string, any> = {};
+    for (const [id, club] of Object.entries<any>(d.clubs ?? {})) clubs[id] = club.finance ? club : initFinance(club, d.players ?? {});
+    return { ...d, clubs, transfers: d.transfers ?? [], inbox: d.inbox ?? [], preContracts: d.preContracts ?? [] };
+  },
+};
 
 export function serializeCareer(career: CareerState, savedAt: number): string {
   const envelope: SaveEnvelope = { saveVersion: CURRENT_SAVE_VERSION, savedAt, data: career };

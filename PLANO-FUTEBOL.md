@@ -233,6 +233,15 @@ Decisões da Fase 1:
   elencos vazios, ovr médio disparando ou caindo). Criar `scripts/diagnose_league.ts` que
   mede ovr médio, folhas salariais e distribuição de idade ao longo do tempo.
 
+**Resultado (medido em 2026-10-19) — Fase 2 concluída.** Mercado com janelas, negociação,
+empréstimos, pré-contratos, renovações e dispensas; IA de transferências; finanças com limite
+de dívida; evolução, aposentadorias e base. O `scripts/diagnose_league.ts` (5 carreiras × 10
+temporadas) passa nos 8 critérios: OVR dos titulares 72,9 → 72,4, elencos 18–28, nenhum clube
+quebrado, folha 62%–71% da receita, idade 24,7–26,1, ≥ 11 transferências por temporada e 2,81
+gols por jogo. Save v2 com migração da v1. Decisões em `PLANO-MERCADO.md`, números em
+`ROADMAP.md`. Observações abertas: o banco envelhece pior (mais jovens, OVR geral caindo) e o
+caixa dos clubes cresce devagar.
+
 ## FASE 3 — As cinco ligas e as copas nacionais
 
 - Premier League, La Liga, Serie A (20 clubes), Bundesliga e Ligue 1 (18 clubes) como

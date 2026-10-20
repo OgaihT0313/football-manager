@@ -85,6 +85,26 @@ check('histórico registra a temporada encerrada', atOnce.history.length === 1 &
   check('falta de migração gera erro claro', throws(() => migrate({}, 1, {}, 2)));
   check('save mais novo que o app gera erro claro', throws(() => migrate({}, 9, {}, 1)));
   check('save corrompido gera erro claro', throws(() => deserializeCareer('{"saveVersion":1,"data":')));
+
+  // Save da Fase 1 (v1): clubes sem finanças/treino e carreira sem listas de mercado.
+  const v1Clubs: Record<string, unknown> = {};
+  for (const [id, cl] of Object.entries(start.clubs)) {
+    const { finance: _f, training: _t, ...rest } = cl;
+    v1Clubs[id] = rest;
+  }
+  const { transfers: _tr, inbox: _in, preContracts: _pc, ...v1Rest } = start;
+  const v1 = JSON.stringify({ saveVersion: 1, savedAt: 1, data: { ...v1Rest, saveVersion: 1, clubs: v1Clubs } });
+  let migrated: CareerState | null = null;
+  try {
+    migrated = deserializeCareer(v1).career;
+  } catch {
+    migrated = null;
+  }
+  const club0 = migrated?.clubs[userClubId];
+  check('save v1 (Fase 1) migra para v2 com finanças e listas de mercado',
+    !!migrated && migrated.saveVersion === CURRENT_SAVE_VERSION && !!club0?.finance && !!club0.training &&
+      Array.isArray(migrated.transfers) && Array.isArray(migrated.inbox) && Array.isArray(migrated.preContracts));
+  check('save migrado continua jogável', !!migrated && advanceRound(migrated).results.length === 10);
   check('save sem dados gera erro claro', throws(() => deserializeCareer('{"saveVersion":1}')));
 }
 

@@ -16,8 +16,19 @@ export interface Attributes {
 export interface Contract {
   /** Salário semanal, em unidades monetárias do jogo. */
   wage: number;
-  /** Temporada (ano de início) em que o contrato termina. */
+  /** Temporada (ano de início) em cujo fim o contrato termina. */
   expires: number;
+  /** Multa rescisória: proposta igual ou maior obriga o clube a vender. */
+  releaseClause?: number;
+}
+
+/** Jogador emprestado: `clubId` é o clube que recebeu; o contrato continua com o dono. */
+export interface Loan {
+  parentClubId: string;
+  /** Volta ao clube dono no fim desta temporada. */
+  until: number;
+  /** Fração do salário paga pelo clube que recebeu (0-1). */
+  wageShare: number;
 }
 
 export interface Player extends Attributes {
@@ -39,6 +50,7 @@ export interface Player extends Attributes {
   morale?: number;
   /** 0-100, 100 é totalmente descansado. */
   fitness?: number;
+  loan?: Loan;
 }
 
 export type Formation = '4-3-3' | '4-2-3-1' | '4-4-2' | '3-5-2' | '5-3-2';
@@ -61,10 +73,69 @@ export interface Club {
   /** Vazio = deixar a IA escolher. */
   startingXI: string[];
   tactic: Tactic;
+  /** Orçamento de transferências da temporada, definido pela diretoria. */
   budget: number;
+  /** Teto da folha salarial semanal. */
   wageBudget: number;
   /** 1-100. */
   reputation: number;
+  /** Qualidade do treino/estrutura (1-5): acelera a evolução dos jogadores. */
+  training: Level;
+  finance: ClubFinance;
+}
+
+export interface SeasonLedger {
+  /** Receitas de TV, bilheteria e comerciais acumuladas na temporada. */
+  income: number;
+  /** Premiação por colocação, paga no fim da temporada. */
+  prizes: number;
+  wages: number;
+  /** Custos fixos (estrutura, staff, estádio). */
+  operating: number;
+  transfersIn: number;
+  transfersOut: number;
+}
+
+export interface ClubFinance {
+  /** Caixa do clube. */
+  balance: number;
+  /** Receita anual de referência (TV + bilheteria + comercial), muda com desempenho. */
+  revenueBase: number;
+  season: SeasonLedger;
+}
+
+export type TransferType = 'transfer' | 'loan' | 'free' | 'release' | 'loanReturn';
+
+export interface TransferRecord {
+  year: number;
+  /** Rodada antes da qual a transferência aconteceu (0 = virada de temporada). */
+  round: number;
+  playerId: string;
+  playerName: string;
+  fromClubId: string | null;
+  toClubId: string | null;
+  fee: number;
+  wage: number;
+  type: TransferType;
+}
+
+/** Proposta de um clube da IA por um jogador do usuário. */
+export interface IncomingOffer {
+  id: string;
+  playerId: string;
+  fromClubId: string;
+  fee: number;
+  /** Rodada em que a proposta expira (fecha com a janela). */
+  expiresRound: number;
+  year: number;
+}
+
+/** Pré-contrato: o jogador muda de clube de graça na virada da temporada. */
+export interface PreContract {
+  playerId: string;
+  toClubId: string;
+  wage: number;
+  years: number;
 }
 
 export interface LeagueConfig {

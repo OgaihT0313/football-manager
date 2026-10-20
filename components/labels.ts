@@ -17,9 +17,16 @@ export const LEVEL_LABEL = {
 } as const;
 
 export function formatMoney(v: number): string {
-  if (v >= 1_000_000) return `€ ${(v / 1_000_000).toFixed(1).replace('.', ',')} mi`;
-  if (v >= 1_000) return `€ ${Math.round(v / 1_000)} mil`;
-  return `€ ${v}`;
+  const sign = v < 0 ? '−' : '';
+  const a = Math.abs(v);
+  if (a >= 1_000_000) return `${sign}€ ${(a / 1_000_000).toFixed(1).replace('.', ',')} mi`;
+  if (a >= 1_000) return `${sign}€ ${Math.round(a / 1_000)} mil`;
+  return `${sign}€ ${Math.round(a)}`;
+}
+
+/** Salário semanal. */
+export function formatWage(v: number): string {
+  return `${formatMoney(v)}/sem`;
 }
 
 export function formatDate(ms: number): string {

@@ -3,9 +3,13 @@
 import { useMemo, useState } from 'react';
 import { FlatList, Pressable, Text, View } from 'react-native';
 import { Header } from '../components/Header';
-import { formatMoney, POS_LABEL, POS_ORDER } from '../components/labels';
-import { Badge, FitnessBar, Muted } from '../components/ui';
+import { formatMoney, formatWage, POS_LABEL, POS_ORDER } from '../components/labels';
+import { NegotiationSheet } from '../components/NegotiationSheet';
+import { Badge, Button, FitnessBar, Muted } from '../components/ui';
 import { playerStats } from '../src/career/queries';
+import { loanOut, releasePlayer } from '../src/career/userMarket';
+import { openWindow } from '../src/market/calendar';
+import { releaseCost } from '../src/market/transfers';
 import type { Player } from '../src/domain/types';
 import { selectCareer, useGame } from '../store/gameStore';
 
@@ -14,6 +18,12 @@ export function SquadScreen() {
   const { season, players, clubs, userClubId } = career;
   const club = clubs[userClubId]!;
   const [open, setOpen] = useState<string | null>(null);
+  const [renewing, setRenewing] = useState<string | null>(null);
+  const [confirmRelease, setConfirmRelease] = useState<string | null>(null);
+  const [actionMsg, setActionMsg] = useState<string | null>(null);
+  const market = useGame((s) => s.market);
+  const windowOpen = !!openWindow(season);
+  const loanedIn = (p: Player) => !!p.loan;
 
   const stats = useMemo(() => playerStats(season), [season]);
   const list = useMemo(
@@ -27,7 +37,7 @@ export function SquadScreen() {
 
   return (
     <View className="flex-1">
-      <Header title="Elenco" subtitle={`${list.length} jogadores · toque para ver detalhes`} />
+      <Header title="Elenco" subtitle={`${list.length} jogadores · toque para ver detalhes e contrato`} />
       <View className="flex-row px-4 pb-1">
         <Text className="w-10 text-xs font-bold text-slate-500">POS</Text>
         <Text className="flex-1 text-xs font-bold text-slate-500">JOGADOR</Text>
@@ -44,13 +54,18 @@ export function SquadScreen() {
           const starter = club.startingXI.includes(p.id);
           const expanded = open === p.id;
           return (
-            <Pressable
-              accessibilityRole="button"
-              accessibilityState={{ expanded }}
-              onPress={() => setOpen(expanded ? null : p.id)}
-              className="border-b border-slate-200 py-2.5 dark:border-slate-800"
-            >
-              <View className="flex-row items-center">
+            <View className="border-b border-slate-200 py-2.5 dark:border-slate-800">
+              {/* Só a linha é clicável: os botões do painel não podem ficar dentro de outro botão. */}
+              <Pressable
+                accessibilityRole="button"
+                accessibilityState={{ expanded }}
+                onPress={() => {
+                  setOpen(expanded ? null : p.id);
+                  setActionMsg(null);
+                  setConfirmRelease(null);
+                }}
+                className="flex-row items-center"
+              >
                 <Text className="w-10 text-xs font-bold text-slate-600 dark:text-slate-300">{POS_LABEL[p.positions[0]!]}</Text>
                 <View className="flex-1 flex-row items-center gap-1.5">
                   <Text className={`shrink text-slate-900 dark:text-slate-100 ${starter ? 'font-semibold' : ''}`} numberOfLines={1}>
@@ -63,7 +78,7 @@ export function SquadScreen() {
                   <FitnessBar value={p.fitness ?? 100} />
                 </View>
                 <Text className="w-10 text-right text-base font-bold text-slate-900 dark:text-white">{p.ovr}</Text>
-              </View>
+              </Pressable>
               {expanded ? (
                 <View className="mt-2 gap-1 rounded-xl bg-slate-100 p-3 dark:bg-slate-800">
                   <Muted>
@@ -82,12 +97,54 @@ export function SquadScreen() {
                     Temporada: {s?.apps ?? 0} jogos · {s?.goals ?? 0} gols · {s?.assists ?? 0} assist. · {st?.yellows ?? 0} amarelos
                     {s?.avgRating != null ? ` · nota ${s.avgRating.toFixed(1)}` : ''}
                   </Muted>
+                  <Muted>
+                    Salário {formatWage(p.contract.wage)}
+                    {p.contract.releaseClause ? ` · multa rescisória ${formatMoney(p.contract.releaseClause)}` : ''}
+                    {p.contract.expires === season.year ? ' · contrato termina nesta temporada' : ''}
+                  </Muted>
+                  {loanedIn(p) ? (
+                    <Muted>Emprestado por {clubs[p.loan!.parentClubId]?.name} até o fim de {p.loan!.until}.</Muted>
+                  ) : confirmRelease === p.id ? (
+                    <View className="mt-2 gap-2">
+                      <Muted>Dispensar custa {formatMoney(releaseCost(p, season.year))} (metade dos salários restantes).</Muted>
+                      <View className="flex-row gap-2">
+                        <Button className="flex-1" variant="secondary" label="Cancelar" onPress={() => setConfirmRelease(null)} />
+                        <Button
+                          className="flex-1"
+                          variant="danger"
+                          label="Dispensar"
+                          onPress={() => {
+                            const r = market((c) => releasePlayer(c, p.id));
+                            setActionMsg(r.ok ? null : r.message);
+                            setConfirmRelease(null);
+                          }}
+                        />
+                      </View>
+                    </View>
+                  ) : (
+                    <View className="mt-2 flex-row flex-wrap gap-2">
+                      <Button className="flex-1" variant="secondary" label="Renovar" onPress={() => setRenewing(p.id)} />
+                      <Button
+                        className="flex-1"
+                        variant="secondary"
+                        label="Emprestar"
+                        disabled={!windowOpen}
+                        onPress={() => {
+                          const r = market((c) => loanOut(c, p.id));
+                          setActionMsg(r.ok ? null : r.message);
+                        }}
+                      />
+                      <Button className="flex-1" variant="ghost" label="Dispensar" onPress={() => setConfirmRelease(p.id)} />
+                    </View>
+                  )}
+                  {actionMsg ? <Muted className="text-amber-700 dark:text-amber-300">{actionMsg}</Muted> : null}
                 </View>
               ) : null}
-            </Pressable>
+            </View>
           );
         }}
       />
+      {renewing ? <NegotiationSheet playerId={renewing} mode="renovar" onClose={() => setRenewing(null)} /> : null}
     </View>
   );
 }

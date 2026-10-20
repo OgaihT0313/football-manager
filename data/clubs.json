@@ -38,9 +38,22 @@
       "lineHeight": 4,
       "tempo": 3
     },
-    "budget": 239296615,
-    "wageBudget": 2400327,
-    "reputation": 81
+    "budget": 56100000,
+    "wageBudget": 2966200,
+    "reputation": 81,
+    "finance": {
+      "balance": 93480000,
+      "revenueBase": 233700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 5
   },
   {
     "id": "ficticia-gca",
@@ -81,9 +94,22 @@
       "lineHeight": 3,
       "tempo": 2
     },
-    "budget": 196222275,
-    "wageBudget": 2047953,
-    "reputation": 78
+    "budget": 39900000,
+    "wageBudget": 2109500,
+    "reputation": 78,
+    "finance": {
+      "balance": 66480000,
+      "revenueBase": 166200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 4
   },
   {
     "id": "ficticia-fce",
@@ -124,9 +150,22 @@
       "lineHeight": 2,
       "tempo": 3
     },
-    "budget": 182286336,
-    "wageBudget": 1930743,
-    "reputation": 77
+    "budget": 48300000,
+    "wageBudget": 2553700,
+    "reputation": 77,
+    "finance": {
+      "balance": 80480000,
+      "revenueBase": 201200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 4
   },
   {
     "id": "ficticia-pse",
@@ -167,9 +206,22 @@
       "lineHeight": 3,
       "tempo": 2
     },
-    "budget": 95510636,
-    "wageBudget": 1151231,
-    "reputation": 70
+    "budget": 26200000,
+    "wageBudget": 1384700,
+    "reputation": 70,
+    "finance": {
+      "balance": 43640000,
+      "revenueBase": 109100000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 4
   },
   {
     "id": "ficticia-dpe",
@@ -210,9 +262,22 @@
       "lineHeight": 2,
       "tempo": 2
     },
-    "budget": 35735338,
-    "wageBudget": 524324,
-    "reputation": 58
+    "budget": 11550000,
+    "wageBudget": 610500,
+    "reputation": 58,
+    "finance": {
+      "balance": 19240000,
+      "revenueBase": 48100000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-avr",
@@ -253,9 +318,22 @@
       "lineHeight": 3,
       "tempo": 3
     },
-    "budget": 28815737,
-    "wageBudget": 441393,
-    "reputation": 55
+    "budget": 11400000,
+    "wageBudget": 602900,
+    "reputation": 55,
+    "finance": {
+      "balance": 19000000,
+      "revenueBase": 47500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-ose",
@@ -296,9 +374,22 @@
       "lineHeight": 2,
       "tempo": 4
     },
-    "budget": 36285926,
-    "wageBudget": 530777,
-    "reputation": 58
+    "budget": 13500000,
+    "wageBudget": 714600,
+    "reputation": 58,
+    "finance": {
+      "balance": 22520000,
+      "revenueBase": 56300000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-rmo",
@@ -339,9 +430,22 @@
       "lineHeight": 4,
       "tempo": 2
     },
-    "budget": 23352507,
-    "wageBudget": 373068,
-    "reputation": 53
+    "budget": 12050000,
+    "wageBudget": 638400,
+    "reputation": 53,
+    "finance": {
+      "balance": 20120000,
+      "revenueBase": 50300000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-ala",
@@ -382,9 +486,22 @@
       "lineHeight": 2,
       "tempo": 2
     },
-    "budget": 18114892,
-    "wageBudget": 304474,
-    "reputation": 50
+    "budget": 9300000,
+    "wageBudget": 491200,
+    "reputation": 50,
+    "finance": {
+      "balance": 15480000,
+      "revenueBase": 38700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-ecp",
@@ -425,9 +542,22 @@
       "lineHeight": 3,
       "tempo": 2
     },
-    "budget": 12445188,
-    "wageBudget": 225487,
-    "reputation": 45
+    "budget": 6550000,
+    "wageBudget": 346500,
+    "reputation": 45,
+    "finance": {
+      "balance": 10920000,
+      "revenueBase": 27300000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-ema",
@@ -468,9 +598,22 @@
       "lineHeight": 3,
       "tempo": 3
     },
-    "budget": 12594924,
-    "wageBudget": 227655,
-    "reputation": 45
+    "budget": 6900000,
+    "wageBudget": 365500,
+    "reputation": 45,
+    "finance": {
+      "balance": 11520000,
+      "revenueBase": 28800000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-rcu",
@@ -511,9 +654,22 @@
       "lineHeight": 3,
       "tempo": 3
     },
-    "budget": 12933105,
-    "wageBudget": 232532,
-    "reputation": 46
+    "budget": 7950000,
+    "wageBudget": 421400,
+    "reputation": 46,
+    "finance": {
+      "balance": 13280000,
+      "revenueBase": 33200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 3
   },
   {
     "id": "ficticia-apl",
@@ -554,9 +710,22 @@
       "lineHeight": 2,
       "tempo": 2
     },
-    "budget": 11523697,
-    "wageBudget": 212029,
-    "reputation": 44
+    "budget": 6750000,
+    "wageBudget": 357900,
+    "reputation": 44,
+    "finance": {
+      "balance": 11280000,
+      "revenueBase": 28200000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 2
   },
   {
     "id": "ficticia-uri",
@@ -597,9 +766,22 @@
       "lineHeight": 2,
       "tempo": 4
     },
-    "budget": 7824433,
-    "wageBudget": 155555,
-    "reputation": 40
+    "budget": 4500000,
+    "wageBudget": 237300,
+    "reputation": 40,
+    "finance": {
+      "balance": 7480000,
+      "revenueBase": 18700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 2
   },
   {
     "id": "ficticia-ino",
@@ -640,9 +822,22 @@
       "lineHeight": 3,
       "tempo": 4
     },
-    "budget": 6294946,
-    "wageBudget": 130712,
-    "reputation": 37
+    "budget": 5000000,
+    "wageBudget": 265300,
+    "reputation": 37,
+    "finance": {
+      "balance": 8360000,
+      "revenueBase": 20900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 2
   },
   {
     "id": "ficticia-jfl",
@@ -683,9 +878,22 @@
       "lineHeight": 3,
       "tempo": 3
     },
-    "budget": 6790539,
-    "wageBudget": 138882,
-    "reputation": 38
+    "budget": 4650000,
+    "wageBudget": 245000,
+    "reputation": 38,
+    "finance": {
+      "balance": 7720000,
+      "revenueBase": 19300000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 2
   },
   {
     "id": "ficticia-ove",
@@ -726,9 +934,22 @@
       "lineHeight": 4,
       "tempo": 3
     },
-    "budget": 5492318,
-    "wageBudget": 117200,
-    "reputation": 35
+    "budget": 4100000,
+    "wageBudget": 215800,
+    "reputation": 35,
+    "finance": {
+      "balance": 6800000,
+      "revenueBase": 17000000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 2
   },
   {
     "id": "ficticia-cit",
@@ -769,9 +990,22 @@
       "lineHeight": 4,
       "tempo": 3
     },
-    "budget": 7102403,
-    "wageBudget": 143961,
-    "reputation": 39
+    "budget": 4250000,
+    "wageBudget": 224700,
+    "reputation": 39,
+    "finance": {
+      "balance": 7080000,
+      "revenueBase": 17700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 2
   },
   {
     "id": "ficticia-cnb",
@@ -812,9 +1046,22 @@
       "lineHeight": 4,
       "tempo": 2
     },
-    "budget": 3605754,
-    "wageBudget": 83699,
-    "reputation": 30
+    "budget": 3200000,
+    "wageBudget": 170100,
+    "reputation": 30,
+    "finance": {
+      "balance": 5360000,
+      "revenueBase": 13400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 2
   },
   {
     "id": "ficticia-sau",
@@ -855,8 +1102,21 @@
       "lineHeight": 2,
       "tempo": 2
     },
-    "budget": 2118834,
-    "wageBudget": 54701,
-    "reputation": 24
+    "budget": 2100000,
+    "wageBudget": 110400,
+    "reputation": 24,
+    "finance": {
+      "balance": 3480000,
+      "revenueBase": 8700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    },
+    "training": 1
   }
 ]

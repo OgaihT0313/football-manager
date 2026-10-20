@@ -6,11 +6,78 @@ Plano completo em `PLANO-FUTEBOL.md`. Aqui fica o estado de cada fase e o que fo
 |---|---|
 | 0 — Spike: motor + uma liga, sem tela | **Concluída** (2026-10-18) |
 | 1 — Uma liga jogável (app) | **Concluída** (2026-10-18) |
-| 2 — Calendário, contratos, transferências, finanças | Não iniciada |
+| 2 — Calendário, contratos, transferências, finanças | **Concluída** (2026-10-19) |
 | 3 — Cinco ligas e copas nacionais | Não iniciada |
 | 4 — Competições europeias | Não iniciada |
 | 5 — Camada de técnico | Não iniciada |
 | 6 — Ligas de fundo, visão 2D, eras | Não iniciada |
+
+## Fase 2 — resultado
+
+Mercado com janelas (verão até a rodada 3; inverno nas rodadas 20 a 22), transferências com
+contraproposta, multa rescisória, empréstimos com divisão de salário, pré-contratos a partir do
+inverno, renovações e dispensas. A IA compra, vende, empresta e renova, e faz propostas pelos
+jogadores do usuário. Finanças com receita, folha, custos, premiação, orçamento da diretoria e
+limite de dívida. Evolução e declínio por idade, treino e minutos; aposentadorias e base.
+Abas novas: Mercado e Clube; Tabela e Rodadas viraram a aba Liga. Decisões e porquês em
+`PLANO-MERCADO.md`.
+
+Comandos:
+
+```bash
+npm run diagnose       # scripts/diagnose_league.ts (10 temporadas x 3 carreiras; --carreiras 5)
+npm run check:market   # scripts/check_market.ts
+```
+
+Medido:
+
+- `diagnose_league` (5 carreiras × 10 temporadas, IA em todos os clubes): **os 8 critérios de
+  "não degenerou" passaram**.
+
+| Critério | Medido |
+|---|---|
+| OVR médio dos titulares estável (Δ ≤ 3) | 72,9 → 72,4 |
+| Elencos entre 18 e 30 | 18–28 |
+| Nenhum clube com caixa < −50% da receita | 0 |
+| Folha/receita média entre 45% e 75% | 62%–71% |
+| Idade média entre 24 e 28 | 24,7–26,1 |
+| ≥ 10 transferências pagas por temporada | mínimo 11 (média ~25) |
+| Gols por jogo, média das 50 temporadas | 2,81 |
+| Gols por jogo, cada temporada (±4 desvios) | 2,61–3,05 |
+
+Médias das 5 carreiras, temporada a temporada:
+
+| Temp. | Titulares | Todos | Idade | ≤ 21 | Folha/R | Caixa méd./R | Transf. | Taxas (mi) | Campeão | Gols/j |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2026 | 72,9 | 68,8 | 25,8 | 23% | 62% | 0,44 | 33 | 325 | 83 | 2,75 |
+| 2028 | 74,3 | 68,6 | 25,9 | 22% | 65% | 0,50 | 27 | 398 | 83 | 2,81 |
+| 2030 | 74,4 | 67,9 | 25,6 | 27% | 69% | 0,74 | 21 | 374 | 84 | 2,81 |
+| 2032 | 73,2 | 65,9 | 25,1 | 35% | 69% | 0,82 | 22 | 191 | 88 | 2,77 |
+| 2035 | 72,4 | 64,9 | 24,8 | 36% | 69% | 0,95 | 25 | 214 | 87 | 2,83 |
+
+- Tempo: 514 ms por temporada com mercado (25,7 s para 50 temporadas).
+- `check_market`: 48 verificações verdes (valor, negociação, compra/empréstimo/pré-contrato/
+  renovação/dispensa do usuário, propostas da IA, evolução, invariantes de 3 temporadas e
+  determinismo com mercado).
+- `check_save`: 29 verdes, incluindo save v1 → v2 jogável. `check_engine`: 32 verdes.
+- Backtest de 500 temporadas: os mesmos números da Fase 1 (gols/jogo 2,76 / 2,79; campeão
+  83,7 / 83,3). Os limites novos do motor (λ ≤ 6, fator do goleiro ≤ 2×) não mudam uma
+  temporada normal.
+- Save: 527 KB na rodada 17, 884 KB no fim da temporada.
+- No navegador: migração de um save v1 real, aba Clube com finanças migradas, filtro "cabem
+  no orçamento", recusas explicadas (orçamento, teto salarial), empréstimo pagando 50%, janela
+  de verão com transferências e empréstimos da IA, renovação, virada para 2027 (emprestado
+  voltou, 4 contratos saíram de graça) e recarga da página. Corrigido um erro de botão dentro
+  de botão no Elenco (web). Bundle Android compila (1062 módulos). **Não testado em aparelho.**
+
+O que observar:
+
+- A fatia de jogadores com até 21 anos sobe de 23% para ~36% em 10 anos, e o OVR médio do
+  elenco inteiro cai de 68,8 para 64,9. Os titulares ficam estáveis; quem enfraquece é o
+  banco. Vale rever na Fase 5 (base e olheiros).
+- O caixa mediano sobe devagar (0,44 → 0,95 da receita): os clubes guardam mais do que gastam.
+  Sem comprador externo, o dinheiro só circula entre eles.
+- Empréstimos quase somem depois do 4º ano (de 16 para ~2 por temporada).
 
 ## Fase 1 — resultado
 
@@ -126,7 +193,6 @@ Parâmetros calibrados na Fase 0 (`DEFAULT_PARAMS` em `src/engine/matchEngine.ts
 
 - Moral existe no tipo (`morale`, entra em `conditionFactor`) mas ainda não muda com os
   resultados.
-- Nova temporada não envelhece nem evolui jogadores (Fase 2).
 - Zonas da tabela (4 primeiros, 3 últimos) são só visuais; vagas reais e rebaixamento na
   Fase 3.
 - Testar num aparelho Android/iOS de verdade (salvar com `expo-file-system`, fechar e reabrir).

@@ -16,6 +16,7 @@ a próxima sem o usuário pedir.
   `C:\Users\Usuario\Documents\Projetos\nba-gm-mobile`.
 - Meça antes de afirmar: toda mudança no motor termina rodando `scripts/backtest_league.ts`
   e `scripts/check_engine.ts` e reportando os números. Mudança na carreira ou no save roda
-  também `scripts/check_save.ts`.
+  também `scripts/check_save.ts`. Mudança em mercado, finanças, IA ou evolução roda
+  `scripts/check_market.ts` e `scripts/diagnose_league.ts --carreiras 5`.
 - Mudou o formato de `CareerState`? Suba `CURRENT_SAVE_VERSION` (`src/career/career.ts`) e
   escreva a migração em `src/save/saveService.ts`.
