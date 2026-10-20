@@ -150,6 +150,7 @@ export function expectedGoals(
   awayTactic: Tactic,
   ctx: MatchContext,
   params: EngineParams = DEFAULT_PARAMS,
+  neutral = false,
 ): { home: number; away: number } {
   const th = tacticFactors(homeTactic);
   const ta = tacticFactors(awayTactic);
@@ -166,8 +167,9 @@ export function expectedGoals(
         againstF,
     );
   return {
-    home: lambda(params.muHome, home, away, th.forOwn, ta.againstOwn),
-    away: lambda(params.muAway, away, home, ta.forOwn, th.againstOwn),
+    // Campo neutro: os dois lados usam a média dos μ.
+    home: lambda(neutral ? (params.muHome + params.muAway) / 2 : params.muHome, home, away, th.forOwn, ta.againstOwn),
+    away: lambda(neutral ? (params.muHome + params.muAway) / 2 : params.muAway, away, home, ta.forOwn, th.againstOwn),
   };
 }
 
@@ -239,6 +241,14 @@ export interface SimulateMatchInput {
   ctx: MatchContext;
   rng: Rng;
   params?: EngineParams;
+  /** Força pronta para um lado sem elenco detalhado (clube "por força"); a escalação fica vazia. */
+  homeStrength?: TeamStrength;
+  awayStrength?: TeamStrength;
+}
+
+/** Força de um clube sem elenco: o mesmo número em todos os setores. */
+export function strengthFromRating(rating: number): TeamStrength {
+  return { attack: rating, midfield: rating, defense: rating, goalkeeper: rating, offense: rating, defenseLine: rating };
 }
 
 export function simulateMatch(input: SimulateMatchInput): MatchResult {
@@ -246,9 +256,9 @@ export function simulateMatch(input: SimulateMatchInput): MatchResult {
   const params = input.params ?? DEFAULT_PARAMS;
   const homePositions = slotsOfFormation(homeLineup);
   const awayPositions = slotsOfFormation(awayLineup);
-  const hs = teamStrength(homeLineup, homePositions, params);
-  const as = teamStrength(awayLineup, awayPositions, params);
-  const xg = expectedGoals(hs, as, home.tactic, away.tactic, ctx, params);
+  const hs = input.homeStrength ?? teamStrength(homeLineup, homePositions, params);
+  const as = input.awayStrength ?? teamStrength(awayLineup, awayPositions, params);
+  const xg = expectedGoals(hs, as, home.tactic, away.tactic, ctx, params, !!input.fixture.neutral);
   const [homeGoals, awayGoals] = sampleScore(rng, xg.home, xg.away, params.rho);
 
   const events: MatchEvent[] = [];
@@ -335,8 +345,8 @@ export function simulateMatch(input: SimulateMatchInput): MatchResult {
     awayId: away.id,
     homeGoals,
     awayGoals,
-    homeXg: xg.home,
-    awayXg: xg.away,
+    homeXg: Math.round(xg.home * 100) / 100,
+    awayXg: Math.round(xg.away * 100) / 100,
     events,
     ratings,
     homeXI: homeLineup.slots.map((s) => s.playerId),

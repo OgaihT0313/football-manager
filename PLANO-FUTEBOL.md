@@ -254,6 +254,12 @@ caixa dos clubes cresce devagar.
   (medir). Se o JSON de save passar de ~10 MB, migrar o armazenamento para `expo-sqlite`
   antes de seguir.
 
+**Resultado (medido em 2026-10-19) — Fase 3 concluída.** Mundo com 5 países, 2ª divisão "por
+força", copas, supercopas, acesso e rebaixamento num calendário de 44 datas. Uma temporada
+completa das cinco ligas leva 1,3 s no Node e 1,56 s no navegador; o save fica em 4,0 MB (abaixo
+de 10 MB, sem SQLite; no web foi para o IndexedDB). O diagnóstico de 10 temporadas passa nos 9
+critérios. Decisões em `PLANO-LIGAS.md`, números em `ROADMAP.md`.
+
 ## FASE 4 — Competições europeias
 
 - Champions League no formato atual (fase de liga de 36 clubes com 8 jogos por clube,

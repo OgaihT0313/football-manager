@@ -4,6 +4,7 @@
 
 import { CURRENT_SAVE_VERSION, type CareerState } from '../career/career';
 import { initFinance } from '../club/finance';
+import { buildSlots } from '../competitions/world';
 
 export interface SaveEnvelope {
   saveVersion: number;
@@ -25,6 +26,41 @@ export const MIGRATIONS: Record<number, (data: any) => any> = {
     const clubs: Record<string, any> = {};
     for (const [id, club] of Object.entries<any>(d.clubs ?? {})) clubs[id] = club.finance ? club : initFinance(club, d.players ?? {});
     return { ...d, clubs, transfers: d.transfers ?? [], inbox: d.inbox ?? [], preContracts: d.preContracts ?? [] };
+  },
+  // v2 → v3 (Fase 3): de uma liga para o mundo. A liga vira a única competição, a temporada
+  // ganha calendário de datas (38 fins de semana) e o histórico guarda liga e campeões.
+  2: (d) => {
+    const league = { ...d.league, tier: 1, mode: 'full' };
+    const old = d.season;
+    const over = old.nextRound > old.totalRounds;
+    const competition = {
+      id: league.id,
+      kind: 'league',
+      name: league.name,
+      country: league.country,
+      leagueId: league.id,
+      mode: 'full',
+      clubIds: league.clubIds.slice(),
+      fixtures: old.fixtures.map((f: any) => ({ ...f, slot: f.round - 1, competitionId: league.id })),
+      results: old.results,
+      table: old.table,
+      context: old.context,
+      ratings: {},
+      stages: [],
+      championId: over ? (old.table[0]?.clubId ?? null) : null,
+    };
+    const season = {
+      year: old.year,
+      seed: old.seed,
+      slots: buildSlots([]),
+      nextSlot: old.nextRound - 1,
+      competitions: { [league.id]: competition },
+      status: old.status ?? {},
+      stats: statsFromResults(old.results ?? []),
+    };
+    const history = (d.history ?? []).map((h: any) => ({ ...h, leagueId: league.id, winners: { [league.id]: h.championId } }));
+    const { league: _l, ...rest } = d;
+    return { ...rest, leagues: { [league.id]: league }, season, history };
   },
 };
 
@@ -60,7 +96,7 @@ export function deserializeCareer(text: string): { career: CareerState; savedAt:
     throw new SaveError('Save sem versão ou sem dados.');
   }
   const data = migrate(envelope.data, envelope.saveVersion) as CareerState;
-  if (!data.userClubId || !data.clubs?.[data.userClubId] || !data.season?.fixtures) {
+  if (!data.userClubId || !data.clubs?.[data.userClubId] || !data.season?.competitions) {
     throw new SaveError('Save incompleto (faltam clube, clubes ou temporada).');
   }
   return { career: { ...data, saveVersion: CURRENT_SAVE_VERSION }, savedAt: envelope.savedAt ?? 0 };
@@ -106,4 +142,24 @@ export function createSaveService(storage: StorageAdapter, key = SAVE_KEY) {
       await storage.remove(key);
     },
   };
+}
+
+/** Recalcula as estatísticas por jogador a partir de resultados completos (migração v2 → v3). */
+function statsFromResults(results: any[]): Record<string, any> {
+  const out: Record<string, any> = {};
+  const line = (id: string) => (out[id] ??= { apps: 0, goals: 0, assists: 0, yellows: 0, reds: 0, ratingSum: 0 });
+  for (const r of results) {
+    for (const id of [...r.homeXI, ...r.awayXI]) {
+      line(id).apps++;
+      line(id).ratingSum += r.ratings?.[id] ?? 0;
+    }
+    for (const e of r.events) {
+      if (e.type === 'goal') {
+        line(e.playerId).goals++;
+        if (e.assistId) line(e.assistId).assists++;
+      } else if (e.type === 'yellow') line(e.playerId).yellows++;
+      else if (e.type === 'red') line(e.playerId).reds++;
+    }
+  }
+  return out;
 }

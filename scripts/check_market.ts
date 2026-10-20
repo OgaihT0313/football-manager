@@ -23,7 +23,7 @@ const M = (v: number) => `${(v / 1e6).toFixed(1)}M`;
 
 const gen = generateFictionalLeague({ seed: 2026 });
 const userClubId = gen.clubs[10]!.id;
-const start = newCareer({ league: gen.league, clubs: gen.clubs, players: gen.players, userClubId, seed: 7, year: 2026 });
+const start = newCareer({ leagues: [gen.league], clubs: gen.clubs, players: gen.players, userClubId, seed: 7, year: 2026 });
 const user = () => start.clubs[userClubId]!;
 
 // 1. Valorização.
@@ -105,8 +105,8 @@ const otherPlayer = (c: CareerState, pred: (p: Player) => boolean) =>
   );
   const loaned = requestLoan(start, loanTarget.id, 1);
   check('empréstimo de reserva é aceito', loaned.result.ok && loaned.career.players[loanTarget.id]!.loan?.parentClubId === loanTarget.clubId);
-  const billBefore = weeklyWageBill(userClubId, start.players);
-  check('emprestado entra na folha de quem recebe', weeklyWageBill(userClubId, loaned.career.players) - billBefore === loanTarget.contract.wage);
+  const billBefore = weeklyWageBill(user(), start.players);
+  check('emprestado entra na folha de quem recebe', weeklyWageBill(loaned.career.clubs[userClubId]!, loaned.career.players) - billBefore === loanTarget.contract.wage);
   const back = startNextSeason(simulateRounds(loaned.career));
   const returned = back.players[loanTarget.id];
   check('emprestado volta ao dono na virada da temporada', !returned || (returned.clubId !== userClubId && !returned.loan));
@@ -189,7 +189,7 @@ const otherPlayer = (c: CareerState, pred: (p: Player) => boolean) =>
 // 6. Várias temporadas: invariantes do mundo e determinismo.
 {
   const run = (seed: number) => {
-    let c = newCareer({ league: gen.league, clubs: gen.clubs, players: gen.players, userClubId, seed, year: 2026 });
+    let c = newCareer({ leagues: [gen.league], clubs: gen.clubs, players: gen.players, userClubId, seed, year: 2026 });
     for (let s = 0; s < 3; s++) {
       c = simulateRounds(c, Infinity, { aiControlsUser: true });
       if (s < 2) c = startNextSeason(c, { aiControlsUser: true });
@@ -217,7 +217,7 @@ const otherPlayer = (c: CareerState, pred: (p: Player) => boolean) =>
   check('todo clube tem pelo menos 2 goleiros', gkOk);
   const debtOk = Object.values(a.clubs).every((cl) => cl.finance.balance > -0.5 * cl.finance.revenueBase);
   check('nenhum clube quebrado após 3 temporadas', debtOk);
-  const capOk = Object.values(a.clubs).every((cl) => weeklyWageBill(cl.id, a.players) <= cl.wageBudget * 1.15);
+  const capOk = Object.values(a.clubs).every((cl) => weeklyWageBill(cl, a.players) <= cl.wageBudget * 1.15);
   check('folhas dentro do teto (com folga de 15%)', capOk);
   const contracts = Object.values(a.players).filter((p) => p.clubId && !p.loan).every((p) => p.contract.expires >= a.season.year);
   check('nenhum contrato vencido em jogador com clube', contracts);

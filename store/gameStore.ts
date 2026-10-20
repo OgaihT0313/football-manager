@@ -3,16 +3,17 @@
 
 import { create } from 'zustand';
 import {
-  advanceRound, autoPickUserXI, newCareer, setUserFormation, setUserSlot, setUserTactic,
+  advanceToNextMatch, autoPickUserXI, newCareer, setUserFormation, setUserSlot, setUserTactic,
   simulateRounds, startNextSeason, type CareerState,
 } from '../src/career/career';
 import type { Club, Formation, LeagueConfig, Level, Player } from '../src/domain/types';
 import type { MarketResult } from '../src/career/userMarket';
+import { currentMarker } from '../src/market/calendar';
 import { createSaveService, SaveError } from '../src/save/saveService';
 import { storage } from '../src/save/storage';
-import leagueJson from '../data/leagues/ficticia.json';
-import clubsJson from '../data/clubs.json';
-import playersJson from '../data/players.json';
+import leaguesJson from '../data/world/leagues.json';
+import clubsJson from '../data/world/clubs.json';
+import playersJson from '../data/world/players.json';
 
 export type Tab = 'inicio' | 'elenco' | 'escalacao' | 'mercado' | 'clube' | 'liga';
 export type Phase = 'carregando' | 'menu' | 'escolhaClube' | 'jogo';
@@ -22,7 +23,7 @@ const saves = createSaveService(storage);
 const THEME_KEY = 'tema';
 
 export const baseData = {
-  league: leagueJson as LeagueConfig,
+  leagues: leaguesJson as LeagueConfig[],
   clubs: clubsJson as Club[],
   players: playersJson as Player[],
 };
@@ -43,6 +44,8 @@ interface GameState {
   saveError: string | null;
   tab: Tab;
   matchDetailId: string | null;
+  /** Competição exibida na aba Liga (null = liga do usuário). */
+  leagueView: string | null;
   /** Rodada exibida na aba Rodadas (null = rodada atual). */
   roundView: number | null;
   busy: boolean;
@@ -59,6 +62,7 @@ interface GameState {
   setTab(tab: Tab): void;
   openMatch(fixtureId: string | null): void;
   setRoundView(round: number | null): void;
+  setLeagueView(id: string | null): void;
   playNextRound(): void;
   simulateToEnd(): void;
   nextSeason(): void;
@@ -76,8 +80,8 @@ function infoOf(c: CareerState, savedAt: number): SaveInfo {
   return {
     clubName: c.clubs[c.userClubId]?.name ?? '?',
     year: c.season.year,
-    round: Math.min(c.season.nextRound - 1, c.season.totalRounds),
-    totalRounds: c.season.totalRounds,
+    round: Math.min(currentMarker(c.season) - 1, 38),
+    totalRounds: 38,
     savedAt,
   };
 }
@@ -116,6 +120,7 @@ export const useGame = create<GameState>()((set, get) => {
     saveError: null,
     tab: 'inicio',
     matchDetailId: null,
+    leagueView: null,
     roundView: null,
     busy: false,
     themePref: 'system',
@@ -168,15 +173,15 @@ export const useGame = create<GameState>()((set, get) => {
     setTab: (tab) => set({ tab }),
     openMatch: (fixtureId) => set({ matchDetailId: fixtureId }),
     setRoundView: (round) => set({ roundView: round }),
+    setLeagueView: (id) => set({ leagueView: id, roundView: null }),
 
     playNextRound() {
       heavy(() => {
         const c = get().career;
         if (!c) return;
-        const { career, results } = advanceRound(c);
+        const { career, result } = advanceToNextMatch(c);
         commit(career);
-        const mine = results.find((r) => r.homeId === c.userClubId || r.awayId === c.userClubId);
-        if (mine) set({ matchDetailId: mine.fixtureId });
+        if (result) set({ matchDetailId: result.fixtureId });
       });
     },
 
@@ -216,7 +221,6 @@ export const useGame = create<GameState>()((set, get) => {
 // Seletores. Devolvem referências que só mudam quando o dado muda, para não re-renderizar à toa.
 export const selectCareer = (s: GameState) => s.career;
 export const selectSeason = (s: GameState) => s.career?.season ?? null;
-export const selectTable = (s: GameState) => s.career?.season.table ?? null;
 export const selectUserClub = (s: GameState) => (s.career ? (s.career.clubs[s.career.userClubId] ?? null) : null);
 export const selectPlayers = (s: GameState) => s.career?.players ?? null;
 export const selectClubs = (s: GameState) => s.career?.clubs ?? null;

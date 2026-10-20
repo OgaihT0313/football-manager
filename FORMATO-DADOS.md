@@ -2,11 +2,16 @@
 
 ## Arquivos do jogo (`data/`)
 
+O app usa o **mundo** em `data/world/` (gerado por `npm run gen:world`):
+
 | Arquivo | Conteúdo |
 |---|---|
-| `data/leagues/<id>.json` | `LeagueConfig`: clubes da liga, pontos por vitória/empate, turnos, ordem de desempate |
-| `data/clubs.json` | `Club[]`: elenco (ids), formação e tática, orçamento, reputação |
-| `data/players.json` | `Player[]`: atributos, posições, contrato, valor |
+| `data/world/leagues.json` | `LeagueConfig[]`: 1ª e 2ª divisões de cada país (divisão, modo `full`/`strength`, rebaixamento, liga ligada, copa, supercopa, vagas europeias) |
+| `data/world/clubs.json` | `Club[]`: elenco (ids) ou, na 2ª divisão, só `strength`; tática, finanças, reputação |
+| `data/world/players.json` | `Player[]`: atributos, posições, contrato, valor |
+
+A liga única de `data/leagues/ficticia.json` + `data/clubs.json` + `data/players.json` continua
+sendo a base do backtest do motor (`npm run backtest`).
 
 Os tipos estão em `src/domain/types.ts`. Tudo é JSON puro.
 
@@ -71,5 +76,16 @@ Conversão:
 
 Exemplo: `data/exemplos/jogadores_fifa.csv`.
 
-Os clubes criados pela importação vêm com 4-3-3, tática neutra e orçamento zero; isso é
-ajustado na Fase 3.
+Os clubes criados pela importação vêm com 4-3-3 e tática neutra; reputação e finanças saem da
+força e da folha do elenco.
+
+### Jogar com os dados importados
+
+A importação grava `players.json`, `clubs.json` e `leagues.json` (uma 1ª divisão por
+`league_name`) na pasta de saída. Para o app usar esses dados, copie os três para `data/world/`.
+O que não vem do CSV e pode ser completado à mão em `leagues.json`:
+
+- `country`, `cupName` e `supercupName` (copa e supercopa do país);
+- `continental` (vagas europeias);
+- `relegation` e `linkedLeagueId` (uma 2ª divisão com clubes `"strength": 60` e `squad: []`,
+  `"mode": "strength"`, `"tier": 2`).

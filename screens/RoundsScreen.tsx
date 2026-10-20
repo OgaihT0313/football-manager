@@ -1,36 +1,37 @@
-// Rodadas: jogos de cada rodada, com placar quando já jogados.
+// Rodadas de uma liga: jogos de cada rodada, com placar quando já jogados.
 
 import { useMemo } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { Header } from '../components/Header';
 import { Button, Card, Muted } from '../components/ui';
-import { roundFixtures } from '../src/competitions/season';
+import type { CompetitionState } from '../src/competitions/world';
 import type { MatchResult } from '../src/domain/types';
 import { selectCareer, useGame } from '../store/gameStore';
 
-export function RoundsScreen() {
+export function RoundsScreen({ comp }: { comp: CompetitionState }) {
   const career = useGame(selectCareer)!;
   const roundView = useGame((s) => s.roundView);
   const setRoundView = useGame((s) => s.setRoundView);
   const openMatch = useGame((s) => s.openMatch);
-  const { season, clubs, userClubId } = career;
-
-  // Padrão: a última rodada jogada (ou a 1ª se nada foi jogado).
-  const round = roundView ?? Math.max(1, Math.min(season.nextRound - 1, season.totalRounds));
-  const fixtures = useMemo(() => roundFixtures(season, round), [season, round]);
+  const { clubs, userClubId } = career;
+  const totalRounds = comp.fixtures.reduce((m, f) => Math.max(m, f.round), 0);
   const results = useMemo(() => {
     const m: Record<string, MatchResult> = {};
-    for (const r of season.results) m[r.fixtureId] = r;
+    for (const r of comp.results) m[r.fixtureId] = r;
     return m;
-  }, [season.results]);
+  }, [comp.results]);
+  // Padrão: a última rodada jogada (ou a 1ª se nada foi jogado).
+  const lastPlayed = comp.fixtures.reduce((m, f) => (results[f.id] ? Math.max(m, f.round) : m), 0);
+  const round = roundView ?? Math.max(1, lastPlayed);
+  const fixtures = useMemo(() => comp.fixtures.filter((f) => f.round === round), [comp.fixtures, round]);
 
   return (
     <ScrollView contentContainerClassName="gap-4 px-4 pb-8">
-      <Header title="Rodadas" subtitle={round < season.nextRound ? 'Toque num jogo para ver os detalhes' : 'Rodada ainda não jogada'} />
+      <Header title="Rodadas" subtitle={round <= lastPlayed ? 'Toque num jogo para ver os detalhes' : 'Rodada ainda não jogada'} />
       <View className="flex-row items-center justify-between">
         <Button variant="secondary" label="‹ Anterior" disabled={round <= 1} onPress={() => setRoundView(round - 1)} />
         <Text className="text-lg font-bold text-slate-900 dark:text-white">Rodada {round}</Text>
-        <Button variant="secondary" label="Próxima ›" disabled={round >= season.totalRounds} onPress={() => setRoundView(round + 1)} />
+        <Button variant="secondary" label="Próxima ›" disabled={round >= totalRounds} onPress={() => setRoundView(round + 1)} />
       </View>
       <Card className="p-2">
         {fixtures.map((f) => {
@@ -64,7 +65,7 @@ export function RoundsScreen() {
         })}
       </Card>
       {roundView !== null ? <Button variant="ghost" label="Voltar à rodada atual" onPress={() => setRoundView(null)} /> : null}
-      <Muted className="text-center">{season.totalRounds} rodadas · ida e volta</Muted>
+      <Muted className="text-center">{totalRounds} rodadas · ida e volta</Muted>
     </ScrollView>
   );
 }

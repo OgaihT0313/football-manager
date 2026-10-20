@@ -82,6 +82,10 @@ export interface Club {
   /** Qualidade do treino/estrutura (1-5): acelera a evolução dos jogadores. */
   training: Level;
   finance: ClubFinance;
+  /** Força (1-99) de clube sem elenco detalhado (segunda divisão, ligas de fundo). */
+  strength?: number;
+  /** Jogadores do clube emprestados a outros (continuam na folha, na parte não coberta). */
+  loanedOut?: string[];
 }
 
 export interface SeasonLedger {
@@ -149,15 +153,45 @@ export interface LeagueConfig {
   legs: number;
   /** Ordem dos critérios de desempate, aplicada da esquerda para a direita. */
   tiebreakers: Tiebreaker[];
+  /** 1 = primeira divisão, 2 = segunda. Padrão 1. */
+  tier?: 1 | 2;
+  /**
+   * 'full' = partidas com elenco, escalação e eventos; 'strength' = só pela força do clube
+   * (segunda divisão e ligas de fundo). Padrão 'full'.
+   */
+  mode?: 'full' | 'strength';
+  /** Quantos caem (1ª divisão) ou sobem (2ª) por temporada. */
+  relegation?: number;
+  /** Liga da divisão de baixo (na 1ª) ou de cima (na 2ª). */
+  linkedLeagueId?: string;
+  /** Nome da copa nacional e da supercopa do país (definidos na 1ª divisão). */
+  cupName?: string;
+  supercupName?: string;
+  /** Vagas europeias pela colocação (Fase 4). */
+  continental?: ContinentalSpots;
+  /** Força relativa da liga (0-100), usada no ágio salarial e em coeficientes. */
+  reputation?: number;
+}
+
+export interface ContinentalSpots {
+  ucl: number;
+  uel: number;
+  uecl: number;
 }
 
 export type Tiebreaker = 'points' | 'goalDiff' | 'goalsFor' | 'headToHead' | 'wins' | 'awayGoalsFor';
 
 export interface Fixture {
   id: string;
+  /** Rodada (liga) ou fase (copa). */
   round: number;
   homeId: string;
   awayId: string;
+  /** Data no calendário da temporada (índice do slot). */
+  slot?: number;
+  competitionId?: string;
+  /** Campo neutro (finais): sem vantagem de mando. */
+  neutral?: boolean;
 }
 
 export type MatchEventType = 'goal' | 'yellow' | 'red' | 'injury';
@@ -187,6 +221,8 @@ export interface MatchResult {
   ratings: Record<string, number>;
   homeXI: string[];
   awayXI: string[];
+  /** Mata-mata empatado: quem venceu nos pênaltis. */
+  shootoutWinnerId?: string;
 }
 
 export interface TableRow {

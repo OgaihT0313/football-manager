@@ -21,11 +21,15 @@ export function emptyLedger(): SeasonLedger {
 }
 
 /** Custo salarial semanal de um clube, considerando empréstimos nos dois sentidos. */
-export function weeklyWageBill(clubId: string, players: Record<string, Player>): number {
+export function weeklyWageBill(club: Pick<Club, 'id' | 'squad' | 'loanedOut'>, players: Record<string, Player>): number {
   let total = 0;
-  for (const p of Object.values(players)) {
-    if (p.clubId === clubId) total += p.loan ? p.contract.wage * p.loan.wageShare : p.contract.wage;
-    else if (p.loan?.parentClubId === clubId) total += p.contract.wage * (1 - p.loan.wageShare);
+  for (const id of club.squad) {
+    const p = players[id];
+    if (p) total += p.loan ? p.contract.wage * p.loan.wageShare : p.contract.wage;
+  }
+  for (const id of club.loanedOut ?? []) {
+    const p = players[id];
+    if (p?.loan?.parentClubId === club.id) total += p.contract.wage * (1 - p.loan.wageShare);
   }
   return total;
 }
@@ -40,7 +44,7 @@ export function trainingFromReputation(rep: number): Level {
 
 /** Cria as finanças iniciais a partir da folha atual (a receita sustenta a folha a 60%). */
 export function initFinance(club: Omit<Club, 'finance' | 'training'> & Partial<Pick<Club, 'finance' | 'training'>>, players: Record<string, Player>): Club {
-  const bill = weeklyWageBill(club.id, players);
+  const bill = weeklyWageBill(club, players);
   const revenueBase = Math.max(5_000_000, Math.round((bill * 52) / WAGE_SHARE / 100_000) * 100_000);
   const finance: ClubFinance = club.finance ?? { balance: Math.round(revenueBase * 0.4), revenueBase, season: emptyLedger() };
   const full: Club = { ...club, finance, training: club.training ?? trainingFromReputation(club.reputation) };
@@ -67,14 +71,14 @@ export function spendableFee(club: Club): number {
 
 /** Folga semanal no teto salarial. */
 export function wageRoom(club: Club, players: Record<string, Player>): number {
-  return club.wageBudget - weeklyWageBill(club.id, players);
+  return club.wageBudget - weeklyWageBill(club, players);
 }
 
 /** Receitas e despesas de uma rodada. ALTERA `club.finance`. */
 export function settleRound(club: Club, players: Record<string, Player>, totalRounds: number): void {
   const R = club.finance.revenueBase;
   const income = (R * ROUND_INCOME_SHARE) / totalRounds;
-  const wages = (weeklyWageBill(club.id, players) * 52) / totalRounds;
+  const wages = (weeklyWageBill(club, players) * 52) / totalRounds;
   const operating = (R * OPERATING_SHARE) / totalRounds;
   const f = club.finance;
   f.balance += income - wages - operating;

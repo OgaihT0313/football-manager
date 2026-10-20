@@ -23,7 +23,7 @@ export interface GenOptions {
  * Nível-alvo (OVR médio dos titulares) por posição no ranking de força, do mais forte ao mais
  * fraco. Os valores são faixas [mín, máx]; cada clube sorteia dentro da sua.
  */
-const STRENGTH_TIERS: readonly [number, number][] = [
+export const STRENGTH_TIERS: readonly [number, number][] = [
   [81, 83], [80.5, 82.5], [79.5, 81.5],
   [77, 79],
   [74, 76], [73, 75], [73, 75],
@@ -112,7 +112,7 @@ function pickFoot(rng: Rng, pos: Position): Foot {
 export function makePlayer(
   rng: Rng,
   id: string,
-  clubId: string,
+  clubId: string | null,
   pos: Position,
   target: number,
   season: number,
@@ -150,6 +150,24 @@ export function makePlayer(
   };
 }
 
+/**
+ * Elenco de 25 para um clube de nível `level` (OVR médio dos titulares): titular e reserva
+ * para cada vaga da formação, terceiro goleiro e dois jovens coringas.
+ */
+export function generateSquad(rng: Rng, clubId: string, level: number, formation: Formation, season: number, idPrefix = clubId): Player[] {
+  const slots = FORMATIONS[formation];
+  const plan: { pos: Position; target: number; ages: [number, number] }[] = [];
+  for (const pos of slots) {
+    plan.push({ pos, target: level + gaussian(rng, 0, 2.5), ages: [21, 33] });
+    plan.push({ pos, target: level - 5 + gaussian(rng, 0, 3), ages: [18, 34] });
+  }
+  plan.push({ pos: 'GK', target: level - 12 + gaussian(rng, 0, 3), ages: [17, 36] });
+  for (let k = 0; k < 2; k++) {
+    plan.push({ pos: pick(rng, slots.slice(1)), target: level - 8 + gaussian(rng, 0, 4), ages: [17, 21] });
+  }
+  return plan.map((p, j) => makePlayer(rng, `${idPrefix}-${String(j + 1).padStart(2, '0')}`, clubId, p.pos, p.target, season, p.ages));
+}
+
 export function generateFictionalLeague(opts: GenOptions): GeneratedLeague {
   const rng = createRng(opts.seed);
   const leagueId = opts.leagueId ?? 'ficticia';
@@ -166,24 +184,9 @@ export function generateFictionalLeague(opts: GenOptions): GeneratedLeague {
     const level = levels[i] as number;
     const clubId = `${leagueId}-${shortName.toLowerCase()}`;
     const formation: Formation = pick(rng, FORMATION_LIST);
-    const slots = FORMATIONS[formation];
-    // Titular + reserva para cada vaga, terceiro goleiro e dois coringas = 25.
-    const plan: { pos: Position; target: number; ages: [number, number] }[] = [];
-    for (const pos of slots) {
-      plan.push({ pos, target: level + gaussian(rng, 0, 2.5), ages: [21, 33] });
-      plan.push({ pos, target: level - 5 + gaussian(rng, 0, 3), ages: [18, 34] });
-    }
-    plan.push({ pos: 'GK', target: level - 12 + gaussian(rng, 0, 3), ages: [17, 36] });
-    for (let k = 0; k < 2; k++) {
-      plan.push({ pos: pick(rng, slots.slice(1)), target: level - 8 + gaussian(rng, 0, 4), ages: [17, 21] });
-    }
-
-    const squad: string[] = [];
-    plan.forEach((p, j) => {
-      const id = `${clubId}-${String(j + 1).padStart(2, '0')}`;
-      players.push(makePlayer(rng, id, clubId, p.pos, p.target, season, p.ages));
-      squad.push(id);
-    });
+    const generated = generateSquad(rng, clubId, level, formation, season);
+    players.push(...generated);
+    const squad = generated.map((p) => p.id);
 
     clubs.push({
       id: clubId,

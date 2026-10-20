@@ -1,7 +1,9 @@
-// Tabela de classificação.
+// Tabela de classificação de uma liga, com as faixas de vaga europeia, acesso e rebaixamento.
 
 import { FlatList, Text, View } from 'react-native';
 import { Header } from '../components/Header';
+import { Muted } from '../components/ui';
+import type { CompetitionState } from '../src/competitions/world';
 import { selectCareer, useGame } from '../store/gameStore';
 
 const COLS = [
@@ -13,14 +15,28 @@ const COLS = [
   { key: 'Pts', w: 'w-10' },
 ] as const;
 
-export function TableScreen() {
+export function TableScreen({ comp }: { comp: CompetitionState }) {
   const career = useGame(selectCareer)!;
-  const { season, clubs, userClubId, league } = career;
-  const n = season.table.length;
+  const { season, clubs, userClubId } = career;
+  const league = career.leagues[comp.leagueId ?? ''];
+  const n = comp.table.length;
+  const played = comp.table.reduce((m, r) => Math.max(m, r.played), 0);
+  const tier = league?.tier ?? 1;
+  const k = league?.relegation ?? 0;
+  const cont = league?.continental;
+  const ucl = cont?.ucl ?? 0;
+  const europe = ucl + (cont?.uel ?? 0) + (cont?.uecl ?? 0);
+  const zoneOf = (i: number) => {
+    if (tier === 2) return i < k ? 'border-l-green-600' : 'border-l-transparent';
+    if (i < ucl) return 'border-l-green-600';
+    if (i < europe) return 'border-l-sky-500';
+    if (i >= n - k) return 'border-l-red-500';
+    return 'border-l-transparent';
+  };
 
   return (
     <View className="flex-1">
-      <Header title="Tabela" subtitle={`${league.name} ${season.year} · ${Math.min(season.nextRound - 1, season.totalRounds)} rodadas jogadas`} />
+      <Header title={comp.name} subtitle={`${season.year} · ${played} rodadas jogadas`} />
       <View className="flex-row px-4 pb-1">
         <Text className="w-7 text-xs font-bold text-slate-500">#</Text>
         <Text className="flex-1 text-xs font-bold text-slate-500">CLUBE</Text>
@@ -31,13 +47,12 @@ export function TableScreen() {
         ))}
       </View>
       <FlatList
-        data={season.table}
+        data={comp.table}
         keyExtractor={(r) => r.clubId}
         contentContainerClassName="px-4 pb-6"
         renderItem={({ item: r, index }) => {
           const mine = r.clubId === userClubId;
-          // Faixas só visuais por enquanto: 4 primeiros e 3 últimos (vagas reais na Fase 3).
-          const zone = index < 4 ? 'border-l-green-600' : index >= n - 3 ? 'border-l-red-500' : 'border-l-transparent';
+          const zone = zoneOf(index);
           const values = [r.played, r.wins, r.draws, r.losses, r.goalsFor - r.goalsAgainst, r.points];
           return (
             <View
@@ -58,6 +73,13 @@ export function TableScreen() {
             </View>
           );
         }}
+        ListFooterComponent={
+          <Muted className="mt-3 text-xs">
+            {tier === 2
+              ? `Verde: sobem (${k}).`
+              : `Verde: Champions (${ucl}) · azul: Europa/Conference (${europe - ucl}) · vermelho: caem (${k}).`}
+          </Muted>
+        }
       />
     </View>
   );

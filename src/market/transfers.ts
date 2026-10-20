@@ -4,7 +4,8 @@
 // são SUBSTITUÍDOS no mapa (nunca alterados por dentro), então copiar só os mapas basta.
 
 import { MAX_DEBT_SHARE, spendableFee, wageRoom } from '../club/finance';
-import type { SeasonState } from '../competitions/season';
+import type { WorldSeason } from '../competitions/world';
+import { currentMarker } from './calendar';
 import type { Club, Player, TransferRecord, TransferType } from '../domain/types';
 import { autoLineup } from '../engine/lineup';
 import { contractYearsRange, marketValue, wageDemand } from './valuation';
@@ -16,8 +17,10 @@ export const MIN_GOALKEEPERS = 2;
 export interface MarketWorld {
   clubs: Record<string, Club>;
   players: Record<string, Player>;
-  season: SeasonState;
+  season: WorldSeason;
   transfers: TransferRecord[];
+  /** Rodada registrada nas transferências (0 = virada); padrão: jornada da próxima data. */
+  round?: number;
 }
 
 const round100 = (v: number) => Math.round(v / 100) * 100;
@@ -85,7 +88,7 @@ export function canAfford(buyer: Club, players: Record<string, Player>, fee: num
 function record(w: MarketWorld, p: Player, from: string | null, to: string | null, fee: number, wage: number, type: TransferType): void {
   w.transfers.push({
     year: w.season.year,
-    round: w.season.nextRound,
+    round: w.round ?? currentMarker(w.season),
     playerId: p.id,
     playerName: p.name,
     fromClubId: from,
@@ -158,7 +161,8 @@ export function executeTransfer(w: MarketWorld, playerId: string, toClubId: stri
 export function executeLoan(w: MarketWorld, playerId: string, toClubId: string, wageShare: number): void {
   const p = w.players[playerId]!;
   const parentId = p.clubId!;
-  setClub(w, removeFromClub(w.clubs[parentId]!, playerId));
+  const parent = removeFromClub(w.clubs[parentId]!, playerId);
+  setClub(w, { ...parent, loanedOut: [...(parent.loanedOut ?? []), playerId] });
   setClub(w, addToClub(w.clubs[toClubId]!, playerId));
   w.players[playerId] = { ...p, clubId: toClubId, loan: { parentClubId: parentId, until: w.season.year, wageShare } };
   record(w, p, parentId, toClubId, 0, round100(p.contract.wage * wageShare), 'loan');
@@ -172,7 +176,8 @@ export function returnLoan(w: MarketWorld, playerId: string): void {
   if (p.clubId) setClub(w, removeFromClub(w.clubs[p.clubId]!, playerId));
   const { loan: _loan, ...rest } = p;
   if (w.clubs[parentId]) {
-    setClub(w, addToClub(w.clubs[parentId]!, playerId));
+    const parent = addToClub(w.clubs[parentId]!, playerId);
+    setClub(w, { ...parent, loanedOut: (parent.loanedOut ?? []).filter((id) => id !== playerId) });
     w.players[playerId] = { ...rest, clubId: parentId };
   } else {
     w.players[playerId] = { ...rest, clubId: null };

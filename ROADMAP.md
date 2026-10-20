@@ -7,10 +7,65 @@ Plano completo em `PLANO-FUTEBOL.md`. Aqui fica o estado de cada fase e o que fo
 | 0 — Spike: motor + uma liga, sem tela | **Concluída** (2026-10-18) |
 | 1 — Uma liga jogável (app) | **Concluída** (2026-10-18) |
 | 2 — Calendário, contratos, transferências, finanças | **Concluída** (2026-10-19) |
-| 3 — Cinco ligas e copas nacionais | Não iniciada |
+| 3 — Cinco ligas e copas nacionais | **Concluída** (2026-10-19) |
 | 4 — Competições europeias | Não iniciada |
 | 5 — Camada de técnico | Não iniciada |
 | 6 — Ligas de fundo, visão 2D, eras | Não iniciada |
+
+## Fase 3 — resultado
+
+Mundo com 5 países: 1ª divisão com elencos, 2ª divisão "por força", copa nacional (32 clubes,
+mata-mata) e supercopa. Acesso e rebaixamento, calendário único de 44 datas, aba Liga com
+qualquer competição, escolha de clube por país e "Jogar próxima partida" em qualquer
+competição. Save v3 com migração da v2. Decisões em `PLANO-LIGAS.md`.
+
+Comandos:
+
+```bash
+npm run gen:world    # data/world/ (5 países, 192 clubes, 2.400 jogadores)
+npm run diagnose     # mundo; --liga-unica para a liga de data/
+```
+
+Medido:
+
+- **Temporada completa das cinco ligas** (10 ligas, 5 copas e 5 supercopas, 3.664 jogos): 1,3 s
+  no Node (`check_save`) e **1,56 s no navegador** (build de desenvolvimento, medido do clique em
+  "Simular resto" até a tela de fim de temporada). A virada leva ~0,13 s. No celular não foi
+  medido; estimando 3 a 6 vezes mais lento que o navegador do PC, daria uns 5 a 9 s para simular
+  uma temporada inteira, e dezenas de milissegundos por partida jogada.
+- **Save:** 4,0 MB no fim da temporada do mundo, abaixo do limite de 10 MB, então não foi preciso
+  `expo-sqlite`. No web, o save foi para o IndexedDB: com 4,3 milhões de caracteres, chegava
+  perto da cota do `localStorage`.
+- `diagnose_league` no mundo (3 carreiras × 10 temporadas, IA em todos os clubes): **9 de 9
+  critérios OK**.
+
+| Critério | Medido |
+|---|---|
+| OVR médio dos titulares estável | 73,1 → 72,2 |
+| Elencos entre 18 e 30 | 19–29 |
+| Nenhum clube quebrado | 0 |
+| Folha/receita | 63%–70% |
+| Idade média | 25,2–26,0 |
+| Transferências pagas por temporada | mínimo 56 |
+| Gols por jogo (média) | 2,85 |
+| Gols por jogo por liga | PL 2,88 · La Liga 2,85 · Serie A 2,85 · Bundesliga 2,83 · Ligue 1 2,84 |
+| Posição média do promovido no 1º ano | 16,9 |
+
+- Liga única (5 carreiras): 8 de 8 OK (transferências pagas: mínimo 11).
+- Backtest de 500 temporadas: igual ao da Fase 2 (gols/jogo 2,76 / 2,79).
+- `check_save`: 34 verdes. Inclui mundo interrompido na rodada 21 e retomado idêntico, acesso
+  e rebaixamento, e migração de saves v1 e v2. `check_market`: 48. `check_engine`: 32.
+- No navegador: migração de um save v2 real, carreira nova na Espanha, aba Liga com
+  tabela (faixas de vaga), copa (fases e pênaltis) e 2ª divisão, temporada inteira simulada,
+  virada para 2027 e 2028, e save no IndexedDB lido depois de recarregar. Bundle Android
+  compila (1063 módulos). **Não testado em aparelho.**
+
+O que observar:
+
+- Os gols por jogo no mundo (2,85) ficam acima da liga única (2,79). As datas de meio de semana
+  cansam mais, e a diferença entre ricos e pobres cresce um pouco com os anos (pior clube 64 → 61).
+- O promovido termina perto do 17º lugar, o que é realista, mas fica no limite do critério.
+- Nenhuma copa foi ganha por clube da 2ª divisão na média (houve 1 em 30 temporadas).
 
 ## Fase 2 — resultado
 
@@ -193,8 +248,6 @@ Parâmetros calibrados na Fase 0 (`DEFAULT_PARAMS` em `src/engine/matchEngine.ts
 
 - Moral existe no tipo (`morale`, entra em `conditionFactor`) mas ainda não muda com os
   resultados.
-- Zonas da tabela (4 primeiros, 3 últimos) são só visuais; vagas reais e rebaixamento na
-  Fase 3.
 - Testar num aparelho Android/iOS de verdade (salvar com `expo-file-system`, fechar e reabrir).
 - Vermelho não muda o placar (λ é calculado antes); entra com o modo ao vivo.
 - Dados reais: o usuário fornece o CSV; ver `FORMATO-DADOS.md`.

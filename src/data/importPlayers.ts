@@ -5,7 +5,7 @@
 
 import { initFinance } from '../club/finance';
 import { computeOvr, FORMATIONS, POSITION_WEIGHTS } from '../domain/positions';
-import type { Attributes, Club, Foot, Player, Position } from '../domain/types';
+import type { Attributes, Club, Foot, LeagueConfig, Player, Position } from '../domain/types';
 
 export type ImportFormat = 'nativo' | 'fifa';
 
@@ -93,6 +93,8 @@ function anchorOvr(attrs: Attributes, pos: Position, target: number): Attributes
 export interface ImportResult {
   players: Player[];
   clubs: Club[];
+  /** Uma 1ª divisão por liga encontrada no CSV (sem 2ª divisão nem copa: completar à mão). */
+  leagues: LeagueConfig[];
   warnings: string[];
 }
 
@@ -120,6 +122,7 @@ export function importPlayersCsv(text: string, opts: ImportOptions): ImportResul
   const errors: string[] = [];
   const players: Player[] = [];
   const clubs: Record<string, Omit<Club, 'finance' | 'training'>> = {};
+  const leagueNames: Record<string, string> = {};
   const usedIds = new Set<string>();
 
   rows.forEach((r, i) => {
@@ -172,7 +175,10 @@ export function importPlayersCsv(text: string, opts: ImportOptions): ImportResul
       nationality = col(r, 'nationality_name');
       clubName = col(r, 'club_name');
       clubId = slugify(clubName);
-      if (header.includes('league_name') && col(r, 'league_name')) leagueId = slugify(col(r, 'league_name'));
+      if (header.includes('league_name') && col(r, 'league_name')) {
+        leagueId = slugify(col(r, 'league_name'));
+        leagueNames[leagueId] = col(r, 'league_name');
+      }
       const rawPos = col(r, 'player_positions').split(/[,;/ ]+/).filter(Boolean).map((p) => p.toUpperCase());
       positions = [];
       for (const p of rawPos) {
@@ -277,5 +283,18 @@ export function importPlayersCsv(text: string, opts: ImportOptions): ImportResul
     const avg = top.reduce((a, b) => a + b, 0) / Math.max(1, top.length);
     return initFinance({ ...c, reputation: Math.round(Math.max(1, Math.min(100, (avg - 55) * 3))) }, byId);
   });
-  return { players, clubs: finished, warnings };
+  const leagues: LeagueConfig[] = [...new Set(finished.map((c) => c.leagueId))].map((id) => ({
+    id,
+    name: leagueNames[id] ?? id,
+    country: leagueNames[id] ?? id,
+    clubIds: finished.filter((c) => c.leagueId === id).map((c) => c.id),
+    pointsForWin: 3,
+    pointsForDraw: 1,
+    legs: 2,
+    tiebreakers: ['points', 'goalDiff', 'goalsFor', 'headToHead', 'wins', 'awayGoalsFor'],
+    tier: 1,
+    mode: 'full',
+  }));
+  for (const l of leagues) if (l.clubIds.length % 2 === 1) warnings.push(`${l.name}: número ímpar de clubes (${l.clubIds.length}); haverá folga por rodada`);
+  return { players, clubs: finished, leagues, warnings };
 }

@@ -30,8 +30,10 @@ try {
   const result = importPlayersCsv(readFileSync(csvPath, 'utf8'), { format, season, leagueId });
   writeJson(join(outDir, 'players.json'), result.players);
   writeJson(join(outDir, 'clubs.json'), result.clubs);
+  writeJson(join(outDir, 'leagues.json'), result.leagues);
   for (const w of result.warnings) console.warn(`Aviso: ${w}`);
-  console.log(`${result.players.length} jogadores e ${result.clubs.length} clubes gravados em ${outDir}`);
+  console.log(`${result.players.length} jogadores, ${result.clubs.length} clubes e ${result.leagues.length} ligas gravados em ${outDir}`);
+  console.log('Para jogar com esses dados, copie leagues.json, clubs.json e players.json para data/world/ (ver FORMATO-DADOS.md).');
 } catch (e) {
   if (e instanceof ImportError) fail(e.message);
   throw e;

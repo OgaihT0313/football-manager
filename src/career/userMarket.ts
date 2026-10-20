@@ -125,7 +125,7 @@ export function loanOut(c: CareerState, playerId: string): Outcome {
   const pos = p.positions[0] as Position;
   let best: { club: Club; gain: number } | null = null;
   for (const club of Object.values(c.clubs)) {
-    if (club.id === c.userClubId || club.squad.length >= MAX_SQUAD - 1 || p.contract.wage > wageRoom(club, c.players)) continue;
+    if (club.id === c.userClubId || !club.squad.length || club.squad.length >= MAX_SQUAD - 1 || p.contract.wage > wageRoom(club, c.players)) continue;
     const pool = club.squad.map((id) => c.players[id]!).filter(Boolean);
     const weakest = autoLineup(club.tactic.formation, pool).slots.filter((s) => s.pos === pos).sort((a, b) => a.rating - b.rating)[0];
     if (!weakest) continue;

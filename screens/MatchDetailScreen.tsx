@@ -3,6 +3,7 @@
 import { ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, Muted, SectionTitle } from '../components/ui';
+import { findResult } from '../src/competitions/world';
 import type { MatchEvent, MatchResult, Player } from '../src/domain/types';
 import { selectCareer, useGame } from '../store/gameStore';
 
@@ -20,8 +21,10 @@ export function MatchDetailScreen({ fixtureId }: { fixtureId: string }) {
   const career = useGame(selectCareer)!;
   const close = useGame((s) => s.openMatch);
   const insets = useSafeAreaInsets();
-  const r = career.season.results.find((x) => x.fixtureId === fixtureId);
-  if (!r) return null;
+  const found = findResult(career.season, fixtureId);
+  if (!found) return null;
+  const { result: r, comp } = found;
+  const summarized = r.homeXI.length === 0 && r.awayXI.length === 0;
   const { clubs, players } = career;
   const home = clubs[r.homeId]!;
   const away = clubs[r.awayId]!;
@@ -48,6 +51,8 @@ export function MatchDetailScreen({ fixtureId }: { fixtureId: string }) {
           <Muted className="mt-2 text-center">
             Gols esperados {r.homeXg.toFixed(2).replace('.', ',')} x {r.awayXg.toFixed(2).replace('.', ',')}
           </Muted>
+          {r.shootoutWinnerId ? <Muted className="text-center">{clubs[r.shootoutWinnerId]?.name} venceu nos pênaltis</Muted> : null}
+          <Muted className="text-center">{comp.name}</Muted>
         </Card>
 
         <Card>
@@ -71,10 +76,14 @@ export function MatchDetailScreen({ fixtureId }: { fixtureId: string }) {
           })}
         </Card>
 
-        <View className="flex-row gap-3">
-          <Ratings title={home.shortName} ids={r.homeXI} result={r} players={players} />
-          <Ratings title={away.shortName} ids={r.awayXI} result={r} players={players} />
-        </View>
+        {summarized ? (
+          <Muted className="text-center">Jogo de outra competição: guardamos só o placar e os gols.</Muted>
+        ) : (
+          <View className="flex-row gap-3">
+            <Ratings title={home.shortName} ids={r.homeXI} result={r} players={players} />
+            <Ratings title={away.shortName} ids={r.awayXI} result={r} players={players} />
+          </View>
+        )}
       </ScrollView>
     </View>
   );

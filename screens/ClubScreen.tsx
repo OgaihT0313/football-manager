@@ -24,7 +24,7 @@ export function ClubScreen() {
   const { clubs, userClubId, players, season, transfers } = career;
   const club = clubs[userClubId]!;
   const f = club.finance;
-  const bill = weeklyWageBill(userClubId, players);
+  const bill = weeklyWageBill(club, players);
   const led = f.season;
   const net = led.income + led.prizes + led.transfersOut - led.wages - led.operating - led.transfersIn;
 

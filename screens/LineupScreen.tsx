@@ -7,6 +7,7 @@ import { Header } from '../components/Header';
 import { LEVEL_LABEL, POS_LABEL } from '../components/labels';
 import { Badge, Button, Card, FitnessBar, Muted, SectionTitle, Segmented, Strong } from '../components/ui';
 import { userLineup } from '../src/career/career';
+import { roundLabel } from '../src/career/queries';
 import { familiarity, FORMATION_LIST, FORMATIONS } from '../src/domain/positions';
 import type { Level, Player, Position } from '../src/domain/types';
 import { slotRating } from '../src/engine/lineup';
@@ -46,7 +47,7 @@ export function LineupScreen() {
   return (
     <View className="flex-1">
       <ScrollView contentContainerClassName="gap-4 px-4 pb-8">
-        <Header title="Escalação" subtitle={`${club.tactic.formation} · próxima rodada ${Math.min(season.nextRound, season.totalRounds)}`} />
+        <Header title="Escalação" subtitle={`${club.tactic.formation} · ${roundLabel(season)}`} />
 
         <Card>
           <SectionTitle>Formação</SectionTitle>

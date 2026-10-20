@@ -4,7 +4,7 @@
 import { wageRoom } from '../club/finance';
 import { FORMATIONS } from '../domain/positions';
 import type { Club, IncomingOffer, Player, Position } from '../domain/types';
-import { autoLineup, slotRating } from '../engine/lineup';
+import { autoLineup, slotRating, type Lineup } from '../engine/lineup';
 import { chance, shuffle, type Rng } from '../engine/rng';
 import { openWindow, windowLastRound } from '../market/calendar';
 import {
@@ -44,25 +44,27 @@ export function runMarketDay(w: MarketWorld, opts: MarketDayOptions): void {
   const window = openWindow(w.season);
   if (!window) return;
   const firstRound = window === 'verao' ? 1 : windowLastRound('inverno') - 2;
-  const starterCache = new Map<string, Set<string>>();
-  const startersFor = (club: Club) => {
-    let s = starterCache.get(club.id);
-    if (!s) {
-      s = startersOf(club, w.players);
-      starterCache.set(club.id, s);
+  // Escalação automática por clube no dia. Clubes são substituídos quando mudam (compra,
+  // venda, empréstimo), então o cache por objeto se invalida sozinho.
+  const lineups = new WeakMap<Club, Lineup>();
+  const lineupOf = (club: Club): Lineup => {
+    let l = lineups.get(club);
+    if (!l) {
+      l = autoLineup(club.tactic.formation, club.squad.map((id) => w.players[id]).filter((p): p is Player => !!p));
+      lineups.set(club, l);
     }
-    return s;
+    return l;
   };
+  const startersFor = (club: Club) => new Set(lineupOf(club).slots.map((s) => s.playerId));
 
   for (const clubId of shuffle(opts.rng, Object.keys(w.clubs))) {
-    if (!isAI(clubId, opts) || !chance(opts.rng, ACT_CHANCE[window])) continue;
+    // Clubes só com força (sem elenco) não entram no mercado.
+    if (!w.clubs[clubId]!.squad.length || !isAI(clubId, opts) || !chance(opts.rng, ACT_CHANCE[window])) continue;
     trimSquad(w, clubId);
-    if (window === 'verao') loanOutYoungster(w, clubId, startersFor);
+    if (window === 'verao') loanOutYoungster(w, clubId, startersFor, lineupOf);
     if (buysThisWindow(w, clubId, firstRound) < BUYS_PER_WINDOW[window]) {
       const depth = w.clubs[clubId]!.squad.length < DEPTH_TARGET;
-      const changed = tryBuy(w, clubId, opts, startersFor, windowLastRound(window), depth);
-      // Compra muda titulares de quem comprou e de quem vendeu.
-      for (const id of changed) starterCache.delete(id);
+      tryBuy(w, clubId, opts, startersFor, lineupOf, windowLastRound(window), depth);
     }
   }
 }
@@ -79,7 +81,7 @@ function trimSquad(w: MarketWorld, clubId: string): void {
 }
 
 /** Jovem (≤ 21) sem espaço vai emprestado para um clube onde seria titular. */
-function loanOutYoungster(w: MarketWorld, clubId: string, startersFor: (c: Club) => Set<string>): void {
+function loanOutYoungster(w: MarketWorld, clubId: string, startersFor: (c: Club) => Set<string>, lineupOf: (c: Club) => Lineup): void {
   const club = w.clubs[clubId]!;
   if (club.squad.length <= 24) return;
   const starters = startersFor(club);
@@ -91,10 +93,9 @@ function loanOutYoungster(w: MarketWorld, clubId: string, startersFor: (c: Club)
   const pos = young.positions[0] as Position;
   if (pos === 'GK' && club.squad.filter((id) => w.players[id]?.positions[0] === 'GK').length <= 2) return;
   for (const other of Object.values(w.clubs)) {
-    if (other.id === clubId || other.squad.length >= MAX_SQUAD - 2) continue;
+    if (other.id === clubId || !other.squad.length || other.squad.length >= MAX_SQUAD - 2) continue;
     if (young.contract.wage > wageRoom(other, w.players)) continue;
-    const pool = other.squad.map((id) => w.players[id]!).filter(Boolean);
-    const weakest = autoLineup(other.tactic.formation, pool).slots.filter((s) => s.pos === pos).sort((a, b) => a.rating - b.rating)[0];
+    const weakest = lineupOf(other).slots.filter((s) => s.pos === pos).sort((a, b) => a.rating - b.rating)[0];
     if (weakest && slotRating(young, pos) >= weakest.rating + 1) {
       executeLoan(w, young.id, other.id, 1);
       return;
@@ -108,12 +109,13 @@ function tryBuy(
   clubId: string,
   opts: MarketDayOptions,
   startersFor: (c: Club) => Set<string>,
+  lineupOf: (c: Club) => Lineup,
   lastRound: number,
   depth: boolean,
 ): string[] {
   const club = w.clubs[clubId]!;
   const pool = club.squad.map((id) => w.players[id]!).filter(Boolean);
-  const lineup = autoLineup(club.tactic.formation, pool);
+  const lineup = lineupOf(club);
   const positions = FORMATIONS[club.tactic.formation];
 
   // Vaga alvo: a de menor rendimento; vaga vazia ou falta de goleiro reserva vêm antes.
@@ -144,6 +146,8 @@ function tryBuy(
   let best: { p: Player; fee: number; wage: number; gain: number } | null = null;
   for (const p of Object.values(w.players)) {
     if (p.clubId === clubId || p.loan || p.age > 32 || (depth && p.age < 21)) continue;
+    // Pré-filtro barato: o rendimento numa vaga raramente passa o OVR por mais de alguns pontos.
+    if (p.ovr + 6 < floor) continue;
     const r = slotRating({ ...p, fitness: 100 }, targetPos);
     if (r < floor) continue;
     const seller = p.clubId ? w.clubs[p.clubId] : undefined;
@@ -169,7 +173,7 @@ function tryBuy(
     const pending = opts.inbox.some((o) => o.playerId === p.id && o.fromClubId === clubId);
     if (!pending) {
       opts.inbox.push({
-        id: `${w.season.year}-${w.season.nextRound}-${clubId}-${p.id}`,
+        id: `${w.season.year}-${w.season.nextSlot}-${clubId}-${p.id}`,
         playerId: p.id,
         fromClubId: clubId,
         fee,
@@ -241,7 +245,7 @@ const WAGE_SLACK = 0.05;
  */
 export function fillSquadsWithFreeAgents(w: MarketWorld, opts: Pick<MarketDayOptions, 'userClubId' | 'aiControlsUser'>): void {
   for (const club of Object.values(w.clubs)) {
-    if (!isAI(club.id, opts)) continue;
+    if (!club.squad.length || !isAI(club.id, opts)) continue;
     while (w.clubs[club.id]!.squad.length < EMERGENCY_FLOOR) {
       const cur = w.clubs[club.id]!;
       const slack = wageRoom(cur, w.players) + cur.wageBudget * WAGE_SLACK;
@@ -275,7 +279,7 @@ export function ensureGoalkeepers(
   isAvailable: (id: string) => boolean = () => true,
 ): void {
   for (const club of Object.values(w.clubs)) {
-    if (!isAI(club.id, opts)) continue;
+    if (!club.squad.length || !isAI(club.id, opts)) continue;
     let guard = 0;
     while (guard++ < 3) {
       const cur = w.clubs[club.id]!;
