@@ -270,6 +270,12 @@ critérios. Decisões em `PLANO-LIGAS.md`, números em `ROADMAP.md`.
 - **Aceite:** 5 temporadas completas com todas as competições, sem partida duplicada, sem
   clube em dois jogos no mesmo dia, campeão europeu coerente com a força dos clubes.
 
+**Resultado (medido em 2026-10-20) — Fase 4 concluída.** Champions, Europa League e Conference
+no formato 2026/27 (fonte e simplificações em `PLANO-EUROPA.md`), com 12 ligas de fundo "por
+força" completando os participantes. Em 10 temporadas completas não houve partida duplicada nem
+clube em dois jogos no mesmo dia, e o campeão da Champions ficou em média em 4,9º no ranking de
+força dos 36. O diagnóstico do mundo com Europa passa nos 9 critérios. Números em `ROADMAP.md`.
+
 ## FASE 5 — Camada de técnico
 
 - Diretoria com metas por temporada (modelo do `ownerService`/mandatos do NBA GM), confiança

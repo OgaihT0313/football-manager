@@ -143,6 +143,12 @@ check('histórico registra a temporada encerrada', atOnce.history.length === 1 &
   }
   const { transfers: _tr, inbox: _in, preContracts: _pc, ...v1Rest } = v2Data;
   const fromV1 = deserializeCareer(JSON.stringify({ saveVersion: 1, savedAt: 1, data: { ...v1Rest, saveVersion: 1, clubs: v1Clubs } })).career;
+  // Save da Fase 3 (v3): mesma forma, sem Europa; deve carregar e seguir jogando.
+  const v3 = JSON.parse(serializeCareer(mid, 1));
+  v3.saveVersion = 3;
+  v3.data.saveVersion = 3;
+  const fromV3 = deserializeCareer(JSON.stringify(v3)).career;
+  check('save v3 (Fase 3) migra para v4 e continua jogável', fromV3.saveVersion === CURRENT_SAVE_VERSION && advanceRound(fromV3).results.length === 10);
   check('save v1 (Fase 1) migra até a versão atual e continua jogável',
     !!fromV1.clubs[userClubId]!.finance && Array.isArray(fromV1.transfers) && !!fromV1.season.competitions[gen.league.id] &&
       advanceRound(fromV1).results.length === 10);

@@ -11,7 +11,8 @@ import { autoLineup } from '../src/engine/lineup';
 import { teamStrength } from '../src/engine/matchEngine';
 import { baseData, useGame } from '../store/gameStore';
 
-const topLeagues = baseData.leagues.filter((l) => (l.tier ?? 1) === 1);
+// Só 1ª divisão com elenco completo (as ligas de fundo jogam "por força").
+const topLeagues = baseData.leagues.filter((l) => (l.tier ?? 1) === 1 && (l.mode ?? 'full') === 'full');
 
 export function ClubSelectScreen() {
   const startCareer = useGame((s) => s.startCareer);

@@ -50,8 +50,9 @@ const median = (xs: number[]) => {
 };
 const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / Math.max(1, xs.length);
 
+/** 1ª divisão com elenco completo (as ligas de fundo jogam "por força" e ficam de fora). */
 function topLeagues(c: CareerState) {
-  return Object.values(c.leagues).filter((l) => (l.tier ?? 1) === 1);
+  return Object.values(c.leagues).filter((l) => (l.tier ?? 1) === 1 && (l.mode ?? 'full') === 'full');
 }
 
 /** Medido no fim da temporada (antes da virada), só na 1ª divisão. */

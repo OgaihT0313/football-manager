@@ -8,56 +8,55 @@ Plano completo em `PLANO-FUTEBOL.md`. Aqui fica o estado de cada fase e o que fo
 | 1 — Uma liga jogável (app) | **Concluída** (2026-10-18) |
 | 2 — Calendário, contratos, transferências, finanças | **Concluída** (2026-10-19) |
 | 3 — Cinco ligas e copas nacionais | **Concluída** (2026-10-19) |
-| 4 — Competições europeias | **Em andamento** (domínio pronto; faltam telas e save v4) |
+| 4 — Competições europeias | **Concluída** (2026-10-20) |
 | 5 — Camada de técnico | Não iniciada |
 | 6 — Ligas de fundo, visão 2D, eras | Não iniciada |
 
-## Fase 4 — em andamento (parado em 2026-10-19)
+## Fase 4 — resultado
 
-Formato conferido nas fontes atuais (Wikipedia, páginas da Champions, Europa League e Conference
-League 2026/27; beIN Sports e Flashscore para potes e chave):
+Champions League, Europa League e Conference League no formato vigente (2026/27): fase de liga
+com 36 clubes (8/8/6 jogos, potes, restrições de país), playoff 9º–24º de ida e volta, chave fixa
+e final em campo neutro. 12 ligas de fundo "por força" completam os participantes. A
+classificação sai da tabela anterior e da copa, e há premiação e reputação. Na aba Liga, "Europa"
+mostra a fase de liga, os jogos e o mata-mata (ida, volta, agregado, pênaltis). Save v4 com
+migração da v3. Fontes, decisões e simplificações em `PLANO-EUROPA.md`.
 
-- **Champions e Europa League:** fase de liga com 36 clubes e 8 jogos; 4 potes de 9; 2
-  adversários por pote; sem repetir país e no máximo 2 do mesmo país.
-- **Conference:** 36 clubes e 6 jogos, um adversário de cada um dos 6 potes.
-- **Mata-mata:** 1º–8º direto às oitavas; playoff de ida e volta entre 9º–16º e 17º–24º; chave
-  fixa; final em jogo único.
+Comando novo: `npm run check:europe` (`scripts/check_europe.ts`, `--temporadas 10`).
 
-Pronto (no domínio, testado):
+Medido:
 
-- `src/competitions/europe.ts`:
-  - sorteio da fase de liga por potes, com as restrições de país;
-  - distribuição dos jogos pelas rodadas por coloração de arestas (cadeias de Kempe);
-  - mando equilibrado (orientação de Euler);
-  - playoff e chave fixa, ida e volta com pênaltis só no agregado, sementes herdadas;
-  - classificação pela tabela e pelos campeões da copa (o que falta até 36 vai aos mais fortes
-    não classificados);
-  - premiação e reputação.
-- 12 ligas de fundo "por força" (Portugal, Holanda, Bélgica, Turquia, Escócia, Áustria, Suíça,
-  Grécia, Tchéquia, Dinamarca, Croácia e Sérvia) em `data/world/`, que jogam no calendário e
-  alimentam a Europa. Antecipa parte da Fase 6.
-- Calendário de 61 datas: meios de semana europeus e a final depois da última rodada.
-- Quem passa 2 temporadas na 2ª divisão sem subir volta a ser clube "por força". Sem isso, o
-  mundo crescia de 2.400 para 3.200 jogadores; agora estabiliza em ~2.800–3.000.
-- `scripts/check_europe.ts` (10 temporadas): tudo verde.
+- **Aceite da fase** (`check_europe`, 10 temporadas completas com todas as competições): tudo
+  verde.
   - Formato 36 clubes e 8/8/6 jogos; mando 4/4/3; mata-mata 16/16/8/4/1.
-  - Nenhum jogo duplicado, nenhum clube em duas datas iguais nem em duas copas europeias.
-  - Premiação paga.
-  - Posição média do campeão no ranking de força: Champions 4,9; Europa League 8,5;
-    Conference 8,9.
-  - Tempo: 1,5–3,4 s por temporada no Node. Save: até 6,0 MB.
+  - **Nenhuma partida duplicada** e **nenhum clube em dois jogos na mesma data**, em todas as
+    competições; nenhum clube em duas copas europeias.
+  - Premiação paga a todos os participantes da Champions.
+  - **Campeão coerente com a força:** posição média do campeão no ranking de força dos 36 —
+    Champions 4,9 (sempre entre os 13 primeiros), Europa League 8,5, Conference 8,9.
+  - Tempo: 0,9 → ~3,3 s por temporada no Node, estabilizando a partir do 4º ano. Save: até
+    6,0 MB.
+- `diagnose_league` no mundo com Europa (3 carreiras × 10 temporadas): 9 de 9 critérios.
+  - OVR dos titulares 73,1 → 72,2; elencos 18–29; nenhum clube quebrado.
+  - Folha/receita 63%–73%; idade 25,2–26,0; pelo menos 47 transferências pagas.
+  - Gols por jogo 2,83 (PL 2,89 · La Liga 2,82 · Serie A 2,82 · Bundesliga 2,80 · Ligue 1 2,83).
+  - Promovido termina em média em 16,8º.
+- Liga única: 8 de 8. Backtest de 500 temporadas: igual (gols/jogo 2,76 / 2,79).
+  `check_engine` 32, `check_save` 35 (inclui migração de save v3), `check_market` 48: verdes.
+- **No navegador:** carreira nova com Europa desde a 1ª temporada ("Champions League" na agenda
+  do Início). A temporada inteira com Europa terminou em até 4 s. A aba Liga mostra os chips de
+  país (Europa + 17 países), a tabela da fase de liga com as faixas, e o mata-mata com playoff
+  15/16 x 17/18, agregados e pênaltis, oitavas contra 1º/2º e campeão. Save v3 antigo carregou.
+  Sem erros no console. Bundle Android compila (1064 módulos). **Não testado em aparelho.**
 
-Falta (próxima sessão):
+O que observar:
 
-1. **Telas:** "Europa" na aba Liga (tabela da fase de liga e chave do mata-mata), rótulo das
-   fases europeias no Início, rodada 39 ("final europeia") no `roundLabel`.
-2. **Save v4 com migração da v3:** o formato mudou (`Club.lowerSince`, `Fixture.leg`/
-   `firstLegId`, `CupStage.slot2`, `CompetitionState.seeds`). Os campos novos são opcionais, então
-   um save v3 provavelmente carrega, mas sem Europa até a próxima temporada. Falta subir
-   `CURRENT_SAVE_VERSION` e testar.
-3. **Medição completa:** `diagnose_league` com a Europa (o dinheiro europeu pode concentrar força
-   nos grandes), backtest, `check_market`, teste no navegador, bundle Android e `PLANO-EUROPA.md`.
-4. As Fases 5 e 6 não começaram.
+- O dinheiro europeu vai aos grandes: o caixa mediano da 1ª divisão chega a 1,2× a receita em 10
+  anos, e a folha a 72–73% (o teto sobe com caixa sobrando). Os critérios passam, mas perto do
+  limite de 75%.
+- O tempo de simulação dobra entre a 1ª e a 4ª temporada (mais clubes com elenco na 2ª
+  divisão) e depois se estabiliza. No celular, estimando 3 a 6 vezes mais lento que o Node,
+  daria 10 a 20 s para simular uma temporada inteira.
+- Siglas curtas de clube às vezes saem feias ("AT3", "UN5") quando há colisão.
 
 ## Fase 3 — resultado
 

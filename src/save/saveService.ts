@@ -62,6 +62,11 @@ export const MIGRATIONS: Record<number, (data: any) => any> = {
     const { league: _l, ...rest } = d;
     return { ...rest, leagues: { [league.id]: league }, season, history };
   },
+  // v3 → v4 (Fase 4): competições europeias e ligas de fundo. Os campos novos são opcionais
+  // (Club.lowerSince/loanedOut, Fixture.leg/firstLegId, CupStage.slot2, seeds), então a
+  // temporada em andamento segue sem Europa; a Europa entra na próxima virada. As ligas de fundo
+  // não existem num save antigo: o mundo segue com as ligas que tinha.
+  3: (d) => ({ ...d, season: { ...d.season, stats: d.season?.stats ?? {} } }),
 };
 
 export function serializeCareer(career: CareerState, savedAt: number): string {

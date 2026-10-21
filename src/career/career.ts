@@ -51,7 +51,7 @@ export interface CareerState {
   preContracts: PreContract[];
 }
 
-export const CURRENT_SAVE_VERSION = 3;
+export const CURRENT_SAVE_VERSION = 4;
 
 /** Quantas temporadas de transferências o save guarda. */
 const TRANSFER_HISTORY_SEASONS = 3;

@@ -1,6 +1,6 @@
 {
   "name": "football-manager",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,7 +17,8 @@
     "check:save": "tsx scripts/check_save.ts",
     "check:market": "tsx scripts/check_market.ts",
     "diagnose": "tsx scripts/diagnose_league.ts",
-    "gen:world": "tsx scripts/gen_world.ts"
+    "gen:world": "tsx scripts/gen_world.ts",
+    "check:europe": "tsx scripts/check_europe.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

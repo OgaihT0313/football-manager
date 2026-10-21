@@ -86,5 +86,6 @@ export function userLeague(c: CareerState): CompetitionState | null {
 export function roundLabel(ws: WorldSeason): string {
   const slot = ws.slots[ws.nextSlot];
   if (!slot) return 'temporada encerrada';
+  if (slot.marker > 38) return 'finais europeias';
   return `rodada ${slot.marker}/38${slot.kind === 'meio' ? ' · meio de semana' : ''}`;
 }

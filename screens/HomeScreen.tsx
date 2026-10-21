@@ -16,6 +16,11 @@ const OUTCOME_TONE = { V: 'good', E: 'neutral', D: 'bad' } as const;
 /** "Premier League · rodada 12" ou "FA Cup · Quartas de final". */
 function stageLabel(comp: CompetitionState, fx: Fixture): string {
   if (comp.kind === 'league') return `${comp.name} · rodada ${fx.round}`;
+  if (comp.kind === 'europe') {
+    if (comp.stages[0]?.fixtureIds.includes(fx.id)) return `${comp.name} · fase de liga, rodada ${fx.round}`;
+    const stage = comp.stages[fx.round - 1]?.name ?? '';
+    return `${comp.name} · ${stage}${fx.leg ? (fx.leg === 1 ? ' (ida)' : ' (volta)') : ''}`;
+  }
   const stage = comp.stages[fx.round - 1]?.name ?? '';
   return `${comp.name}${stage ? ` · ${stage}` : ''}`;
 }

@@ -26,7 +26,9 @@ export function TableScreen({ comp }: { comp: CompetitionState }) {
   const cont = league?.continental;
   const ucl = cont?.ucl ?? 0;
   const europe = ucl + (cont?.uel ?? 0) + (cont?.uecl ?? 0);
+  const isEurope = comp.kind === 'europe';
   const zoneOf = (i: number) => {
+    if (isEurope) return i < 8 ? 'border-l-green-600' : i < 24 ? 'border-l-sky-500' : 'border-l-red-500';
     if (tier === 2) return i < k ? 'border-l-green-600' : 'border-l-transparent';
     if (i < ucl) return 'border-l-green-600';
     if (i < europe) return 'border-l-sky-500';
@@ -75,7 +77,9 @@ export function TableScreen({ comp }: { comp: CompetitionState }) {
         }}
         ListFooterComponent={
           <Muted className="mt-3 text-xs">
-            {tier === 2
+            {isEurope
+              ? 'Verde: oitavas (1º–8º) · azul: playoff (9º–24º) · vermelho: eliminados.'
+              : tier === 2
               ? `Verde: sobem (${k}).`
               : `Verde: Champions (${ucl}) · azul: Europa/Conference (${europe - ucl}) · vermelho: caem (${k}).`}
           </Muted>
