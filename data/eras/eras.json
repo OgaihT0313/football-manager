@@ -1,0 +1,42 @@
+[
+  {
+    "id": "atual",
+    "name": "Atual",
+    "year": 2026,
+    "description": "O futebol de hoje: Champions com fase de liga de 36 clubes, vitória vale 3 pontos.",
+    "goalScale": 1
+  },
+  {
+    "id": "milenio",
+    "name": "Virada do milênio",
+    "year": 2000,
+    "description": "Copa da UEFA e Intertoto, Division 1 na França e First Division abaixo da Premier League. Um pouco menos de gols.",
+    "goalScale": 0.96,
+    "leagueNames": { "ing2": "First Division", "esp1": "Primera División", "esp2": "Segunda División", "fra1": "Division 1", "fra2": "Division 2", "por1": "Primeira Liga", "bra1": "Campeonato Brasileiro", "arg1": "Primera División" },
+    "cupNames": { "fra1": "Coupe de France" },
+    "europeNames": { "uel": "Copa da UEFA", "uecl": "Copa Intertoto" }
+  },
+  {
+    "id": "anos90",
+    "name": "Anos 90",
+    "year": 1993,
+    "description": "Vitória vale 2 pontos na Espanha, Itália, Alemanha e França (a Inglaterra já dava 3). Copa da UEFA e Recopa. Menos gols.",
+    "goalScale": 0.93,
+    "pointsByCountry": { "Espanha": 2, "Itália": 2, "Alemanha": 2, "França": 2 },
+    "leagueNames": { "ing2": "First Division", "esp1": "Primera División", "esp2": "Segunda División", "fra1": "Division 1", "fra2": "Division 2", "por1": "Primeira Divisão", "bra1": "Campeonato Brasileiro", "arg1": "Primera División", "tur1": "1. Lig" },
+    "cupNames": { "ing1": "FA Cup" },
+    "europeNames": { "uel": "Copa da UEFA", "uecl": "Recopa Europeia" }
+  },
+  {
+    "id": "anos70",
+    "name": "Anos 70",
+    "year": 1975,
+    "description": "Copa dos Campeões, vitória vale 2 pontos em todo lugar e jogos mais truncados.",
+    "goalScale": 0.9,
+    "pointsForWin": 2,
+    "leagueNames": { "ing1": "First Division", "ing2": "Second Division", "esp1": "Primera División", "esp2": "Segunda División", "fra1": "Division 1", "fra2": "Division 2", "por1": "Primeira Divisão", "bra1": "Campeonato Brasileiro", "arg1": "Metropolitano", "tur1": "1. Lig" },
+    "cupNames": { "ing1": "FA Cup", "esp1": "Copa del Generalísimo" },
+    "supercupNames": { "ing1": "Charity Shield" },
+    "europeNames": { "ucl": "Copa dos Campeões", "uel": "Copa da UEFA", "uecl": "Recopa Europeia" }
+  }
+]

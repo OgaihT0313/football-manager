@@ -35,7 +35,9 @@ export function startersOf(club: Club, players: Record<string, Player>): Set<str
 /** Preço que o clube dono pede. Titular vale mais; clube no vermelho vende mais barato. */
 export function askingPrice(p: Player, seller: Club, players: Record<string, Player>, season: number, starters?: Set<string>): number {
   let factor = 1.1;
-  if ((starters ?? startersOf(seller, players)).has(p.id)) factor = 1.5;
+  // Clube de liga de fundo (vitrine): vende, mas cobra um pouco mais que o valor.
+  if (!seller.squad.length) factor = 1.2;
+  else if ((starters ?? startersOf(seller, players)).has(p.id)) factor = 1.5;
   else if (seller.squad.length > MAX_SQUAD - 3 || p.age >= 31) factor = 0.85;
   if (seller.finance.balance < 0) factor *= 0.85;
   const ask = round50k(marketValue(p, season) * factor);
@@ -46,6 +48,11 @@ export type SellerAnswer = { kind: 'accept' } | { kind: 'counter'; fee: number }
 
 export function sellerResponse(p: Player, seller: Club, players: Record<string, Player>, season: number, fee: number): SellerAnswer {
   if (p.contract.releaseClause && fee >= p.contract.releaseClause) return { kind: 'accept' };
+  // Vitrine de liga de fundo: o clube não tem elenco para proteger.
+  if (!seller.squad.length) {
+    const ask = askingPrice(p, seller, players, season);
+    return fee >= ask ? { kind: 'accept' } : fee >= ask * 0.7 ? { kind: 'counter', fee: ask } : { kind: 'reject', reason: 'Proposta muito abaixo do valor.' };
+  }
   if (seller.squad.length <= MIN_SQUAD) return { kind: 'reject', reason: 'O clube não quer reduzir mais o elenco.' };
   if (p.positions[0] === 'GK' && goalkeepers(seller, players) <= MIN_GOALKEEPERS) {
     return { kind: 'reject', reason: 'O clube não tem outro goleiro para repor.' };
@@ -106,6 +113,7 @@ function setClub(w: MarketWorld, club: Club): void {
 function removeFromClub(club: Club, playerId: string): Club {
   return {
     ...club,
+    ...(club.showcase ? { showcase: club.showcase.filter((id) => id !== playerId) } : {}),
     squad: club.squad.filter((id) => id !== playerId),
     // Vaga do XI fica vazia; a escalação preenche com o melhor reserva.
     startingXI: club.startingXI.map((id) => (id === playerId ? '' : id)),

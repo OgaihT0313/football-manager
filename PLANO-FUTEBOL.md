@@ -304,6 +304,18 @@ demissões) termina idêntica jogada direto ou com 12 recargas de save no meio. 
 - Eras históricas (ex.: temporadas clássicas) como pacotes de dados, depois que o resto
   estiver estável.
 
+**Resultado (medido em 2026-10-20) — Fase 6 concluída.**
+
+- 14 ligas de fundo, com Brasil e Argentina.
+- Vitrine de jogadores gerados sob demanda, que a IA e o usuário compram.
+- Visão 2D da partida em Skia, cuja encenação segue o placar e os minutos do motor em todas as
+  690 partidas medidas.
+- Quatro eras como pacotes de dados (2026, 2000, 1993 e 1975), com nomes, pontos por vitória e
+  gols da época.
+- Save v6.
+
+Decisões em `PLANO-FUNDO.md`, números em `ROADMAP.md`.
+
 ---
 
 ## 6. Riscos e pendências

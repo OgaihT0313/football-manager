@@ -494,12 +494,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 68,
     "continental": {
       "ucl": 2,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 68
+    }
   },
   {
     "id": "hol1",
@@ -539,12 +539,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 66,
     "continental": {
       "ucl": 2,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 66
+    }
   },
   {
     "id": "bel1",
@@ -582,12 +582,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 60,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 60
+    }
   },
   {
     "id": "tur1",
@@ -627,12 +627,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 60,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 60
+    }
   },
   {
     "id": "esc1",
@@ -666,12 +666,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 56,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 56
+    }
   },
   {
     "id": "aut1",
@@ -705,12 +705,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 55,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 55
+    }
   },
   {
     "id": "sui1",
@@ -744,12 +744,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 54,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 54
+    }
   },
   {
     "id": "gre1",
@@ -785,12 +785,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 54,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 54
+    }
   },
   {
     "id": "tch1",
@@ -828,12 +828,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 50,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 50
+    }
   },
   {
     "id": "din1",
@@ -867,12 +867,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 50,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 50
+    }
   },
   {
     "id": "cro1",
@@ -904,12 +904,12 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 48,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 48
+    }
   },
   {
     "id": "sev1",
@@ -945,11 +945,95 @@
     "tier": 1,
     "mode": "strength",
     "relegation": 0,
+    "reputation": 48,
     "continental": {
       "ucl": 1,
       "uel": 1,
       "uecl": 1
-    },
-    "reputation": 48
+    }
+  },
+  {
+    "id": "bra1",
+    "name": "Brasileirão",
+    "country": "Brasil",
+    "clubIds": [
+      "bra1-america-londrina-velha",
+      "bra1-atletico-quixada",
+      "bra1-ec-natal-sul",
+      "bra1-america-ourinhos",
+      "bra1-botafogo-resende",
+      "bra1-gremio-varginha",
+      "bra1-atletico-divinopolis",
+      "bra1-gremio-campina-verde",
+      "bra1-america-maringa",
+      "bra1-sport-bage",
+      "bra1-gremio-uberaba",
+      "bra1-america-aracaju",
+      "bra1-botafogo-tubarao",
+      "bra1-ec-caxias-alta",
+      "bra1-botafogo-pelotas-norte",
+      "bra1-atletico-petrolina",
+      "bra1-ec-feira-nova",
+      "bra1-sport-juazeiro",
+      "bra1-atletico-goianesia",
+      "bra1-sport-xerem"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "reputation": 62
+  },
+  {
+    "id": "arg1",
+    "name": "Liga Profesional",
+    "country": "Argentina",
+    "clubIds": [
+      "arg1-atletico-azul",
+      "arg1-independiente-cordoba-alta",
+      "arg1-racing-pergamino",
+      "arg1-atletico-campana",
+      "arg1-club-parana",
+      "arg1-atletico-neuquen",
+      "arg1-club-rosario-norte",
+      "arg1-independiente-zarate",
+      "arg1-independiente-quilmes-viejo",
+      "arg1-racing-bahia-clara",
+      "arg1-estudiantes-junin",
+      "arg1-club-ushuaia",
+      "arg1-independiente-san-luis",
+      "arg1-atletico-rafaela",
+      "arg1-estudiantes-salta",
+      "arg1-club-mendoza-sur",
+      "arg1-deportivo-viedma",
+      "arg1-club-lanus-oeste",
+      "arg1-independiente-tucuman",
+      "arg1-atletico-tandil"
+    ],
+    "pointsForWin": 3,
+    "pointsForDraw": 1,
+    "legs": 2,
+    "tiebreakers": [
+      "points",
+      "goalDiff",
+      "goalsFor",
+      "headToHead",
+      "wins",
+      "awayGoalsFor"
+    ],
+    "tier": 1,
+    "mode": "strength",
+    "relegation": 0,
+    "reputation": 58
   }
 ]

@@ -59,6 +59,7 @@ export function requestLoan(c: CareerState, playerId: string, wageShare: number)
   if (p.loan) return fail(c, 'O jogador já está emprestado.');
   const owner = c.clubs[p.clubId]!;
   const buyer = userClub(c);
+  if (!owner.squad.length) return fail(c, 'Clubes do exterior só vendem; não emprestam.');
   if (startersOf(owner, c.players).has(p.id)) return fail(c, `${owner.name} não empresta titulares.`);
   if (owner.squad.length <= MIN_SQUAD) return fail(c, `${owner.name} não quer reduzir o elenco.`);
   if (wageShare < 0.5) return fail(c, 'O clube dono quer que você pague pelo menos metade do salário.');

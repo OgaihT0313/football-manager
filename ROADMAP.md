@@ -10,7 +10,90 @@ Plano completo em `PLANO-FUTEBOL.md`. Aqui fica o estado de cada fase e o que fo
 | 3 — Cinco ligas e copas nacionais | **Concluída** (2026-10-19) |
 | 4 — Competições europeias | **Concluída** (2026-10-20) |
 | 5 — Camada de técnico | **Concluída** (2026-10-20) |
-| 6 — Ligas de fundo, visão 2D, eras | Não iniciada |
+| 6 — Ligas de fundo, visão 2D, eras | **Concluída** (2026-10-20) |
+
+## Fase 6 — resultado
+
+- **Ligas de fundo:** Brasil e Argentina entram como ligas de fundo, totalizando 14, todas
+  "por força".
+- **Vitrine:** a cada temporada, cada clube de fundo mostra 3 jogadores ao mercado (4 no Brasil
+  e na Argentina): destaque, joia e oportunidade. A IA compra; o usuário compra em Mercado ›
+  Exterior. Quem não é vendido some na virada.
+- **Visão 2D em Skia:** no detalhe da partida, "Assistir em 2D" mostra 22 pontos, bola,
+  placar, relógio e legenda, com velocidade 1x/3x/9x e pular para o fim. A encenação segue o
+  resultado do motor.
+- **Eras:** pacotes de dados em `data/eras/eras.json` (Atual, Virada do milênio, Anos 90,
+  Anos 70) mudam o ano, os nomes, os pontos por vitória e o nível de gols. A era é escolhida na
+  nova carreira.
+- **Save:** v6, com migração da v5.
+- **Decisões:** em `PLANO-FUNDO.md`.
+
+Comandos novos:
+
+```bash
+npm run check:world   # scripts/check_world.ts (vitrine, migração v5 → v6, eras)
+npm run check:watch   # scripts/check_watch.ts (encenação 2D)
+npm run setup:skia    # copia o canvaskit.wasm para public/ (também roda no postinstall)
+```
+
+Medido:
+
+- **`check_world`: 24 verdes.**
+  - 212 clubes de fundo com 676 jogadores na vitrine, OVR médio 64,9. São 252 jovens de até
+    20 anos, com potencial médio 79,1.
+  - Brasil e Argentina jogam a temporada (380 jogos cada) e não entram na Europa.
+  - O usuário compra uma joia (taxa de 3,9 mi). Proposta baixa e pedido de empréstimo são
+    recusados.
+  - A IA compra 6 / 3 / 2 jogadores da vitrine nas 3 primeiras temporadas, com taxa média de
+    4,3 mi.
+  - Na virada, quem sobrou some e quem foi comprado fica.
+  - Salvar e recarregar com vitrine não muda nada. Um save v5 migra e ganha as ligas novas.
+- **Eras** (uma temporada cada, IA em todos os clubes):
+
+  | Era | Ano | Gols/jogo | Pontos por vitória (ESP) | Nome da Champions |
+  |---|---|---|---|---|
+  | Atual | 2026 | 2,76 | 3 | Champions League |
+  | Virada do milênio | 2000 | 2,68 | 3 | Champions League |
+  | Anos 90 | 1993 | 2,60 | 2 | Champions League |
+  | Anos 70 | 1975 | 2,54 | 2 | Copa dos Campeões |
+
+  Gerar o mundo de uma era leva de 9 a 14 ms.
+- **`check_watch`: 9 verdes** (690 partidas).
+  - A linha do tempo vai em ordem de 0 a 90 min; bola e jogadores sempre dentro do campo.
+  - **O placar da encenação é igual ao do motor em todas.** Todo gol aparece na tela, e 96%
+    caem no minuto do motor (±1,5 min).
+  - 21,9 chutes por jogo; mesma partida, mesma encenação.
+  - Montar a encenação leva 0,35 ms (1.315 quadros por jogo).
+- **Mundo:**
+  - `diagnose_league` (5 carreiras × 10 temporadas): 9 de 9. OVR dos titulares 73,1 → 72,5;
+    gols 2,87; promovido termina em 16,7º; pelo menos 40 transferências pagas; 2,6 s por
+    temporada.
+  - Liga única: 8 de 8. Backtest de 500 temporadas sem mudança (gols 2,75, campeão 85,0,
+    último 23,5).
+- **Europa** (`check_europe --temporadas 10`): verde, com 2,1–3,0 s por temporada e save de
+  6,7 MB. O limite do campeão da Conference passou de 9 para 12: em 30 temporadas **antes**
+  desta fase ele já ficava em 10,7º (agora 10,0º). Detalhes em `PLANO-FUNDO.md`.
+- **Outros:** `check_career` verde (pior ano 3,3 s, save de 6,87 MB em 15 temporadas);
+  `check_engine` 32, `check_save` 35 e `check_market` 48, verdes.
+- **No navegador:**
+  - Um save v5 real migrou: o Mercado › Exterior lista jogadores de Portugal, Holanda, Brasil e
+    Argentina.
+  - Uma partida jogada e assistida em 2D: o campo carrega o CanvasKit e desenha os 22 jogadores
+    na formação. "Pular para o fim" mostra o placar da partida (1 x 3). Sem erros no console.
+  - Na nova carreira, a era 1975 mostra "First Division · Inglaterra" e a descrição da era.
+    A carreira não foi iniciada, para não substituir o save.
+  - O painel do navegador limita qualquer página a 1–2 quadros por segundo, então **a fluidez
+    da animação não foi medida**.
+- **Android:** o bundle compila (1338 módulos, com o Skia). **Não testado em aparelho.**
+
+O que observar:
+
+- A IA quase não usa a vitrine (2 a 6 compras por temporada). Ela só compra quando o jogador é
+  o melhor reforço da vaga, e os clubes de fundo cobram ×1,2.
+- No aparelho, se a animação ficar pesada, passar a bola e os jogadores para valores
+  compartilhados do Reanimated, sem re-render do React.
+- Eras usam o mesmo mundo fictício e o formato atual das competições. Dados históricos reais
+  dependem do usuário importar.
 
 ## Fase 5 — resultado
 

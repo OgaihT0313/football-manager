@@ -4,3 +4,5 @@ node_modules/
 dist/
 web-build/
 .claude/settings.local.json
+# CanvasKit do Skia web (copiado do node_modules no postinstall)
+public/canvaskit.wasm

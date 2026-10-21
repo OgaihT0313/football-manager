@@ -6,6 +6,8 @@ import { CURRENT_SAVE_VERSION, type CareerState } from '../career/career';
 import { initFinance } from '../club/finance';
 import { initManagerFields } from '../career/managerCareer';
 import { buildSlots } from '../competitions/world';
+import { BACKGROUND, backgroundLeague } from '../data/fictionalWorld';
+import { refreshShowcases } from '../market/abroad';
 
 export interface SaveEnvelope {
   saveVersion: number;
@@ -70,6 +72,25 @@ export const MIGRATIONS: Record<number, (data: any) => any> = {
   3: (d) => ({ ...d, season: { ...d.season, stats: d.season?.stats ?? {} } }),
   // v4 → v5 (Fase 5): técnico, diretoria, decisões, notícias, vagas, prêmios e staff.
   4: (d) => (d.manager ? d : { ...d, ...initManagerFields(d) }),
+  // v5 → v6 (Fase 6): ligas de fundo que faltam (Brasil e Argentina) e vitrines do exterior.
+  // `era` é opcional (sem era = atual).
+  // As ligas novas jogam a partir da próxima temporada; a vitrine já vale nesta.
+  5: (d) => {
+    const leagues = { ...d.leagues };
+    const clubs = { ...d.clubs };
+    const players = { ...d.players };
+    const used = new Set<string>(Object.values<any>(clubs).map((c) => c.shortName));
+    // Save de antes da Fase 4 (sem ligas de fundo) segue com as ligas que tinha.
+    const hasBackground = BACKGROUND.some((spec) => leagues[`${spec.code}1`]);
+    for (const spec of hasBackground ? BACKGROUND : []) {
+      if (leagues[`${spec.code}1`]) continue;
+      const bg = backgroundLeague(spec, d.seed, used);
+      leagues[bg.league.id] = bg.league;
+      for (const c of bg.clubs) clubs[c.id] = c;
+    }
+    refreshShowcases(clubs, players, leagues, d.season.year, d.seed);
+    return { ...d, leagues, clubs, players };
+  },
 };
 
 export function serializeCareer(career: CareerState, savedAt: number): string {

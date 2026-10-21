@@ -90,6 +90,8 @@ export interface Club {
   loanedOut?: string[];
   /** Temporada em que caiu para a 2ª divisão (some quando sobe). */
   lowerSince?: number;
+  /** Jogadores à venda de um clube de liga de fundo (vitrine da temporada; ver market/abroad.ts). */
+  showcase?: string[];
   /** Staff detalhado (só o clube do usuário; os outros usam o treino). */
   staff?: Partial<Record<StaffRole, StaffMember>>;
 }

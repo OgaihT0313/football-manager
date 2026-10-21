@@ -114,7 +114,10 @@ export function CareerView() {
 
   return (
     <ScrollView contentContainerClassName="gap-4 px-4 pb-8">
-      <Header title={manager.name} subtitle={`Reputação ${manager.reputation}/100 · ${totals.m} jogos (${totals.w}V ${totals.d}E ${totals.l}D)`} />
+      <Header
+        title={manager.name}
+        subtitle={`${career.era ? `Era: ${career.era.name} · ` : ''}Reputação ${manager.reputation}/100 · ${totals.m} jogos (${totals.w}V ${totals.d}E ${totals.l}D)`}
+      />
 
       <Card>
         <SectionTitle>Passagens</SectionTitle>

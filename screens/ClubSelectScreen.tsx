@@ -9,17 +9,19 @@ import { strengthScore } from '../src/career/queries';
 import { FORMATIONS } from '../src/domain/positions';
 import { autoLineup } from '../src/engine/lineup';
 import { teamStrength } from '../src/engine/matchEngine';
-import { baseData, useGame } from '../store/gameStore';
-
-// Só 1ª divisão com elenco completo (as ligas de fundo jogam "por força").
-const topLeagues = baseData.leagues.filter((l) => (l.tier ?? 1) === 1 && (l.mode ?? 'full') === 'full');
+import { dataForEra, ERAS, useGame } from '../store/gameStore';
 
 export function ClubSelectScreen() {
   const startCareer = useGame((s) => s.startCareer);
   const backToMenu = useGame((s) => s.backToMenu);
+  const [eraId, setEraId] = useState(ERAS[0]?.id ?? 'atual');
+  const era = ERAS.find((e) => e.id === eraId) ?? ERAS[0]!;
+  const baseData = useMemo(() => dataForEra(eraId), [eraId]);
+  // Só 1ª divisão com elenco completo (as ligas de fundo jogam "por força").
+  const topLeagues = useMemo(() => baseData.leagues.filter((l) => (l.tier ?? 1) === 1 && (l.mode ?? 'full') === 'full'), [baseData]);
   const [leagueId, setLeagueId] = useState(topLeagues[0]?.id ?? '');
   const [selected, setSelected] = useState<string | null>(null);
-  const league = topLeagues.find((l) => l.id === leagueId)!;
+  const league = topLeagues.find((l) => l.id === leagueId) ?? topLeagues[0]!;
 
   const clubs = useMemo(() => {
     const byId = new Map(baseData.players.map((p) => [p.id, p]));
@@ -31,7 +33,7 @@ export function ClubSelectScreen() {
         return { club: c, score: strengthScore(teamStrength(l, FORMATIONS[l.formation])) };
       })
       .sort((a, b) => b.score - a.score);
-  }, [league]);
+  }, [league, baseData]);
   const best = clubs[0]?.score ?? 1;
   const worst = clubs[clubs.length - 1]?.score ?? 0;
   const relegation = league.relegation ?? 3;
@@ -40,7 +42,14 @@ export function ClubSelectScreen() {
   return (
     <View className="flex-1">
       <Header title="Escolha seu clube" subtitle={`${league.name} · ${league.country}`} right={<Button variant="ghost" label="Voltar" onPress={backToMenu} />} />
-      <View className="px-4 pb-2">
+      <View className="gap-2 px-4 pb-2">
+        <Segmented options={ERAS.map((e) => e.id)} value={eraId} onChange={(id) => { setEraId(id); setSelected(null); }} labelOf={(id) => {
+          const e = ERAS.find((x) => x.id === id)!;
+          return e.id === 'atual' ? 'Atual' : String(e.year);
+        }} />
+        <Muted className="text-xs">
+          {era.name} ({era.year}): {era.description}
+        </Muted>
         <Segmented
           options={topLeagues.map((l) => l.id)}
           value={leagueId}
@@ -85,7 +94,7 @@ export function ClubSelectScreen() {
         }}
       />
       <View className="border-t border-slate-200 p-4 dark:border-slate-800">
-        <Button label={selected ? 'Começar carreira' : 'Selecione um clube'} disabled={!selected} onPress={() => selected && startCareer(selected)} />
+        <Button label={selected ? 'Começar carreira' : 'Selecione um clube'} disabled={!selected} onPress={() => selected && startCareer(selected, eraId)} />
       </View>
     </View>
   );

@@ -16,6 +16,8 @@ import { storage } from '../src/save/storage';
 import leaguesJson from '../data/world/leagues.json';
 import clubsJson from '../data/world/clubs.json';
 import playersJson from '../data/world/players.json';
+import erasJson from '../data/eras/eras.json';
+import { eraRules, eraWorld, type EraPack } from '../src/data/eras';
 
 export type Tab = 'inicio' | 'elenco' | 'escalacao' | 'mercado' | 'clube' | 'liga';
 export type Phase = 'carregando' | 'menu' | 'escolhaClube' | 'jogo';
@@ -29,6 +31,17 @@ export const baseData = {
   clubs: clubsJson as Club[],
   players: playersJson as Player[],
 };
+
+/** Eras disponíveis (pacotes de dados em data/eras/). */
+export const ERAS = erasJson as EraPack[];
+
+/** Mundo inicial de uma era: a atual usa data/world (pode ter dados importados); as outras são geradas. */
+const eraCache: Record<string, typeof baseData> = {};
+export function dataForEra(eraId: string): typeof baseData {
+  const pack = ERAS.find((e) => e.id === eraId);
+  if (!pack || pack.id === 'atual') return baseData;
+  return (eraCache[pack.id] ??= eraWorld(pack));
+}
 
 interface SaveInfo {
   clubName: string;
@@ -58,7 +71,7 @@ interface GameState {
   init(): Promise<void>;
   goToClubSelect(): void;
   backToMenu(): void;
-  startCareer(clubId: string): void;
+  startCareer(clubId: string, eraId?: string): void;
   continueCareer(): Promise<void>;
   deleteSave(): Promise<void>;
   setTab(tab: Tab): void;
@@ -150,13 +163,15 @@ export const useGame = create<GameState>()((set, get) => {
     goToClubSelect: () => set({ phase: 'escolhaClube' }),
     backToMenu: () => set({ phase: 'menu', matchDetailId: null }),
 
-    startCareer(clubId) {
+    startCareer(clubId, eraId = 'atual') {
+      const pack = ERAS.find((e) => e.id === eraId) ?? ERAS[0]!;
       const career = newCareer({
-        ...baseData,
+        ...dataForEra(pack.id),
         userClubId: clubId,
         // A seed da carreira vem do relógio; dentro do domínio tudo é determinístico.
         seed: Date.now() >>> 0,
-        year: 2026,
+        year: pack.year,
+        era: eraRules(pack),
       });
       commit(career);
       set({ phase: 'jogo', tab: 'inicio', roundView: null, matchDetailId: null, loadError: null });

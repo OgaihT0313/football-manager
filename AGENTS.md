@@ -20,7 +20,12 @@ a próxima sem o usuário pedir.
   `scripts/check_market.ts` e `scripts/diagnose_league.ts --carreiras 5`. Mudança em calendário,
   copas ou Europa roda `scripts/check_europe.ts --temporadas 10`.
   Mudança na diretoria, empregos, staff, imprensa ou prêmios (`src/manager/`,
-  `src/career/managerCareer.ts`) roda `scripts/check_career.ts`.
+  `src/career/managerCareer.ts`) roda `scripts/check_career.ts`. Mudança nas ligas de fundo,
+  vitrine (`src/market/abroad.ts`) ou eras roda `scripts/check_world.ts`; na visão 2D
+  (`src/engine/watchDirector.ts`), `scripts/check_watch.ts`.
+- Visão 2D em Skia (`@shopify/react-native-skia`). No web o CanvasKit vem de
+  `public/canvaskit.wasm` (`npm run setup:skia`, fora do git); `components/PitchCanvas.web.tsx`
+  o carrega antes de importar o desenho.
 - O jogo roda num **mundo** (`src/competitions/world.ts`): ligas, copas e supercopas num
   calendário de datas. Clubes sem elenco jogam "por força" (`Club.strength`). Dados em
   `data/world/` (`npm run gen:world`); a liga única de `data/` é só a base do backtest.

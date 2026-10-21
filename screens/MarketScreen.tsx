@@ -15,10 +15,10 @@ import { selectCareer, useGame } from '../store/gameStore';
 
 type View_ = 'buscar' | 'propostas' | 'movimentos';
 type Group = 'Todos' | 'GOL' | 'DEF' | 'MEI' | 'ATA';
-type Source = 'Clubes' | 'Livres' | 'Fim de contrato';
+type Source = 'Clubes' | 'Exterior' | 'Livres' | 'Fim de contrato';
 
 const GROUPS: readonly Group[] = ['Todos', 'GOL', 'DEF', 'MEI', 'ATA'];
-const SOURCES: readonly Source[] = ['Clubes', 'Livres', 'Fim de contrato'];
+const SOURCES: readonly Source[] = ['Clubes', 'Exterior', 'Livres', 'Fim de contrato'];
 const GROUP_OF: Record<Position, Group> = {
   GK: 'GOL', CB: 'DEF', LB: 'DEF', RB: 'DEF', DM: 'MEI', CM: 'MEI', AM: 'MEI', LW: 'ATA', RW: 'ATA', ST: 'ATA',
 };
@@ -42,6 +42,10 @@ export function MarketScreen() {
     return marketPool(career)
       .filter((p) => {
         if (source === 'Livres') return p.clubId === null;
+        // Exterior: vitrine das ligas de fundo (Portugal, Holanda, Brasil...).
+        const abroad = p.clubId !== null && !clubs[p.clubId]?.squad.length;
+        if (source === 'Exterior') return abroad;
+        if (abroad) return false;
         if (source === 'Fim de contrato') return p.clubId !== null && !p.loan && p.contract.expires === season.year;
         return p.clubId !== null;
       })
@@ -50,7 +54,13 @@ export function MarketScreen() {
       .filter((p) => !onlyAffordable || p.value <= budget)
       .sort((a, b) => b.ovr - a.ovr)
       .slice(0, MAX_ROWS);
-  }, [career, source, group, season.year, onlyAffordable, budget]);
+  }, [career, clubs, source, group, season.year, onlyAffordable, budget]);
+
+  const clubLabel = (id: string) => {
+    const cl = clubs[id];
+    if (!cl) return undefined;
+    return cl.squad.length ? cl.shortName : `${cl.name} · ${career.leagues[cl.leagueId]?.country ?? ''}`;
+  };
 
   const recent = useMemo(
     () => career.transfers.filter((t) => t.year === season.year && t.type !== 'loanReturn').slice(-40).reverse(),
@@ -90,6 +100,9 @@ export function MarketScreen() {
               onChange={(v) => setOnlyAffordable(v === 'orcamento')}
               labelOf={(v) => (v === 'todos' ? 'Todos os preços' : 'Valor até o orçamento')}
             />
+            {source === 'Exterior' ? (
+              <Muted>Clubes das ligas de fundo mostram 3 jogadores por temporada (4 no Brasil e na Argentina). Quem não for vendido fica por lá.</Muted>
+            ) : null}
             {source === 'Fim de contrato' && !preContractsOpen(season) ? (
               <Muted>Pré-contratos abrem na janela de inverno; antes disso, só comprando.</Muted>
             ) : null}
@@ -99,7 +112,7 @@ export function MarketScreen() {
             keyExtractor={(p) => p.id}
             contentContainerClassName="px-4 pb-6"
             ListEmptyComponent={<Muted className="py-6 text-center">Ninguém encontrado com esse filtro.</Muted>}
-            renderItem={({ item }) => <PlayerRow p={item} clubName={item.clubId ? clubs[item.clubId]?.shortName : undefined} onPress={() => setNegotiating(item.id)} />}
+            renderItem={({ item }) => <PlayerRow p={item} clubName={item.clubId ? clubLabel(item.clubId) : undefined} onPress={() => setNegotiating(item.id)} />}
           />
         </>
       ) : null}

@@ -1,11 +1,13 @@
 // Detalhe da partida: placar, gols esperados, lances e notas dos titulares.
 
+import { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, Muted, SectionTitle } from '../components/ui';
 import { findResult } from '../src/competitions/world';
 import type { MatchEvent, MatchResult, Player } from '../src/domain/types';
 import { selectCareer, useGame } from '../store/gameStore';
+import { WatchView } from './WatchView';
 
 const EVENT_LABEL: Record<MatchEvent['type'], string> = { goal: 'Gol', yellow: 'Amarelo', red: 'Vermelho', injury: 'Lesão' };
 const EVENT_COLOR: Record<MatchEvent['type'], string> = {
@@ -21,6 +23,7 @@ export function MatchDetailScreen({ fixtureId }: { fixtureId: string }) {
   const career = useGame(selectCareer)!;
   const close = useGame((s) => s.openMatch);
   const insets = useSafeAreaInsets();
+  const [watching, setWatching] = useState(false);
   const found = findResult(career.season, fixtureId);
   if (!found) return null;
   const { result: r, comp } = found;
@@ -29,6 +32,7 @@ export function MatchDetailScreen({ fixtureId }: { fixtureId: string }) {
   const home = clubs[r.homeId]!;
   const away = clubs[r.awayId]!;
   const name = (id: string) => players[id]?.name ?? id;
+  if (watching && !summarized) return <WatchView result={r} clubs={clubs} players={players} seed={career.seed} onClose={() => setWatching(false)} />;
 
   return (
     <View className="absolute inset-0 bg-slate-50 dark:bg-slate-950">
@@ -53,6 +57,7 @@ export function MatchDetailScreen({ fixtureId }: { fixtureId: string }) {
           </Muted>
           {r.shootoutWinnerId ? <Muted className="text-center">{clubs[r.shootoutWinnerId]?.name} venceu nos pênaltis</Muted> : null}
           <Muted className="text-center">{comp.name}</Muted>
+          {summarized ? null : <Button className="mt-3" label="Assistir em 2D" onPress={() => setWatching(true)} />}
         </Card>
 
         <Card>

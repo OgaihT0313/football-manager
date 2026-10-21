@@ -13682,5 +13682,1245 @@
         "transfersOut": 0
       }
     }
+  },
+  {
+    "id": "bra1-america-londrina-velha",
+    "name": "América Londrina Velha",
+    "shortName": "AME",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 11400000,
+    "wageBudget": 601600,
+    "reputation": 57,
+    "strength": 74,
+    "training": 3,
+    "finance": {
+      "balance": 18960000,
+      "revenueBase": 47400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-atletico-quixada",
+    "name": "Atlético Quixadá",
+    "shortName": "AT5",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 11400000,
+    "wageBudget": 601600,
+    "reputation": 57,
+    "strength": 73.8,
+    "training": 3,
+    "finance": {
+      "balance": 18960000,
+      "revenueBase": 47400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-ec-natal-sul",
+    "name": "EC Natal Sul",
+    "shortName": "NAT",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 52,
+    "strength": 72.4,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-america-ourinhos",
+    "name": "América Ourinhos",
+    "shortName": "AM1",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 52,
+    "strength": 72.5,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-botafogo-resende",
+    "name": "Botafogo Resende",
+    "shortName": "BOT",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 44,
+    "strength": 69.5,
+    "training": 2,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-gremio-varginha",
+    "name": "Grêmio Varginha",
+    "shortName": "GR4",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 51,
+    "strength": 71.8,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-atletico-divinopolis",
+    "name": "Atlético Divinópolis",
+    "shortName": "AT6",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 46,
+    "strength": 70.2,
+    "training": 3,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-gremio-campina-verde",
+    "name": "Grêmio Campina Verde",
+    "shortName": "GR5",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 46,
+    "strength": 70.3,
+    "training": 3,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-america-maringa",
+    "name": "América Maringá",
+    "shortName": "AM2",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 4950000,
+    "wageBudget": 261500,
+    "reputation": 41,
+    "strength": 68.6,
+    "training": 2,
+    "finance": {
+      "balance": 8240000,
+      "revenueBase": 20600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-sport-bage",
+    "name": "Sport Bagé",
+    "shortName": "SP16",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 40,
+    "strength": 68.3,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-gremio-uberaba",
+    "name": "Grêmio Uberaba",
+    "shortName": "GR6",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 4950000,
+    "wageBudget": 261500,
+    "reputation": 42,
+    "strength": 68.9,
+    "training": 2,
+    "finance": {
+      "balance": 8240000,
+      "revenueBase": 20600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-america-aracaju",
+    "name": "América Aracaju",
+    "shortName": "AM3",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 38,
+    "strength": 67.6,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-botafogo-tubarao",
+    "name": "Botafogo Tubarão",
+    "shortName": "BO3",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 32,
+    "strength": 65.8,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-ec-caxias-alta",
+    "name": "EC Caxias Alta",
+    "shortName": "CAX",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 31,
+    "strength": 65.5,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-botafogo-pelotas-norte",
+    "name": "Botafogo Pelotas Norte",
+    "shortName": "BO4",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 31,
+    "strength": 65.4,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-atletico-petrolina",
+    "name": "Atlético Petrolina",
+    "shortName": "AT7",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 26,
+    "strength": 63.7,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-ec-feira-nova",
+    "name": "EC Feira Nova",
+    "shortName": "FEI",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 28,
+    "strength": 64.4,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-sport-juazeiro",
+    "name": "Sport Juazeiro",
+    "shortName": "SP17",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 25,
+    "strength": 63.3,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-atletico-goianesia",
+    "name": "Atlético Goianésia",
+    "shortName": "AT8",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 1800000,
+    "wageBudget": 96500,
+    "reputation": 25,
+    "strength": 63.3,
+    "training": 1,
+    "finance": {
+      "balance": 3040000,
+      "revenueBase": 7600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "bra1-sport-xerem",
+    "name": "Sport Xerém",
+    "shortName": "SP18",
+    "leagueId": "bra1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 19,
+    "strength": 61.4,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-atletico-azul",
+    "name": "Atlético Azul",
+    "shortName": "AT9",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 9600000,
+    "wageBudget": 509000,
+    "reputation": 54,
+    "strength": 72.9,
+    "training": 3,
+    "finance": {
+      "balance": 16040000,
+      "revenueBase": 40100000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-independiente-cordoba-alta",
+    "name": "Independiente Córdoba Alta",
+    "shortName": "IND",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 11400000,
+    "wageBudget": 601600,
+    "reputation": 57,
+    "strength": 74.1,
+    "training": 3,
+    "finance": {
+      "balance": 18960000,
+      "revenueBase": 47400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-racing-pergamino",
+    "name": "Racing Pergamino",
+    "shortName": "RA7",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 8150000,
+    "wageBudget": 430300,
+    "reputation": 52,
+    "strength": 72.4,
+    "training": 3,
+    "finance": {
+      "balance": 13560000,
+      "revenueBase": 33900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-atletico-campana",
+    "name": "Atlético Campana",
+    "shortName": "AT10",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 6900000,
+    "wageBudget": 364300,
+    "reputation": 49,
+    "strength": 71.4,
+    "training": 3,
+    "finance": {
+      "balance": 11480000,
+      "revenueBase": 28700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-club-parana",
+    "name": "Club Paraná",
+    "shortName": "CLU",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 4
+    },
+    "budget": 5850000,
+    "wageBudget": 309700,
+    "reputation": 44,
+    "strength": 69.7,
+    "training": 2,
+    "finance": {
+      "balance": 9760000,
+      "revenueBase": 24400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-atletico-neuquen",
+    "name": "Atlético Neuquén",
+    "shortName": "AT11",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 3
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 39,
+    "strength": 68.1,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-club-rosario-norte",
+    "name": "Club Rosario Norte",
+    "shortName": "CL1",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 39,
+    "strength": 68.1,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-independiente-zarate",
+    "name": "Independiente Zárate",
+    "shortName": "IN1",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 2,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 34,
+    "strength": 66.5,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-independiente-quilmes-viejo",
+    "name": "Independiente Quilmes Viejo",
+    "shortName": "IN2",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 4200000,
+    "wageBudget": 222100,
+    "reputation": 39,
+    "strength": 68.1,
+    "training": 2,
+    "finance": {
+      "balance": 7000000,
+      "revenueBase": 17500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-racing-bahia-clara",
+    "name": "Racing Bahía Clara",
+    "shortName": "RA8",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 32,
+    "strength": 65.8,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-estudiantes-junin",
+    "name": "Estudiantes Junín",
+    "shortName": "EST",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-3-3",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 3000000,
+    "wageBudget": 158700,
+    "reputation": 32,
+    "strength": 65.6,
+    "training": 2,
+    "finance": {
+      "balance": 5000000,
+      "revenueBase": 12500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-club-ushuaia",
+    "name": "Club Ushuaia",
+    "shortName": "CL2",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "5-3-2",
+      "pressing": 2,
+      "lineHeight": 2,
+      "tempo": 4
+    },
+    "budget": 2550000,
+    "wageBudget": 134500,
+    "reputation": 31,
+    "strength": 65.4,
+    "training": 2,
+    "finance": {
+      "balance": 4240000,
+      "revenueBase": 10600000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-independiente-san-luis",
+    "name": "Independiente San Luis",
+    "shortName": "IN3",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 3
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 20,
+    "strength": 61.6,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-atletico-rafaela",
+    "name": "Atlético Rafaela",
+    "shortName": "AT12",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 2150000,
+    "wageBudget": 113000,
+    "reputation": 28,
+    "strength": 64.4,
+    "training": 1,
+    "finance": {
+      "balance": 3560000,
+      "revenueBase": 8900000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-estudiantes-salta",
+    "name": "Estudiantes Salta",
+    "shortName": "ES1",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-4-2",
+      "pressing": 4,
+      "lineHeight": 2,
+      "tempo": 2
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 22,
+    "strength": 62.3,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-club-mendoza-sur",
+    "name": "Club Mendoza Sur",
+    "shortName": "CL3",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 4,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 18,
+    "strength": 61.1,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-deportivo-viedma",
+    "name": "Deportivo Viedma",
+    "shortName": "DE5",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 2,
+      "lineHeight": 4,
+      "tempo": 4
+    },
+    "budget": 1150000,
+    "wageBudget": 59700,
+    "reputation": 15,
+    "strength": 60.1,
+    "training": 1,
+    "finance": {
+      "balance": 1880000,
+      "revenueBase": 4700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-club-lanus-oeste",
+    "name": "Club Lanús Oeste",
+    "shortName": "CL4",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 4,
+      "lineHeight": 3,
+      "tempo": 3
+    },
+    "budget": 1300000,
+    "wageBudget": 69800,
+    "reputation": 19,
+    "strength": 61.2,
+    "training": 1,
+    "finance": {
+      "balance": 2200000,
+      "revenueBase": 5500000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-independiente-tucuman",
+    "name": "Independiente Tucumán",
+    "shortName": "IN4",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "3-5-2",
+      "pressing": 3,
+      "lineHeight": 3,
+      "tempo": 2
+    },
+    "budget": 1550000,
+    "wageBudget": 81200,
+    "reputation": 21,
+    "strength": 62.1,
+    "training": 1,
+    "finance": {
+      "balance": 2560000,
+      "revenueBase": 6400000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
+  },
+  {
+    "id": "arg1-atletico-tandil",
+    "name": "Atlético Tandil",
+    "shortName": "AT13",
+    "leagueId": "arg1",
+    "squad": [],
+    "startingXI": [],
+    "tactic": {
+      "formation": "4-2-3-1",
+      "pressing": 3,
+      "lineHeight": 4,
+      "tempo": 2
+    },
+    "budget": 1150000,
+    "wageBudget": 59700,
+    "reputation": 16,
+    "strength": 60.3,
+    "training": 1,
+    "finance": {
+      "balance": 1880000,
+      "revenueBase": 4700000,
+      "season": {
+        "income": 0,
+        "prizes": 0,
+        "wages": 0,
+        "operating": 0,
+        "transfersIn": 0,
+        "transfersOut": 0
+      }
+    }
   }
 ]

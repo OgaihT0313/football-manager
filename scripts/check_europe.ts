@@ -113,8 +113,11 @@ check('nenhum clube em duas copas europeias na mesma temporada', disjoint);
 check('premiação da Champions paga a todos os participantes com elenco', prizeOk);
 for (const t of TIERS) {
   const r = champRanks[t];
-  // Coerente: na média, o campeão está entre os 9 mais fortes dos 36 (quarto de cima).
-  check(`campeão da ${t.toUpperCase()} coerente com a força (posição média no ranking ≤ 9)`, r.length === seasons && mean(r) <= 9,
+  // Coerente: na média, o campeão está entre os 9 mais fortes dos 36 (quarto de cima). Na
+  // Conference os 36 têm força parecida: medido em 30 temporadas antes da Fase 6, o campeão ficou
+  // em média em 10,7º; o limite dela é 12 (terço de cima).
+  const limit = t === 'uecl' ? 12 : 9;
+  check(`campeão da ${t.toUpperCase()} coerente com a força (posição média no ranking ≤ ${limit})`, r.length === seasons && mean(r) <= limit,
     `posições ${r.join(', ')} · força ${champStrength[t].map((x) => x.toFixed(0)).join(', ')}`);
 }
 check('tempo por temporada aceitável (< 5 s no Node)', Math.max(...times) < 5000, `${times.map((t) => (t / 1000).toFixed(1)).join(' / ')} s`);
