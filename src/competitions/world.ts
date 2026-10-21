@@ -14,6 +14,7 @@ import {
   aggregateTied, countryOfClub, createEuropeCompetition, drawEuropeStage, EUROPE_MARKERS, EUROPE_TIEBREAKERS,
   inheritSeeds, stageWinners, type EuropeTier,
 } from './europe';
+import { analystFactor, recoveryFactor } from '../manager/staff';
 import { computeTable, generateFixtures } from './league';
 
 export interface PlayerStatus {
@@ -96,6 +97,10 @@ export const YELLOW_LIMIT = 5;
 /** Recuperação entre datas: semana cheia ou meio de semana (menos descanso). */
 export const RECOVERY_RATE = 0.35;
 export const RECOVERY_RATE_MIDWEEK = 0.22;
+
+/** Moral: ganho/perda por vitória/derrota e quanto volta para 50 a cada fim de semana. */
+export const MORALE_WIN = 3;
+export const MORALE_DECAY = 0.1;
 
 /** Desgaste de uma partida (condição 0-100). Pressão alta cansa mais. */
 export function matchFitnessCost(club: Club): number {
@@ -422,6 +427,8 @@ export function playSlot(
           ctx: comp.context,
           rng: createRng(deriveSeed(ws.seed, fx.id)),
           params,
+          homePrep: analystFactor(home),
+          awayPrep: analystFactor(away),
           ...(homeFull ? {} : { homeStrength: strengthFromRating(comp.ratings[home.id] ?? home.strength ?? 55) }),
           ...(awayFull ? {} : { awayStrength: strengthFromRating(comp.ratings[away.id] ?? away.strength ?? 55) }),
         });
@@ -442,11 +449,14 @@ export function playSlot(
   const rate = slot.kind === 'meio' || next?.kind === 'meio' ? RECOVERY_RATE_MIDWEEK : RECOVERY_RATE;
   for (const club of Object.values(clubs)) {
     if (!hasSquad(club)) continue;
+    const r = Math.min(0.9, rate * recoveryFactor(club));
     for (const pid of club.squad) {
       const p = players[pid];
       if (!p) continue;
       const f = p.fitness ?? 100;
-      if (f < 100) p.fitness = Math.round((f + (100 - f) * rate) * 10) / 10;
+      if (f < 100) p.fitness = Math.round((f + (100 - f) * r) * 10) / 10;
+      // Moral volta devagar para o neutro (50) a cada fim de semana.
+      if (slot.kind === 'fds' && p.morale !== undefined && p.morale !== 50) p.morale = Math.round((p.morale + (50 - p.morale) * MORALE_DECAY) * 10) / 10;
     }
   }
 
@@ -542,12 +552,19 @@ function applyMatchEffects(ws: WorldSeason, result: MatchResult, home: Club, awa
   }
   for (const club of [home, away]) {
     if (!hasSquad(club)) continue;
+    const mine = club.id === result.homeId ? result.homeGoals : result.awayGoals;
+    const theirs = club.id === result.homeId ? result.awayGoals : result.homeGoals;
+    const swing = mine > theirs ? MORALE_WIN : mine < theirs ? -MORALE_WIN : 0;
+    const xi = new Set(club.id === result.homeId ? result.homeXI : result.awayXI);
     for (const pid of club.squad) {
       const st = ws.status[pid];
       if (st && st.out > 0) {
         st.out--;
         if (st.out === 0) st.reason = null;
       }
+      // Moral: resultado para todo o elenco; quem jogou ganha um pouco mais.
+      const p = players[pid];
+      if (p) p.morale = Math.max(0, Math.min(100, (p.morale ?? 50) + swing + (xi.has(pid) ? 1 : 0)));
     }
   }
   for (const e of result.events) {

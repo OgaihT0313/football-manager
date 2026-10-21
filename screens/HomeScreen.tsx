@@ -4,6 +4,7 @@
 import { useMemo } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { Header } from '../components/Header';
+import { BoardCard, DecisionsCard, JobOffersCard, NewsCard, UnemployedView } from '../components/ManagerCards';
 import { Badge, Button, Card, Muted, SectionTitle, Strong } from '../components/ui';
 import { nextFixtureOf, outcomeFor, positionOf, resultsOf, roundLabel, upcomingOf, userLeague } from '../src/career/queries';
 import { isWorldSeasonOver, type CompetitionState } from '../src/competitions/world';
@@ -77,6 +78,8 @@ export function HomeScreen() {
     return season.competitions[compId]?.name ?? career.leagues[compId]?.name ?? compId;
   }
 
+  if (!career.manager.employed) return <UnemployedView career={career} />;
+
   return (
     <ScrollView contentContainerClassName="gap-4 px-4 pb-8">
       <Header
@@ -127,6 +130,10 @@ export function HomeScreen() {
           </View>
         </Card>
       ) : null}
+
+      <DecisionsCard career={career} />
+      <BoardCard career={career} />
+      <JobOffersCard career={career} />
 
       <Card>
         <SectionTitle>Mercado</SectionTitle>
@@ -229,6 +236,8 @@ export function HomeScreen() {
           })}
         </Card>
       ) : null}
+
+      <NewsCard career={career} />
 
       {career.history.length > 0 ? (
         <Card>

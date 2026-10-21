@@ -3,11 +3,13 @@
 
 import { create } from 'zustand';
 import {
-  advanceToNextMatch, autoPickUserXI, newCareer, setUserFormation, setUserSlot, setUserTactic,
+  advanceRound, advanceToNextMatch, autoPickUserXI, cloneForStep, newCareer, setUserFormation, setUserSlot, setUserTactic,
   simulateRounds, startNextSeason, type CareerState,
 } from '../src/career/career';
 import type { Club, Formation, LeagueConfig, Level, Player } from '../src/domain/types';
+import { acceptJob, answerDecision, hireStaff, sendScout } from '../src/career/managerCareer';
 import type { MarketResult } from '../src/career/userMarket';
+import type { ScoutRegion } from '../src/manager/staff';
 import { currentMarker } from '../src/market/calendar';
 import { createSaveService, SaveError } from '../src/save/saveService';
 import { storage } from '../src/save/storage';
@@ -74,6 +76,14 @@ interface GameState {
   /** Roda uma ação de mercado; se der certo, salva. Devolve o resultado para a tela. */
   market(action: (c: CareerState) => { career: CareerState; result: MarketResult }): MarketResult;
   clearToast(): void;
+  /** Assume o comando de um clube com vaga aberta. */
+  takeJob(clubId: string): MarketResult;
+  /** Responde uma decisão pendente (coletiva, jogador insatisfeito). */
+  decide(decisionId: string, option: number): void;
+  hire(staffId: string): MarketResult;
+  scout(region: ScoutRegion): MarketResult;
+  /** Avança uma data (usado quando o técnico está sem clube). */
+  advanceOne(): void;
 }
 
 function infoOf(c: CareerState, savedAt: number): SaveInfo {
@@ -215,6 +225,20 @@ export const useGame = create<GameState>()((set, get) => {
       return result;
     },
     clearToast: () => set({ toast: null }),
+
+    takeJob(clubId) {
+      const r = get().market((c) => acceptJob(c, clubId, cloneForStep, autoPickUserXI));
+      if (r.ok) set({ tab: 'inicio', leagueView: null, roundView: null });
+      return r;
+    },
+    decide(decisionId, option) {
+      update((c) => answerDecision(c, decisionId, option, cloneForStep));
+    },
+    hire: (staffId) => get().market((c) => hireStaff(c, staffId, cloneForStep)),
+    scout: (region) => get().market((c) => sendScout(c, region, cloneForStep)),
+    advanceOne() {
+      heavy(() => update((c) => advanceRound(c).career));
+    },
   };
 });
 

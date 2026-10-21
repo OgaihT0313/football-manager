@@ -19,6 +19,8 @@ a próxima sem o usuário pedir.
   também `scripts/check_save.ts`. Mudança em mercado, finanças, IA ou evolução roda
   `scripts/check_market.ts` e `scripts/diagnose_league.ts --carreiras 5`. Mudança em calendário,
   copas ou Europa roda `scripts/check_europe.ts --temporadas 10`.
+  Mudança na diretoria, empregos, staff, imprensa ou prêmios (`src/manager/`,
+  `src/career/managerCareer.ts`) roda `scripts/check_career.ts`.
 - O jogo roda num **mundo** (`src/competitions/world.ts`): ligas, copas e supercopas num
   calendário de datas. Clubes sem elenco jogam "por força" (`Club.strength`). Dados em
   `data/world/` (`npm run gen:world`); a liga única de `data/` é só a base do backtest.

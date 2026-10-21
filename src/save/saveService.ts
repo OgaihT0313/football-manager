@@ -4,6 +4,7 @@
 
 import { CURRENT_SAVE_VERSION, type CareerState } from '../career/career';
 import { initFinance } from '../club/finance';
+import { initManagerFields } from '../career/managerCareer';
 import { buildSlots } from '../competitions/world';
 
 export interface SaveEnvelope {
@@ -67,6 +68,8 @@ export const MIGRATIONS: Record<number, (data: any) => any> = {
   // temporada em andamento segue sem Europa; a Europa entra na próxima virada. As ligas de fundo
   // não existem num save antigo: o mundo segue com as ligas que tinha.
   3: (d) => ({ ...d, season: { ...d.season, stats: d.season?.stats ?? {} } }),
+  // v4 → v5 (Fase 5): técnico, diretoria, decisões, notícias, vagas, prêmios e staff.
+  4: (d) => (d.manager ? d : { ...d, ...initManagerFields(d) }),
 };
 
 export function serializeCareer(career: CareerState, savedAt: number): string {

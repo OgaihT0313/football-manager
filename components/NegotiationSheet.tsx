@@ -9,6 +9,7 @@ import { spendableFee, wageRoom } from '../src/club/finance';
 import { openWindow, preContractsOpen } from '../src/market/calendar';
 import { askingPrice, renewalResponse, wageAsk } from '../src/market/transfers';
 import { contractYearsRange } from '../src/market/valuation';
+import { potentialRange, staffLevel } from '../src/manager/staff';
 import { selectCareer, useGame } from '../store/gameStore';
 import { formatMoney, formatWage, POS_LABEL } from './labels';
 import { Sheet } from './Sheet';
@@ -48,6 +49,9 @@ export function NegotiationSheet({ playerId, mode, onClose }: { playerId: string
   const [result, setResult] = useState<MarketResult | null>(null);
 
   if (!p) return null;
+  // Potencial de jogador de outro clube aparece como faixa, mais precisa com olheiro melhor.
+  const [potLo, potHi] = p.clubId === career.userClubId ? [p.potential, p.potential] : potentialRange(p, staffLevel(user, 'olheiro'));
+  const potLabel = potLo === potHi ? `Pot. ${potLo}` : `Pot. ${potLo}–${potHi}`;
   const windowOpen = !!openWindow(career.season);
   const isFree = !p.clubId;
   const canPreContract = !!from && !p.loan && p.contract.expires === year && preContractsOpen(career.season);
@@ -67,7 +71,7 @@ export function NegotiationSheet({ playerId, mode, onClose }: { playerId: string
         <View className="flex-row flex-wrap items-center gap-1.5">
           <Badge label={p.positions.map((x) => POS_LABEL[x]).join('/')} />
           <Badge tone="good" label={`OVR ${p.ovr}`} />
-          <Badge label={`Pot. ${p.potential}`} />
+          <Badge label={potLabel} />
           <Badge label={`${p.age} anos`} />
           {p.loan ? <Badge tone="warn" label="Emprestado" /> : null}
         </View>

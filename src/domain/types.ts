@@ -51,6 +51,8 @@ export interface Player extends Attributes {
   /** 0-100, 100 é totalmente descansado. */
   fitness?: number;
   loan?: Loan;
+  /** Prospecto achado pelo olheiro deste clube (só ele vê o jogador no mercado). */
+  scoutedFor?: string;
 }
 
 export type Formation = '4-3-3' | '4-2-3-1' | '4-4-2' | '3-5-2' | '5-3-2';
@@ -88,6 +90,20 @@ export interface Club {
   loanedOut?: string[];
   /** Temporada em que caiu para a 2ª divisão (some quando sobe). */
   lowerSince?: number;
+  /** Staff detalhado (só o clube do usuário; os outros usam o treino). */
+  staff?: Partial<Record<StaffRole, StaffMember>>;
+}
+
+export type StaffRole = 'preparador' | 'treinador' | 'olheiro' | 'analista';
+
+export interface StaffMember {
+  id: string;
+  name: string;
+  role: StaffRole;
+  /** 1-5. */
+  level: number;
+  /** Salário semanal. */
+  wage: number;
 }
 
 export interface SeasonLedger {

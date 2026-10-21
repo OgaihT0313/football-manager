@@ -244,6 +244,9 @@ export interface SimulateMatchInput {
   /** Força pronta para um lado sem elenco detalhado (clube "por força"); a escalação fica vazia. */
   homeStrength?: TeamStrength;
   awayStrength?: TeamStrength;
+  /** Preparação de jogo (analista): multiplica os gols esperados a favor. Padrão 1. */
+  homePrep?: number;
+  awayPrep?: number;
 }
 
 /** Força de um clube sem elenco: o mesmo número em todos os setores. */
@@ -258,7 +261,8 @@ export function simulateMatch(input: SimulateMatchInput): MatchResult {
   const awayPositions = slotsOfFormation(awayLineup);
   const hs = input.homeStrength ?? teamStrength(homeLineup, homePositions, params);
   const as = input.awayStrength ?? teamStrength(awayLineup, awayPositions, params);
-  const xg = expectedGoals(hs, as, home.tactic, away.tactic, ctx, params, !!input.fixture.neutral);
+  const raw = expectedGoals(hs, as, home.tactic, away.tactic, ctx, params, !!input.fixture.neutral);
+  const xg = { home: raw.home * (input.homePrep ?? 1), away: raw.away * (input.awayPrep ?? 1) };
   const [homeGoals, awayGoals] = sampleScore(rng, xg.home, xg.away, params.rho);
 
   const events: MatchEvent[] = [];

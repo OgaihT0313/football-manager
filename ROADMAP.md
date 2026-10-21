@@ -9,8 +9,51 @@ Plano completo em `PLANO-FUTEBOL.md`. Aqui fica o estado de cada fase e o que fo
 | 2 — Calendário, contratos, transferências, finanças | **Concluída** (2026-10-19) |
 | 3 — Cinco ligas e copas nacionais | **Concluída** (2026-10-19) |
 | 4 — Competições europeias | **Concluída** (2026-10-20) |
-| 5 — Camada de técnico | Não iniciada |
+| 5 — Camada de técnico | **Concluída** (2026-10-20) |
 | 6 — Ligas de fundo, visão 2D, eras | Não iniciada |
+
+## Fase 5 — resultado
+
+Camada de técnico: diretoria com mandato, meta e confiança (projeção da campanha contra a meta);
+demissão no meio ou no fim da temporada; mercado de empregos com vagas da IA e propostas de
+clubes maiores conforme a reputação; técnico desempregado avançando o calendário. Coletivas e
+decisões com prazo (vale a opção padrão), jogador insatisfeito, moral que muda com os
+resultados. Staff do usuário (preparador, auxiliar, olheiro, analista) pago de um orçamento
+próprio de 6% da receita, missões do olheiro trazendo jovens só para o usuário, potencial em
+faixa conforme o olheiro. Prêmios por liga e copa europeia, 11 conquistas, passagens e campeões
+na aba Clube › Carreira. Save v5 com migração da v4. Decisões em `PLANO-TECNICO.md`.
+
+Comando novo: `npm run check:career` (`scripts/check_career.ts`, `--temporadas 15`).
+
+Medido:
+
+- **Aceite da fase** (`check_career`, 15 temporadas com o "técnico automático"): tudo verde.
+  - Carreira 2026–2040 completa, jogada duas vezes: direto e com 12 recargas de save em pontos
+    sorteados. **O estado final é idêntico.**
+  - 5 passagens: OL1 2026–2027 (demitido), ST3 2028–2036 (saiu), VAL 2036–2038 (demitido),
+    HEX 2039 (saiu), GLE 2039–2040 (demitido no balanço final). Toda demissão anterior foi
+    seguida de novo emprego.
+  - Demissão forçada: o clube passa para a IA, aparecem vagas e o novo clube vem com diretoria
+    e staff. Decisões aplicam o efeito; moral muda; contratar staff, missão do olheiro (3
+    prospectos só do usuário) e intervalo entre missões funcionam.
+  - Prêmios em todas as temporadas (5 ligas + 3 copas europeias). Pior temporada 4,1 s no Node;
+    save de 6,22 MB depois de 15 temporadas.
+- `diagnose_league` no mundo (3 carreiras × 10 temporadas): 9 de 9. OVR dos titulares
+  73,1 → 72,3; gols por jogo 2,87; promovido termina em 16,6º; ~2,2 s por temporada.
+- Backtest de 500 temporadas (com a moral dinâmica): gols/jogo 2,75, mandante 44,9%, empate
+  25,1%, campeão 85,0 pts, último 23,5, mais forte campeão 37,0%; tudo dentro das faixas.
+- `check_engine`, `check_save`, `check_market` e `check_europe --temporadas 10`: verdes.
+  Liga única: 8 de 8.
+- **No navegador:** save v4 real migrado para v5, cartão da diretoria, decisões, aba Staff
+  (contratar, missão do olheiro), aba Carreira, balanço e notícias de fim de temporada. Sem
+  erros no console. Bundle Android compila (1072 módulos). **Não testado em aparelho.**
+
+O que observar:
+
+- Staff caro depois de rebaixamento apertava o caixa; agora o staff sai com o técnico demitido e
+  é cortado na virada se passar do orçamento.
+- A moral dinâmica afasta um pouco os extremos (campeão +1,4 pt, último −1,5 pt).
+- Vagas dependem da IA demitir: com reputação baixa, o técnico pode ficar várias datas parado.
 
 ## Fase 4 — resultado
 
@@ -292,8 +335,6 @@ Parâmetros calibrados na Fase 0 (`DEFAULT_PARAMS` em `src/engine/matchEngine.ts
 
 ## Pendências para fases seguintes
 
-- Moral existe no tipo (`morale`, entra em `conditionFactor`) mas ainda não muda com os
-  resultados.
 - Testar num aparelho Android/iOS de verdade (salvar com `expo-file-system`, fechar e reabrir).
 - Vermelho não muda o placar (λ é calculado antes); entra com o modo ao vivo.
 - Dados reais: o usuário fornece o CSV; ver `FORMATO-DADOS.md`.

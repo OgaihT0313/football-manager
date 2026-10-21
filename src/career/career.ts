@@ -9,6 +9,10 @@ import {
   type WorldData, type WorldSeason, type WorldSeasonOptions,
 } from '../competitions/world';
 import { europePrizes, europeanQualifiers } from '../competitions/europe';
+import { effectiveTraining, staffLevel } from '../manager/staff';
+import {
+  aiRunsUser, initManagerFields, managerAfterSlot, managerBeforeSlot, managerNewSeason, managerSeasonClose, type ManagerFields,
+} from './managerCareer';
 import { outsideFreeAgents, populateClub, topUpSquad } from '../data/fictionalWorld';
 import { FORMATIONS } from '../domain/positions';
 import type {
@@ -31,7 +35,7 @@ export interface SeasonSummary {
   winners: Record<string, string>;
 }
 
-export interface CareerState {
+export interface CareerState extends ManagerFields {
   /** Versão do formato. Ver src/save/saveService.ts. */
   saveVersion: number;
   seed: number;
@@ -51,7 +55,7 @@ export interface CareerState {
   preContracts: PreContract[];
 }
 
-export const CURRENT_SAVE_VERSION = 4;
+export const CURRENT_SAVE_VERSION = 5;
 
 /** Quantas temporadas de transferências o save guarda. */
 const TRANSFER_HISTORY_SEASONS = 3;
@@ -79,6 +83,8 @@ export interface NewCareerInput {
   userClubId: string;
   seed: number;
   year: number;
+  /** Nome do técnico (padrão "Você"). */
+  managerName?: string;
 }
 
 export function worldData(c: Pick<CareerState, 'leagues' | 'clubs' | 'players'>): WorldData {
@@ -112,7 +118,7 @@ export function newCareer(input: NewCareerInput): CareerState {
   // Primeira temporada: Europa pela força dos clubes (não há tabela anterior).
   const europe = europeanQualifiers(leagues, clubRating(base));
   const season = createWorldSeason(worldData(base), input.year, deriveSeed(input.seed, 'temporada', input.year), { europe });
-  const career: CareerState = {
+  const core = {
     saveVersion: CURRENT_SAVE_VERSION,
     seed: input.seed,
     userClubId: input.userClubId,
@@ -123,6 +129,7 @@ export function newCareer(input: NewCareerInput): CareerState {
     inbox: [],
     preContracts: [],
   };
+  const career: CareerState = { ...core, ...initManagerFields(core, input.managerName) };
   return autoPickUserXI(career);
 }
 
@@ -153,6 +160,9 @@ export function cloneForStep(c: CareerState): CareerState {
     transfers: c.transfers.slice(),
     inbox: c.inbox.slice(),
     preContracts: c.preContracts.slice(),
+    decisions: c.decisions.slice(),
+    news: c.news.slice(),
+    vacancies: c.vacancies.slice(),
   };
 }
 
@@ -173,9 +183,12 @@ function youthGkFor(c: CareerState, year: number) {
 function stepSlot(c: CareerState, opts: StepOptions): MatchResult[] {
   const s = c.season;
   const slot = currentSlot(s)!;
+  const slotIndex = s.nextSlot;
   const marker = currentMarker(s);
+  managerBeforeSlot(c);
   c.inbox = c.inbox.filter((o) => o.year === s.year && o.expiresRound >= marker && c.players[o.playerId]?.clubId === c.userClubId);
-  const aiOpts = { userClubId: c.userClubId, aiControlsUser: !!opts.aiControlsUser };
+  // Desempregado, o clube antigo fica com a IA.
+  const aiOpts = { userClubId: c.userClubId, aiControlsUser: aiRunsUser(c, !!opts.aiControlsUser) };
   if (openWindow(s)) {
     runMarketDay(marketWorld(c), { ...aiOpts, rng: createRng(deriveSeed(c.seed, 'mercado', s.year, s.nextSlot)), inbox: c.inbox });
   }
@@ -186,6 +199,7 @@ function stepSlot(c: CareerState, opts: StepOptions): MatchResult[] {
   const results = playSlot(worldData(c), s, undefined, (comp, fx) => comp.id === userLeagueId || fx.homeId === c.userClubId || fx.awayId === c.userClubId);
   // Receitas e salários correm por semana (fins de semana), para todo clube com elenco.
   if (slot.kind === 'fds') for (const club of Object.values(c.clubs)) if (club.squad.length) settleRound(club, c.players, 38);
+  managerAfterSlot(c, results, slotIndex);
   if (isWorldSeasonOver(s)) closeSeason(c, opts);
   return results;
 }
@@ -221,7 +235,7 @@ export function simulateRounds(c: CareerState, untilRound = Infinity, opts: Step
 /** Fim de temporada: renovações da IA, premiação, receita/reputação e histórico. ALTERA `c`. */
 function closeSeason(c: CareerState, opts: StepOptions): void {
   if (c.history.some((h) => h.year === c.season.year)) return;
-  aiRenewals(marketWorld(c), { userClubId: c.userClubId, aiControlsUser: !!opts.aiControlsUser });
+  aiRenewals(marketWorld(c), { userClubId: c.userClubId, aiControlsUser: aiRunsUser(c, !!opts.aiControlsUser) });
   for (const comp of Object.values(c.season.competitions)) {
     if (comp.kind !== 'league') continue;
     const n = comp.clubIds.length;
@@ -263,6 +277,7 @@ function closeSeason(c: CareerState, opts: StepOptions): void {
       winners,
     },
   ];
+  managerSeasonClose(c);
 }
 
 /** Jogos como titular por jogador na temporada (todas as competições). */
@@ -297,7 +312,7 @@ export function startNextSeason(c: CareerState, opts: StepOptions = {}): CareerS
   for (const p of Object.values(next.players)) {
     const club = p.clubId ? next.clubs[p.clubId] : undefined;
     const rng = createRng(deriveSeed(next.seed, 'evolucao', year, p.id));
-    const grown = developPlayer(p, rng, { training: club?.training ?? 2, apps: apps[p.id] ?? 0, nextSeason: year });
+    const grown = developPlayer(p, rng, { training: club ? effectiveTraining(club) : 2, apps: apps[p.id] ?? 0, nextSeason: year });
     if (shouldRetire(grown, rng)) {
       if (grown.clubId) {
         const cl = next.clubs[grown.clubId]!;
@@ -312,7 +327,9 @@ export function startNextSeason(c: CareerState, opts: StepOptions = {}): CareerS
   for (const club of Object.values(next.clubs)) {
     if (!club.squad.length) continue;
     const count = club.squad.length <= 22 ? 2 : club.squad.length < MAX_SQUAD - 1 ? 1 : 0;
-    const youth = youthIntake(club, next.players, createRng(deriveSeed(next.seed, 'base', year, club.id)), year, count);
+    // O olheiro do usuário melhora a base (clubes da IA são neutros).
+    const bonus = club.staff ? staffLevel(club, 'olheiro') - 3 : 0;
+    const youth = youthIntake(club, next.players, createRng(deriveSeed(next.seed, 'base', year, club.id)), year, count, undefined, bonus);
     for (const p of youth) next.players[p.id] = p;
     next.clubs[club.id] = { ...club, squad: [...club.squad, ...youth.map((p) => p.id)] };
   }
@@ -329,7 +346,7 @@ export function startNextSeason(c: CareerState, opts: StepOptions = {}): CareerS
     for (const p of outsideFreeAgents(createRng(deriveSeed(next.seed, 'fora', year)), year, needed, low - 10, low + 4)) next.players[p.id] = p;
   }
 
-  const aiOpts = { userClubId: next.userClubId, aiControlsUser: !!opts.aiControlsUser };
+  const aiOpts = { userClubId: next.userClubId, aiControlsUser: aiRunsUser(next, !!opts.aiControlsUser) };
   fillSquadsWithFreeAgents(w, aiOpts);
   ensureGoalkeepers(w, aiOpts, youthGkFor(next, year));
 
@@ -361,13 +378,15 @@ export function startNextSeason(c: CareerState, opts: StepOptions = {}): CareerS
   }
   const europe = europeanQualifiers(next.leagues, clubRating(next), order, cupWinners);
   const season = createWorldSeason(worldData(next), year, deriveSeed(next.seed, 'temporada', year), { supercups, europe });
-  return autoPickUserXI({
+  const fresh: CareerState = {
     ...next,
     season,
     inbox: [],
     preContracts: [],
     transfers: next.transfers.filter((t) => t.year > year - TRANSFER_HISTORY_SEASONS),
-  });
+  };
+  managerNewSeason(fresh);
+  return autoPickUserXI(fresh);
 }
 
 /**

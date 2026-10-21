@@ -1,13 +1,14 @@
 // Clube: caixa, orçamentos da diretoria, folha salarial, receitas e despesas da temporada,
 // emprestados e movimentações do clube.
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Header } from '../components/Header';
 import { formatMoney, formatWage } from '../components/labels';
-import { Card, Muted, SectionTitle, Strong } from '../components/ui';
+import { Card, Muted, SectionTitle, Segmented, Strong } from '../components/ui';
 import { MAX_DEBT_SHARE, spendableFee, weeklyWageBill } from '../src/club/finance';
 import { selectCareer, useGame } from '../store/gameStore';
+import { CareerView, StaffView } from './ClubPanels';
 
 function Line({ label, value, tone }: { label: string; value: string; tone?: 'good' | 'bad' }) {
   const color = tone === 'good' ? 'text-green-700 dark:text-green-400' : tone === 'bad' ? 'text-red-600 dark:text-red-400' : 'text-slate-900 dark:text-slate-100';
@@ -19,7 +20,25 @@ function Line({ label, value, tone }: { label: string; value: string; tone?: 'go
   );
 }
 
+/** Aba Clube: finanças, staff e carreira do técnico. */
 export function ClubScreen() {
+  const [sub, setSub] = useState<'financas' | 'staff' | 'carreira'>('financas');
+  return (
+    <View className="flex-1">
+      <View className="px-4 pt-2">
+        <Segmented
+          options={['financas', 'staff', 'carreira'] as const}
+          value={sub}
+          onChange={setSub}
+          labelOf={(v) => (v === 'financas' ? 'Finanças' : v === 'staff' ? 'Staff' : 'Carreira')}
+        />
+      </View>
+      <View className="flex-1">{sub === 'financas' ? <FinanceView /> : sub === 'staff' ? <StaffView /> : <CareerView />}</View>
+    </View>
+  );
+}
+
+function FinanceView() {
   const career = useGame(selectCareer)!;
   const { clubs, userClubId, players, season, transfers } = career;
   const club = clubs[userClubId]!;

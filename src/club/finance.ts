@@ -63,6 +63,17 @@ export function setBoardBudgets(club: Club): Club {
   return { ...club, wageBudget, budget };
 }
 
+/** Salários semanais do staff detalhado. */
+export function staffWeekly(club: Pick<Club, 'staff'>): number {
+  return Object.values(club.staff ?? {}).reduce((a, s) => a + (s?.wage ?? 0), 0);
+}
+
+/** Orçamento semanal de staff dado pela diretoria: 6% da receita-base. */
+export const STAFF_BUDGET_SHARE = 0.06;
+export function staffBudget(club: Pick<Club, 'finance'>): number {
+  return Math.round((club.finance.revenueBase * STAFF_BUDGET_SHARE) / 52 / 100) * 100;
+}
+
 /** Quanto o clube ainda pode gastar em taxa de transferência agora. */
 export function spendableFee(club: Club): number {
   const debtFloor = -MAX_DEBT_SHARE * club.finance.revenueBase;
@@ -78,7 +89,8 @@ export function wageRoom(club: Club, players: Record<string, Player>): number {
 export function settleRound(club: Club, players: Record<string, Player>, totalRounds: number): void {
   const R = club.finance.revenueBase;
   const income = (R * ROUND_INCOME_SHARE) / totalRounds;
-  const wages = (weeklyWageBill(club, players) * 52) / totalRounds;
+  // Staff detalhado (só o clube do usuário) é pago do caixa, fora do teto da folha de jogadores.
+  const wages = ((weeklyWageBill(club, players) + staffWeekly(club)) * 52) / totalRounds;
   const operating = (R * OPERATING_SHARE) / totalRounds;
   const f = club.finance;
   f.balance += income - wages - operating;

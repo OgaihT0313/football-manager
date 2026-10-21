@@ -158,6 +158,7 @@ export function answerOffer(c: CareerState, offerId: string, accept: boolean): O
 
 /** Jogadores que o usuário pode procurar no mercado (outros clubes e agentes livres). */
 export function marketPool(c: CareerState): Player[] {
-  return Object.values(c.players).filter((p) => p.clubId !== c.userClubId);
+  // Prospectos que outro olheiro achou ficam escondidos; os nossos aparecem.
+  return Object.values(c.players).filter((p) => p.clubId !== c.userClubId && (!p.scoutedFor || p.scoutedFor === c.userClubId));
 }
 

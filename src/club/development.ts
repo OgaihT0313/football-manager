@@ -20,7 +20,7 @@ function expectedDelta(age: number, gap: number): number {
   return -3.5;
 }
 
-export function trainingFactor(training: Level): number {
+export function trainingFactor(training: number): number {
   return 0.8 + 0.1 * training;
 }
 
@@ -48,7 +48,8 @@ export function shiftOvr(p: Player, delta: number): Attributes {
 }
 
 export interface DevelopmentContext {
-  training: Level;
+  /** Treino efetivo (1-5, pode ser fracionário com o auxiliar técnico). */
+  training: number;
   /** Jogos como titular na temporada que terminou. */
   apps: number;
   /** Temporada que vai começar (para valor de mercado). */
@@ -110,6 +111,8 @@ export function youthIntake(
   season: number,
   count: number,
   forcePos?: Position,
+  /** Pontos de nível a mais (olheiro do usuário). */
+  bonus = 0,
 ): Player[] {
   const level = clubLevel(club, players);
   const have: Partial<Record<Position, number>> = {};
@@ -123,7 +126,7 @@ export function youthIntake(
     const options = [pick(rng, YOUTH_POSITIONS), pick(rng, YOUTH_POSITIONS), pick(rng, YOUTH_POSITIONS)];
     const pos = forcePos ?? (options.sort((a, b) => (have[a] ?? 0) - (have[b] ?? 0))[0] as Position);
     have[pos] = (have[pos] ?? 0) + 1;
-    const target = level - 17 + 1.5 * (club.training - 3) + gaussian(rng, 0, 4);
+    const target = level - 17 + 1.5 * (club.training - 3) + bonus + gaussian(rng, 0, 4);
     const id = `${club.id}-b${season}-${forcePos ? `${forcePos.toLowerCase()}` : ''}${k + 1}`;
     // Potencial médio ~4 abaixo do nível do clube: poucos viram titulares.
     const p = makePlayer(rng, id, club.id, pos, target, season, [16, 18], [0.4, 1.8]);

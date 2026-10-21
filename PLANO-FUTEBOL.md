@@ -289,6 +289,12 @@ força dos 36. O diagnóstico do mundo com Europa passa nos 9 critérios. Númer
 - **Aceite:** carreira de 15 temporadas jogável do início ao fim, incluindo demissão e novo
   emprego, com save/continuar em todos os pontos.
 
+**Resultado (medido em 2026-10-20) — Fase 5 concluída.** Diretoria com mandato e confiança,
+demissão, vagas e propostas, coletivas e decisões, moral dinâmica, staff com orçamento próprio,
+missões do olheiro, prêmios e conquistas. Uma carreira de 15 temporadas com 5 passagens (3
+demissões) termina idêntica jogada direto ou com 12 recargas de save no meio. Decisões em
+`PLANO-TECNICO.md`, números em `ROADMAP.md`.
+
 ## FASE 6 — Ligas de fundo, visão 2D e eras
 
 - **Ligas de fundo** (Portugal, Holanda, Brasil etc.): simuladas só por força do clube, sem

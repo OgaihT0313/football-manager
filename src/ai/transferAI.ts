@@ -145,7 +145,8 @@ function tryBuy(
 
   let best: { p: Player; fee: number; wage: number; gain: number } | null = null;
   for (const p of Object.values(w.players)) {
-    if (p.clubId === clubId || p.loan || p.age > 32 || (depth && p.age < 21)) continue;
+    // Prospecto achado pelo olheiro de outro clube não está no radar da IA.
+    if (p.clubId === clubId || p.loan || p.scoutedFor || p.age > 32 || (depth && p.age < 21)) continue;
     // Pré-filtro barato: o rendimento numa vaga raramente passa o OVR por mais de alguns pontos.
     if (p.ovr + 6 < floor) continue;
     const r = slotRating({ ...p, fitness: 100 }, targetPos);
