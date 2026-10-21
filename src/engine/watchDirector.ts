@@ -31,6 +31,8 @@ export interface WatchScript {
   /** Eventos do motor (gols, cartões, lesões) no tempo da encenação. */
   marks: WatchMark[];
   shots: Record<Side, number>;
+  /** Cada finalização encenada, em ordem (no alvo = gol ou defesa). */
+  shotLog: { t: number; side: Side; onTarget: boolean }[];
   duration: number;
 }
 
@@ -87,6 +89,7 @@ export function directMatch(result: MatchResult, seed = 0): WatchScript {
   climaxes.sort((a, b) => a.t - b.t);
 
   // Domínio: quem tem mais xG fica mais com a bola.
+  const shotLog: WatchScript['shotLog'] = [];
   const share = (result.homeXg + 0.3) / (result.homeXg + result.awayXg + 0.6);
   const frames: WatchFrame[] = [];
   let poss: Side = 'home';
@@ -183,6 +186,7 @@ export function directMatch(result: MatchResult, seed = 0): WatchScript {
     }
     fill(c.t - 20);
     attack(c);
+    shotLog.push({ t: c.t, side: c.side, onTarget: c.outcome !== 'chute' });
     if (c.outcome === 'gol') {
       // Comemoração e nova saída de quem sofreu.
       t += 2;
@@ -205,7 +209,7 @@ export function directMatch(result: MatchResult, seed = 0): WatchScript {
   t = Math.max(t + 0.5, MATCH_SECONDS);
   push('fim');
   marks.sort((a, b) => a.t - b.t);
-  return { frames, marks, shots, duration: MATCH_SECONDS };
+  return { frames, marks, shots, shotLog, duration: MATCH_SECONDS };
 }
 
 export interface WatchState {
@@ -309,4 +313,51 @@ export function playerSpots(spots: [number, number][], side: Side, s: Pick<Watch
     out[best] = [x + (s.x - x) * pull, y + (s.y - y) * pull];
   }
   return out;
+}
+
+/**
+ * Pressão do jogo até o segundo `upTo`, em `bins` faixas iguais de 0 a 90 min: média de quanto
+ * cada lado está com a bola no terço final (+ mandante, − visitante), de −1 a 1. Faixas ainda
+ * não jogadas ficam null.
+ */
+export function pressureSeries(script: WatchScript, upTo: number, bins = 30): (number | null)[] {
+  const out: (number | null)[] = [];
+  const width = MATCH_SECONDS / bins;
+  for (let b = 0; b < bins; b++) {
+    const from = b * width;
+    if (from >= upTo) {
+      out.push(null);
+      continue;
+    }
+    const to = Math.min(upTo, from + width);
+    let sum = 0;
+    let n = 0;
+    for (let t = from; t < to; t += 10) {
+      const s = sampleAt(script, t);
+      const home = s.poss === 'home' ? Math.max(0, s.x - 0.55) / 0.45 : 0;
+      const away = s.poss === 'away' ? Math.max(0, 0.45 - s.x) / 0.45 : 0;
+      sum += home - away;
+      n++;
+    }
+    out.push(n ? Math.max(-1, Math.min(1, sum / n)) : 0);
+  }
+  return out;
+}
+
+/** Estatísticas encenadas até o segundo `t`: posse do mandante (%), finalizações e no alvo. */
+export function liveStats(script: WatchScript, t: number): { possession: number; shots: Record<Side, number>; onTarget: Record<Side, number> } {
+  let home = 0;
+  let total = 0;
+  for (let s = 0; s <= Math.min(t, MATCH_SECONDS); s += 15) {
+    if (sampleAt(script, s).poss === 'home') home++;
+    total++;
+  }
+  const shots: Record<Side, number> = { home: 0, away: 0 };
+  const onTarget: Record<Side, number> = { home: 0, away: 0 };
+  for (const sh of script.shotLog) {
+    if (sh.t > t) break;
+    shots[sh.side]++;
+    if (sh.onTarget) onTarget[sh.side]++;
+  }
+  return { possession: total ? Math.round((home / total) * 100) : 50, shots, onTarget };
 }

@@ -70,8 +70,8 @@ export function NegotiationSheet({ playerId, mode, onClose }: { playerId: string
       <Card className="p-3">
         <View className="flex-row flex-wrap items-center gap-1.5">
           <Badge label={p.positions.map((x) => POS_LABEL[x]).join('/')} />
-          <Badge tone="good" label={`OVR ${p.ovr}`} />
-          <Badge label={potLabel} />
+          <Badge tone={p.ovr >= 80 ? 'acc' : 'neutral'} label={`OVR ${p.ovr}`} />
+          <Badge tone="good" label={potLabel} />
           <Badge label={`${p.age} anos`} />
           {p.loan ? <Badge tone="warn" label="Emprestado" /> : null}
         </View>
@@ -92,14 +92,14 @@ export function NegotiationSheet({ playerId, mode, onClose }: { playerId: string
       {mode === 'comprar' && !isFree ? <Stepper label="Taxa de transferência" value={fee} onChange={setFee} step={feeStep} format={formatMoney} /> : null}
       <Stepper label="Salário semanal" value={wage} onChange={setWage} step={wageStep} min={500} format={formatWage} />
       <View>
-        <Muted className="mb-1">
+        <Muted className="mb-1.5 text-xs">
           Duração (ele aceita de {range[0]} a {range[1]} temporadas)
         </Muted>
-        <Segmented options={YEARS} value={years as (typeof YEARS)[number]} onChange={setYears} labelOf={(y) => `${y}a`} />
+        <Segmented mono options={YEARS} value={years as (typeof YEARS)[number]} onChange={setYears} labelOf={(y) => `${y}a`} />
       </View>
 
       {result ? (
-        <Card className={result.ok ? 'border-green-400 dark:border-green-700' : 'border-amber-400 dark:border-amber-700'}>
+        <Card className={result.ok ? 'border-pos' : 'border-acc'}>
           <Strong className="text-sm">{result.message}</Strong>
           {!result.ok && result.counterFee ? (
             <Button className="mt-2" variant="secondary" label={`Usar ${formatMoney(result.counterFee)}`} onPress={() => setFee(result.counterFee!)} />

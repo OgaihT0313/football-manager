@@ -12,6 +12,53 @@ Plano completo em `PLANO-FUTEBOL.md`. Aqui fica o estado de cada fase e o que fo
 | 5 — Camada de técnico | **Concluída** (2026-10-20) |
 | 6 — Ligas de fundo, visão 2D, eras | **Concluída** (2026-10-20) |
 
+## Redesign "Mesa de Comando" (2026-10-21) — resultado
+
+Nova identidade visual para Android e PC, seguindo o handoff de design (9 telas, temas escuro e
+claro). Não muda o domínio nem o save.
+
+- **Tokens:**
+  - Cores por tema em `components/theme.ts`, aplicadas como variáveis na raiz do app; classes
+    `bg-bg`, `bg-s1`, `text-ink`, `text-mute`, `border-line`, `bg-acc`, `text-pos`, `text-neg`...
+  - Âmbar é a única cor de ação.
+  - Fontes Big Shoulders Display, Archivo e JetBrains Mono (`@expo-google-fonts`), uma família por
+    peso.
+- **Navegação:** abaixo de 1024 px, barra de abas inferior; a partir de 1024 px, cabeçalho com
+  abas e "Próximo jogo ▸" (`components/TopBar.tsx`) e telas em 2–3 colunas.
+- **Telas:**
+  - **Menu e escolha de clube:** wordmark; ligas, grade de clubes e painel de detalhes no PC.
+  - **Início:** jogo da rodada com Jogar/Simular, forma, diretoria e caixa de entrada.
+  - **Elenco:** ficha do jogador em painel no PC, em folha no celular.
+  - **Escalação:** XI no campo, tática em 5 segmentos.
+  - **Mercado:** busca por nome, filtros, propostas.
+  - **Clube:** Finanças, Staff, Diretoria, Carreira.
+  - **Liga:** tabela com faixas e forma, jogos, artilharia, mata-mata.
+  - **Partida:** placar, pressão do jogo, estatísticas ao vivo, lances, campo 2D e notas.
+- **Novos no jogo:**
+  - **Simular:** joga a partida sem abrir a tela dela.
+  - **Partida ao vivo:** recém-jogada, começa do 0′, com pausa, velocidade e pular para o fim.
+  - **Estatísticas da partida:** pressão e posse/finalizações ao vivo, por
+    `pressureSeries`/`liveStats` no diretor.
+  - **Liga:** artilharia por competição.
+  - **Cabeçalho:** data de exibição derivada da rodada.
+- **Medido:**
+  - `tsc` limpo.
+  - `check_watch`: 11 verdes (finalizações ao vivo batem com a encenação; pressão em [−1, 1];
+    posse média do mandante 55%).
+  - `check_save` verde.
+  - Bundle Android compila (1406 módulos).
+- **No navegador:**
+  - **Celular (375 px):** todas as telas no tema escuro e a Liga no claro.
+  - **PC (1440×900):** as 9 telas.
+  - Corrigidos durante o teste:
+    - Skia quebrava no web quando a tela importava o arquivo do Skia antes do CanvasKit; as
+      medidas do campo agora ficam em `components/pitchSize.ts`.
+    - Visitante com cor parecida com o âmbar agora vira azul (`rivalColor`).
+    - Colunas cortadas no Mercado e no Elenco do PC.
+- **Fora do design, por falta no jogo:** aba Estádio; botão Substituir na partida (o resultado
+  vem do motor); arrastar jogadores na escalação do PC (lá a troca é por clique na vaga).
+  **Não testado em aparelho.**
+
 ## Fase 6 — resultado
 
 - **Ligas de fundo:** Brasil e Argentina entram como ligas de fundo, totalizando 14, todas

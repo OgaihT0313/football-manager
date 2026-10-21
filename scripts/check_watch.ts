@@ -5,7 +5,7 @@ import { advanceRound, newCareer } from '../src/career/career';
 import { generateFictionalWorld } from '../src/data/fictionalWorld';
 import { FORMATIONS } from '../src/domain/positions';
 import type { MatchResult } from '../src/domain/types';
-import { directMatch, formationSpots, MATCH_SECONDS, playerSpots, sampleAt, scoreAt } from '../src/engine/watchDirector';
+import { directMatch, formationSpots, liveStats, MATCH_SECONDS, playerSpots, pressureSeries, sampleAt, scoreAt } from '../src/engine/watchDirector';
 import { arg } from './lib';
 
 let failures = 0;
@@ -33,6 +33,9 @@ let goals = 0;
 let shots = 0;
 let frames = 0;
 let ms = 0;
+let statsOk = true;
+let pressureOk = true;
+let possSum = 0;
 for (const r of results) {
   const t0 = performance.now();
   const s = directMatch(r, 11);
@@ -42,6 +45,12 @@ for (const r of results) {
   for (let i = 1; i < s.frames.length; i++) if (s.frames[i]!.t < s.frames[i - 1]!.t) monotonic = false;
   if (s.frames[0]!.t !== 0 || s.frames[s.frames.length - 1]!.t !== MATCH_SECONDS) monotonic = false;
   for (const f of s.frames) if (!(f.x >= 0 && f.x <= 1 && f.y >= 0 && f.y <= 1)) inside = false;
+  // Estatísticas ao vivo batem com a encenação; pressão fica em [−1, 1].
+  const ls = liveStats(s, MATCH_SECONDS);
+  if (ls.shots.home !== s.shots.home || ls.shots.away !== s.shots.away || ls.onTarget.home < r.homeGoals || ls.onTarget.away < r.awayGoals || s.shotLog.length !== s.shots.home + s.shots.away) statsOk = false;
+  possSum += ls.possession;
+  const pr = pressureSeries(s, MATCH_SECONDS / 2);
+  if (pr.some((v) => v !== null && (v < -1 || v > 1)) || pr.filter((v) => v !== null).length !== 15) pressureOk = false;
   const end = scoreAt(s, r, MATCH_SECONDS);
   if (end[0] !== r.homeGoals || end[1] !== r.awayGoals) goalsOk = false;
   for (const m of s.marks) {
@@ -66,6 +75,8 @@ check('placar da encenação igual ao do motor em todas as partidas', goalsOk);
 check('todo gol aparece na tela', goalFrames, `${goals} gols`);
 check('gols no minuto do motor (±1,5 min) em pelo menos 95%', onMinute >= goals * 0.95, `${((onMinute / Math.max(1, goals)) * 100).toFixed(1)}%`);
 check('chutes por jogo plausíveis (15–30 somando os dois)', shots / n >= 15 && shots / n <= 30, (shots / n).toFixed(1));
+check('finalizações e no alvo ao vivo batem com a encenação (gol conta no alvo)', statsOk);
+check('pressão em [−1, 1], só nas faixas já jogadas', pressureOk, `posse média do mandante ${(possSum / n).toFixed(0)}%`);
 const a = JSON.stringify(directMatch(results[0]!, 11));
 check('mesma partida, mesma encenação', a === JSON.stringify(directMatch(results[0]!, 11)));
 check('montar a encenação é rápido (< 5 ms por jogo)', ms / n < 5, `${(ms / n).toFixed(2)} ms · ${(frames / n).toFixed(0)} quadros por jogo`);

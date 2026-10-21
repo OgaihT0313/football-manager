@@ -23,6 +23,11 @@ a próxima sem o usuário pedir.
   `src/career/managerCareer.ts`) roda `scripts/check_career.ts`. Mudança nas ligas de fundo,
   vitrine (`src/market/abroad.ts`) ou eras roda `scripts/check_world.ts`; na visão 2D
   (`src/engine/watchDirector.ts`), `scripts/check_watch.ts`.
+- Interface "Mesa de Comando": use os tokens de `components/theme.ts` (classes `bg-bg`, `bg-s1`,
+  `text-ink`, `text-mute`, `border-line`, `bg-acc`...) e as famílias `font-sans*`, `font-disp*`,
+  `font-mono*` (uma por peso; não use `font-bold`). Telas têm layout de celular e de PC
+  (`useWide()`, a partir de 1024 px). Nada de importar `components/Pitch2D.tsx` fora de
+  `PitchCanvas*` (no web quebra o Skia).
 - Visão 2D em Skia (`@shopify/react-native-skia`). No web o CanvasKit vem de
   `public/canvaskit.wasm` (`npm run setup:skia`, fora do git); `components/PitchCanvas.web.tsx`
   o carrega antes de importar o desenho.

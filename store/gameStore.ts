@@ -11,6 +11,7 @@ import { acceptJob, answerDecision, hireStaff, sendScout } from '../src/career/m
 import type { MarketResult } from '../src/career/userMarket';
 import type { ScoutRegion } from '../src/manager/staff';
 import { currentMarker } from '../src/market/calendar';
+import { positionOf, userLeague } from '../src/career/queries';
 import { createSaveService, SaveError } from '../src/save/saveService';
 import { storage } from '../src/save/storage';
 import leaguesJson from '../data/world/leagues.json';
@@ -44,7 +45,13 @@ export function dataForEra(eraId: string): typeof baseData {
 }
 
 interface SaveInfo {
+  clubId: string;
   clubName: string;
+  shortName: string;
+  leagueName: string;
+  /** Posição na liga (0 = antes da 1ª rodada). */
+  position: number;
+  employed: boolean;
   year: number;
   round: number;
   totalRounds: number;
@@ -59,6 +66,8 @@ interface GameState {
   saveError: string | null;
   tab: Tab;
   matchDetailId: string | null;
+  /** A partida aberta acabou de ser jogada: a tela começa ao vivo, do minuto 0. */
+  matchLive: boolean;
   /** Competição exibida na aba Liga (null = liga do usuário). */
   leagueView: string | null;
   /** Rodada exibida na aba Rodadas (null = rodada atual). */
@@ -79,6 +88,8 @@ interface GameState {
   setRoundView(round: number | null): void;
   setLeagueView(id: string | null): void;
   playNextRound(): void;
+  /** Joga até a próxima partida do usuário sem abrir a tela da partida (o placar vai no aviso). */
+  quickSim(): void;
   simulateToEnd(): void;
   nextSeason(): void;
   setFormation(f: Formation): void;
@@ -100,8 +111,14 @@ interface GameState {
 }
 
 function infoOf(c: CareerState, savedAt: number): SaveInfo {
+  const league = userLeague(c);
   return {
+    clubId: c.userClubId,
     clubName: c.clubs[c.userClubId]?.name ?? '?',
+    shortName: c.clubs[c.userClubId]?.shortName ?? '?',
+    leagueName: league?.name ?? '',
+    position: league?.results.length ? positionOf(c.season, c.userClubId) : 0,
+    employed: c.manager?.employed ?? true,
     year: c.season.year,
     round: Math.min(currentMarker(c.season) - 1, 38),
     totalRounds: 38,
@@ -143,6 +160,7 @@ export const useGame = create<GameState>()((set, get) => {
     saveError: null,
     tab: 'inicio',
     matchDetailId: null,
+    matchLive: false,
     leagueView: null,
     roundView: null,
     busy: false,
@@ -196,7 +214,7 @@ export const useGame = create<GameState>()((set, get) => {
     },
 
     setTab: (tab) => set({ tab }),
-    openMatch: (fixtureId) => set({ matchDetailId: fixtureId }),
+    openMatch: (fixtureId) => set({ matchDetailId: fixtureId, matchLive: false }),
     setRoundView: (round) => set({ roundView: round }),
     setLeagueView: (id) => set({ leagueView: id, roundView: null }),
 
@@ -206,7 +224,23 @@ export const useGame = create<GameState>()((set, get) => {
         if (!c) return;
         const { career, result } = advanceToNextMatch(c);
         commit(career);
-        if (result) set({ matchDetailId: result.fixtureId });
+        if (result) set({ matchDetailId: result.fixtureId, matchLive: true });
+      });
+    },
+
+    quickSim() {
+      heavy(() => {
+        const c = get().career;
+        if (!c) return;
+        const { career, result } = advanceToNextMatch(c);
+        commit(career);
+        if (!result) return;
+        const home = result.homeId === career.userClubId;
+        const mine = home ? result.homeGoals : result.awayGoals;
+        const theirs = home ? result.awayGoals : result.homeGoals;
+        const opp = career.clubs[home ? result.awayId : result.homeId]?.name ?? '';
+        const word = mine > theirs ? 'Vitória' : mine < theirs ? 'Derrota' : 'Empate';
+        set({ toast: `${word} ${mine} x ${theirs} ${home ? 'contra' : 'fora, contra'} ${opp}.` });
       });
     },
 

@@ -11,7 +11,7 @@ export function PitchCanvas(props: PitchProps) {
       getComponent={() => import('./Pitch2D')}
       componentProps={props}
       opts={{ locateFile: (file: string) => `/${file}` }}
-      fallback={<Text className="p-4 text-center text-slate-500">Carregando o campo…</Text>}
+      fallback={<Text className="p-4 text-center font-sans text-mute">Carregando o campo…</Text>}
     />
   );
 }

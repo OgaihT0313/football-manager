@@ -14,12 +14,8 @@ export function Toast() {
   }, [toast, clear]);
   if (!toast) return null;
   return (
-    <Pressable
-      accessibilityRole="alert"
-      onPress={clear}
-      className="mx-4 mb-2 rounded-xl bg-slate-900 px-4 py-3 dark:bg-slate-100"
-    >
-      <Text className="text-sm font-semibold text-white dark:text-slate-900">{toast}</Text>
+    <Pressable accessibilityRole="alert" onPress={clear} className="mx-4 mb-2 self-center rounded-xl bg-ink px-4 py-3" style={{ maxWidth: 560 }}>
+      <Text className="font-sanss text-sm text-bg">{toast}</Text>
     </Pressable>
   );
 }
