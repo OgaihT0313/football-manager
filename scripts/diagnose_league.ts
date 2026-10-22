@@ -4,6 +4,8 @@
 // Uso: npx tsx scripts/diagnose_league.ts [--temporadas 10] [--carreiras 2] [--seed 1] [--liga-unica]
 // A IA cuida de todos os clubes, inclusive o do "usuário". Com --liga-unica usa a liga de data/.
 
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { newCareer, simulateRounds, startNextSeason, type CareerState } from '../src/career/career';
 import { clubLevel } from '../src/club/development';
 import { weeklyWageBill } from '../src/club/finance';
@@ -26,6 +28,8 @@ interface SeasonStats {
   age: number;
   young: number;
   squadMin: number;
+  /** Clubes fora das faixas (para achar a causa): elenco < 18 ou caixa < −50% da receita. */
+  offenders: string[];
   squadMax: number;
   wageRatio: number;
   balanceMed: number;
@@ -95,6 +99,9 @@ function measure(c: CareerState, promotedNow: Set<string>, seconds: number): Sea
     wageRatio: mean(ratios),
     balanceMed: median(balances),
     broke: balances.filter((b) => b < -0.5).length,
+    offenders: clubs
+      .filter((cl) => cl.squad.length < 18 || cl.finance.balance / cl.finance.revenueBase < -0.5)
+      .map((cl) => `${c.season.year} ${cl.name} (${cl.leagueId}): elenco ${cl.squad.length}, caixa ${(cl.finance.balance / cl.finance.revenueBase).toFixed(2)}×R`),
     transfers: t.filter((x) => x.type === 'transfer').length,
     fees: t.filter((x) => x.type === 'transfer').reduce((a, x) => a + x.fee, 0),
     loans: t.filter((x) => x.type === 'loan').length,
@@ -112,8 +119,21 @@ function startCareer(seed: number): CareerState {
     const fixed = loadLeague() ?? generateFictionalLeague({ seed: 2026 });
     return newCareer({ leagues: [fixed.league], clubs: fixed.clubs, players: fixed.players, userClubId: fixed.league.clubIds[0]!, seed, year: 2026 });
   }
-  const w = generateFictionalWorld(2026);
-  return newCareer({ leagues: w.leagues, clubs: w.clubs, players: w.players, userClubId: w.leagues[0]!.clubIds[0]!, seed, year: 2026 });
+  // --mundo pasta: lê leagues/clubs/players.json (ex.: data/world com o mundo real).
+  const dir = arg('mundo');
+  const w = dir
+    ? {
+        leagues: JSON.parse(readFileSync(join(dir, 'leagues.json'), 'utf8')),
+        clubs: JSON.parse(readFileSync(join(dir, 'clubs.json'), 'utf8')),
+        players: JSON.parse(readFileSync(join(dir, 'players.json'), 'utf8')),
+      }
+    : generateFictionalWorld(2026);
+  // --ajuste base,forças,gols sobrescreve o ajuste do mundo (para calibrar).
+  const override = arg('ajuste')?.split(',').map(Number);
+  const tuning = override
+    ? { youthBonus: override[0]!, strengthScale: override[1]!, goalScale: override[2] ?? 1 }
+    : dir && existsSync(join(dir, 'meta.json')) ? JSON.parse(readFileSync(join(dir, 'meta.json'), 'utf8')).tuning : undefined;
+  return newCareer({ leagues: w.leagues, clubs: w.clubs, players: w.players, userClubId: w.leagues[0]!.clubIds[0]!, seed, year: 2026, tuning });
 }
 
 const all: SeasonStats[][] = [];
@@ -190,4 +210,6 @@ const criteria = [
 ];
 console.table(criteria.map((c) => ({ critério: c.nome, medido: c.medido, status: c.ok ? 'OK' : 'FORA' })));
 console.log(`Tempo: ${elapsed.toFixed(1)} s (${((elapsed / (careers * seasons)) * 1000).toFixed(0)} ms por temporada com mercado)`);
+const offenders = all.flat().flatMap((x) => x.offenders);
+if (offenders.length) console.log(['', 'Fora das faixas:', ...offenders.map((o) => `  ${o}`)].join(String.fromCharCode(10)));
 process.exit(criteria.every((c) => c.ok) ? 0 : 1);

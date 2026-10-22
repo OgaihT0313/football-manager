@@ -8,10 +8,11 @@ import type { Club, LeagueConfig, Player, Position } from '../domain/types';
 import { createRng, deriveSeed, int, pick } from '../engine/rng';
 import { makePlayer } from '../data/fictionalLeague';
 import { BACKGROUND } from '../data/fictionalWorld';
+import { REAL_BACKGROUND } from '../data/realWorld';
 import { marketValue } from './valuation';
 
 /** Ids das ligas de fundo e a nacionalidade dos seus jogadores. */
-const NAT_BY_LEAGUE: Record<string, string> = Object.fromEntries(BACKGROUND.map((b) => [`${b.code}1`, b.nat]));
+const NAT_BY_LEAGUE: Record<string, string> = Object.fromEntries([...BACKGROUND, ...REAL_BACKGROUND].map((b) => [`${b.code}1`, b.nat]));
 
 /** Ligas de fora da Europa mostram mais jovens (fonte clássica de talento). */
 const YOUTH_HEAVY = new Set(['bra1', 'arg1']);
@@ -57,10 +58,12 @@ export function refreshShowcases(
   leagues: Record<string, LeagueConfig>,
   year: number,
   seed: number,
+  /** Mantém a vitrine que o clube já trouxe dos dados (jogadores reais, na 1ª temporada). */
+  keepExisting = false,
 ): void {
-  clearShowcases(clubs, players);
+  if (!keepExisting) clearShowcases(clubs, players);
   for (const club of Object.values(clubs)) {
-    if (!isAbroadClub(club, leagues)) continue;
+    if (!isAbroadClub(club, leagues) || (keepExisting && club.showcase?.length)) continue;
     const list = generateShowcase(club, year, seed);
     for (const p of list) players[p.id] = p;
     clubs[club.id] = { ...club, showcase: list.map((p) => p.id) };

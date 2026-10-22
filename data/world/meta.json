@@ -1,0 +1,7 @@
+{
+  "source": "EA FC (FC26_20250921.csv)",
+  "tuning": {
+    "youthBonus": 8,
+    "strengthScale": 1.3
+  }
+}

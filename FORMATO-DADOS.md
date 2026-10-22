@@ -15,6 +15,61 @@ sendo a base do backtest do motor (`npm run backtest`).
 
 Os tipos estão em `src/domain/types.ts`. Tudo é JSON puro.
 
+## Mundo real (dataset do EA FC)
+
+```bash
+npm run gen:real -- --csv caminho/FC26_20250921.csv
+```
+
+`scripts/gen_real_world.ts` lê um dataset do EA FC no formato sofifa e grava em `data/world/`
+o mundo inteiro com clubes e jogadores reais, mais `meta.json` com a fonte e o ajuste do
+mundo. O CSV e o zip ficam fora do git (`.gitignore`). Para voltar ao mundo fictício, rode
+`npm run gen:world`.
+
+- **Ligas, pelo `league_id` do dataset.** Os nomes se repetem: há quatro "Super League" e
+  duas "Bundesliga".
+  - 1ª divisão dos 5 países: elencos reais, partidas completas.
+  - 2ª divisão dos 5 países: elencos reais, liga jogada "por força".
+  - 14 ligas de fundo "por força" (Portugal, Holanda, Bélgica, Turquia, Escócia, Áustria,
+    Suíça, Dinamarca, Polônia, Noruega, Suécia, Romênia, Brasil e Argentina), com a força
+    tirada do elenco real.
+  - Grécia, Tchéquia, Croácia e Sérvia vêm incompletas no dataset e ficam de fora.
+  - Liga com mais de 20 clubes (Championship, La Liga 2, Argentina) fica com os 20 mais fortes.
+- **Jogadores.** Mesma conversão do formato `fifa` (abaixo), com estas regras:
+  - id `fc-<player_id>`, estável entre versões do dataset;
+  - nome "Primeiro Sobrenome" quando o `short_name` é "J. Sobrenome";
+  - nacionalidade em código de 3 letras;
+  - valor recalculado pela fórmula do jogo, porque o preço pedido nas negociações sai dela;
+  - salário e fim de contrato do dataset (o contrato que vai "até 2027" termina no fim da
+    temporada 2027 do jogo).
+- **Clubes.** Formação em que o elenco rende mais; reputação pela força do XI; finanças pela
+  folha real; elenco de até 30 (saem os piores).
+- **Vitrine do exterior na 1ª temporada:** os jogadores reais de mais destaque de cada clube de
+  fundo (o melhor e a maior promessa, mais 1–2). Nas temporadas seguintes, a vitrine é gerada.
+- **Ajuste do mundo** (`meta.json`, guardado na carreira e aplicado ao motor e à base). As notas
+  do EA FC deixam os clubes mais próximos que no mundo fictício, onde o motor foi calibrado, e o
+  mundo começa acima do equilíbrio da evolução. Os valores foram medidos com
+  `npx tsx scripts/diagnose_league.ts --mundo data/world --carreiras 5` (para testar outro
+  ajuste: `--ajuste base,forças,gols`) e estão em `ROADMAP.md`.
+- **Eras:** usam o mundo fictício. Só a era atual usa `data/world`.
+
+Verificação: `npm run check:real`.
+
+### FC27 (guardado para calibrações futuras)
+
+`fc27 p1.zip` e `fc27 p2.zip`, na pasta do projeto e fora do git, trazem dois CSVs da API de
+ratings da EA, num formato diferente do sofifa:
+
+- `players.csv` (12/09/2026): 19.789 jogadores (17.849 homens), com overall, posições, clube,
+  liga, nacionalidade, nascimento e atributos. **Sem** potencial, valor, salário, contrato e id
+  de liga (a liga vem só pelo nome).
+- `fc27-players-2026-10-11.csv`: 10.763 jogadores, **com** potencial e atributos, também sem
+  valor, salário e contrato.
+
+Para usar, falta um conversor desse formato. A ideia é ligar as ligas pelo nome do clube ao
+FC26 (os ids de jogador batem: 13.027 jogadores estão nos dois arquivos), estimar salário, valor e contrato pelas
+fórmulas do jogo (`wageDemand`, `marketValue`) e repetir a calibração do ajuste do mundo.
+
 ## Importar jogadores reais
 
 ```bash

@@ -12,6 +12,7 @@ const dir = join(DATA, 'world');
 writeJson(join(dir, 'leagues.json'), world.leagues);
 writeJson(join(dir, 'clubs.json'), world.clubs);
 writeJson(join(dir, 'players.json'), world.players);
+writeJson(join(dir, 'meta.json'), { source: `fictício (seed ${seed})` });
 
 const players: Record<string, (typeof world.players)[number]> = {};
 for (const p of world.players) players[p.id] = p;

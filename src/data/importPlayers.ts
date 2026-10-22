@@ -104,6 +104,20 @@ export interface ImportOptions {
   season: number;
   /** Liga usada nos clubes criados quando o CSV não tem coluna de liga. */
   leagueId: string;
+  /**
+   * Formato fifa com os ids do dataset (mundo real): jogador `fc-<player_id>`, clube
+   * `fc-<club_team_id>`, liga = `league_id` (nomes de liga se repetem entre países) e nome de
+   * exibição "Primeiro Sobrenome" quando o short_name é "J. Sobrenome".
+   */
+  datasetIds?: boolean;
+}
+
+/** "J. Bellingham" + "Jude Victor William Bellingham" → "Jude Bellingham"; "Vini Jr." fica. */
+export function displayName(shortName: string, longName: string): string {
+  const m = shortName.match(/^\p{L}{1,2}\.\s+(.+)$/u);
+  const first = longName.trim().split(/\s+/)[0];
+  if (m && first && first.length > 1) return `${first} ${m[1]}`;
+  return shortName;
 }
 
 export function importPlayersCsv(text: string, opts: ImportOptions): ImportResult {
@@ -175,7 +189,14 @@ export function importPlayersCsv(text: string, opts: ImportOptions): ImportResul
       nationality = col(r, 'nationality_name');
       clubName = col(r, 'club_name');
       clubId = slugify(clubName);
-      if (header.includes('league_name') && col(r, 'league_name')) {
+      if (opts.datasetIds) {
+        if (header.includes('long_name')) name = displayName(name, col(r, 'long_name'));
+        clubId = col(r, 'club_team_id') ? `fc-${col(r, 'club_team_id')}` : '';
+        if (col(r, 'league_id')) {
+          leagueId = col(r, 'league_id');
+          leagueNames[leagueId] = col(r, 'league_name');
+        }
+      } else if (header.includes('league_name') && col(r, 'league_name')) {
         leagueId = slugify(col(r, 'league_name'));
         leagueNames[leagueId] = col(r, 'league_name');
       }
@@ -215,7 +236,10 @@ export function importPlayersCsv(text: string, opts: ImportOptions): ImportResul
       warnings.push(`linha ${line}: ${name} sem clube (fica como agente livre)`);
     }
 
-    const baseId = opts.format === 'nativo' && header.includes('id') && col(r, 'id') ? col(r, 'id') : `${clubId || 'livre'}-${slugify(name)}`;
+    const baseId =
+      opts.datasetIds && col(r, 'player_id') ? `fc-${col(r, 'player_id')}`
+      : opts.format === 'nativo' && header.includes('id') && col(r, 'id') ? col(r, 'id')
+      : `${clubId || 'livre'}-${slugify(name)}`;
     let id = baseId;
     for (let n = 2; usedIds.has(id); n++) id = `${baseId}-${n}`;
     usedIds.add(id);

@@ -6,3 +6,6 @@ web-build/
 .claude/settings.local.json
 # CanvasKit do Skia web (copiado do node_modules no postinstall)
 public/canvaskit.wasm
+# Dataset do EA FC (não vai para o repositório; gere o mundo com npm run gen:real)
+*.zip
+FC*.csv

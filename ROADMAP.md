@@ -12,6 +12,50 @@ Plano completo em `PLANO-FUTEBOL.md`. Aqui fica o estado de cada fase e o que fo
 | 5 — Camada de técnico | **Concluída** (2026-10-20) |
 | 6 — Ligas de fundo, visão 2D, eras | **Concluída** (2026-10-20) |
 
+## Mundo real (EA FC 26) — resultado (2026-10-21)
+
+`npm run gen:real -- --csv FC26_20250921.csv` gera `data/world` com clubes e jogadores reais. Na
+1ª e na 2ª divisão dos 5 países entram os elencos reais. As 14 ligas de fundo levam os clubes
+reais, com a força tirada dos elencos, e a vitrine real na 1ª temporada. Detalhes em
+`FORMATO-DADOS.md`. Para voltar ao fictício: `npm run gen:world`.
+
+- **Mundo gerado:** 24 ligas, 410 clubes e 5.990 jogadores. Há 192 clubes com elenco real (21
+  a 30 jogadores) e 669 jogadores reais na vitrine. Exemplo: Mbappé, OVR 91, no Real Madrid.
+- **`check_real`: 15 verdes.** Uma temporada no Node levou 6,6 s; o save tem 3,7 MB depois da
+  virada.
+- **Ajuste do mundo** (`meta.json`, guardado na carreira). O motor e a base foram calibrados no
+  mundo fictício. No EA FC as forças são bem mais próximas (Premier League de 86 a 76, contra
+  86 a 63 no fictício), e o mundo começa acima do equilíbrio da evolução.
+
+  Diagnóstico com 5 carreiras × 10 temporadas:
+
+  | Ajuste (base, forças, gols) | OVR do XI (1ª → última) | Campeão (pts) | Gols/jogo por liga | Fora das faixas |
+  |---|---|---|---|---|
+  | sem ajuste (3 carreiras) | 78,2 → 74,8 | ~76 | 2,70–2,81 | queda do XI (3,4) |
+  | +8, ×1, ×1 | 78,2 → 76,9 | 75,9 | 2,72–2,79 | nada |
+  | **+8, ×1,3, ×1 (escolhido)** | **78,2 → 77,0** | **80,2** | **2,75–2,86** | **Udinese com 16 jogadores em 2033 (1 caso em 50 temporadas)** |
+  | +8, ×1,45, ×0,96 | 78,2 → 77,1 | 82,0 | 2,67–2,83 | Burnley quebrado (2032 e 2034) |
+  | +8, ×1,6, ×1 | 78,2 → 77,2 | — | 2,79–2,96 | gols > 2,9; elenco de 14; 2 quebrados |
+
+  Com o ajuste escolhido passam folha/receita (64%–73%), idade, mercado (mínimo de 122
+  transferências pagas) e promovidos (16,5º).
+- **Caso aberto:** a Udinese ficou com 16 jogadores tendo caixa de 1,0× a receita. A venda,
+  o empréstimo e a dispensa respeitam limites (18, 24 e 28). A causa não foi encontrada.
+- **Mundo fictício sem mudança:** diagnóstico 9 de 9 com os mesmos números (73,1 → 72,5; gols
+  2,87). Backtest igual (2,75; campeão 85,0).
+- **Outras checagens verdes:** `check_engine` 32, `check_save` 35 (save v7), `check_market` 48,
+  `check_world` 24, `check_watch` 11, `check_career` 19 e `check_europe`.
+- **No navegador:** a escolha de clube mostra os clubes reais. Não iniciei carreira, para não
+  substituir o save.
+
+O que observar:
+
+- **Tempo:** a temporada leva 6 s no Node (o fictício leva 3,5 s), porque as 2ªs divisões têm
+  elencos reais no mercado. No celular pode passar de 20 s.
+- **Ligas fora do mundo:** Grécia, Tchéquia, Croácia e Sérvia vêm incompletas no dataset; MLS,
+  Arábia Saudita e outras não entram.
+- **FC27:** os dois CSVs estão guardados para recalibrar (ver `FORMATO-DADOS.md`).
+
 ## Redesign "Mesa de Comando" (2026-10-21) — resultado
 
 Nova identidade visual para Android e PC, seguindo o handoff de design (9 telas, temas escuro e

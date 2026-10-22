@@ -17,8 +17,9 @@ import { storage } from '../src/save/storage';
 import leaguesJson from '../data/world/leagues.json';
 import clubsJson from '../data/world/clubs.json';
 import playersJson from '../data/world/players.json';
+import metaJson from '../data/world/meta.json';
 import erasJson from '../data/eras/eras.json';
-import { eraRules, eraWorld, type EraPack } from '../src/data/eras';
+import { eraRules, eraWorld, type EraPack, type WorldTuning } from '../src/data/eras';
 
 export type Tab = 'inicio' | 'elenco' | 'escalacao' | 'mercado' | 'clube' | 'liga';
 export type Phase = 'carregando' | 'menu' | 'escolhaClube' | 'jogo';
@@ -32,6 +33,11 @@ export const baseData = {
   clubs: clubsJson as Club[],
   players: playersJson as Player[],
 };
+
+/** Ajuste do mundo de data/world (mundo real do EA FC); ver src/data/realWorld.ts. */
+const WORLD_TUNING = (metaJson as { tuning?: WorldTuning }).tuning;
+/** De onde vêm os dados de data/world ("EA FC (...)" ou "fictício"). */
+export const WORLD_SOURCE = (metaJson as { source?: string }).source ?? 'fictício';
 
 /** Eras disponíveis (pacotes de dados em data/eras/). */
 export const ERAS = erasJson as EraPack[];
@@ -190,6 +196,8 @@ export const useGame = create<GameState>()((set, get) => {
         seed: Date.now() >>> 0,
         year: pack.year,
         era: eraRules(pack),
+        // O ajuste do mundo vale para os dados de data/world (era atual); as outras eras são fictícias.
+        ...(pack.id === 'atual' && WORLD_TUNING ? { tuning: WORLD_TUNING } : {}),
       });
       commit(career);
       set({ phase: 'jogo', tab: 'inicio', roundView: null, matchDetailId: null, loadError: null });

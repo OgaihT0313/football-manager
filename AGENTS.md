@@ -31,6 +31,11 @@ a próxima sem o usuário pedir.
 - Visão 2D em Skia (`@shopify/react-native-skia`). No web o CanvasKit vem de
   `public/canvaskit.wasm` (`npm run setup:skia`, fora do git); `components/PitchCanvas.web.tsx`
   o carrega antes de importar o desenho.
+- `data/world/` pode ser o mundo real (dataset do EA FC, `npm run gen:real -- --csv ...`) ou o
+  fictício (`npm run gen:world`); `meta.json` diz qual e traz o ajuste do mundo
+  (`WorldTuning`: base e sensibilidade do motor). Mudou o gerador real ou o ajuste? Rode
+  `scripts/check_real.ts` e `scripts/diagnose_league.ts --mundo data/world --carreiras 5`.
+  Os scripts de checagem usam o mundo fictício gerado na hora.
 - O jogo roda num **mundo** (`src/competitions/world.ts`): ligas, copas e supercopas num
   calendário de datas. Clubes sem elenco jogam "por força" (`Club.strength`). Dados em
   `data/world/` (`npm run gen:world`); a liga única de `data/` é só a base do backtest.

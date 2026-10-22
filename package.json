@@ -1,6 +1,6 @@
 {
   "name": "football-manager",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,8 +18,10 @@
     "check:market": "tsx scripts/check_market.ts",
     "diagnose": "tsx scripts/diagnose_league.ts",
     "gen:world": "tsx scripts/gen_world.ts",
+    "gen:real": "tsx scripts/gen_real_world.ts",
     "check:europe": "tsx scripts/check_europe.ts",
     "check:career": "tsx scripts/check_career.ts",
+    "check:real": "tsx scripts/check_real.ts",
     "check:watch": "tsx scripts/check_watch.ts",
     "check:world": "tsx scripts/check_world.ts",
     "setup:skia": "setup-skia-web public",

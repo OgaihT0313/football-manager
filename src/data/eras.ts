@@ -52,9 +52,25 @@ export function eraRules(pack: EraPack): EraRules {
 }
 
 /** Parâmetros do motor na era (sem era = os padrões calibrados). */
-export function eraParams(era?: EraRules): EngineParams {
-  if (!era || era.goalScale === 1) return DEFAULT_PARAMS;
-  return { ...DEFAULT_PARAMS, muHome: DEFAULT_PARAMS.muHome * era.goalScale, muAway: DEFAULT_PARAMS.muAway * era.goalScale };
+export function eraParams(era?: EraRules, tuning?: WorldTuning): EngineParams {
+  const goal = (era?.goalScale ?? 1) * (tuning?.goalScale ?? 1);
+  const k = tuning?.strengthScale ?? 1;
+  if (goal === 1 && k === 1) return DEFAULT_PARAMS;
+  return { ...DEFAULT_PARAMS, muHome: DEFAULT_PARAMS.muHome * goal, muAway: DEFAULT_PARAMS.muAway * goal, k: DEFAULT_PARAMS.k * k };
+}
+
+/**
+ * Ajuste do mundo (vem com os dados, em data/world/meta.json). O motor e a base foram calibrados
+ * no mundo fictício; o mundo real (EA FC) tem forças mais próximas entre os clubes e começa acima
+ * do equilíbrio da evolução. Ver FORMATO-DADOS.md.
+ */
+export interface WorldTuning {
+  /** Pontos de nível a mais nos jovens da base de todos os clubes. */
+  youthBonus: number;
+  /** Multiplica a sensibilidade do motor à diferença de força (`k`). */
+  strengthScale: number;
+  /** Multiplica a média de gols (compensa o aumento que vem de `strengthScale`). Padrão 1. */
+  goalScale?: number;
 }
 
 /** Aplica nomes e pontos da era a um mundo gerado (devolve cópia das ligas). */

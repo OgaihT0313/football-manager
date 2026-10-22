@@ -91,6 +91,8 @@ export const MIGRATIONS: Record<number, (data: any) => any> = {
     refreshShowcases(clubs, players, leagues, d.season.year, d.seed);
     return { ...d, leagues, clubs, players };
   },
+  // v6 → v7 (mundo real): `tuning` é opcional; save antigo segue com a calibração fictícia.
+  6: (d) => d,
 };
 
 export function serializeCareer(career: CareerState, savedAt: number): string {
