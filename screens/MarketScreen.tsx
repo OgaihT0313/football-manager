@@ -7,7 +7,7 @@ import { FlatList, Pressable, ScrollView, Text, TextInput, View } from 'react-na
 import { formatMoney, formatWage, POS_GROUP, POS_GROUPS, POS_LABEL, type PosGroup } from '../components/labels';
 import { NegotiationSheet } from '../components/NegotiationSheet';
 import { useTokens, useWide } from '../components/theme';
-import { Badge, Button, Card, Chips, Label, Meter, Muted, Num, OvrBadge, Segmented, Strong, Tabs, Title } from '../components/ui';
+import { Badge, Button, Card, Chips, Label, Meter, Muted, Num, OvrBadge, PlayerPhoto, Segmented, Strong, Tabs, Title } from '../components/ui';
 import { answerOffer, marketPool } from '../src/career/userMarket';
 import { spendableFee, wageRoom, weeklyWageBill } from '../src/club/finance';
 import type { Club, IncomingOffer, Player, TransferRecord } from '../src/domain/types';
@@ -181,13 +181,16 @@ export function MarketScreen() {
                     <View className={MCOL[0]}>
                       <OvrBadge ovr={p.ovr} w={40} h={30} size={18} />
                     </View>
-                    <View className={MCOL[1]}>
-                      <Text className="font-sansb text-[14.5px] text-ink" numberOfLines={1}>
-                        {p.name}
-                      </Text>
-                      <Text className="font-monom text-[11px] text-mute" numberOfLines={1}>
-                        {p.positions.map((x) => POS_LABEL[x]).join('/')}
-                      </Text>
+                    <View className={`flex-row items-center gap-2.5 ${MCOL[1]}`}>
+                      <PlayerPhoto id={p.id} name={p.name} size={34} />
+                      <View className="min-w-0 flex-1">
+                        <Text className="font-sansb text-[14.5px] text-ink" numberOfLines={1}>
+                          {p.name}
+                        </Text>
+                        <Text className="font-monom text-[11px] text-mute" numberOfLines={1}>
+                          {p.positions.map((x) => POS_LABEL[x]).join('/')}
+                        </Text>
+                      </View>
                     </View>
                     <Text className={`font-mono text-[13px] text-ink ${MCOL[2]}`}>{p.age}</Text>
                     <Text className={`font-sans text-[13.5px] text-mute ${MCOL[3]}`} numberOfLines={1}>
@@ -274,7 +277,7 @@ export function MarketScreen() {
           renderItem={({ item: p }) => (
             <Card className="gap-2.5 p-3">
               <View className="flex-row items-center gap-2.5">
-                <OvrBadge ovr={p.ovr} w={36} h={30} size={17} />
+                <PlayerPhoto id={p.id} name={p.name} size={38} />
                 <View className="min-w-0 flex-1 gap-px">
                   <Text className="font-sansb text-sm text-ink" numberOfLines={1}>
                     {p.name}
@@ -284,7 +287,10 @@ export function MarketScreen() {
                     {p.loan ? ' · emprestado' : ''}
                   </Text>
                 </View>
-                <Text className="font-mono text-[10.5px] text-pos">POT {potLabel(p)}</Text>
+                <View className="items-end gap-1">
+                  <OvrBadge ovr={p.ovr} w={36} h={28} size={17} />
+                  <Text className="font-mono text-[10.5px] text-pos">POT {potLabel(p)}</Text>
+                </View>
               </View>
               <View className="flex-row items-center gap-3">
                 <View>

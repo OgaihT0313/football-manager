@@ -55,6 +55,28 @@ mundo. O CSV e o zip ficam fora do git (`.gitignore`). Para voltar ao mundo fict
 
 Verificação: `npm run check:real`.
 
+### Escudos e fotos
+
+```bash
+npm run fetch:images -- --csv caminho/FC26_20250921.csv
+```
+
+`scripts/fetch_images.ts` busca a imagem principal da página de cada clube e de cada jogador
+na Wikipedia em inglês (miniatura de 120 px) e grava `data/world/images.json`, que mapeia o id
+do clube ou do jogador para o caminho da imagem. Os ids são estáveis, então as carreiras já
+salvas no mundo real também mostram as imagens. O app baixa as imagens pela internet; sem
+imagem, ou sem conexão, mostra o círculo com a sigla do clube ou as iniciais do jogador.
+
+- **Clubes:** o nome do dataset, variantes ("X F.C.", "X Football Club"...) e uma lista de
+  títulos para nomes curtos ("Inter" → "Inter Milan"). A página precisa falar de futebol.
+- **Jogadores:** a página só é aceita se a descrição diz "footballer" **e** traz o ano de
+  nascimento do dataset, para não trazer a foto de um homônimo.
+- **Medido (FC26):** escudos para 406 de 410 clubes; fotos para 2.571 de 5.990 jogadores, ou
+  375 de 432 entre os de OVR 80+. Base e reservas costumam não ter página.
+- **Licenças:** as fotos são do Wikimedia Commons, com licença livre (atribuição na página de
+  cada arquivo). Os escudos são, em geral, marcas usadas sob "uso justo" na Wikipedia. O app só
+  aponta para as imagens, não as copia. O jogo é de uso pessoal.
+
 ### FC27 (guardado para calibrações futuras)
 
 `fc27 p1.zip` e `fc27 p2.zip`, na pasta do projeto e fora do git, trazem dois CSVs da API de

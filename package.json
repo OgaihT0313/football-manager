@@ -19,6 +19,7 @@
     "diagnose": "tsx scripts/diagnose_league.ts",
     "gen:world": "tsx scripts/gen_world.ts",
     "gen:real": "tsx scripts/gen_real_world.ts",
+    "fetch:images": "tsx scripts/fetch_images.ts",
     "check:europe": "tsx scripts/check_europe.ts",
     "check:career": "tsx scripts/check_career.ts",
     "check:real": "tsx scripts/check_real.ts",

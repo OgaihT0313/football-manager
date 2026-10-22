@@ -8,7 +8,7 @@ import { formatMoney, formatWage, POS_GROUP, POS_GROUPS, POS_LABEL, POS_ORDER, t
 import { NegotiationSheet } from '../components/NegotiationSheet';
 import { Sheet } from '../components/Sheet';
 import { useWide } from '../components/theme';
-import { Button, Card, Chips, CondBar, Label, Muted, Num, OvrBadge, Title } from '../components/ui';
+import { Button, Card, Chips, CondBar, Label, Muted, Num, OvrBadge, PlayerPhoto, Title } from '../components/ui';
 import { playerStats, type PlayerSeasonStats } from '../src/career/queries';
 import { loanOut, releasePlayer } from '../src/career/userMarket';
 import { openWindow } from '../src/market/calendar';
@@ -91,13 +91,16 @@ export function SquadScreen() {
                   className={`h-[50px] flex-row items-center gap-3 border-b border-line px-4 ${active ? 'rounded-[10px] bg-s1' : 'active:bg-s2'}`}
                 >
                   <Text className={`font-monob text-xs text-mute ${WIDE_COL.POS}`}>{POS_LABEL[p.positions[0]!]}</Text>
-                  <View className={WIDE_COL.JOGADOR}>
+                  <View className={`flex-row items-center gap-2.5 ${WIDE_COL.JOGADOR}`}>
+                    <PlayerPhoto id={p.id} name={p.name} size={32} />
+                    <View className="min-w-0 flex-1">
                     <Text className="font-sanss text-[14.5px] text-ink" numberOfLines={1}>
                       {p.name}
                     </Text>
                     <Text className={`font-sans text-[11.5px] ${TONE_TEXT[s.tone]}`} numberOfLines={1}>
                       {s.text}
                     </Text>
+                    </View>
                   </View>
                   <Text className={`font-mono text-[13px] text-ink ${WIDE_COL.IDADE}`}>{p.age}</Text>
                   <View className={WIDE_COL.OVR}>
@@ -150,7 +153,8 @@ export function SquadScreen() {
           const cond = Math.round(p.fitness ?? 100);
           return (
             <Pressable accessibilityRole="button" onPress={() => setSelected(p.id)} className="flex-row items-center gap-2 border-b border-line px-[18px] py-[9px] active:bg-s2">
-              <Text className="w-[38px] font-monob text-[11px] text-mute">{POS_LABEL[p.positions[0]!]}</Text>
+              <Text className="w-[30px] font-monob text-[11px] text-mute">{POS_LABEL[p.positions[0]!]}</Text>
+              <PlayerPhoto id={p.id} name={p.name} size={30} />
               <View className="min-w-0 flex-1 gap-px">
                 <Text className="font-sanss text-[13.5px] text-ink" numberOfLines={1}>
                   {p.name}
@@ -213,7 +217,8 @@ function PlayerCard({ p, stats, onRenew, wide = false }: { p: Player; stats?: Pl
 
   const body = (
     <View className="gap-5">
-      <View className="flex-row items-start justify-between">
+      <View className="flex-row items-start justify-between gap-4">
+        <PlayerPhoto id={p.id} name={p.name} size={wide ? 72 : 64} />
         <View className="flex-1 gap-1">
           <Label>
             {p.positions.map((x) => POS_LABEL[x]).join('/')} · {p.age} anos · {p.nationality}

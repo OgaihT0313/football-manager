@@ -45,6 +45,17 @@ check('vitrine real nas ligas de fundo', showcase.length > 100 && showcase.every
 const star = players.find((p) => p.name === 'Kylian Mbappé');
 check('nomes e notas reais (ex.: Mbappé)', !!star && star.ovr >= 85, star ? `${star.name} OVR ${star.ovr}, ${clubById.get(star.clubId ?? '')?.name}` : '');
 
+// Escudos e fotos (scripts/fetch_images.ts): cobertura e ids que existem no mundo.
+if (existsSync(join(dir, 'images.json'))) {
+  const img = load<{ base: string; clubs: Record<string, string>; players: Record<string, string> }>('images.json');
+  const crests = clubs.filter((c) => img.clubs[c.id]).length;
+  const top = players.filter((p) => p.ovr >= 80);
+  const topPhotos = top.filter((p) => img.players[p.id]).length;
+  check('escudos para pelo menos 95% dos clubes', crests >= clubs.length * 0.95, `${crests}/${clubs.length}`);
+  check('fotos para pelo menos 80% dos jogadores com OVR 80+', topPhotos >= top.length * 0.8, `${topPhotos}/${top.length} (todos: ${Object.keys(img.players).length}/${players.length})`);
+  check('imagens só de clubes e jogadores do mundo', Object.keys(img.clubs).every((id) => clubById.has(id)) && Object.keys(img.players).every((id) => byId.has(id)));
+} else check('images.json presente', false);
+
 const t0 = performance.now();
 let c = newCareer({ leagues, clubs, players, userClubId: full[0]!.clubIds[0]!, seed: 5, year: 2026, tuning: meta.tuning });
 check('carreira guarda o ajuste do mundo', JSON.stringify(c.tuning) === JSON.stringify(meta.tuning));

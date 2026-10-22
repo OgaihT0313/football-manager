@@ -2,8 +2,9 @@
 // Fontes: Big Shoulders Display (títulos, números grandes, botões primários), Archivo (texto),
 // JetBrains Mono (rótulos, dinheiro, datas, estatísticas).
 
-import type { ReactNode } from 'react';
-import { ActivityIndicator, Pressable, ScrollView, Text, View } from 'react-native';
+import { useState, type ReactNode } from 'react';
+import { ActivityIndicator, Image, Pressable, ScrollView, Text, View } from 'react-native';
+import { crestUrl, photoUrl } from './images';
 import { clubColor, useTokens } from './theme';
 
 export function Card({ children, className = '', selected = false }: { children: ReactNode; className?: string; selected?: boolean }) {
@@ -288,8 +289,25 @@ export function Meter({ pct, tone = 'acc', height = 4 }: { pct: number; tone?: '
   );
 }
 
-/** Escudo provisório: círculo na cor do clube com a sigla. */
+/** Escudo do clube (imagem do mundo real); sem imagem, círculo na cor do clube com a sigla. */
 export function Crest({ id, short, size = 36 }: { id: string; short: string; size?: number }) {
+  const url = crestUrl(id);
+  const [failed, setFailed] = useState(false);
+  if (url && !failed) {
+    // Disco claro atrás: escudos escuros (Tottenham, Juventus) somem no tema escuro.
+    const pad = Math.max(2, Math.round(size * 0.12));
+    return (
+      <View className="items-center justify-center rounded-full" style={{ width: size, height: size, backgroundColor: 'rgba(255,255,255,0.92)' }}>
+        <Image
+          source={{ uri: url }}
+          accessibilityLabel={`Escudo ${short}`}
+          onError={() => setFailed(true)}
+          resizeMode="contain"
+          style={{ width: size - pad * 2, height: size - pad * 2 }}
+        />
+      </View>
+    );
+  }
   return (
     <View className="items-center justify-center rounded-full" style={{ width: size, height: size, backgroundColor: clubColor(id) }}>
       <Text className="font-disp text-white" style={{ fontSize: Math.max(9, size * 0.32), lineHeight: Math.max(10, size * 0.36) }} numberOfLines={1}>
@@ -335,4 +353,30 @@ export function Dots({ n, max = 5, size = 7 }: { n: number; max?: number; size?:
 export function Dot({ tone, size = 6 }: { tone: 'acc' | 'pos' | 'neg' | 'mute'; size?: number }) {
   const bg = tone === 'acc' ? 'bg-acc' : tone === 'pos' ? 'bg-pos' : tone === 'neg' ? 'bg-neg' : 'bg-mute';
   return <View className={`rounded-full ${bg}`} style={{ width: size, height: size }} />;
+}
+
+/** Foto do jogador (mundo real); sem foto, círculo com as iniciais. */
+export function PlayerPhoto({ id, name, size = 32 }: { id: string; name: string; size?: number }) {
+  const url = photoUrl(id);
+  const [failed, setFailed] = useState(false);
+  if (url && !failed) {
+    return (
+      <View className="overflow-hidden rounded-full bg-s2" style={{ width: size, height: size }}>
+        <Image source={{ uri: url }} accessibilityLabel={name} onError={() => setFailed(true)} resizeMode="cover" style={{ width: size, height: size }} />
+      </View>
+    );
+  }
+  const initials = name
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w[0]!.toUpperCase())
+    .slice(0, 2)
+    .join('');
+  return (
+    <View className="items-center justify-center rounded-full bg-s2" style={{ width: size, height: size }}>
+      <Text className="font-disp text-mute" style={{ fontSize: size * 0.38 }}>
+        {initials}
+      </Text>
+    </View>
+  );
 }
